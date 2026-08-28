@@ -1,0 +1,282 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DX・AIデイリー 2026-08-28</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap">
+</head><body>
+<style>
+:root {
+  --head:#084FAD; --band:#013BAB; --body:#12303B; --sub:#445A66; --muted:#7A929C;
+  --rule:#C8D4DC; --link:#2E6FB7;
+  --med:#2E6FB7; --hosp:#7A5FB5; --care:#2F9E7C; --home:#1E9AA8; --fund:#D97B2B;
+  --bg:#FFFFFF; --card:#F6F9FB; --colbg:#F4F7FA; --chipbg:#F4F7FA;
+  --band-text:#FFFFFF;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --head:#7FB3F0; --band:#1D4FB0; --body:#D9E4EA; --sub:#A9BCC6; --muted:#8399A3;
+    --rule:#2E3E48; --link:#7FB3F0;
+    --med:#7FB3F0; --hosp:#A896E0; --care:#4FBF9C; --home:#55C4CC; --fund:#E8965A;
+    --bg:#0F1A20; --card:#18242C; --colbg:#16222A; --chipbg:#18242C;
+    --band-text:#FFFFFF;
+  }
+}
+:root[data-theme="dark"] {
+  --head:#7FB3F0; --band:#1D4FB0; --body:#D9E4EA; --sub:#A9BCC6; --muted:#8399A3;
+  --rule:#2E3E48; --link:#7FB3F0;
+  --med:#7FB3F0; --hosp:#A896E0; --care:#4FBF9C; --home:#55C4CC; --fund:#E8965A;
+  --bg:#0F1A20; --card:#18242C; --colbg:#16222A; --chipbg:#18242C;
+  --band-text:#FFFFFF;
+}
+* { box-sizing:border-box; }
+body {
+  font-family:"BIZ UDPGothic","BIZ UDPゴシック","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  background:var(--bg); color:var(--body); line-height:1.75; margin:0;
+  padding:2.2rem 1.1rem 3rem;
+}
+main { max-width:860px; margin:0 auto; }
+a { color:var(--link); text-decoration:underline; }
+h1 { color:var(--head); font-size:1.9rem; line-height:1.35; margin:0 0 .2rem; }
+.date { font-size:1.05rem; font-weight:700; margin:0; }
+.period { font-size:.9rem; font-weight:700; color:var(--sub); margin:.15rem 0 0; }
+.aud { font-size:.92rem; color:var(--muted); margin:.35rem 0 0; }
+.chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0 0; }
+.chip { display:inline-flex; align-items:center; gap:.4rem; background:var(--chipbg);
+  border-radius:999px; padding:.28rem .85rem; font-size:.82rem; font-weight:700; }
+.chip .dot { width:.62rem; height:.62rem; border-radius:50%; display:inline-block; }
+header { padding-bottom:1.4rem; border-bottom:1px solid var(--rule); }
+section { margin-top:2.4rem; }
+h2 { color:var(--head); font-size:1.4rem; display:flex; align-items:center; gap:.55rem; margin:0 0 1rem; }
+.hbar { width:.32rem; height:1.35rem; border-radius:2px; display:inline-block; background:var(--head); flex:none; }
+.hgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:.9rem; }
+.hcard { background:var(--card); border-radius:12px; border-top:4px solid var(--head);
+  padding:1rem 1.05rem .85rem; }
+.hcard h3 { font-size:1.02rem; margin:.3rem 0 .35rem; line-height:1.5; }
+.hcat { font-size:.75rem; font-weight:700; letter-spacing:.04em; }
+.sub { font-size:.95rem; color:var(--sub); margin:.2rem 0 .3rem; }
+.src { font-size:.8rem; margin:.1rem 0 0; }
+.item { display:flex; gap:.7rem; margin:0 0 1.15rem; }
+.idot { width:.72rem; height:.72rem; border-radius:50%; flex:none; margin-top:.5rem; }
+.ibody h3 { font-size:1.15rem; margin:0 0 .15rem; line-height:1.5; }
+.banner { background:var(--band); color:var(--band-text); font-weight:700; text-align:center;
+  border-radius:10px; padding:.6rem 1rem; margin:1.3rem 0 .6rem; font-size:.95rem; }
+details.note { margin:.5rem 0 0; font-size:.9rem; color:var(--sub); }
+details.note summary { cursor:pointer; color:var(--muted); font-size:.85rem; }
+details.note p { margin:.5rem 0 0; }
+.tablewrap { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; min-width:560px; font-size:.92rem; }
+th, td { text-align:left; padding:.55rem .7rem; border-bottom:1px solid var(--rule); vertical-align:top; }
+th { color:var(--sub); font-size:.82rem; }
+.td-date { font-weight:700; white-space:nowrap; }
+.column-block { background:var(--colbg); border-radius:14px; padding:1.25rem; }
+.col-theme { font-size:1.25rem; font-weight:700; color:var(--head); margin:0 0 .8rem; line-height:1.5; }
+.column-block p { font-size:.98rem; line-height:1.9; margin:0 0 .9rem; }
+.col-impl-h { font-weight:700; color:var(--head); margin:1rem 0 .4rem; font-size:.95rem; }
+.col-impl { list-style:none; padding:0; margin:0 0 .8rem; }
+.col-impl li { display:flex; align-items:baseline; gap:.5rem; margin:.25rem 0; font-size:.95rem; }
+.cdot { width:.55rem; height:.55rem; border-radius:50%; background:var(--med); flex:none; position:relative; top:-.08rem; }
+.sources li { font-size:.92rem; margin:.35rem 0; }
+.sources { padding-left:1.2rem; }
+.footnote { font-size:.8rem; color:var(--muted); margin-top:2.2rem; }
+@media print {
+  body { background:#fff; padding:.5rem; }
+  .banner { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+<main>
+<header>
+<h1>医療 介護 DX・AIデイリー</h1>
+<p class="date">2026年8月28日（金）</p>
+<p class="period">対象期間：2026年8月27日（木）〜8月28日（金）</p>
+<p class="aud">病院・クリニック・介護/在宅事業者の皆さま向け　医療・介護のDX・AIニュースまとめ（毎日更新）</p>
+<div class="chips"><span class="chip"><span class="dot" style="background:var(--med)"></span>医療 DX・AI</span><span class="chip"><span class="dot" style="background:var(--hosp)"></span>病院 DX・AI</span><span class="chip"><span class="dot" style="background:var(--care)"></span>介護 DX・AI</span><span class="chip"><span class="dot" style="background:var(--home)"></span>在宅 DX・AI</span><span class="chip"><span class="dot" style="background:var(--fund)"></span>補助金・実証</span></div>
+<details class="note"><summary>読み上げ原稿</summary><p>医療 介護 DX・AIデイリーをお届けします。医療・介護分野のDXとAIに関する、きょうのニュースまとめです。本日は8月28日金曜日、前営業日の27日木曜日からの動きを中心にご紹介します。まず医療分野では電子カルテとAIをめぐるベンダー側の大きな動き、続いて病院ご自身の取り組みとして京都の蘇生会総合病院の内製事例、介護分野では国の医療・介護情報連携の議論、在宅分野では訪問看護の記録AI、最後に9月に締切が集中している補助金の情報をお伝えします。あわせて常設コラムでは、電子カルテ情報共有サービスの全体像を解説します。それでは順に見てまいりましょう。</p></details>
+</header>
+
+<section id="sec-highlights">
+<h2><span class="hbar"></span>本日の要点</h2>
+<div class="hgrid"><div class="hcard" style="border-top-color:var(--med)">
+<div class="hcat" style="color:var(--med)">医療 DX・AI</div>
+<h3>メドレー、標準仕様準拠のクラウド電子カルテを開発へ</h3>
+<p class="sub">AIネイティブの「MALLクラウド」。中小病院・有床診向けに2027年1月以降提供。</p>
+<p class="src">▶ 出典：<a href="https://www.medley.jp/release/20260813.html" target="_blank" rel="noopener">株式会社メドレー</a></p>
+</div><div class="hcard" style="border-top-color:var(--hosp)">
+<div class="hcat" style="color:var(--hosp)">病院 DX・AI</div>
+<h3>蘇生会総合病院、iPhoneでリハビリ評価を内製DX</h3>
+<p class="sub">既存iPhone約50台を活用した自作Webアプリ。運用2週間で評価350件超を蓄積。</p>
+<p class="src">▶ 出典：<a href="https://prtimes.jp/main/html/rd/p/000000031.000175918.html" target="_blank" rel="noopener">PR TIMES</a></p>
+</div><div class="hcard" style="border-top-color:var(--care)">
+<div class="hcat" style="color:var(--care)">介護 DX・AI</div>
+<h3>医療・介護の情報連携、国のWGが議論を整理</h3>
+<p class="sub">退院時サマリー等を介護側と電子的に共有する仕組みづくりが前進（7月23日）。</p>
+<p class="src">▶ 出典：<a href="https://www.mhlw.go.jp/stf/newpage_74842.html" target="_blank" rel="noopener">厚生労働省</a></p>
+</div><div class="hcard" style="border-top-color:var(--home)">
+<div class="hcat" style="color:var(--home)">在宅 DX・AI</div>
+<h3>訪問看護の報告書作成、AI要約で最大42%短縮</h3>
+<p class="sub">アルム「Team」に下書き自動作成機能。新潟県の6ステーションで効果を検証。</p>
+<p class="src">▶ 出典：<a href="https://www.allm.net/news/20260525/" target="_blank" rel="noopener">アルム</a></p>
+</div><div class="hcard" style="border-top-color:var(--fund)">
+<div class="hcat" style="color:var(--fund)">補助金・実証</div>
+<h3>介護テクノロジー導入支援、9月締切が集中</h3>
+<p class="sub">奈良9/9・青森9/11など。補助率は最大3/4、記録ソフトは上限100〜250万円。</p>
+<p class="src">▶ 出典：<a href="https://www.pref.nara.lg.jp/n067/p015035.html" target="_blank" rel="noopener">奈良県</a></p>
+</div></div>
+<div class="banner">気になる項目は出典リンクから一次情報をご確認ください</div>
+<details class="note"><summary>読み上げ原稿</summary><p>本日の要点を5つにまとめました。1つ目、メドレーが国の標準仕様に準拠したクラウド電子カルテをAIネイティブで開発すると発表し、2027年1月以降の提供を予定しています。2つ目、京都の蘇生会総合病院が、手持ちのiPhoneを活かしてリハビリ評価システムを院内で作り上げた事例です。3つ目、厚生労働省のワーキンググループが医療と介護の間の電子的な情報連携について議論を整理しました。4つ目、訪問看護の報告書作成をAIの下書きで最大42%短縮できたという検証結果です。5つ目、介護テクノロジー導入支援事業の締切が9月上旬に集中しています。それぞれ詳しく見てまいります。</p></details>
+</section>
+
+<section id="sec-med">
+<h2><span class="hbar" style="background:var(--med)"></span>医療 DX・AI動向</h2>
+<div class="item">
+<div class="idot" style="background:var(--med)"></div>
+<div class="ibody">
+<h3>メドレー、AIネイティブのクラウド電子カルテを開発</h3>
+<p class="sub">国の標準仕様に準拠した「MALLクラウド」。生成AIの文書作成支援を標準搭載し、中小病院・有床診療所向けに2027年1月以降、段階的に提供。</p>
+<p class="src">▶ 出典：<a href="https://www.medley.jp/release/20260813.html" target="_blank" rel="noopener">株式会社メドレー</a></p>
+</div>
+</div><div class="item">
+<div class="idot" style="background:var(--med)"></div>
+<div class="ibody">
+<h3>精神科向け記録AI「MENTRA」、1か月無料トライアル受付を開始</h3>
+<p class="sub">診察の会話からカルテ・看護記録など5種の下書きを自動作成。導入先では中央値18秒で下書き表示、承認率96.7%。申込は10月31日まで。</p>
+<p class="src">▶ 出典：<a href="https://prtimes.jp/main/html/rd/p/000000002.000189676.html" target="_blank" rel="noopener">PR TIMES</a></p>
+</div>
+</div><div class="item">
+<div class="idot" style="background:var(--med)"></div>
+<div class="ibody">
+<h3>電子カルテ連動型の生成AIサービス、契約300件を突破</h3>
+<p class="sub">ソフトウェア・サービス社が発表。2025年9月の発売から約10か月で到達し、退院時サマリー等の文書作成支援の需要が拡大。</p>
+<p class="src">▶ 出典：<a href="https://prtimes.jp/main/html/rd/p/000000002.000118791.html" target="_blank" rel="noopener">PR TIMES</a></p>
+</div>
+</div>
+<div class="banner">電子カルテは「クラウド＋AI標準搭載」が選定の新基準になりつつあります</div>
+<details class="note"><summary>読み上げ原稿</summary><p>医療分野のDX・AIの動きです。1件目、メドレーは中小病院や有床診療所に向けて、国の標準仕様に準拠したクラウドネイティブ電子カルテ「MALLクラウド」を開発すると発表しました。生成AIによる文書作成支援を最初から組み込む設計で、2027年1月以降に段階提供の予定です。2件目は精神科に特化した記録AIのMENTRAで、診察の会話からカルテや看護記録の下書きを自動作成します。10月末まで1か月の無料トライアルを受け付けています。3件目、ソフトウェア・サービス社の電子カルテ連動型の生成AIサービスは、発売から約10か月で契約300件を超えました。文書作成AIが電子カルテ選びの前提条件になりつつあることを示す動きです。</p></details>
+</section><section id="sec-hosp">
+<h2><span class="hbar" style="background:var(--hosp)"></span>病院 DX・AI動向</h2>
+<div class="item">
+<div class="idot" style="background:var(--hosp)"></div>
+<div class="ibody">
+<h3>蘇生会総合病院（京都）、リハビリ評価システムを院内で内製</h3>
+<p class="sub">既存のiPhone約50台を活かした自作Webアプリで約30種の評価を電子化。運用開始2週間で評価350件超を蓄積。</p>
+<p class="src">▶ 出典：<a href="https://prtimes.jp/main/html/rd/p/000000031.000175918.html" target="_blank" rel="noopener">PR TIMES</a></p>
+</div>
+</div><div class="item">
+<div class="idot" style="background:var(--hosp)"></div>
+<div class="ibody">
+<h3>JCHO大阪病院、生成AIを安全に使う体制づくりを開始</h3>
+<p class="sub">富士通Japanと協定を締結し、退院時サマリー作成や看護の申し送りをAIで支援。6月から運用開始。</p>
+<p class="src">▶ 出典：<a href="https://global.fujitsu/ja-jp/subsidiaries/fjj/news/press-releases/2026/0219-01" target="_blank" rel="noopener">富士通Japan</a></p>
+</div>
+</div><div class="item">
+<div class="idot" style="background:var(--hosp)"></div>
+<div class="ibody">
+<h3>九州大学病院など全国100病院が「ユビー生成AI」を導入</h3>
+<p class="sub">大学病院10施設以上を含む規模に拡大。恵寿総合病院では退院時の看護サマリー作成時間を42.5%削減。</p>
+<p class="src">▶ 出典：<a href="https://prtimes.jp/main/html/rd/p/000000198.000048083.html" target="_blank" rel="noopener">PR TIMES</a></p>
+</div>
+</div>
+<div class="banner">先行病院は「文書作成AI」と「現場発の内製」で成果を出し始めています</div>
+<details class="note"><summary>読み上げ原稿</summary><p>続いて、病院ご自身が主体となったDX・AIの取り組みです。1件目は京都市伏見区の蘇生会総合病院で、リハビリ部門とシステム担当が協力し、既存のiPhone約50台を活かした評価システムを院内で内製しました。運用開始から2週間で350件を超える評価が集まり、現場が自発的に使うシステムに育っています。2件目のJCHO大阪病院は、富士通Japanと協定を結び、退院時サマリーの作成や看護の申し送りに生成AIを安全に使うための体制づくりを進め、6月から運用を始めています。3件目は九州大学病院をはじめ全国100病院に広がったユビー生成AIで、恵寿総合病院では退院時の看護サマリー作成時間が42.5%短くなったと報告されています。高価な投資だけがDXではない、という点も蘇生会の事例から読み取れます。</p></details>
+</section><section id="sec-care">
+<h2><span class="hbar" style="background:var(--care)"></span>介護 DX・AI動向</h2>
+<div class="item">
+<div class="idot" style="background:var(--care)"></div>
+<div class="ibody">
+<h3>医療・介護間の電子的な情報連携、厚労省WGが議論を整理</h3>
+<p class="sub">7月23日の医療等情報利活用WG（第34回・持ち回り）で、退院時サマリー等を介護事業所と共有する方向の整理資料を公表。</p>
+<p class="src">▶ 出典：<a href="https://www.mhlw.go.jp/stf/newpage_74842.html" target="_blank" rel="noopener">厚生労働省</a></p>
+</div>
+</div><div class="item">
+<div class="idot" style="background:var(--care)"></div>
+<div class="ibody">
+<h3>江戸川区、ケアプランデータ連携システム導入率62%を達成</h3>
+<p class="sub">274事業所を伴走支援し、人口10万人以上の都市で全国トップ水準に。予定・実績の入力時間を月16.7分削減。</p>
+<p class="src">▶ 出典：<a href="https://prtimes.jp/main/html/rd/p/000000072.000134768.html" target="_blank" rel="noopener">PR TIMES</a></p>
+</div>
+</div><div class="item">
+<div class="idot" style="background:var(--care)"></div>
+<div class="ibody">
+<h3>AI見守りカメラ全室導入の宝木荘、転倒事故を45%削減</h3>
+<p class="sub">宇都宮市の中山会が運営。夜間巡回は1日225回から50回未満に減り、転倒骨折による入院はゼロが続く。</p>
+<p class="src">▶ 出典：<a href="https://www.koureisha-jutaku.com/20260819_34_01/" target="_blank" rel="noopener">高齢者住宅新聞</a></p>
+</div>
+</div>
+<div class="banner">ケアプランデータ連携と見守り機器は「成果の数字」が出そろってきました</div>
+<details class="note"><summary>読み上げ原稿</summary><p>介護分野の動きです。1件目は制度側の大きな流れで、7月23日に開かれた国のワーキンググループが、医療機関と介護事業所の間で退院時サマリーなどの情報を電子的にやり取りする仕組みについて、これまでの議論を整理しました。退院時の情報連携が電子化されれば、施設側の入所前の情報収集が大きく変わります。2件目は東京都江戸川区の事例で、ケアプランデータ連携システムの導入率が62%と、人口10万人以上の都市で全国トップ水準に達しました。274の事業所を伴走型で支援した成果で、入力時間の削減効果も数字で示されています。3件目は宇都宮市の介護施設、宝木荘です。AI見守りカメラを全室に導入し、転倒事故を45%減らし、夜間の巡回は1日225回から50回未満まで減りました。見守り機器は補助金の優先対象にもなっていますので、次の補助金のスライドとあわせてご覧ください。</p></details>
+</section><section id="sec-home">
+<h2><span class="hbar" style="background:var(--home)"></span>在宅 DX・AI動向</h2>
+<div class="item">
+<div class="idot" style="background:var(--home)"></div>
+<div class="ibody">
+<h3>訪問看護の報告書作成、AI下書きで最大42%短縮</h3>
+<p class="sub">アルムの多職種連携システム「Team」に搭載。新潟県の6ステーション・看護師15名の検証で効果を確認し提供開始。</p>
+<p class="src">▶ 出典：<a href="https://www.allm.net/news/20260525/" target="_blank" rel="noopener">アルム</a></p>
+</div>
+</div><div class="item">
+<div class="idot" style="background:var(--home)"></div>
+<div class="ibody">
+<h3>AI活用の訪問診療、横浜のクリニックが段階的に開始</h3>
+<p class="sub">AIプラスクリニックたまプラーザが7月から提供。訪問先でのAI画像診断支援や、会話を認識する記録AIを組み合わせる。</p>
+<p class="src">▶ 出典：<a href="https://kyodonewsprwire.jp/release/202606160894" target="_blank" rel="noopener">共同通信PRワイヤー</a></p>
+</div>
+</div>
+<div class="banner">在宅の記録・報告書は「AIが下書き、人が確認」へ移りつつあります</div>
+<details class="note"><summary>読み上げ原稿</summary><p>在宅分野の動きです。1件目はアルムの多職種連携システム「Team」に搭載されたAI要約機能で、訪問看護の月次報告書の下書きを自動で作成します。新潟県内の6つの訪問看護ステーション、看護師15名による検証では、作成時間が標準的なケースで最大42%短くなりました。前月の報告書や当月の記録を読み込んでワンクリックで下書きができる仕組みで、「AIが下書きを作り、看護師が確認して仕上げる」という流れが現実のものになっています。2件目は横浜市のAIプラスクリニックたまプラーザで、AIによる画像診断支援や、診察中の会話を認識して記録を作るAIを組み合わせた訪問診療を7月から段階的に始めました。在宅医療の現場にもAIの実装が広がり始めています。</p></details>
+</section><section id="sec-fund">
+<h2><span class="hbar" style="background:var(--fund)"></span>補助金・助成金・実証事業</h2>
+<div class="item">
+<div class="idot" style="background:var(--fund)"></div>
+<div class="ibody">
+<h3>介護テクノロジー導入支援事業、補助率は最大3/4</h3>
+<p class="sub">原則1/2、賃金還元等の要件を満たすと3/4（職場環境改善との併用で4/5）。介護記録ソフトは上限100〜250万円、移乗・入浴支援ロボットは1台100万円。</p>
+<p class="src">▶ 出典：<a href="https://hojyokin-portal.jp/columns/kaigo_technology" target="_blank" rel="noopener">補助金ポータル</a></p>
+</div>
+</div><div class="item">
+<div class="idot" style="background:var(--fund)"></div>
+<div class="ibody">
+<h3>奈良県は9月9日必着で受付中（介護テクノロジー導入支援）</h3>
+<p class="sub">見守り機器・インカム・介護ソフトを優先枠に設定。研修動画の視聴とアンケート回答のうえ、県窓口へメールで申請。</p>
+<p class="src">▶ 出典：<a href="https://www.pref.nara.lg.jp/n067/p015035.html" target="_blank" rel="noopener">奈良県</a></p>
+</div>
+</div><div class="item">
+<div class="idot" style="background:var(--fund)"></div>
+<div class="ibody">
+<h3>デジタル化・AI導入補助金2026、通常枠は9月29日締切</h3>
+<p class="sub">旧IT導入補助金。電子カルテやレセコン等の導入に活用可。締切は17時、交付決定は11月9日予定。青森県の介護テクノロジー導入支援も9月11日必着で受付中。</p>
+<p class="src">▶ 出典：<a href="https://it-shien.smrj.go.jp/schedule/" target="_blank" rel="noopener">中小機構</a></p>
+</div>
+</div>
+<div class="banner">9月は締切ラッシュ。要件確認と見積取得は今週中の着手が安全です</div>
+<details class="note"><summary>読み上げ原稿</summary><p>補助金の情報です。介護テクノロジー導入支援事業は、見守り機器や記録ソフト、介護ロボットの導入費用を支援する都道府県の事業で、補助率は原則2分の1、賃金への還元などの要件を満たすと4分の3まで上がります。介護記録ソフトは職員数に応じて100万円から250万円、移乗支援・入浴支援のロボットは1台100万円が上限です。奈良県は9月9日必着、青森県は9月11日必着と、締切が目前に迫っています。医療機関の側では、旧IT導入補助金にあたるデジタル化・AI導入補助金2026の通常枠が9月29日17時締切で、電子カルテやレセプトコンピュータの導入にも使えます。いずれも要件確認と見積の取得に時間がかかりますので、検討中の施設は今週中の着手をお勧めします。</p></details>
+</section>
+
+<section id="sec-schedule">
+<h2><span class="hbar"></span>今後の注目日程</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>日付</th><th>内容</th><th>主体</th><th>リンク</th></tr></thead>
+<tbody><tr><td class="td-date">9月9日（水）</td><td>介護テクノロジー導入支援事業 申請締切（必着）</td><td>奈良県</td><td><a href="https://www.pref.nara.lg.jp/n067/p015035.html" target="_blank" rel="noopener">公式ページ</a></td></tr><tr><td class="td-date">9月11日（金）</td><td>介護テクノロジー定着支援事業費補助金 申請締切（必着）</td><td>青森県</td><td><a href="https://www.pref.aomori.lg.jp/soshiki/kenko/koreihoken/kaigo-robot-hojo.html" target="_blank" rel="noopener">公式ページ</a></td></tr><tr><td class="td-date">9月29日（火）17時</td><td>デジタル化・AI導入補助金2026 通常枠 申請締切</td><td>中小機構</td><td><a href="https://it-shien.smrj.go.jp/schedule/" target="_blank" rel="noopener">公式ページ</a></td></tr><tr><td class="td-date">9月30日（水）消印有効</td><td>介護テクノロジー導入支援事業 事前協議書 締切</td><td>滋賀県</td><td><a href="https://www.pref.shiga.lg.jp/ippan/kenkouiryouhukushi/koureisya/351475.html" target="_blank" rel="noopener">公式ページ</a></td></tr><tr><td class="td-date">10月31日（土）</td><td>精神科向け記録AI「MENTRA」無料トライアル申込締切</td><td>MENTRA</td><td><a href="https://prtimes.jp/main/html/rd/p/000000002.000189676.html" target="_blank" rel="noopener">公式ページ</a></td></tr><tr><td class="td-date">2026年度冬頃</td><td>電子カルテ情報共有サービス 全国での本格運用開始（目標）</td><td>厚生労働省</td><td><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/johoka/denkarukyouyuu.html" target="_blank" rel="noopener">公式ページ</a></td></tr></tbody>
+</table>
+</div>
+<div class="banner">締切前倒しの自治体もあります。必ず公式ページで最新情報をご確認ください</div>
+<details class="note"><summary>読み上げ原稿</summary><p>今後の注目日程です。9月9日に奈良県、11日に青森県の介護テクノロジー関連補助金が締め切られ、29日にはデジタル化・AI導入補助金2026の通常枠、30日には滋賀県の事前協議が締切を迎えます。10月31日までは精神科向け記録AIの無料トライアル申込が可能です。そして最も大きな節目が、2026年度の冬頃をめどに全国利用を目指して議論が進む電子カルテ情報共有サービスの本格運用です。自治体の補助金は予算がなくなり次第終了する場合や、締切が前倒しになる場合がありますので、申請をお考えの際は必ず各公式ページで最新の情報をご確認ください。</p></details>
+</section>
+
+<section id="sec-column">
+<h2><span class="hbar"></span>コラム：医療等情報利活用WGを読む</h2>
+<div class="column-block">
+<p class="col-theme">電子カルテ情報共有サービスの全体像——何が、いつから、誰に見えるのか</p>
+<p>電子カルテ情報共有サービスは、全国の医療機関や薬局のあいだで患者さんのカルテ情報の一部をやり取りできるようにする、全国医療情報プラットフォーム（国が進める医療情報の共通基盤）の中核サービスです。共有されるのは「3文書6情報」、つまり診療情報提供書・退院時サマリー・健診結果報告書の3つの文書と、傷病名やアレルギー、薬剤禁忌、検査結果などの6種類の情報で、全国の医療機関等に加えて患者さん本人も自分の情報を閲覧できる設計です。</p><p>現在は全国9地域・22医療機関のモデル事業で運用上の課題を洗い出し、システム改修を経て、2026年度の冬頃をめどに全国で利用可能な状態（本格運用）とする方向で議論されています。2026年6月には技術解説書の新版（v2.1.0）も公開され、ベンダー側の対応も本格化しています。自院の電子カルテがいつ対応するのか、退院時サマリー等を確実に登録できる院内体制があるか、いまのうちに点検しておきたいところです。</p>
+<p class="col-impl-h">現場への示唆</p>
+<ul class="col-impl"><li><span class="cdot"></span>自院カルテの対応時期と改修費用をベンダーに確認する</li><li><span class="cdot"></span>退院時サマリー・診療情報提供書の作成運用を点検する</li></ul>
+<p class="src">▶ 出典：<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/johoka/denkarukyouyuu.html" target="_blank" rel="noopener">厚生労働省｜電子カルテ情報共有サービス（医療機関等向け案内）</a></p>
+</div>
+<details class="note"><summary>読み上げ原稿</summary><p>ここからは常設コラム、医療等情報利活用ワーキンググループの解説です。本日のテーマは電子カルテ情報共有サービスの全体像です。資料を読むときの着眼点は3つあります。1つ目は「何が共有されるのか」。診療情報提供書、退院時サマリー、健診結果報告書の3文書と、傷病名やアレルギーなど6情報が対象です。2つ目は「誰に見えるのか」。全国の医療機関等に加えて、患者さん本人も自分の情報を閲覧できる設計です。3つ目は「いつからか」。現在は9地域22医療機関のモデル事業の段階で、2026年度の冬頃をめどに全国展開する方向で議論されています。つまり、あと半年ほどで全国の医療機関に関係する話になります。自院のカルテがいつ対応するのか、退院時サマリーを確実に作成し登録できる体制があるか、この2点を今のうちにご確認ください。</p></details>
+</section>
+
+<section id="sec-sources">
+<h2><span class="hbar"></span>出典一覧</h2>
+<ul class="sources"><li>株式会社メドレー　｜　<a href="https://www.medley.jp/release/20260813.html" target="_blank" rel="noopener">標準仕様に準拠したクラウドネイティブ電子カルテ「MALLクラウド」をAIネイティブで開発</a></li><li>PR TIMES（MENTRA）　｜　<a href="https://prtimes.jp/main/html/rd/p/000000002.000189676.html" target="_blank" rel="noopener">精神科病院・クリニック向け医療AI「MENTRA」1か月無料トライアル受付開始</a></li><li>PR TIMES（ソフトウェア・サービス）　｜　<a href="https://prtimes.jp/main/html/rd/p/000000002.000118791.html" target="_blank" rel="noopener">電子カルテ連動型「生成AIサービス」が契約300件を突破</a></li><li>PR TIMES（蘇生会総合病院）　｜　<a href="https://prtimes.jp/main/html/rd/p/000000031.000175918.html" target="_blank" rel="noopener">既存iPhone約50台を活用したリハビリ評価システムを院内で内製</a></li><li>富士通Japan　｜　<a href="https://global.fujitsu/ja-jp/subsidiaries/fjj/news/press-releases/2026/0219-01" target="_blank" rel="noopener">大阪病院にて生成AIを安全に利活用する体制構築に向けたプロジェクトを開始</a></li><li>PR TIMES（Ubie）　｜　<a href="https://prtimes.jp/main/html/rd/p/000000198.000048083.html" target="_blank" rel="noopener">「ユビー生成AI」、大学病院10施設以上を含む全国100病院へ導入</a></li><li>厚生労働省　｜　<a href="https://www.mhlw.go.jp/stf/newpage_74842.html" target="_blank" rel="noopener">第34回医療等情報利活用ワーキンググループ（医療・介護間の電子的情報連携）資料</a></li><li>PR TIMES（善光総合研究所）　｜　<a href="https://prtimes.jp/main/html/rd/p/000000072.000134768.html" target="_blank" rel="noopener">江戸川区にて「ケアプランデータ連携システム」導入率62%を達成</a></li><li>高齢者住宅新聞　｜　<a href="https://www.koureisha-jutaku.com/20260819_34_01/" target="_blank" rel="noopener">見守りカメラ活用で転倒事故対策 入院減少で入居率にも貢献</a></li><li>アルム　｜　<a href="https://www.allm.net/news/20260525/" target="_blank" rel="noopener">訪問看護の報告書作成時間を最大42%削減 多職種連携システム・TeamにAI要約機能を搭載開始</a></li><li>共同通信PRワイヤー　｜　<a href="https://kyodonewsprwire.jp/release/202606160894" target="_blank" rel="noopener">AIプラスクリニックたまプラーザ、2026年夏から訪問診療を段階的に開始</a></li><li>補助金ポータル　｜　<a href="https://hojyokin-portal.jp/columns/kaigo_technology" target="_blank" rel="noopener">【令和8年度】介護テクノロジー導入支援事業の活用ガイド</a></li><li>奈良県　｜　<a href="https://www.pref.nara.lg.jp/n067/p015035.html" target="_blank" rel="noopener">令和8年度 介護テクノロジー導入支援事業（9月9日必着）</a></li><li>青森県　｜　<a href="https://www.pref.aomori.lg.jp/soshiki/kenko/koreihoken/kaigo-robot-hojo.html" target="_blank" rel="noopener">青森県介護テクノロジー定着支援事業費補助金（9月11日必着）</a></li><li>滋賀県　｜　<a href="https://www.pref.shiga.lg.jp/ippan/kenkouiryouhukushi/koureisya/351475.html" target="_blank" rel="noopener">介護テクノロジー導入支援事業（事前協議 9月30日締切）</a></li><li>中小機構　｜　<a href="https://it-shien.smrj.go.jp/schedule/" target="_blank" rel="noopener">デジタル化・AI導入補助金2026 事業スケジュール</a></li><li>GemMed　｜　<a href="https://gemmed.ghc-j.com/?p=71681" target="_blank" rel="noopener">電子カルテ情報共有サービス、モデル事業での検証・改修経て「2026年度冬頃の本格運用」目指す</a></li><li>厚生労働省　｜　<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/johoka/denkarukyouyuu.html" target="_blank" rel="noopener">電子カルテ情報共有サービス（医療機関等向け案内）</a></li></ul>
+<p class="footnote">※ 日付・金額・締切は各出典で確認済み。数値は発表時点のもので、最終確認は必ず公式ページで行ってください。</p>
+<details class="note"><summary>読み上げ原稿</summary><p>最後に、本日の出典一覧です。本日のニュースまとめは、厚生労働省の資料、都道府県の補助金公募ページ、各社の公式プレスリリース、業界紙の記事をもとに作成しました。日付や金額、締切はそれぞれの出典で確認していますが、数値はいずれも発表時点のものです。特に補助金の締切や要件は変更されることがありますので、申請の際は必ず公式ページで最終確認をお願いいたします。スライドの各項目には出典へのリンクを付けていますので、詳細はそちらからご覧ください。本日の内容は以上です。あすも医療と介護のDX・AIの動きをまとめてお届けします。</p></details>
+</section>
+</main>
+</body></html>

@@ -3,82 +3,71 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap">
 </head><body>
 <style>
-:root {
+:root{
   --head:#084FAD; --band:#013BAB; --body:#12303B; --sub:#445A66; --muted:#7A929C;
-  --rule:#C8D4DC; --link:#2E6FB7; --bg:#FFFFFF; --card:#F6F9FB;
+  --rule:#C8D4DC; --link:#2E6FB7;
+  --med:#2E6FB7; --hosp:#7A5FB5; --care:#2F9E7C; --home:#1E9AA8; --fund:#D97B2B;
+  --bg:#FFFFFF; --card:#F6F9FB; --chip:#F4F7FA;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --head:#7FB3F0; --band:#1D4FB0; --body:#D9E4EA; --sub:#A9BCC6; --muted:#8399A3;
-    --rule:#2E3E48; --link:#7FB3F0; --bg:#0F1A20; --card:#18242C;
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --head:#7FB3F0; --band:#013BAB; --body:#DCE6EC; --sub:#A8BAC4; --muted:#7A929C;
+    --rule:#33454F; --link:#7FB3F0;
+    --med:#7FB3F0; --hosp:#A896E0; --care:#4FC49E; --home:#55C4CC; --fund:#E89A55;
+    --bg:#0F1B21; --card:#1A2831; --chip:#182630;
   }
 }
-:root[data-theme="dark"] {
-  --head:#7FB3F0; --band:#1D4FB0; --body:#D9E4EA; --sub:#A9BCC6; --muted:#8399A3;
-  --rule:#2E3E48; --link:#7FB3F0; --bg:#0F1A20; --card:#18242C;
+:root[data-theme="dark"]{
+  --head:#7FB3F0; --band:#013BAB; --body:#DCE6EC; --sub:#A8BAC4; --muted:#7A929C;
+  --rule:#33454F; --link:#7FB3F0;
+  --med:#7FB3F0; --hosp:#A896E0; --care:#4FC49E; --home:#55C4CC; --fund:#E89A55;
+  --bg:#0F1B21; --card:#1A2831; --chip:#182630;
 }
-* { box-sizing:border-box; }
-body {
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--body);
   font-family:"BIZ UDPGothic","BIZ UDPゴシック","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
-  background:var(--bg); color:var(--body); line-height:1.75; margin:0; padding:2.2rem 1.1rem 3rem;
-}
-main { max-width:860px; margin:0 auto; }
-a { color:var(--link); text-decoration:underline; }
-h1 { color:var(--head); font-size:1.9rem; margin:0 0 .2rem; }
-.aud { font-size:.92rem; color:var(--muted); margin:.3rem 0 0; }
-h2 { color:var(--head); font-size:1.35rem; margin:2.2rem 0 .9rem; }
-.latest { background:var(--card); border-radius:14px; padding:1.4rem 1.5rem; }
-.latest .d { font-size:1.15rem; font-weight:700; margin:0; }
-.latest .t { font-size:.98rem; color:var(--sub); margin:.4rem 0 1rem; }
-.btn { display:inline-block; background:var(--band); color:#fff; font-weight:700;
-  border-radius:10px; padding:.6rem 1.3rem; text-decoration:none; }
-.btn:hover { opacity:.92; }
-.tablewrap { overflow-x:auto; }
-table { border-collapse:collapse; width:100%; min-width:520px; font-size:.93rem; }
-th, td { text-align:left; padding:.55rem .7rem; border-bottom:1px solid var(--rule); vertical-align:top; }
-th { color:var(--sub); font-size:.82rem; }
-.td-date { font-weight:700; white-space:nowrap; }
-.footnote { font-size:.8rem; color:var(--muted); margin-top:2rem; }
+  line-height:1.75;}
+.wrap{max-width:860px; margin:0 auto; padding:2.2rem 1.2rem 3rem;}
+a{color:var(--link); text-decoration:underline; text-underline-offset:2px;}
+h1{color:var(--head); font-size:1.9rem; font-weight:700; margin:0 0 .2rem;}
+.aud{font-size:.9rem; color:var(--muted); margin:.4rem 0 0;}
+.chips{display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0 0; padding:0; list-style:none;}
+.chips li{display:flex; align-items:center; gap:.45rem; background:var(--chip); border-radius:999px; padding:.3rem .85rem; font-size:.82rem; font-weight:700; color:var(--sub);}
+.chips .dot{width:.62em; height:.62em; border-radius:50%; flex:none;}
+.latest{background:var(--card); border-radius:14px; padding:1.4rem 1.5rem; margin:2rem 0;}
+.latest .label{font-size:.8rem; font-weight:700; letter-spacing:.08em; color:var(--muted); margin:0 0 .3rem;}
+.latest .date{font-size:1.25rem; font-weight:700; margin:0 0 .3rem;}
+.latest .theme{font-size:.95rem; color:var(--sub); margin:0 0 1rem;}
+.latest .btn{display:inline-block; background:var(--band); color:#FFFFFF; font-weight:700; border-radius:10px; padding:.65rem 1.4rem; text-decoration:none;}
+.latest .btn:hover{opacity:.92;}
+h2{color:var(--head); font-size:1.25rem; font-weight:700; border-bottom:1px solid var(--rule); padding-bottom:.35rem; margin:2.2rem 0 1rem;}
+.tablewrap{overflow-x:auto;}
+table{border-collapse:collapse; width:100%; min-width:520px; font-size:.92rem;}
+th,td{border-bottom:1px solid var(--rule); padding:.55rem .7rem; text-align:left; vertical-align:top;}
+th{color:var(--sub); font-size:.82rem; white-space:nowrap;}
+td.d{white-space:nowrap; font-weight:700; font-variant-numeric:tabular-nums;}
+footer{margin-top:2.5rem; font-size:.8rem; color:var(--muted);}
 </style>
-<main>
+<div class="wrap">
 <header>
 <h1>医療 介護 DX・AIデイリー</h1>
 <p class="aud">病院・クリニック・介護/在宅事業者の皆さま向け　医療・介護のDX・AIニュースまとめ（毎日更新）</p>
+<ul class="chips"><li><span class="dot" style="background:var(--med)"></span>医療 DX・AI</li><li><span class="dot" style="background:var(--hosp)"></span>病院 DX・AI</li><li><span class="dot" style="background:var(--care)"></span>介護 DX・AI</li><li><span class="dot" style="background:var(--home)"></span>在宅 DX・AI</li><li><span class="dot" style="background:var(--fund)"></span>補助金・実証</li></ul>
 </header>
-
-<h2>最新号</h2>
-<div class="latest">
-<p class="d">2026年8月28日（金）</p>
-<p class="t">コラム：電子カルテ情報共有サービスの全体像——何が、いつから、誰に見えるのか</p>
+<section class="latest">
+<p class="label">最新号</p>
+<p class="date">2026年8月28日（金）</p>
+<p class="theme">コラム：3文書6情報の中身——何をどこまで共有するのか</p>
 <a class="btn" href="2026-08-28.html" target="_blank" rel="noopener">今日のニュースまとめを開く</a>
-</div>
-
+</section>
+<section>
 <h2>バックナンバー</h2>
-<div class="tablewrap">
-<table>
+<div class="tablewrap"><table>
 <thead><tr><th>日付</th><th>コラムのテーマ</th><th>リンク</th></tr></thead>
-<tbody><tr><td class="td-date">2026年8月28日（金）</td><td>電子カルテ情報共有サービスの全体像——何が、いつから、誰に見えるのか</td><td><a href="2026-08-28.html" target="_blank" rel="noopener">開く</a></td></tr></tbody>
-</table>
+<tbody><tr><td class="d">2026年8月28日（金）</td><td>3文書6情報の中身——何をどこまで共有するのか</td><td><a href="2026-08-28.html" target="_blank" rel="noopener">開く</a></td></tr></tbody>
+</table></div>
+</section>
+<footer>※ 各号の日付・金額・締切は出典で確認済み。最終確認は必ず公式ページで行ってください。</footer>
 </div>
-
-<p class="footnote">各号の日付・金額・締切は号内の出典で確認済みです。最終確認は必ず公式ページで行ってください。</p>
-</main>
-<script type="application/json" id="archive-data">
-{
-  "latest": {
-    "date": "2026-08-28",
-    "date_jp": "2026年8月28日（金）",
-    "theme": "電子カルテ情報共有サービスの全体像——何が、いつから、誰に見えるのか",
-    "url": "2026-08-28.html"
-  },
-  "archive": [
-    {
-      "date": "2026-08-28",
-      "date_jp": "2026年8月28日（金）",
-      "theme": "電子カルテ情報共有サービスの全体像——何が、いつから、誰に見えるのか",
-      "url": "2026-08-28.html"
-    }
-  ]
-}
-</script>
+<script type="application/json" id="archive-data">{"latest": {"date": "2026-08-28", "date_jp": "2026年8月28日（金）", "theme": "3文書6情報の中身——何をどこまで共有するのか", "url": "2026-08-28.html"}, "archive": [{"date": "2026-08-28", "date_jp": "2026年8月28日（金）", "theme": "3文書6情報の中身——何をどこまで共有するのか", "url": "2026-08-28.html"}]}</script>
 </body></html>

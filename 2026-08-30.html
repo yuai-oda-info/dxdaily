@@ -1,0 +1,347 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DX・AIデイリー 2026-08-30</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap">
+</head><body>
+<style>
+:root {
+  --head:#084FAD; --band:#013BAB; --body:#12303B; --sub:#445A66; --muted:#7A929C;
+  --rule:#C8D4DC; --link:#2E6FB7; --med:#2E6FB7; --hosp:#7A5FB5; --care:#2F9E7C; --home:#1E9AA8; --fund:#D97B2B;
+  --sec:#C24141; --brch:#8E3E63;
+  --bg:#FFFFFF; --card:#F6F9FB; --colbg:#F4F7FA; --chip:#F4F7FA; --bandtext:#FFFFFF;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --head:#7FB3F0; --band:#0D3B8F; --body:#DCE7EE; --sub:#A8BCC7; --muted:#7E95A1;
+    --rule:#33475366; --link:#7FB3F0; --med:#6FA8E8; --hosp:#A896E0; --care:#4FB896; --home:#55C4CC; --fund:#E0975A;
+    --sec:#E8807E; --brch:#D389AE;
+    --bg:#101820; --card:#182430; --colbg:#16222E; --chip:#182430; --bandtext:#FFFFFF;
+  }
+}
+:root[data-theme="dark"] {
+  --head:#7FB3F0; --band:#0D3B8F; --body:#DCE7EE; --sub:#A8BCC7; --muted:#7E95A1;
+  --rule:#33475366; --link:#7FB3F0; --med:#6FA8E8; --hosp:#A896E0; --care:#4FB896; --home:#55C4CC; --fund:#E0975A;
+  --sec:#E8807E; --brch:#D389AE;
+  --bg:#101820; --card:#182430; --colbg:#16222E; --chip:#182430; --bandtext:#FFFFFF;
+}
+* { box-sizing:border-box; }
+body {
+  font-family:"BIZ UDPGothic","BIZ UDPゴシック","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  background:var(--bg); color:var(--body); margin:0; line-height:1.75;
+}
+.wrap { max-width:860px; margin:0 auto; padding:2.2rem 1.2rem 3rem; }
+a { color:var(--link); text-decoration:underline; text-underline-offset:2px; }
+header h1 { font-size:1.72rem; color:var(--head); margin:0 0 .2rem; line-height:1.35; text-wrap:balance; }
+.date { font-size:1.02rem; font-weight:700; margin:0 0 .15rem; }
+.period { font-size:.9rem; font-weight:700; color:var(--sub); margin:0 0 .25rem; }
+.created { font-size:.8rem; color:var(--muted); margin:0 0 .25rem; }
+.aud { font-size:.9rem; color:var(--sub); margin:0 0 1rem; }
+.chips { display:flex; flex-wrap:wrap; gap:.55rem; margin:0 0 .4rem; padding:0; list-style:none; }
+.chips li { display:flex; align-items:center; gap:.45rem; background:var(--chip); border-radius:999px; padding:.32rem .95rem; font-size:.86rem; font-weight:700; }
+.cdot { width:.62rem; height:.62rem; border-radius:50%; flex:none; }
+h2 { font-size:1.28rem; color:var(--head); margin:2.6rem 0 1rem; padding-left:.6rem; border-left:.3rem solid var(--head); line-height:1.4; }
+h2.h-med { border-left-color:var(--med); }
+h2.h-hosp { border-left-color:var(--hosp); }
+h2.h-home { border-left-color:var(--home); }
+h2.h-fund { border-left-color:var(--fund); }
+h2.h-care { border-left-color:var(--care); }
+h2.h-sec { border-left-color:var(--sec); }
+h2.h-brch { border-left-color:var(--brch); }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:.9rem; }
+.card { background:var(--card); border-radius:.7rem; padding:1rem 1.1rem .9rem; border-top:3px solid var(--head); }
+.card .ih { margin:0 0 .35rem; }
+.card .is { margin:0 0 .5rem; }
+.ih { font-size:1.15rem; font-weight:700; line-height:1.5; margin:0 0 .2rem; }
+.is { font-size:.95rem; color:var(--sub); margin:0 0 .3rem; }
+.il { font-size:.8rem; margin:0; color:var(--muted); }
+.il a { font-size:.8rem; }
+.item { display:flex; gap:.7rem; margin:0 0 1.35rem; }
+.dot { width:.72rem; height:.72rem; border-radius:50%; flex:none; margin-top:.5rem; }
+.itembody { flex:1; min-width:0; }
+.band { background:var(--band); color:var(--bandtext); font-weight:700; text-align:center;
+  border-radius:.6rem; padding:.6rem 1rem; margin:1.4rem 0 0; font-size:.98rem; }
+.tablewrap { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; font-size:.92rem; min-width:560px; }
+th { text-align:left; color:var(--muted); font-size:.82rem; border-bottom:2px solid var(--rule); padding:.4rem .6rem; white-space:nowrap; }
+td { border-bottom:1px solid var(--rule); padding:.55rem .6rem; vertical-align:top; }
+td.d { white-space:nowrap; font-weight:700; font-variant-numeric:tabular-nums; }
+.column { background:var(--colbg); border-radius:.8rem; padding:1.25rem; }
+.coltheme { font-size:1.25rem; font-weight:700; color:var(--head); margin:0 0 .8rem; line-height:1.5; text-wrap:balance; }
+.colbody p { font-size:.98rem; line-height:1.9; margin:0 0 .9rem; }
+.imp h3 { font-size:.95rem; color:var(--head); margin:1.1rem 0 .4rem; }
+.imp ul { margin:0 0 .8rem; padding:0; list-style:none; }
+.imp li { display:flex; gap:.55rem; align-items:baseline; margin:0 0 .3rem; font-size:.95rem; }
+.imp .dot { margin-top:.32rem; width:.6rem; height:.6rem; }
+.srclist { margin:0; padding:0; list-style:none; }
+.srclist li { padding:.5rem 0; border-bottom:1px solid var(--rule); font-size:.93rem; }
+.srclist .media { font-weight:700; }
+.note { font-size:.8rem; color:var(--muted); margin-top:1.6rem; }
+details.notes { margin:1.1rem 0 0; font-size:.9rem; color:var(--sub); background:var(--card); border-radius:.6rem; padding:.55rem .9rem; }
+details.notes summary { cursor:pointer; font-weight:700; color:var(--muted); font-size:.85rem; }
+details.notes p { margin:.5rem 0 .2rem; line-height:1.85; }
+.card .klabel { display:flex; align-items:center; gap:.35rem; font-size:.72rem; font-weight:700; margin:0 0 .3rem; letter-spacing:.02em; }
+.card .klabel .cdot { width:.5rem; height:.5rem; }
+.credit { margin-top:2.4rem; padding-top:.8rem; border-top:1px solid var(--rule); font-size:.8rem; color:var(--muted); }
+@media print {
+  body { background:#fff; }
+  .wrap { padding:0; max-width:none; }
+  details.notes { display:none; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior:auto; } }
+</style>
+<div class="wrap">
+<header>
+<h1>医療 介護 DX・AI　デイリー</h1>
+<p class="date">2026年8月30日（日）</p>
+<p class="period">対象期間：2026年8月29日（土）</p>
+<p class="created">作成日時：2026年8月30日（日）5:25（日本時間）</p>
+<p class="aud">病院・クリニック・介護/在宅事業者の皆さま向け　医療・介護のDX・AIニュースまとめ（毎日更新）</p>
+<ul class="chips"><li style="color:var(--med)"><span class="cdot" style="background:var(--med)"></span>医療 DX・AI</li><li style="color:var(--hosp)"><span class="cdot" style="background:var(--hosp)"></span>病院 DX・AI</li><li style="color:var(--care)"><span class="cdot" style="background:var(--care)"></span>介護 DX・AI</li><li style="color:var(--home)"><span class="cdot" style="background:var(--home)"></span>在宅 DX・AI</li><li style="color:var(--fund)"><span class="cdot" style="background:var(--fund)"></span>補助金・実証</li><li style="color:var(--sec)"><span class="cdot" style="background:var(--sec)"></span>サイバーセキュリティ</li><li style="color:var(--brch)"><span class="cdot" style="background:var(--brch)"></span>病院・介護 情報漏洩</li></ul>
+</header>
+<details class="notes"><summary>読み上げ原稿</summary><p>医療 介護 DX・AIデイリーをお届けします。医療・介護分野のDXとAIに関する、きょうのニュースまとめです。本日は2026年8月30日号として、前日8月29日を対象に、この週に公表された動きをあわせてお伝えします。テーマは7つ、医療分野の制度とシステムの動き、病院自身のDXとAIの取り組み、介護分野、在宅・訪問分野、補助金と実証事業、サイバーセキュリティのインシデント情報、そして病院・介護施設の被害事例と情報漏洩の順にご紹介します。あわせて常設コラムを2本、医療等情報利活用ワーキンググループを読み解くコラムと、セキュリティ・BCP講座をお届けします。それでは始めましょう。</p></details>
+<section>
+<h2>本日の要点</h2>
+<div class="cards"><div class="card" style="border-top-color:var(--med)">
+<p class="klabel" style="color:var(--med)"><span class="cdot" style="background:var(--med)"></span>医療 DX・AI</p>
+<p class="ih">紙の医療文書をAIが構造化データに——商用提供開始</p>
+<p class="is">診療情報提供書や訪問看護指示書を読み取り自動データ化。認識精度95%以上。</p>
+<p class="il">▶ 出典：<a class="src" href="https://prtimes.jp/main/html/rd/p/000000006.000115560.html" target="_blank" rel="noopener">PR TIMES（United Vision &amp; Company）</a></p>
+</div><div class="card" style="border-top-color:var(--hosp)">
+<p class="klabel" style="color:var(--hosp)"><span class="cdot" style="background:var(--hosp)"></span>病院 DX・AI</p>
+<p class="ih">JCHO大阪病院、退院サマリ年1.6万件を生成AIで支援</p>
+<p class="is">富士通Japanらと安全活用の体制構築プロジェクト。6月から運用開始予定で公的病院のモデルへ。</p>
+<p class="il">▶ 出典：<a class="src" href="https://global.fujitsu/ja-jp/subsidiaries/fjj/news/press-releases/2026/0219-01" target="_blank" rel="noopener">富士通Japan</a></p>
+</div><div class="card" style="border-top-color:var(--care)">
+<p class="klabel" style="color:var(--care)"><span class="cdot" style="background:var(--care)"></span>介護 DX・AI</p>
+<p class="ih">ワイズマン×BONX、装着デバイスに話すだけで介護記録</p>
+<p class="is">画面操作なしで記録が完了する音声記録AIオプションを提供開始。</p>
+<p class="il">▶ 出典：<a class="src" href="https://prtimes.jp/main/html/rd/p/000000180.000020459.html" target="_blank" rel="noopener">PR TIMES（BONX）</a></p>
+</div><div class="card" style="border-top-color:var(--home)">
+<p class="klabel" style="color:var(--home)"><span class="cdot" style="background:var(--home)"></span>在宅 DX・AI</p>
+<p class="ih">ZESTにAIアシスタント——空き枠探しをAIが即答</p>
+<p class="is">訪問看護・介護のスケジュール調整を支援。試験運転中は全顧客に無料提供。</p>
+<p class="il">▶ 出典：<a class="src" href="https://prtimes.jp/main/html/rd/p/000000081.000056654.html" target="_blank" rel="noopener">PR TIMES（ゼスト）</a></p>
+</div><div class="card" style="border-top-color:var(--fund)">
+<p class="klabel" style="color:var(--fund)"><span class="cdot" style="background:var(--fund)"></span>補助金・実証</p>
+<p class="ih">デジタル化・AI導入補助金2026、通常枠は9月29日締切</p>
+<p class="is">補助率1/2以内（要件により2/3以内）。1〜5次締切は9月29日17時。</p>
+<p class="il">▶ 出典：<a class="src" href="https://it-shien.smrj.go.jp/schedule/" target="_blank" rel="noopener">デジタル化・AI導入補助金2026</a></p>
+</div><div class="card" style="border-top-color:var(--sec)">
+<p class="klabel" style="color:var(--sec)"><span class="cdot" style="background:var(--sec)"></span>サイバーセキュリティ</p>
+<p class="ih">IPA、休暇明けのVPN・IoT機器の点検を呼びかけ</p>
+<p class="is">ネットワーク貫通型攻撃が相次ぐと警告。接続機器の把握と脆弱性対策を。</p>
+<p class="il">▶ 出典：<a class="src" href="https://www.ipa.go.jp/security/anshin/heads-up/alert20260730.html" target="_blank" rel="noopener">IPA</a></p>
+</div><div class="card" style="border-top-color:var(--brch)">
+<p class="klabel" style="color:var(--brch)"><span class="cdot" style="background:var(--brch)"></span>病院・介護 情報漏洩</p>
+<p class="ih">国立国際医療センター、患者8.3万人分のHDDを紛失</p>
+<p class="is">検査機器の内蔵ハードディスクが廃棄前に所在不明に。記録媒体の管理が教訓。</p>
+<p class="il">▶ 出典：<a class="src" href="https://www.security-next.com/189334" target="_blank" rel="noopener">Security NEXT</a></p>
+</div></div>
+<p class="band">記録も文書も「話す・読み取る」へ。まず一つ試しましょう</p>
+<details class="notes"><summary>読み上げ原稿</summary><p>まず本日の要点を7つご紹介します。1つ目、紙の診療情報提供書や訪問看護指示書をAIが読み取り構造化データに変換する機能が商用提供を始めました。2つ目、JCHO大阪病院が富士通Japanらと生成AIを安全に使う体制づくりを進め、年間約1万6千件の退院サマリ作成を支援します。3つ目、介護現場では装着デバイスに話すだけで記録が完了する音声記録AIが登場しました。4つ目、訪問看護・介護向けクラウドZESTに空き枠検索のAIアシスタントが加わりました。5つ目、デジタル化・AI導入補助金2026の通常枠は9月29日締切です。6つ目、IPAが休暇時期のVPN・IoT機器を狙う攻撃に注意を呼びかけています。7つ目、国立国際医療センターで患者約8万3千人分の検査データを含むハードディスクの紛失が公表されました。順にご説明します。</p></details>
+</section>
+<section>
+<h2 class="h-med">医療 DX・AI動向</h2>
+<div class="item">
+<span class="dot" style="background:var(--med)"></span>
+<div class="itembody">
+<p class="ih">医療文書を構造化データへ——AI-OCR機能の商用提供が開始</p>
+<p class="is">8月28日発表。診療情報提供書・退院サマリー・訪問看護指示書などを読み取り自動データ化。認識精度95%以上で、紙・FAX運用のまま転記作業を削減。</p>
+<p class="il">▶ 出典：<a class="src" href="https://prtimes.jp/main/html/rd/p/000000006.000115560.html" target="_blank" rel="noopener">PR TIMES（United Vision &amp; Company）</a></p>
+</div>
+</div><div class="item">
+<span class="dot" style="background:var(--med)"></span>
+<div class="itembody">
+<p class="ih">医療機関特化型のAIエージェント「AXON」が提供開始</p>
+<p class="is">8月28日発表。予約受付・問診・カルテ作成から診療報酬算定支援まで診療周辺業務を自動化。まず自由診療領域の医療機関が対象。</p>
+<p class="il">▶ 出典：<a class="src" href="https://prtimes.jp/main/html/rd/p/000000169.000006824.html" target="_blank" rel="noopener">PR TIMES（コンヴァノ）</a></p>
+</div>
+</div><div class="item">
+<span class="dot" style="background:var(--med)"></span>
+<div class="itembody">
+<p class="ih">電子処方箋、対応施設リストが8月23日時点に更新</p>
+<p class="is">厚労省が対応済みの医療機関・薬局の一覧を公表。薬局は9割以上が導入済み（2026年5月時点）で、医療機関側の対応が今後の焦点。</p>
+<p class="il">▶ 出典：<a class="src" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/denshishohousen_taioushisetsu.html" target="_blank" rel="noopener">厚生労働省</a></p>
+</div>
+</div>
+<p class="band">紙とFAXの文書も、AIで構造化データにできる時代です</p>
+<details class="notes"><summary>読み上げ原稿</summary><p>医療分野の制度とシステムの動きです。8月28日、医療文書のAI-OCR機能の商用提供開始が発表されました。診療情報提供書や退院サマリー、訪問看護指示書といった紙の帳票を読み取り、95%以上の精度で構造化データに変換するもので、紙とFAXの運用を残したまま転記の手間を減らせる点が現場向きです。同じ日には、予約受付から問診、カルテ作成、診療報酬算定の支援までを自動化する医療機関特化型のAIエージェントも発表されています。また、厚生労働省の電子処方箋対応施設リストが8月23日時点に更新されました。薬局は9割以上が導入済みで、医療機関側の対応がこれからの焦点です。</p></details>
+</section>
+<section>
+<h2 class="h-hosp">病院 DX・AI動向</h2>
+<div class="item">
+<span class="dot" style="background:var(--hosp)"></span>
+<div class="itembody">
+<p class="ih">JCHO大阪病院、生成AIを安全に使う体制づくりを開始</p>
+<p class="is">富士通Japan・日本マイクロソフトらと協定。年間約16,000件の退院サマリ作成と看護申し送りを生成AIで支援し、6月から運用開始予定。公的病院のモデルを目指す。</p>
+<p class="il">▶ 出典：<a class="src" href="https://global.fujitsu/ja-jp/subsidiaries/fjj/news/press-releases/2026/0219-01" target="_blank" rel="noopener">富士通Japan</a></p>
+</div>
+</div><div class="item">
+<span class="dot" style="background:var(--hosp)"></span>
+<div class="itembody">
+<p class="ih">藤田医科大学病院、電子カルテの音声入力を運用開始</p>
+<p class="is">FIXERの医療業務支援AI「GaiXer Medical Agent」に電子カルテ音声入力と退院時指導書の作成支援機能を追加し、同院で運用を開始。</p>
+<p class="il">▶ 出典：<a class="src" href="https://prtimes.jp/main/html/rd/p/000000137.000009536.html" target="_blank" rel="noopener">PR TIMES（FIXER）</a></p>
+</div>
+</div>
+<p class="band">退院サマリと音声入力から。生成AI導入は体制づくりが鍵</p>
+<details class="notes"><summary>読み上げ原稿</summary><p>続いて、病院自身のDX・AIの取り組みです。地域医療機能推進機構の大阪病院は、富士通Japan、日本マイクロソフトなどと協定を結び、生成AIを安全に使うための体制構築プロジェクトを進めています。対象は年間約1万6千件にのぼる退院サマリの作成支援と看護の申し送り業務で、6月から運用を開始する計画です。ガイドラインの整備や職員教育まで含めて、公的病院のモデルケースを目指す点が特徴です。また、藤田医科大学病院では、生成AIを使った電子カルテの音声入力と退院時指導書の作成支援機能の運用が始まっています。文書業務のどこから着手するか、参考になる2例です。</p></details>
+</section>
+<section>
+<h2 class="h-care">介護 DX・AI動向</h2>
+<div class="item">
+<span class="dot" style="background:var(--care)"></span>
+<div class="itembody">
+<p class="ih">ワイズマン×BONX、「話すだけ」の介護記録AIを提供開始</p>
+<p class="is">装着したインカム型デバイスに発話するだけで記録が完了する音声記録AIオプション。スマホやPCの画面操作が不要で、ケアを中断せずに記録できる。</p>
+<p class="il">▶ 出典：<a class="src" href="https://prtimes.jp/main/html/rd/p/000000180.000020459.html" target="_blank" rel="noopener">PR TIMES（BONX）</a></p>
+</div>
+</div><div class="item">
+<span class="dot" style="background:var(--care)"></span>
+<div class="itembody">
+<p class="ih">SOMPOケア、AI議事録を全国約1,100拠点に導入</p>
+<p class="is">介護職特化のAI議事録ツールを約3,500人が利用。会議や担当者会議の音声を自動で文字化・要約し、記録の下書きまで自動生成。</p>
+<p class="il">▶ 出典：<a class="src" href="https://it.impress.co.jp/articles/-/29489" target="_blank" rel="noopener">IT Leaders</a></p>
+</div>
+</div>
+<p class="band">話すだけ記録と議事録AIで、書類の時間をケアに戻す</p>
+<details class="notes"><summary>読み上げ原稿</summary><p>介護分野の動きです。ワイズマンとBONXは、装着したインカム型のデバイスに話しかけるだけで介護記録が完了する音声記録AIオプションの提供を始めました。スマートフォンやパソコンの画面操作がいらないため、ケアの手を止めずに記録でき、記録のし忘れも防ぎやすくなります。また、SOMPOケアは介護職に特化したAI議事録ツールを全国約1,100拠点、約3,500人に導入しました。担当者会議などの音声を自動で文字化・要約し、記録の下書きまで作る仕組みで、現場からは会議後の記録作成が少しの修正で済むようになったという声が出ています。記録と会議、2つの書類仕事のAI化が進んでいます。</p></details>
+</section>
+<section>
+<h2 class="h-home">在宅 DX・AI動向</h2>
+<div class="item">
+<span class="dot" style="background:var(--home)"></span>
+<div class="itembody">
+<p class="ih">ゼスト、訪問看護・介護向けにAIアシスタントを提供開始</p>
+<p class="is">「どの職員がいつ空いているか」を移動時間まで考慮してAIが即時提案する空き枠検索AIと、操作の疑問に24時間答えるサポートAI。試験運転中は無料。</p>
+<p class="il">▶ 出典：<a class="src" href="https://prtimes.jp/main/html/rd/p/000000081.000056654.html" target="_blank" rel="noopener">PR TIMES（ゼスト）</a></p>
+</div>
+</div><div class="item">
+<span class="dot" style="background:var(--home)"></span>
+<div class="itembody">
+<p class="ih">電力データで在宅高齢者を見守り——多職種連携と接続</p>
+<p class="is">8月26日発表。スマートメーターの電力データをAIが分析し、異変の通知を医療・介護職や家族に一斉共有する連携運用を開始（LYNXS×R65）。</p>
+<p class="il">▶ 出典：<a class="src" href="https://prtimes.jp/main/html/rd/p/000000015.000177243.html" target="_blank" rel="noopener">PR TIMES（LYNXS）</a></p>
+</div>
+</div>
+<p class="band">空き枠探しと見守りはAIに任せ、訪問の質に集中を</p>
+<details class="notes"><summary>読み上げ原稿</summary><p>在宅・訪問分野の動きです。訪問看護・訪問介護向けのスケジュール管理クラウドZESTに、AIアシスタントが加わりました。急な依頼のときに、どの職員がいつ空いているかを移動時間まで考慮してAIが即時に提案してくれる空き枠検索の機能と、システム操作の疑問に24時間答えるサポート機能の2本立てで、試験運転の間はすべての利用者に無料で提供されています。また、スマートメーターの電力データをAIが分析して在宅高齢者の異変を察知し、医療・介護職や家族に一斉に知らせる見守りの連携運用も8月26日に発表されました。訪問の合間を埋める新しい見守りの選択肢です。</p></details>
+</section>
+<section>
+<h2 class="h-fund">補助金・助成金・実証事業</h2>
+<div class="item">
+<span class="dot" style="background:var(--fund)"></span>
+<div class="itembody">
+<p class="ih">デジタル化・AI導入補助金2026、通常枠は9月29日17時締切</p>
+<p class="is">補助率1/2以内（賃金要件を満たすと2/3以内）、補助額は最大450万円。電子カルテ等のITツール導入が対象。電子申請。</p>
+<p class="il">▶ 出典：<a class="src" href="https://it-shien.smrj.go.jp/applicant/subsidy/normal/" target="_blank" rel="noopener">デジタル化・AI導入補助金2026</a></p>
+</div>
+</div><div class="item">
+<span class="dot" style="background:var(--fund)"></span>
+<div class="itembody">
+<p class="ih">介護テクノロジー導入支援、補助率4/5——9月締切の県が多数</p>
+<p class="is">見守り機器・記録ソフト等が対象。記録ソフトは職員数に応じ100万〜250万円。新潟・山梨は9月4日締切。各県窓口へ申請。</p>
+<p class="il">▶ 出典：<a class="src" href="https://www.care-news.jp/useful/uSDgF" target="_blank" rel="noopener">ケアニュース by シルバー産業新聞</a></p>
+</div>
+</div><div class="item">
+<span class="dot" style="background:var(--fund)"></span>
+<div class="itembody">
+<p class="ih">東京都、医療機関のサイバー対策補助——第2回は9月11日締切</p>
+<p class="is">補助率1/2。上限は500床以上の病院3,500万円、無床診療所375万円。オフラインバックアップ等の機器整備が対象。</p>
+<p class="il">▶ 出典：<a class="src" href="https://www.hokeniryo.metro.tokyo.lg.jp/iryo/jigyo/h_gaiyou/cybersecurity" target="_blank" rel="noopener">東京都保健医療局</a></p>
+</div>
+</div>
+<p class="band">9月締切が集中。見積もり取得と申請準備は今週から</p>
+<details class="notes"><summary>読み上げ原稿</summary><p>補助金と実証事業の情報です。デジタル化・AI導入補助金2026の通常枠は、補助率2分の1以内、賃金の要件を満たすと3分の2以内で、補助額は最大450万円、1次から5次までの締切が9月29日17時です。電子カルテなどのITツール導入に使えます。介護分野では、介護テクノロジー導入支援事業の補助率が公費4/5に引き上げられており、記録ソフトは職員数に応じて100万から250万円が上限です。新潟県と山梨県は9月4日締切など、県ごとに期限が違いますので、所在地の県のページを必ずご確認ください。東京都の医療機関向けサイバーセキュリティ対策補助も第2回締切が9月11日に迫っています。</p></details>
+</section>
+<section>
+<h2 class="h-sec">サイバーセキュリティインシデント情報</h2>
+<div class="item">
+<span class="dot" style="background:var(--sec)"></span>
+<div class="itembody">
+<p class="ih">IPA、休暇時期の情報セキュリティ対策を注意喚起</p>
+<p class="is">7月30日公表。VPN機器等のインターネット接続装置を狙う攻撃が相次ぐと警告し、機器の把握・脆弱性対策・ログ監視・BCP体制の整備を推奨。</p>
+<p class="il">▶ 出典：<a class="src" href="https://www.ipa.go.jp/security/anshin/heads-up/alert20260730.html" target="_blank" rel="noopener">IPA</a></p>
+</div>
+</div><div class="item">
+<span class="dot" style="background:var(--sec)"></span>
+<div class="itembody">
+<p class="ih">BIツール「Metabase」の脆弱性、悪用を確認——JPCERT/CC</p>
+<p class="is">8月14日公表。認証不要のSQLインジェクション（CVE-2026-72898）でゼロデイ攻撃を確認。院内のデータ集計・可視化に利用中なら至急更新を。</p>
+<p class="il">▶ 出典：<a class="src" href="https://www.jpcert.or.jp/at/2026/at260023.html" target="_blank" rel="noopener">JPCERT/CC</a></p>
+</div>
+</div><div class="item">
+<span class="dot" style="background:var(--sec)"></span>
+<div class="itembody">
+<p class="ih">厚労省、チェックリストと無償研修で医療機関の点検を支援</p>
+<p class="is">令和7年度版のサイバーセキュリティ対策チェックリストを公表。医療機関向けセキュリティ教育支援ポータル（MIST)では階層別研修も提供。</p>
+<p class="il">▶ 出典：<a class="src" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/johoka/cyber-security.html" target="_blank" rel="noopener">厚生労働省</a></p>
+</div>
+</div>
+<p class="band">休暇明けはVPNと公開システムの点検から始めましょう</p>
+<details class="notes"><summary>読み上げ原稿</summary><p>サイバーセキュリティの情報です。IPAは夏休みなどの長期休暇の時期に合わせて、VPN機器をはじめとするインターネット接続装置を狙う攻撃が相次いでいるとして注意を呼びかけています。休暇明けは、機器の把握、修正プログラムの適用、ログの確認から始めましょう。また、JPCERT／CCはデータ集計・可視化ツールMetabaseの認証不要の脆弱性について、実際の悪用を確認したとして注意喚起を出しました。院内の統計やダッシュボードに使っている場合は至急の更新が必要です。厚生労働省は令和7年度版のチェックリストと無償の階層別研修を提供しており、点検の出発点として活用できます。</p></details>
+</section>
+<section>
+<h2 class="h-brch">病院・介護施設のサイバーセキュリティ・情報漏洩</h2>
+<div class="item">
+<span class="dot" style="background:var(--brch)"></span>
+<div class="itembody">
+<p class="ih">国立国際医療センター、患者約8.3万人分のHDD紛失を公表</p>
+<p class="is">検査機器から取り外し廃棄予定だった内蔵HDDが施錠倉庫での保管中に所在不明に。1998〜2023年の氏名・患者ID・検査結果等が対象。</p>
+<p class="il">▶ 出典：<a class="src" href="https://www.security-next.com/189334" target="_blank" rel="noopener">Security NEXT</a></p>
+</div>
+</div><div class="item">
+<span class="dot" style="background:var(--brch)"></span>
+<div class="itembody">
+<p class="ih">金沢大学附属病院、手術室のX線画像を医療機器会社が保有</p>
+<p class="is">8月24日公表。2025年9〜10月撮影の15枚が事業者側に渡り、経緯を調査。書面同意は確認されておらず、出入り事業者の管理が論点に。</p>
+<p class="il">▶ 出典：<a class="src" href="https://www.security-next.com/189121" target="_blank" rel="noopener">Security NEXT</a></p>
+</div>
+</div><div class="item">
+<span class="dot" style="background:var(--brch)"></span>
+<div class="itembody">
+<p class="ih">患者サポートシステムの委託先から個人情報が流出</p>
+<p class="is">旭化成セラピューティクスが8月21日公表。ウェブ公開領域のファイルに第三者がアクセスし、患者・医療従事者の情報が流出。原因は運用と監督の不備。</p>
+<p class="il">▶ 出典：<a class="src" href="https://www.security-next.com/187860" target="_blank" rel="noopener">Security NEXT</a></p>
+</div>
+</div>
+<p class="band">記録媒体と出入り業者の管理も、情報漏えい対策のうち</p>
+<details class="notes"><summary>読み上げ原稿</summary><p>病院・介護施設の被害事例と情報漏洩の情報です。国立国際医療センターは、検査機器から取り外して廃棄する予定だった内蔵ハードディスクが所在不明になったと公表しました。約8万3千人分の氏名や検査結果などが含まれ、施錠された倉庫で保管していた中での紛失です。記録媒体は廃棄が完了するまで管理台帳で追う必要があります。金沢大学附属病院では、手術室で撮影されたX線画像を医療機器会社が保有していたことが分かり、経緯が調査されています。また、製薬企業の患者サポートシステムでは委託先の運用不備により患者・医療従事者の情報が流出しました。委託先と出入り業者の管理も自院の課題です。</p></details>
+</section>
+<section>
+<h2>今後の注目日程</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>日付</th><th>内容</th><th>主体</th><th>リンク</th></tr></thead>
+<tbody><tr><td class="d">9月4日（金）</td><td>介護テクノロジー導入支援事業 申請締切（新潟県・山梨県）</td><td>新潟県・山梨県</td><td><a class="src" href="https://www.care-news.jp/useful/uSDgF" target="_blank" rel="noopener">まとめページ</a></td></tr><tr><td class="d">9月11日（金）</td><td>東京都 医療機関向けサイバーセキュリティ対策補助 第2回申請締切</td><td>東京都</td><td><a class="src" href="https://www.hokeniryo.metro.tokyo.lg.jp/iryo/jigyo/h_gaiyou/cybersecurity" target="_blank" rel="noopener">公募ページ</a></td></tr><tr><td class="d">9月中</td><td>標準型電子カルテ 標準仕様ver.1 公表予定</td><td>厚生労働省</td><td><a class="src" href="https://gemmed.ghc-j.com/?p=75259" target="_blank" rel="noopener">解説記事</a></td></tr><tr><td class="d">9月29日（火）17時</td><td>デジタル化・AI導入補助金2026 通常枠等 1〜5次締切</td><td>中小機構</td><td><a class="src" href="https://it-shien.smrj.go.jp/schedule/" target="_blank" rel="noopener">公募ページ</a></td></tr><tr><td class="d">10月30日（金）17時</td><td>デジタル化・AI導入補助金2026 複数者連携枠 1〜3次締切</td><td>中小機構</td><td><a class="src" href="https://it-shien.smrj.go.jp/schedule/" target="_blank" rel="noopener">公募ページ</a></td></tr><tr><td class="d">12月1日（火）</td><td>改正・生命科学・医学系研究倫理指針の適用開始</td><td>厚生労働省ほか</td><td><a class="src" href="https://www.mhlw.go.jp/stf/newpage_75864.html" target="_blank" rel="noopener">公表ページ</a></td></tr></tbody>
+</table></div>
+<p class="band">締切から逆算し、担当と期日を今日決めましょう</p>
+<details class="notes"><summary>読み上げ原稿</summary><p>今後の注目日程です。直近では、9月4日に新潟県と山梨県の介護テクノロジー補助の締切、9月11日に東京都のサイバーセキュリティ対策補助の第2回締切が控えています。9月中には、厚生労働省が標準型電子カルテの標準仕様バージョン1を公表する予定で、電子カルテの更新を控えた医療機関には重要な判断材料になります。9月29日はデジタル化・AI導入補助金の通常枠等の締切、10月30日は複数者連携枠の締切です。12月1日には改正された研究倫理指針の適用が始まります。締切から逆算して、院内の意思決定を早めに進めましょう。</p></details>
+</section>
+<section>
+<h2>コラム：医療等情報利活用WGを読む</h2>
+<div class="column">
+<p class="coltheme">全国医療情報プラットフォームの構想と工程表——医療DXの全体地図を読む</p>
+<div class="colbody"><p>全国医療情報プラットフォームは、マイナ保険証のオンライン資格確認ネットワークを土台に、レセプト・健診情報、電子処方箋、電子カルテ情報共有サービス、介護情報基盤などを順につなぎ、本人の同意のもとで必要な医療・介護情報を全国の現場で使えるようにする構想です。2023年6月に政府が決定した「医療DXの推進に関する工程表」が全体の地図にあたり、どの仕組みをいつ動かすかを年度ごとに示しています。</p><p>足元では工程表の中盤が動いています。電子処方箋の普及が進み、電子カルテ情報共有サービスは2026年度冬頃の本格運用を目指す方向で議論され、標準型電子カルテの標準仕様は2026年9月に公表の方向です。さらに8月28日には、2030年度に全医療機関で電子カルテ導入率100%を目指す方針案も示されました。自院がこの地図のどこにいるかを重ねて確認することが、システム投資の判断の出発点になります。</p></div>
+<div class="imp"><h3>現場への示唆</h3><ul><li><span class="dot" style="background:var(--med)"></span>工程表の年度目標と自院のシステム更新計画を突き合わせる</li><li><span class="dot" style="background:var(--med)"></span>電子カルテ共有サービスへの参加時期をベンダーと相談する</li></ul></div>
+<p class="il">▶ 出典：<a class="src" href="https://www.mhlw.go.jp/stf/iryoudx.html" target="_blank" rel="noopener">厚生労働省（医療DXについて（工程表・全国医療情報プラットフォーム））</a>　▶ 出典：<a class="src" href="https://www.mhlw.go.jp/stf/shingi/other-isei_210261.html" target="_blank" rel="noopener">厚生労働省（医療等情報利活用WG（開催一覧））</a>　▶ 出典：<a class="src" href="https://gemmed.ghc-j.com/?p=76259" target="_blank" rel="noopener">GemMed（電子カルテ導入率100%目標）</a></p>
+</div>
+<details class="notes"><summary>読み上げ原稿</summary><p>本日のコラムは、医療DXの全体地図にあたる全国医療情報プラットフォームと工程表のお話です。個々のニュースで聞く電子処方箋や電子カルテ情報共有サービス、介護情報基盤は、実はすべてこの一つの構想の部品です。2023年6月に政府が決めた工程表が、どの仕組みをいつ動かすかを年度ごとに示しています。資料を読むときは、決まったことと検討中のことを分けるのがコツです。現場としては、自院の電子カルテやシステムの更新時期をこの工程表と重ねて、投資のタイミングを考えることをお勧めします。</p></details>
+</section>
+<section>
+<h2>コラム：医療・介護セキュリティ・BCP講座</h2>
+<div class="column">
+<p class="coltheme">ランサムウェア被害の初動対応——遮断・報告・復旧の順番</p>
+<div class="colbody"><p>ランサムウェア（データを暗号化して身代金を要求する不正プログラム）の被害に気づいたら、初動は「遮断・報告・復旧」の順番で考えます。まず遮断です。感染が疑われる端末やサーバーをネットワークから切り離して被害の拡大を止め、保守業者と連絡を取り、VPNなど外部接続の一時停止も検討します。</p><p>次に報告です。厚生労働省は「医療分野のサイバーセキュリティ対策」のページで緊急時の連絡窓口を示しており、被害を確認したら速やかに連絡します。あわせて警察への相談と、個人情報の漏えいのおそれがある場合は個人情報保護委員会への報告・本人への通知も必要です。最後に復旧です。バックアップからの復元を進める間は紙の運用に切り替えて診療・ケアを続けます。「誰が遮断し、誰がどこへ報告するか」を平時に1枚の手順書にしておくことが、当日の混乱を大きく減らします。</p></div>
+<div class="imp"><h3>現場への示唆</h3><ul><li><span class="dot" style="background:var(--sec)"></span>厚労省・警察・個情委の連絡先を1枚にまとめ印刷しておく</li><li><span class="dot" style="background:var(--sec)"></span>端末を切り離す担当と判断基準を決め、夜間連絡網も備える</li></ul></div>
+<p class="il">▶ 出典：<a class="src" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/johoka/cyber-security.html" target="_blank" rel="noopener">厚生労働省（医療分野のサイバーセキュリティ対策について）</a>　▶ 出典：<a class="src" href="https://www.ppc.go.jp/personalinfo/legal/iryoukaigo_guidance/" target="_blank" rel="noopener">個人情報保護委員会（医療・介護関係事業者のガイダンス）</a></p>
+</div>
+<details class="notes"><summary>読み上げ原稿</summary><p>セキュリティ・BCP講座です。本日はランサムウェア被害の初動対応を、遮断・報告・復旧の順番で整理しました。まず感染が疑われる端末をネットワークから切り離して被害の拡大を止める。次に厚生労働省の緊急連絡窓口、警察、そして漏えいのおそれがあれば個人情報保護委員会へ報告する。復旧はバックアップからの復元を進めながら、紙の運用で診療とケアを続ける。この流れを知っているかどうかで、当日の動きが大きく変わります。誰が遮断し、誰がどこへ報告するかを、1枚の手順書にして関係者で共有しておきましょう。</p></details>
+</section>
+<section>
+<h2>出典一覧</h2>
+<ul class="srclist"><li><span class="media">PR TIMES（United Vision &amp; Company）</span>｜<a class="src" href="https://prtimes.jp/main/html/rd/p/000000006.000115560.html" target="_blank" rel="noopener">医療文書を構造化データへ変換する「Pubcare Pro AI-OCR 機能」を共同開発、商用提供を開始</a></li><li><span class="media">PR TIMES（コンヴァノ）</span>｜<a class="src" href="https://prtimes.jp/main/html/rd/p/000000169.000006824.html" target="_blank" rel="noopener">医療機関特化型AIエージェント「AXON」提供開始</a></li><li><span class="media">厚生労働省</span>｜<a class="src" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/denshishohousen_taioushisetsu.html" target="_blank" rel="noopener">電子処方せん対応の医療機関・薬局についてのお知らせ</a></li><li><span class="media">富士通Japan</span>｜<a class="src" href="https://global.fujitsu/ja-jp/subsidiaries/fjj/news/press-releases/2026/0219-01" target="_blank" rel="noopener">医療現場の働き方改革の実現に向け、大阪病院にて生成AIを安全に利活用する体制構築に向けたプロジェクトを開始</a></li><li><span class="media">PR TIMES（FIXER）</span>｜<a class="src" href="https://prtimes.jp/main/html/rd/p/000000137.000009536.html" target="_blank" rel="noopener">「GaiXer Medical Agent」に新機能を追加——「電子カルテ音声入力」と「退院時指導書作成支援」機能、藤田医科大学病院で運用開始</a></li><li><span class="media">PR TIMES（BONX）</span>｜<a class="src" href="https://prtimes.jp/main/html/rd/p/000000180.000020459.html" target="_blank" rel="noopener">ワイズマン、BONXが共同開発「音声記録AIオプション」をリリース</a></li><li><span class="media">IT Leaders</span>｜<a class="src" href="https://it.impress.co.jp/articles/-/29489" target="_blank" rel="noopener">SOMPOケア、AI議事録ツールを全国1100拠点に導入、介護記録の負荷を軽減</a></li><li><span class="media">PR TIMES（ゼスト）</span>｜<a class="src" href="https://prtimes.jp/main/html/rd/p/000000081.000056654.html" target="_blank" rel="noopener">在宅医療・介護の収益改善プラットフォーム「ZEST」、「AIエージェント」構想の第一弾「ZEST AIアシスタント」を提供開始</a></li><li><span class="media">PR TIMES（LYNXS）</span>｜<a class="src" href="https://prtimes.jp/main/html/rd/p/000000015.000177243.html" target="_blank" rel="noopener">高齢者の「住まい」と「命」を守る仕組みが動き出す</a></li><li><span class="media">デジタル化・AI導入補助金2026</span>｜<a class="src" href="https://it-shien.smrj.go.jp/schedule/" target="_blank" rel="noopener">事業スケジュール</a></li><li><span class="media">デジタル化・AI導入補助金2026</span>｜<a class="src" href="https://it-shien.smrj.go.jp/applicant/subsidy/normal/" target="_blank" rel="noopener">通常枠（補助率・補助額）</a></li><li><span class="media">ケアニュース by シルバー産業新聞</span>｜<a class="src" href="https://www.care-news.jp/useful/uSDgF" target="_blank" rel="noopener">2026年度（令和8年度）介護テクノロジー関連補助事業 都道府県の実施状況</a></li><li><span class="media">東京都保健医療局</span>｜<a class="src" href="https://www.hokeniryo.metro.tokyo.lg.jp/iryo/jigyo/h_gaiyou/cybersecurity" target="_blank" rel="noopener">医療機関向けサイバーセキュリティ対策補助事業</a></li><li><span class="media">IPA</span>｜<a class="src" href="https://www.ipa.go.jp/security/anshin/heads-up/alert20260730.html" target="_blank" rel="noopener">2026年度 夏休みにおける情報セキュリティに関する注意喚起</a></li><li><span class="media">JPCERT/CC</span>｜<a class="src" href="https://www.jpcert.or.jp/at/2026/at260023.html" target="_blank" rel="noopener">MetabaseのSQLインジェクションの脆弱性（CVE-2026-72898）に関する注意喚起</a></li><li><span class="media">厚生労働省</span>｜<a class="src" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/johoka/cyber-security.html" target="_blank" rel="noopener">医療分野のサイバーセキュリティ対策について</a></li><li><span class="media">Security NEXT</span>｜<a class="src" href="https://www.security-next.com/189334" target="_blank" rel="noopener">患者の個人情報が記録されたHDDを紛失 - 国立国際医療センター</a></li><li><span class="media">Security NEXT</span>｜<a class="src" href="https://www.security-next.com/189121" target="_blank" rel="noopener">医療機器会社が手術室でのX線画像を保有、経緯を調査 - 金沢大病院</a></li><li><span class="media">Security NEXT</span>｜<a class="src" href="https://www.security-next.com/187860" target="_blank" rel="noopener">委託先の患者支援システムで個人情報流出 - 旭化成セラピューティクス</a></li><li><span class="media">GemMed</span>｜<a class="src" href="https://gemmed.ghc-j.com/?p=75259" target="_blank" rel="noopener">2027年4月からの「標準型電子カルテ」供給目指し、標準仕様ver.1を2026年9月に公表―医療等情報利活用ワーキング</a></li><li><span class="media">GemMed</span>｜<a class="src" href="https://gemmed.ghc-j.com/?p=76259" target="_blank" rel="noopener">2028年度までに療養除く200床以上病院で、30年度までに全医療機関で「電子カルテ導入率100%」を目指す—社保審・医療部会等</a></li><li><span class="media">厚生労働省</span>｜<a class="src" href="https://www.mhlw.go.jp/stf/iryoudx.html" target="_blank" rel="noopener">医療DXについて</a></li><li><span class="media">厚生労働省</span>｜<a class="src" href="https://www.mhlw.go.jp/stf/shingi/other-isei_210261.html" target="_blank" rel="noopener">健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ（開催一覧）</a></li><li><span class="media">個人情報保護委員会</span>｜<a class="src" href="https://www.ppc.go.jp/personalinfo/legal/iryoukaigo_guidance/" target="_blank" rel="noopener">医療・介護関係事業者における個人情報の適切な取扱いのためのガイダンス</a></li><li><span class="media">厚生労働省</span>｜<a class="src" href="https://www.mhlw.go.jp/stf/newpage_75864.html" target="_blank" rel="noopener">「人を対象とする生命科学・医学系研究に関する倫理指針」の一部改正について</a></li></ul>
+<p class="note">※ 日付・金額・締切は各出典で確認済み。数値は発表時点のもので、最終確認は必ず公式ページで行ってください。</p>
+<details class="notes"><summary>読み上げ原稿</summary><p>本日の出典一覧です。厚生労働省の公表資料、自治体の公式ページ、企業の公式プレスリリース、業界メディアの記事から、日付や金額を確認できたものだけを掲載しています。金額や締切は発表時点のものですので、申請などの最終判断の際は、必ずリンク先の公式ページで最新の情報をご確認ください。本日の内容は以上です。ご清聴ありがとうございました。明日もまたお会いしましょう。</p></details>
+</section>
+<footer class="credit"><span style="color:var(--head);font-weight:700">DX / AI / SECURITY / BCP</span><br>© 2026 Information Management Office, Oda Hospital, Yuaikai Medical Corporation</footer>
+</div>
+</body></html>

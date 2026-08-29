@@ -58,6 +58,22 @@ td.d{white-space:nowrap; font-weight:700; font-variant-numeric:tabular-nums;}
 .videos .vdesc a { font-size:.8rem; }
 .videobox { padding:0; }
 footer{margin-top:2.5rem; font-size:.8rem; color:var(--muted);}
+
+.searchbox{margin:.2rem 0 .2rem;}
+.searchbox input{width:100%; padding:.6rem .9rem; font:inherit; font-size:.95rem; color:var(--body); background:var(--card); border:1px solid var(--rule); border-radius:10px; outline:none;}
+.searchbox input:focus-visible{border-color:var(--link); outline:2px solid var(--link); outline-offset:1px;}
+.shint{font-size:.78rem; color:var(--muted); margin:.35rem 0 0;}
+.sresults{margin:.8rem 0 0; padding:0; list-style:none;}
+.sresults li{padding:.6rem 0; border-bottom:1px solid var(--rule); font-size:.92rem;}
+.sresults li:last-child{border-bottom:none;}
+.sresults .sdate{font-weight:700; white-space:nowrap; margin-right:.5rem; font-variant-numeric:tabular-nums;}
+.sresults .ssnip{display:block; font-size:.85rem; color:var(--sub); margin-top:.15rem;}
+.sresults mark{background:transparent; color:var(--head); font-weight:700; padding:0;}
+.snone{font-size:.88rem; color:var(--muted); margin:.8rem 0 0;}
+details.mgroup{margin:.6rem 0 0;}
+details.mgroup summary{cursor:pointer; font-weight:700; color:var(--sub); padding:.45rem .2rem; border-bottom:1px solid var(--rule); font-size:.95rem;}
+details.mgroup summary:focus-visible{outline:2px solid var(--link); outline-offset:2px; border-radius:2px;}
+details.mgroup .tablewrap{margin-top:.4rem;}
 </style>
 <div class="wrap">
 <header>
@@ -73,11 +89,17 @@ footer{margin-top:2.5rem; font-size:.8rem; color:var(--muted);}
 <a class="btn" href="2026-08-29.html" target="_blank" rel="noopener">今日のニュースまとめを開く</a>
 </section>
 <section>
+<h2>記事検索</h2>
+<div class="searchbox"><input id="q" type="search" placeholder="キーワードで全ての号から探す（例：電子カルテ 補助金 訪問看護）" aria-label="記事検索"></div>
+<p class="shint">コラムだけでなく、各号のニュース本文・補助金情報・日程からも探せます。スペース区切りで絞り込み。</p>
+<div id="sout"></div>
+</section>
+<section>
 <h2>バックナンバー</h2>
-<div class="tablewrap"><table>
+<div id="bn"><div class="tablewrap"><table>
 <thead><tr><th>日付</th><th>コラムのテーマ</th><th>リンク</th></tr></thead>
 <tbody><tr><td class="d">2026年8月29日（土）</td><td>HL7 FHIRによる標準化と交換方式——メーカーが違っても読み合える仕組み</td><td><a href="2026-08-29.html" target="_blank" rel="noopener">開く</a></td></tr><tr><td class="d">2026年8月28日（金）</td><td>3文書6情報の中身——何をどこまで共有するのか</td><td><a href="2026-08-28.html" target="_blank" rel="noopener">開く</a></td></tr></tbody>
-</table></div>
+</table></div></div>
 </section>
 <section>
 <h2>関連動画</h2>
@@ -94,5 +116,77 @@ footer{margin-top:2.5rem; font-size:.8rem; color:var(--muted);}
 <footer>※ 各号の日付・金額・締切は出典で確認済み。最終確認は必ず公式ページで行ってください。</footer>
 </div>
 <script type="application/json" id="archive-data">{"latest": {"date": "2026-08-29", "date_jp": "2026年8月29日（土）", "theme": "HL7 FHIRによる標準化と交換方式——メーカーが違っても読み合える仕組み", "url": "2026-08-29.html"}, "archive": [{"date": "2026-08-29", "date_jp": "2026年8月29日（土）", "theme": "HL7 FHIRによる標準化と交換方式——メーカーが違っても読み合える仕組み", "url": "2026-08-29.html"}, {"date": "2026-08-28", "date_jp": "2026年8月28日（金）", "theme": "3文書6情報の中身——何をどこまで共有するのか", "url": "2026-08-28.html"}]}</script>
+<script type="application/json" id="search-data">[{"date": "2026-08-29", "text": "2026年8月29日（土） 対象期間：2026年8月28日（金） 電子カルテ導入率、2030年度に全医療機関で100%目標 8月28日の社会保障審議会・医療部会に方針案。200床以上は2028年度までに。 GemMed 相澤病院、生成AIを全院導入——カンファ記録60分→10分 退院前カンファレンスの記録作成を短縮し、実施件数は月4件から最大20件に。 PR TIMES（Ubie） 北九州市、介護の問い合わせ対応に生成AI——9月1日運用開始 8月28日発表。市内約2,000事業所からの介護保険の照会に自動回答。 PR TIMES（エクサウィザーズ） 訪問看護の予定・ルート作成をAIが自動化——1訪問30円 eWeLLが最大1か月分の訪問予定と移動ルートを一括最適化するAIを提供。 PR TIMES（eWeLL） デジタル化・AI導入補助金2026、通常枠は9月29日締切 補助率1/2以内（要件により2/3以内）。1〜5次締切は9月29日17時。 デジタル化・AI導入補助金2026 医療 DX・AI動向 8月28日の社会保障審議会・医療部会等に方針案。療養病床を除く200床以上の病院は2028年度までに導入率100%を目指す。 研究倫理指針を一部改正——2026年12月1日から適用 8月28日、3省が公布。医学系研究のデータ利活用に関わるルールで、研究に携わる医療機関は対応確認が必要。 厚生労働省 医療・介護間の電子的な情報連携、議論の整理を公表 第34回医療等情報利活用WGと第11回介護情報利活用WGの資料。診療情報提供書・退院時サマリーを介護側と共有する仕組みを検討。 病院 DX・AI動向 相澤病院、生成AIを全院に正式導入——記録作成が60分から10分に 長野県松本市。音声認識と文章生成で退院前カンファレンス記録を短縮し、実施件数は月4件から最大20件に増加。 琉球大学病院、緊急転院時の入院初期記録が2時間から最短5分に 生成AIで紹介状FAXの読み取り・下書きを支援。治験の登録業務も処理効率2.33倍に。 介護 DX・AI動向 北九州市×エクサウィザーズ、介護の問い合わせ対応AIを開発 8月28日発表。約2,000事業所からの照会にAIが根拠資料つきで回答し、職員の承認を経て送信。9月1日運用開始。 ケアプランデータ連携システム、登録は10万5千事業所超に 8月1日時点の利用登録は105,286事業所。ケアマネと介護事業所のケアプランのやり取りを電子化。 WAM（福祉医療機構） 在宅 DX・AI動向 eWeLL、訪問看護の予定・ルート作成AIを提供——1訪問30円 最大1か月分の訪問予定と移動ルートを一括最適化。急変時はワンクリックで組み直し。7月1日から有償提供。 クラシテク、訪問看護の記録書ⅡをAIが自動作成——無料提供 スマホへの音声入力から記録書Ⅱの形式に自動整形。初期費用・月額ゼロで全国の訪問看護ステーションが対象。 PR TIMES（クラシテク） 補助金・助成金・実証事業 デジタル化・AI導入補助金2026、通常枠は9月29日17時締切 補助率1/2以内（賃金要件を満たすと2/3以内）、補助額は最大450万円。電子カルテ等のITツール導入が対象。電子申請。 介護テクノロジー導入支援、補助率4/5——9月締切の県が多数 見守り機器・記録ソフト等が対象。記録ソフトは職員数に応じ100万〜250万円。新潟・山梨は9月4日締切。各県窓口へ申請。 ケアニュース by シルバー産業新聞 東京都、医療機関のサイバー対策補助——第2回は9月11日締切 補助率1/2。上限は500床以上の病院3,500万円、無床診療所375万円。オフラインバックアップ等の機器整備が対象。 東京都保健医療局 2026年9月4日 介護テクノロジー導入支援事業 申請締切（新潟県・山梨県） 新潟県・山梨県 2026年9月11日 医療機関向けサイバーセキュリティ対策補助 第2回申請締切 東京都 2026年9月中 標準型電子カルテ 標準仕様ver.1 公表予定 2026年9月29日 デジタル化・AI導入補助金2026 通常枠等 1〜5次締切（17時） 中小機構 2026年10月30日 デジタル化・AI導入補助金2026 複数者連携枠 1〜3次締切（17時） 2026年12月1日 改正・生命科学・医学系研究倫理指針の適用開始 厚生労働省ほか コラム：医療等情報利活用WGを読む HL7 FHIRによる標準化と交換方式——メーカーが違っても読み合える仕組み 電子カルテ情報共有サービスでは、診療情報提供書・退院時サマリー・健診結果報告書の3文書と、傷病名やアレルギーなどの6情報を医療機関の間でやり取りします。このときの「データの書き方と受け渡しの方式」として採用されているのが、国際標準規格のHL7 FHIR（ファイア。医療情報をインターネットの技術でやり取りするための共通の約束事）です。カルテの中身を共通の形式にそろえることで、メーカーが違う電子カルテ同士でも情報を読み合えるようになります。 6月26日に開かれた第33回の医療等情報利活用ワーキンググループでは、電子カルテ情報共有サービスに接続するシステムベンダー向けの技術解説書の改訂案が示され、接続方式や運用の細部を詰める議論が続いています。また、FHIRを前提にした標準型電子カルテの標準仕様を2026年9月に公表する方向で議論されています。自院の電子カルテがFHIRにいつ対応するかは、今後の情報連携の土台になります。 電子カルテのFHIR対応と改修時期をベンダーに確認する 共有サービスの導入資料を院内の担当者と読み合わせる 2028年度までに療養除く200床以上病院で、30年度までに全医療機関で「電子カルテ導入率100%」を目指す—社保審・医療部会等 「人を対象とする生命科学・医学系研究に関する倫理指針」の一部改正について 第34回医療等情報利活用ワーキンググループ・第11回介護情報利活用ワーキンググループ資料について 相澤病院、「ユビー生成AI」を全院に正式導入 琉球大学病院、「ユビー生成AI」活用で臨床研究・記録業務を効率化 エクサウィザーズ、北九州市と介護事業所からの問い合わせ対応を自動化する生成AIシステムを開発 ケアプランデータ連携システム利用状況 「iBow AI訪問予定・ルート」提供開始 クラシテク、訪問看護の記録書ⅡをAIが自動作成する「AIオペ自動記録書Ⅱ入力」を無料提供開始 事業スケジュール 通常枠の概要 2026年度（令和8年度）介護テクノロジー関連補助事業 都道府県の実施状況 医療機関向けサイバーセキュリティ対策補助事業 2027年4月からの「標準型電子カルテ」供給目指し、標準仕様ver.1を2026年9月に公表―医療等情報利活用ワーキング 第33回 健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ資料について 健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ（開催一覧）"}, {"date": "2026-08-28", "text": "DX・AIデイリー 2026-08-28 医療 介護 DX・AIデイリー 2026年8月28日（金） 対象期間：2026年8月27日（木）〜2026年8月28日（金） 病院・クリニック・介護/在宅事業者の皆さま向け 医療・介護のDX・AIニュースまとめ（毎日更新） 医療 DX・AI 病院 DX・AI 介護 DX・AI 在宅 DX・AI 補助金・実証 本日の要点 2026年度改定で「電子的診療情報連携体制整備加算」新設 電子処方箋と電子カルテ情報共有サービス参加の双方が施設基準に。 ▶ 出典： GemMed 済生会宇都宮病院、生成AIで退院サマリ作成40分→5分 NECの生成AIサービス導入。3カ月で4,121件の利用実績。 ▶ 出典： マイナビニュース ケアプランデータ連携システム、2027年1月に介護WEBサービスへ統合 厚労省が令和8年8月付資料で移行手順と準備期間（2026年7〜12月）を提示。 ▶ 出典： 厚生労働省 訪問看護の報告書作成、AI要約で最大42%削減 アルムが多職種連携システム「Team」にAI要約機能を搭載。 ▶ 出典： アルム デジタル化・AI導入補助金2026、通常枠の締切は9月29日 補助率1/2以内（要件により2/3）・最大450万円。電子カルテ等も対象。 ▶ 出典： 事務局公式 まずはこの5件。自院に関係する動きから確認していきましょう。 医療 DX・AI動向 新設の電子的診療情報連携体制整備加算、共有参加が要件に 2026年度診療報酬改定で新設。初診料加算1は電子処方箋対応と電子カルテ情報共有サービス参加の双方が必要。マイナ保険証利用率30%以上等の共通要件も。 ▶ 出典： GemMed（2026年3月6日） 電子カルテ情報共有サービス、2026年度冬頃に全国本格運用へ 9地域22医療機関のモデル事業で検証中。処方情報は電子処方箋管理サービスの情報として扱う方針に変更。 ▶ 出典： GemMed（2025年12月11日） 第33回 医療等情報利活用WG、技術解説書の改訂案を議論 6月26日開催。技術解説書v2.1.0案、患者団体ヒアリング、電子カルテの普及が議題。資料は公開済み。 ▶ 出典： 厚生労働省 新加算対応は電子処方箋とカルテ共有サービスの両輪で準備を。 病院 DX・AI動向 済生会宇都宮病院：生成AIで退院サマリ作成が40分から約5分に NEC「AIメディカルアシスト」を導入し電子カルテと連携。4〜6月の3カ月で累計4,121件を利用。 ▶ 出典： マイナビニュース（2026年7月9日） 大阪急性期・総合医療センター：退院サマリー原案をAIが自動生成 インフォコムと共同開発。「Medi-Bank」にAI機能を搭載し、HL7 FHIR準拠の構造化データ管理にも対応。2026年度中に販売予定。 ▶ 出典： インフォコム（PR TIMES・2026年7月6日） JCHO北海道病院：診察音声からAIがカルテ下書きを作成する実証 厚労省の医師働き方改革支援事業に採択。院内セキュア環境で音声認識と生成AIを組み合わせる国内初の取り組み。 ▶ 出典： NTTドコモビジネス（2026年1月19日） 文書作成AIは実証から実装へ。まず退院時サマリーから。 介護 DX・AI動向 ケアプランデータ連携、2027年1月に介護WEBサービスへ統合 厚労省が令和8年8月付の資料で提示。2026年7〜12月が準備期間で、電子証明書・マイナ資格確認アプリ・カードリーダー等の整備が必要。 ▶ 出典： 厚生労働省（令和8年8月） 介護情報基盤、2026年4月から対応市町村ごとに順次運用開始 資格確認・主治医意見書等を電子的に共有。2028年4月までに全市町村での完了を目指す。7月30日にインタフェース仕様書が第2.1版に更新。 ▶ 出典： 厚生労働省 カードリーダー等の導入経費、国保中央会の助成金で支援 介護情報基盤ポータルで申請を受付。介護事業所はカードリーダー購入・接続サポート経費、医療機関は主治医意見書の電子送信対応経費が対象。 ▶ 出典： 国保中央会（申請の手引き） 介護情報基盤への引っ越しは、証明書とカードリーダーの準備から。 在宅 DX・AI動向 アルム：訪問看護の報告書作成時間をAI要約で最大42%削減 多職種連携システム「Team」にAI要約機能を搭載開始。政府の戦略的イノベーション創造プログラム（SIP）発の開発。 ▶ 出典： アルム（2026年5月25日） クラシテク：記録書ⅡをAIが自動作成、無料提供を開始 スマートフォンに話しかけるだけでSOAP形式に自動整形。初期費用・月額0円で全国の訪問看護ステーションが対象。 ▶ 出典： クラシテク（PR TIMES・2026年4月14日） クロスログ：2026年度改定対応の新機能を提供 在宅医療充実体制加算等の施設基準を自動判定。BCP策定に対応したハザードマップ機能も搭載。 ▶ 出典： クロスログ（2026年4月16日） 訪問の記録は「話すだけ」へ。無料ツールで小さく試しましょう。 補助金・助成金・実証事業 デジタル化・AI導入補助金2026、通常枠は9月29日締切 補助率1/2以内（低賃金雇用者3割以上の事業者は2/3以内）、補助額5万〜450万円。電子カルテ・介護ソフト等のITツールが対象。次回の複数者連携枠は10月30日締切。 ▶ 出典： デジタル化・AI導入補助金事務局 静岡県：介護テクノロジー定着支援事業費補助金、8月31日締切 TAIS掲載の介護テクノロジー・インカム・バックオフィスソフトが対象。申請はメール提出＋電話確認。交付決定前の発注は対象外。補助率・上限は国実施要綱の区分による。 ▶ 出典： 静岡県 電子カルテ情報共有サービスの導入補助、補助率1/2 医療提供体制設備整備交付金による導入補助。上限は病床数等で変動。申請は支払基金の医療機関等向け総合ポータルから。 ▶ 出典： 補助金ポータル 締切は8月31日と9月29日。見積もり取得は今週中に。 今後の注目日程 日付 内容 主体 リンク 2026年8月31日（月） 静岡県 介護テクノロジー定着支援事業費補助金 申請締切 静岡県 公式ページ 2026年8〜9月頃 鹿児島県 介護テクノロジー導入支援事業 募集開始予定 鹿児島県 公式ページ 2026年9月29日（火） デジタル化・AI導入補助金2026 通常枠・インボイス枠・セキュリティ枠 交付申請締切 デジタル化・AI導入補助金事務局 公式ページ 2026年10月30日（金） デジタル化・AI導入補助金2026 複数者連携枠 交付申請締切 デジタル化・AI導入補助金事務局 公式ページ 2026年度冬頃 電子カルテ情報共有サービス 全国本格運用の目安 厚生労働省 公式ページ 2027年1月（予定） ケアプランデータ連携システムが介護WEBサービスへ統合 厚生労働省 公式ページ 締切から逆算し、担当と期日を今日決めましょう。 コラム：医療等情報利活用WGを読む 3文書6情報の中身——何をどこまで共有するのか 電子カルテ情報共有サービスで医療機関の間をやり取りするのは、「3文書6情報」と呼ばれる標準化された情報です。3文書は、診療情報提供書（紹介状）、退院時サマリー、健診結果報告書の3種類。6情報は、傷病名、アレルギー情報、感染症情報、薬剤禁忌情報、検査情報（救急時に有用な検査や生活習慣病関連の検査）、処方情報を指します。文書を画像ではなくデータとして送るため、受け取った側の電子カルテにそのまま取り込める点が特徴です。 6情報のうち処方情報については、電子処方箋管理サービスに登録された情報として扱う方向で議論されています。また6月26日の第33回ワーキンググループでは、システムベンダ向けの技術解説書v2.1.0案が示され、仕様の詰めが進んでいます。自院の電子カルテがどの範囲に対応するかは、ベンダごとに時期が異なるため、早めの確認が安心です。 現場への示唆 自院の紹介状・退院時サマリーの記載項目を6情報と突き合わせて点検する 電子カルテベンダに3文書6情報への対応時期と改修費を確認する ▶ 出典： 厚生労働省｜電子カルテ情報共有サービスについて ／ 厚生労働省｜第33回 医療等情報利活用ワーキンググループ資料 出典一覧 GemMed ｜ 医療DX推進体制を評価する電子的診療情報連携体制整備加算、電子カルテ情報共有サービス参加、サイバーセキュリティ対策等も要件に GemMed ｜ 電子カルテ情報共有サービス、モデル事業での検証・改修経て「2026年度冬頃の本格運用」目指す 厚生労働省 ｜ 第33回 健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ資料について マイナビニュース ｜ NEC、生成AIで退院サマリ作成が40分から5分に 済生会宇都宮病院で導入効果 インフォコム（PR TIMES） ｜ 退院サマリー作成支援システム「Medi-Bank」にAI機能を搭載〜大阪急性期・総合医療センターと共同開発〜 NTTドコモビジネス ｜ 厚生労働省事業に採択、JCHO北海道病院でAIカルテ下書き実証開始 厚生労働省 ｜ ケアプランデータ連携システムの統合と介護情報基盤（介護保険資格確認等WEBサービス）について（令和8年8月） 厚生労働省 ｜ 介護情報基盤について 国保中央会 ｜ 介護事業所及び医療機関のみなさまへ 助成金申請の手引き アルム ｜ 訪問看護の報告書作成時間を最大42%削減 〜多職種連携システム・TeamにAI要約機能を搭載開始〜 クラシテク（PR TIMES） ｜ クラシテク、訪問看護の記録書ⅡをAIが自動作成する「AIオペ自動記録書Ⅱ入力」を無料提供開始 クロスログ ｜ 2026年診療報酬改定の在宅医療に対応した新機能をリリース デジタル化・AI導入補助金事務局 ｜ 事業スケジュール｜デジタル化・AI導入補助金2026 静岡県 ｜ 令和8年度「介護テクノロジー定着支援事業費補助金」 鹿児島県 ｜ 【令和8年度】介護テクノロジー導入支援事業について 補助金ポータル ｜ 電子カルテ情報共有サービスの導入に係る補助金（医療提供体制設備整備交付金） 厚生労働省 ｜ 電子カルテ情報共有サービスについて ※ 日付・金額・締切は各出典で確認済み。数値は発表時点のもので、最終確認は必ず公式ページで行ってください。"}]</script>
+<script>
+(function(){
+  function parseJSON(id){var el=document.getElementById(id); if(!el){return null;} try{return JSON.parse(el.textContent);}catch(e){return null;}}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function rxesc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+  var A=parseJSON('archive-data'); var S=parseJSON('search-data')||[];
+  if(!A||!A.archive){return;}
+  var arch=A.archive.slice().sort(function(a,b){return a.date<b.date?1:(a.date>b.date?-1:0);});
+  function rowHTML(e){return '<tr><td class="d">'+esc(e.date_jp)+'</td><td>'+esc(e.theme)+'</td><td><a href="'+esc(e.url)+'" target="_blank" rel="noopener">開く</a></td></tr>';}
+  function tableHTML(rows){return '<div class="tablewrap"><table><thead><tr><th>日付</th><th>コラムのテーマ</th><th>リンク</th></tr></thead><tbody>'+rows.join('')+'</tbody></table></div>';}
+  try{
+    var bn=document.getElementById('bn');
+    if(bn&&arch.length){
+      var now=new Date();
+      var cutoff=new Date(now.getFullYear(),now.getMonth(),now.getDate()-13);
+      function toDate(e){var q=e.date.split('-');return new Date(+q[0],+q[1]-1,+q[2]);}
+      var recent=[],older=[];
+      for(var i=0;i<arch.length;i++){ if(toDate(arch[i])>=cutoff){recent.push(arch[i]);}else{older.push(arch[i]);} }
+      var out='';
+      if(recent.length){out+=tableHTML(recent.map(rowHTML));}
+      if(older.length){
+        var groups={},order=[];
+        for(var j=0;j<older.length;j++){var k=older[j].date.slice(0,7); if(!groups[k]){groups[k]=[];order.push(k);} groups[k].push(older[j]);}
+        for(var g=0;g<order.length;g++){var ym=order[g].split('-');
+          out+='<details class="mgroup"><summary>'+(+ym[0])+'年'+(+ym[1])+'月（'+groups[order[g]].length+'号）</summary>'+tableHTML(groups[order[g]].map(rowHTML))+'</details>';}
+      }
+      if(out){bn.innerHTML=out;}
+    }
+  }catch(e){}
+  try{
+    var inp=document.getElementById('q'), sout=document.getElementById('sout');
+    if(inp&&sout){
+      var byDate={};
+      for(var a=0;a<arch.length;a++){byDate[arch[a].date]=arch[a];}
+      var idx=[],seen={};
+      for(var b=0;b<S.length;b++){var e=byDate[S[b].date]; if(e){idx.push({e:e,t:e.date_jp+' '+e.theme+' '+(S[b].text||'')}); seen[S[b].date]=1;}}
+      for(var c=0;c<arch.length;c++){ if(!seen[arch[c].date]){idx.push({e:arch[c],t:arch[c].date_jp+' '+arch[c].theme});} }
+      idx.sort(function(x,y){return x.e.date<y.e.date?1:(x.e.date>y.e.date?-1:0);});
+      function hi(snipEsc,terms){
+        for(var i=0;i<terms.length;i++){
+          try{snipEsc=snipEsc.replace(new RegExp(rxesc(esc(terms[i])),'gi'),function(mm){return '<mark>'+mm+'</mark>';});}catch(e){}
+        }
+        return snipEsc;
+      }
+      function run(){
+        var q=inp.value.replace(/\u3000/g,' ').trim();
+        if(!q){sout.innerHTML=''; return;}
+        var terms=q.split(/\s+/).filter(function(s){return s.length>0;});
+        var lows=terms.map(function(s){return s.toLowerCase();});
+        var hits=[];
+        for(var i=0;i<idx.length;i++){
+          var low=idx[i].t.toLowerCase(), ok=true;
+          for(var j=0;j<lows.length;j++){ if(low.indexOf(lows[j])<0){ok=false;break;} }
+          if(ok){hits.push(idx[i]);}
+        }
+        if(!hits.length){sout.innerHTML='<p class="snone">該当する号は見つかりませんでした。</p>'; return;}
+        var lis=[];
+        for(var k=0;k<hits.length&&k<30;k++){
+          var hd=hits[k], pos=hd.t.toLowerCase().indexOf(lows[0]);
+          var start=pos<0?0:Math.max(0,pos-25);
+          var snip=hd.t.substr(start,95);
+          lis.push('<li><span class="sdate">'+esc(hd.e.date_jp)+'</span><a href="'+esc(hd.e.url)+'" target="_blank" rel="noopener">'+esc(hd.e.theme)+'</a><span class="ssnip">…'+hi(esc(snip),terms)+'…</span></li>');
+        }
+        var more=hits.length>30?'<p class="snone">ほか'+(hits.length-30)+'号。キーワードを足して絞り込めます。</p>':'';
+        sout.innerHTML='<ul class="sresults">'+lis.join('')+'</ul>'+more;
+      }
+      inp.addEventListener('input',run);
+    }
+  }catch(e){}
+})();
+</script>
 
 </body></html>

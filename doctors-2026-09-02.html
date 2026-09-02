@@ -6,6 +6,7 @@
   gtag('js', new Date());
   gtag('config', 'G-CGZZDX78C5');
 </script>
+
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MediKoto Doctors</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap">
@@ -264,135 +265,130 @@ h1.doc{font-family:'Zen Kaku Gothic New','BIZ UDPゴシック',sans-serif;font-w
 
 <section class="men" id="clinical">
 <header class="menhead"><span class="menno" style="color:var(--doc)">2</span><h2>臨床で使える医療AI</h2><span class="menk">用途ではなく、臨床上の価値と評価項目で見る</span></header>
-
 <div class="catgrid">
-<div class="cat"><span class="geo geo-ovs">海外研究</span><span class="sb sb-res">研究</span><h3>外来の会話記録AI（アンビエントAI）</h3>
-<p>診察の会話から診療録の下書きを作る領域。研究では記録時間の短縮がみられる一方、製品によって結果が異なります。</p>
+<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">承認</span><h3>大腸内視鏡の病変検出AI（CADe）</h3>
+<p>検査中の映像をリアルタイムに解析し、ポリープ等の病変の可能性を音や表示で知らせる領域です。国内ではEndoBRAIN-EYEが病変検出支援AIとして承認され、鑑別支援のEndoBRAIN／EndoBRAIN-Xも揃っています。</p>
 <ul class="declist">
-<li><b>期待する効果：</b>診療録作成時間、時間外の電子カルテ作業、患者への視線</li>
-<li><b>評価するリスク：</b>重要所見の欠落、話者の取り違え、評価・計画欄の誤記</li>
-<li><b>採用判断：</b>日本語での精度と、自院の電子カルテでの実測が必要</li>
+<li><b>期待する効果：</b>見落としの低減による腺腫検出率（ADR）の向上</li>
+<li><b>評価するリスク：</b>偽陽性による検査時間の延長、AI依存による技能低下（デスキリング）</li>
+<li><b>国内判断：</b>承認済み。保険上の加算の算定要件は自院で確認</li>
 </ul>
-<a class="src2" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12768499/" target="_blank" rel="noopener">無作為化試験を読む（NEJM AI）→</a></div>
-<div class="cat"><span class="geo geo-ovs">海外研究</span><span class="sb sb-res">研究</span><h3>退院時サマリー・病歴要約の生成</h3>
-<p>長期の診療記録から入院経過を要約する領域。作成時間だけでなく、転院・外来への情報の続きやすさが評価対象です。</p>
+<a class="src2" href="https://www.cybernet.co.jp/medical-imaging/products/endobrain/" target="_blank" rel="noopener">製品の承認情報を見る（サイバネット）→</a></div>
+<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">承認</span><h3>心電図AI（洞調律から隠れ心房細動のリスクを推定）</h3>
+<p>通常の12誘導心電図をAIで解析し、洞調律の波形から発作性心房細動の可能性を推定する領域です。国内ではフクダ電子の心電計「FCP-9900Ai」が2024年6月に承認されました。</p>
 <ul class="declist">
-<li><b>期待する効果：</b>経過の要約、問題別の整理、文書の標準化</li>
-<li><b>評価するリスク：</b>重要な治療変更の欠落、誤った因果関係、薬剤情報の誤記</li>
-<li><b>採用判断：</b>原文を参照できる機能と修正履歴を重視</li>
+<li><b>期待する効果：</b>健診・外来の通常心電図から隠れ心房細動のリスクを示し、精査や抗凝固療法の検討につなげる</li>
+<li><b>評価するリスク：</b>結果は「推定」であり発症の保証ではない。偽陽性による過剰な精査、偽陰性による見逃し</li>
+<li><b>国内判断：</b>承認済み・販売中。診療報酬上の個別評価は確認できず</li>
 </ul>
-<a class="src2" href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2848785" target="_blank" rel="noopener">前向き実装研究を読む（JAMA Netw Open）→</a></div>
-<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">公的</span><h3>画像診断AI・プログラム医療機器</h3>
-<p>病変検出・読影支援などのプログラム医療機器。「AI一般」ではなく、承認された使用目的の単位で評価します。</p>
+<a class="src2" href="https://prtimes.jp/main/html/rd/p/000000006.000071807.html" target="_blank" rel="noopener">承認取得の発表を読む（フクダ電子）→</a></div>
+<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">承認</span><h3>頭部MRAの脳動脈瘤検出AI</h3>
+<p>頭部MRA画像から脳動脈瘤の候補を自動検出し、読影の見落としを防ぐ領域です。エルピクセルのEIRL Brain Aneurysmに加え、富士フイルムの「FS-AI697型」が2026年7月に承認され、医師の読影と同時にAI結果を示す方式として日本初と発表されました。</p>
 <ul class="declist">
-<li><b>確認する性能：</b>感度・特異度、対象疾患、有病率、外部検証</li>
-<li><b>確認する運用：</b>偽陽性、通知疲れ、専門医との役割分担</li>
-<li><b>国内判断：</b>PMDA承認と保険適用は別々に確認</li>
+<li><b>期待する効果：</b>長径2mm以上の膨隆の自動検出。使用時の感度が非使用時より10%以上向上（富士フイルム発表）</li>
+<li><b>評価するリスク：</b>偽陽性による追加検査、AI表示に引きずられる自動化バイアス</li>
+<li><b>国内判断：</b>承認済み。画像診断管理加算3・4の届出にはAIソフトの安全管理の証明書類が必要</li>
 </ul>
-<a class="src2" href="https://www.pmda.go.jp/review-services/drug-reviews/about-reviews/devices/0052.html" target="_blank" rel="noopener">PMDA：プログラム医療機器の承認等情報 →</a></div>
-<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-res">研究</span><h3>マルチモーダル診療支援AI</h3>
-<p>画像・検査値・症状を統合して鑑別や次の検査を支援する領域。単一の正答率だけでは臨床での価値を判断できません。</p>
+<a class="src2" href="https://www.fujifilm.com/jp/ja/news/list/13678" target="_blank" rel="noopener">承認取得の発表を読む（富士フイルム）→</a></div>
+<div class="cat"><span class="geo geo-ovs">海外研究</span><span class="sb sb-res">研究</span><h3>救急・病棟の敗血症予測AI</h3>
+<p>電子カルテのバイタル・検査値から敗血症を早期に検知し、標準化した治療の流れにつなぐ領域です。スイス・ローザンヌ大学病院（1,100床）は検出アルゴリズムと臨床パスを組み合わせて63病棟に展開しました。</p>
 <ul class="declist">
-<li><b>期待する効果：</b>鑑別の漏れ低減、緊急度判定、情報の統合</li>
-<li><b>評価するリスク：</b>過度な依存、施設差、患者背景の偏り</li>
-<li><b>国内状況：</b>急性腹症などは研究開発段階</li>
+<li><b>期待する効果：</b>前後比較で対象症例の院内死亡が20.5%→15.3%に低下（97,559入院）</li>
+<li><b>評価するリスク：</b>非ランダム化・単施設。アラート疲れと過剰治療の評価が必要</li>
+<li><b>国内状況：</b>承認品・保険評価は確認できず。院内の質改善活動として位置づけるのが現実的</li>
 </ul>
-<a class="src2" href="https://www.amed.go.jp/koubo/03005/01/C_00005.html" target="_blank" rel="noopener">AMED採択課題を見る →</a></div>
+<a class="src2" href="https://www.nature.com/articles/s41746-025-02180-2" target="_blank" rel="noopener">原著を読む（npj Digital Medicine）→</a></div>
 </div>
 </section>
 
 <section class="men" id="evidence">
 <header class="menhead"><span class="menno" style="color:var(--doc)">3</span><h2>エビデンスを読む</h2><span class="menk">結果と同じ大きさで、研究デザインと限界を示す</span></header>
 <h4 class="sub4">海外の原著研究</h4>
-<p style="font-size:.88rem;color:var(--sub);margin:0 0 .6rem"><span class="geo geo-ovs">海外</span>英語診療（米国）の原著研究です。英語診療での結果であり、日本語・国内の環境での性能は別途の検証が必要です。「日本への示唆」を併記しています。</p>
-
+<p style="font-size:.88rem;color:var(--sub);margin:0 0 .6rem"><span class="geo geo-ovs">海外</span>海外の原著研究です。国名をバッジで示します。海外の診療環境での結果であり、日本語・国内の環境での性能は別途の検証が必要です。「日本への示唆」を併記しています。</p>
 <div class="evd2grid">
-<div class="evd2"><span class="geo geo-ovs">海外</span><span class="sb sb-res">無作為化比較試験</span><h3>外来の会話記録AI2製品を通常診療と比較</h3>
-<div class="evres"><strong>238医師・14診療科</strong>Nablaは記録作業時間を対照群比9.5%短縮（有意）。DAXは有意差なし。</div>
+<div class="evd2"><span class="geo geo-ovs">Poland</span><span class="sb sb-res">多施設・後ろ向き観察研究</span><h3>AI支援の大腸内視鏡に慣れると、AI非使用時の検出率が下がる（デスキリング）</h3>
+<div class="evres"><strong>ADR 28.4% → 22.4%</strong>AI導入後、AIを使わない検査での腺腫検出率が絶対差−6.0%（有意）。AI曝露のオッズ比0.69。</div>
 <dl class="evmeta">
-<div><dt>対象</dt><dd>米国1大学病院の外来医師、英語の診療</dd></div>
-<div><dt>安全性</dt><dd>軽度の有害事象1件。臨床上重要な不正確さを時折認めた</dd></div>
-<div><dt>限界</dt><dd>単施設・約2か月。製品間で利用率・連携方法が異なる</dd></div>
-<div><dt>日本への示唆</dt><dd>「会話記録AI全般が有効」ではなく、製品別・日本語別に検証する</dd></div>
+<div><dt>対象</dt><dd>ポーランド4施設、経験豊富な内視鏡医19名、AI非使用の検査1,443件</dd></div>
+<div><dt>安全性</dt><dd>直接の有害事象は対象外。検出率の低下自体が患者の不利益になり得る</dd></div>
+<div><dt>限界</dt><dd>観察研究で他要因を否定できない。対象は経験豊富な医師のみ</dd></div>
+<div><dt>日本への示唆</dt><dd>国内でもAI非使用時の技能維持（ADRの継続監視）を運用に組み込む</dd></div>
 </dl>
-<a class="src2" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12768499/" target="_blank" rel="noopener">原著を読む（NEJM AI／PMC）→</a></div>
-<div class="evd2"><span class="geo geo-ovs">海外</span><span class="sb sb-res">前後比較・質改善研究</span><h3>外来診療で記録の負担はどこまで減ったか</h3>
-<div class="evres"><strong>記録時間 −20.4%</strong>時間外作業は−30.0%、当日中の記録完了は66.2%→72.4%。</div>
+<a class="src2" href="https://wrap.warwick.ac.uk/id/eprint/191005" target="_blank" rel="noopener">原著を読む（Lancet Gastroenterol Hepatol）→</a></div>
+<div class="evd2"><span class="geo geo-ovs">Sweden</span><span class="sb sb-res">無作為化比較・非劣性試験</span><h3>AI支援マンモグラフィ検診（MASAI試験）最終結果——中間期がんが非劣性、感度は向上</h3>
+<div class="evres"><strong>感度 80.5% vs 73.8%</strong>中間期がんはAI群1.55／1,000人 vs 対照1.76／1,000人（非劣性）。特異度は両群98.5%。</div>
 <dl class="evmeta">
-<div><dt>対象</dt><dd>46人・17診療科、米国の大学医療システム</dd></div>
-<div><dt>評価</dt><dd>電子カルテの操作記録と医療者アンケートを併用</dd></div>
-<div><dt>限界</dt><dd>対照群なし・単施設・7週間。製品への評価は混在</dd></div>
-<div><dt>日本への示唆</dt><dd>時間短縮だけでなく、修正率と診療科別の有用性を測る</dd></div>
+<div><dt>対象</dt><dd>スウェーデン、105,934人の女性（AI支援群53,043人・二重読影群52,872人）</dd></div>
+<div><dt>安全性</dt><dd>偽陽性率は1.5% vs 1.4%で同程度</dd></div>
+<div><dt>限界</dt><dd>単一地域・単一機種・単一AI。経験豊富な読影医</dd></div>
+<div><dt>日本への示唆</dt><dd>対策型乳がん検診にAIを組み込む際の最も強いRCT。機種・読影体制の違いから国内検証が前提</dd></div>
 </dl>
-<a class="src2" href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2830383" target="_blank" rel="noopener">原著を読む（JAMA Netw Open）→</a></div>
-<div class="evd2"><span class="geo geo-ovs">海外</span><span class="sb sb-res">前向き単群実装研究</span><h3>AIが作る入院経過の要約は安全に使えるか</h3>
-<div class="evres"><strong>384退院・利用率57.0%</strong>評価した100要約で、欠落25%・不正確20%・事実にない記載2%。</div>
+<a class="src2" href="https://research.regionh.dk/en/publications/interval-cancer-sensitivity-and-specificity-comparing-ai-supporte/" target="_blank" rel="noopener">原著の情報を見る（The Lancet 2026）→</a></div>
+<div class="evd2"><span class="geo geo-ovs">Kenya</span><span class="sb sb-res">多施設クラスター無作為化比較試験</span><h3>プライマリケアでの生成AI診療支援——主要評価項目に有意差なし</h3>
+<div class="evres"><strong>治療失敗 2.2% vs 2.0%</strong>電子カルテ組込みのGPT-4oベース支援で、14日以内の治療失敗は調整オッズ比0.77（有意差なし）。</div>
 <dl class="evmeta">
-<div><dt>対象</dt><dd>米国1病棟、病院総合診療医11人（10週間）</dd></div>
-<div><dt>安全性</dt><dd>88%は危害の可能性なし。1%は中等度の危害が起こり得ると評価</dd></div>
-<div><dt>限界</dt><dd>単群・単病棟。時間短縮は有意差なし</dd></div>
-<div><dt>日本への示唆</dt><dd>流暢さではなく、欠落・不正確・原文をたどれるかを主要指標にする</dd></div>
+<div><dt>対象</dt><dd>ケニアの16プライマリケア施設、臨床官103名、患者9,691人</dd></div>
+<div><dt>安全性</dt><dd>介入に関連する重篤な有害事象なし</dd></div>
+<div><dt>限界</dt><dd>単一の都市部ネットワーク、追跡14日間、ベースラインの診療水準が高い</dd></div>
+<div><dt>日本への示唆</dt><dd>「安全に使えた」と「患者の転帰を改善した」は別。国内導入でも臨床アウトカム指標の設定が必要</dd></div>
 </dl>
-<a class="src2" href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2848785" target="_blank" rel="noopener">原著を読む（JAMA Netw Open）→</a></div>
+<a class="src2" href="https://www.nature.com/articles/s41591-026-04503-6" target="_blank" rel="noopener">原著を読む（Nature Medicine）→</a></div>
 </div>
-
 <h4 class="sub4">国内の研究・検証（比較のために）</h4>
 <div class="evd2grid">
-<div class="evd2"><span class="geo geo-dom">国内</span><span class="sb sb-res">比較検証・学会発表</span><h3>退院時看護サマリの生成AI、使用群と非使用群を比較</h3>
-<div class="evres"><strong>作成時間 −42.5%</strong>平均12分20秒→7分5秒（有意）。心理的負担も27.2%低減。</div>
+<div class="evd2"><span class="geo geo-dom">国内</span><span class="sb sb-res">外部テストセットによる検証（Radiology）</span><h3>神戸大学：CTから膵がんを検出するAI、外部テストで医師と同等以上</h3>
+<div class="evres"><strong>AUC 0.99（造影）／0.93（非造影）</strong>20mm以下の小膵がんの感度は造影CTでAI 98% vs 医師82.6%、非造影CTでAI 86% vs 医師41.1%。</div>
 <dl class="evmeta">
-<div><dt>対象</dt><dd>恵寿総合病院（石川県）。非使用群89件・使用群100件の計189件</dd></div>
-<div><dt>発表</dt><dd>第65回全日本病院学会（2024年9月）で報告</dd></div>
-<div><dt>限界</dt><dd>単施設・学会発表段階。対象は看護サマリで、医師の退院時サマリーは別途検証</dd></div>
-<div><dt>読み方</dt><dd>日本語・国内電子カルテ環境でも時間短縮が数値で示された例</dd></div>
+<div><dt>対象</dt><dd>国内9施設等の患者2,251名で学習。外部テストは造影CT190名・非造影CT187名、医師6名と比較</dd></div>
+<div><dt>限界</dt><dd>後ろ向きの画像評価。前向きの臨床運用やAI併用時の成績は未評価</dd></div>
+<div><dt>読み方</dt><dd>健診・救急の非造影CTでの拾い上げに期待。偽陽性率と追加検査の負荷を見てから判断</dd></div>
 </dl>
-<a class="src2" href="https://prtimes.jp/main/html/rd/p/000000103.000048083.html" target="_blank" rel="noopener">発表を読む（PR TIMES）→</a></div>
-<div class="evd2"><span class="geo geo-dom">国内</span><span class="sb sb-pub">実装効果研究</span><h3>胸部X線の診断支援AIで読影時間はどう変わるか</h3>
-<div class="evres"><strong>読影時間 −9.6%</strong>低有病率セットで中央値2,437ミリ秒→2,202ミリ秒（有意）。</div>
+<a class="src2" href="https://www.kobe-u.ac.jp/ja/news/article/20260623-67915/" target="_blank" rel="noopener">大学発表を読む →</a></div>
+<div class="evd2"><span class="geo geo-dom">国内</span><span class="sb sb-res">内部検証（JAAD International）</span><h3>近畿大・広島大ほか：8種の色素性皮膚病変を判別し根拠を可視化するAI</h3>
+<div class="evres"><strong>診断精度 95.9%</strong>日本人の臨床写真979枚で学習、196枚のテストで95.9%。メラノーマ20例は全例を正しく判定。</div>
 <dl class="evmeta">
-<div><dt>対象</dt><dd>AMED研究班の公開資料。健診等を想定した低有病率のデータセット</dd></div>
-<div><dt>限界</dt><dd>「低有病率セットでは」という条件付きの数値。患者への効果（転帰）は別評価</dd></div>
-<div><dt>読み方</dt><dd>読影補助の効果は、対象集団の有病率で変わることを示す国内例</dd></div>
+<div><dt>対象</dt><dd>近畿大学・京都大学・札幌医科大学・広島大学の共同研究。日本人の臨床写真</dd></div>
+<div><dt>限界</dt><dd>内部検証のみで外部検証は今後。テストセットが小規模でメラノーマ20例の信頼区間は広い</dd></div>
+<div><dt>読み方</dt><dd>皮膚科専門医不在地域のトリアージ補助として有望だが承認前の研究段階</dd></div>
 </dl>
-<a class="src2" href="https://www.amed.go.jp/content/000161152.pdf" target="_blank" rel="noopener">公開資料を読む（AMED・PDF）→</a></div>
-<div class="evd2"><span class="geo geo-dom">国内</span><span class="sb sb-res">研究段階</span><h3>子宮内膜細胞診のAI診断支援——熟練病理医との一致</h3>
-<div class="evres"><strong>特異度 約8割</strong>過半数の熟練病理医が良性と判定した画像に対し特異度約8割・感度約7割。</div>
+<a class="src2" href="https://www.hiroshima-u.ac.jp/news/99383" target="_blank" rel="noopener">大学発表を読む →</a></div>
+<div class="evd2"><span class="geo geo-dom">国内</span><span class="sb sb-res">外科医36名による前向き評価（npj Digital Medicine）</span><h3>国立がん研究センター東病院・Jmees：骨盤リンパ節郭清の解剖認識AI</h3>
+<div class="evres"><strong>感度・特異度が有意に改善</strong>尿管・閉鎖神経・外腸骨動静脈の認識で、AI併用により外科医の感度・特異度が全構造で有意に改善（p<0.001）。</div>
 <dl class="evmeta">
-<div><dt>対象</dt><dd>中央大学らが2026年2月に発表した細胞診AI</dd></div>
-<div><dt>限界</dt><dd>研究・特許出願段階。診断の代替ではなく支援用途の検証</dd></div>
-<div><dt>読み方</dt><dd>「熟練医との一致」を指標にした国内評価の例。実臨床の性能は別途検証</dd></div>
+<div><dt>対象</dt><dd>大腸外科・婦人科・泌尿器科の外科医36名、手術動画の短い切片640本</dd></div>
+<div><dt>限界</dt><dd>静止的な短時間動画での評価。連続した術中の流れでの効果は未検証</dd></div>
+<div><dt>読み方</dt><dd>「AIが解剖を認識できる」から「外科医の認識を改善する」段階へ。合併症の減少はまだ示されていない</dd></div>
 </dl>
-<a class="src2" href="https://www.chuo-u.ac.jp/aboutus/communication/press/2026/02/84472/" target="_blank" rel="noopener">大学発表を読む →</a></div>
+<a class="src2" href="https://www.jmees-inc.com/%E3%80%90%E3%83%97%E3%83%AC%E3%82%B9%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%80%91%E9%AA%A8%E7%9B%A4%E3%83%AA%E3%83%B3%E3%83%91%E7%AF%80%E9%83%AD%E6%B8%85%E3%82%92%E6%94%AF%E6%8F%B4%E3%81%99%E3%82%8B/" target="_blank" rel="noopener">発表を読む（Jmees）→</a></div>
 </div>
-<div class="evjudge"><b>本日の評価：</b>海外・国内とも、記録・文書作成のAIは「負担軽減の可能性あり」で一致しています（国内でも看護サマリで42.5%の時間短縮）。ただし効果は製品・診療科・対象集団で一貫せず、重要情報の欠落もあるため、現時点では医師の確認を前提とした支援用途です。国内は単施設・学会発表段階の報告が中心で、査読済みの比較研究はまだ少ない点も踏まえて読んでください。</div>
+<div class="evjudge"><b>本日の評価：</b>検出・読影支援のAIは、海外の大規模RCT（乳がん検診）で「見落としを減らし精度を保てる」ことが示される一方、大腸内視鏡では「AIに慣れると人の技能が下がる」観察結果も出ています。生成AIの診療支援は「安全に使えた」ことと「患者の転帰を改善した」ことが別だと示されました。国内は大学の画像AI研究が外部テストや外科医評価の段階へ進んでいますが、承認・保険評価とは別物です。AIを入れる時は、技能維持の監視と臨床アウトカム指標をセットで決めて読んでください。</div>
 </section>
 
 <section class="men" id="domestic">
 <header class="menhead"><span class="menno" style="color:var(--doc)">4</span><h2>国内実装・承認情報</h2><span class="menk">承認・保険適用・研究・院内導入を混同しない</span></header>
-
 <div class="catgrid">
-<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">PMDA</span><h3>プログラム医療機器の承認等情報</h3>
-<p>PMDAの一覧では、承認されたプログラム医療機器（SaMD）を確認できます。一覧の「AI活用医療機器」欄の印でAIを使う機器を識別し、承認された使用目的・対象疾患・審査報告書を製品単位で確認します。</p>
-<div class="pillrow"><span class="pill ok">国内承認情報</span><span class="pill">保険適用は別確認</span></div>
-<a class="src2" href="https://www.pmda.go.jp/review-services/drug-reviews/about-reviews/devices/0052.html" target="_blank" rel="noopener">PMDA一覧を開く →</a></div>
-<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">AMED</span><h3>令和8年度 医療AI実装研究の採択課題</h3>
-<p>「医工連携・人工知能実装研究事業」で、緑内障の失明予防、人工股関節手術の術中3Dナビゲーション、心筋梗塞、急性腹症などを対象とする研究を含む13件が採択されました。</p>
-<div class="pillrow"><span class="pill res">研究開発段階</span><span class="pill">採択＝承認ではない</span></div>
-<a class="src2" href="https://www.amed.go.jp/koubo/03005/01/C_00005.html" target="_blank" rel="noopener">採択課題を確認する →</a></div>
-<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">国内病院事例</span><h3>松波総合病院、生成AIを院内業務へ活用</h3>
-<p>厚生労働省の雇用管理改善に関する資料のICT導入事例として、岐阜県の松波総合病院（501床）が2024年に生成AIを導入し、退院時サマリーの作成支援を含む院内業務で活用していることが紹介されています。</p>
-<div class="pillrow"><span class="pill ok">国内導入事例</span><span class="pill">効果の数値は原資料で確認</span></div>
-<a class="src2" href="https://www.mhlw.go.jp/content/11600000/001704896.pdf" target="_blank" rel="noopener">厚生労働省資料（PDF）→</a></div>
-<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">国の医療DX</span><h3>電子カルテ情報共有サービス</h3>
-<p>診療情報提供書・健診結果・臨床情報・患者サマリーを全国で共有する国の基盤です。AI活用の前提になる標準化・情報連携の進み具合を追います。</p>
+<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">承認情報</span><h3>富士フイルム、脳動脈瘤検出プログラム「FS-AI697型」を承認取得</h3>
+<p>2026年7月6日に薬事承認、7月22日発表。頭部MRA画像から長径2mm以上の膨隆を自動検出し、医師が画像を観察するのと同時にAI結果を示す方式として日本初としています。使用時の感度は非使用時と比べ10%以上向上を確認。</p>
+<div class="pillrow"><span class="pill ok">承認済</span><span class="pill">保険適用は別確認</span></div>
+<a class="src2" href="https://www.fujifilm.com/jp/ja/news/list/13678" target="_blank" rel="noopener">発表を読む →</a></div>
+<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">診療報酬</span><h3>画像診断管理加算3・4の届出には、AI画像診断補助ソフトの安全管理の証明が必要</h3>
+<p>届出様式では、加算3または4の届出時に「人工知能関連技術が活用された画像診断補助ソフトウェアの適切な安全管理を行っていること等を証明する書類」の添付と、安全管理責任者の氏名記載を求めています。日本医学放射線学会のAIソフトウェア認証一覧（2026年8月7日時点で45件・うち1件取下げ）が参考になります。</p>
+<div class="pillrow"><span class="pill ok">保険評価あり</span><span class="pill">届出要件を確認</span></div>
+<a class="src2" href="https://kouseikyoku.mhlw.go.jp/kinki/r6-t32.pdf" target="_blank" rel="noopener">届出様式（近畿厚生局・PDF）→</a></div>
+<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">国内病院事例</span><h3>「ユビー生成AI」が大学病院10施設以上を含む全国100病院に導入</h3>
+<p>2026年2月の発表。九州大学病院で年間6,500万円以上の収益改善見込み、亀田総合病院でがん登録業務の情報収集時間を年間約3割削減、南部徳洲会病院で月約200時間の業務時間創出など、各病院の効果が公表されています（企業発表の数値）。</p>
+<div class="pillrow"><span class="pill ok">国内導入事例</span><span class="pill">効果は企業発表の数値</span></div>
+<a class="src2" href="https://prtimes.jp/main/html/rd/p/000000198.000048083.html" target="_blank" rel="noopener">発表を読む（PR TIMES）→</a></div>
+<div class="cat"><span class="geo geo-dom">国内</span><span class="sb sb-pub">国の医療DX</span><h3>電子処方箋：薬局は9割以上が導入、病院・診療所は地域別の状況を確認</h3>
+<p>厚生労働省の対応施設案内ページは「2026年5月時点で9割以上の薬局に導入」と記載しています。都道府県・施設種別ごとの導入率はデジタル庁の公開ページ（データは2026年8月14日付）で確認でき、自院地域の病院・診療所の進み具合を把握できます。</p>
 <div class="pillrow"><span class="pill ok">国内制度</span></div>
-<a class="src2" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/johoka/denkarukyouyuu.html" target="_blank" rel="noopener">厚生労働省の説明を見る →</a></div>
+<a class="src2" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/denshishohousen_taioushisetsu.html" target="_blank" rel="noopener">厚生労働省の案内を見る →</a></div>
 </div>
 </section>
 
 <section class="men" id="specialty">
 <header class="menhead"><span class="menno" style="color:var(--doc)">5</span><h2>診療科別AI</h2><span class="menk">臨床課題・研究段階・承認状況を診療科ごとに整理</span></header>
-<div class="catgrid"><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-dom">国内</span><span class="spname" style="margin-left:.1rem">眼科</span><h3>緑内障の失明予防AI「Vision Keeper」</h3><p>長期の経過データを使った進行予測と介入支援の研究開発（AMED採択）。</p><div class="pillrow"><span class="pill res">AMED採択・開発中</span></div><a class="src2" href="https://www.amed.go.jp/koubo/03005/01/C_00005.html" target="_blank" rel="noopener">一次情報 →</a></div><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-dom">国内</span><span class="spname" style="margin-left:.1rem">整形外科・手術</span><h3>CTに頼らない術中3Dナビゲーション</h3><p>AIの深度推定を使い、人工股関節置換術の術中ナビゲーションを支援する研究。</p><div class="pillrow"><span class="pill res">AMED採択・開発中</span></div><a class="src2" href="https://www.amed.go.jp/koubo/03005/01/C_00005.html" target="_blank" rel="noopener">一次情報 →</a></div><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-dom">国内</span><span class="spname" style="margin-left:.1rem">循環器内科</span><h3>心筋梗塞の診療の流れをAIで支援</h3><p>発症から診断・治療までの流れを支援するプログラム医療機器の研究。</p><div class="pillrow"><span class="pill res">AMED採択・開発中</span></div><a class="src2" href="https://www.amed.go.jp/koubo/03005/01/C_00005.html" target="_blank" rel="noopener">一次情報 →</a></div><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-dom">国内</span><span class="spname" style="margin-left:.1rem">救急・消化器</span><h3>急性腹症の協働型AIエージェント</h3><p>画像と臨床所見を対話的に統合し、急性腹症の診療を支援するマルチモーダルAIの研究。</p><div class="pillrow"><span class="pill res">AMED採択・開発中</span></div><a class="src2" href="https://www.amed.go.jp/koubo/03005/01/C_00005.html" target="_blank" rel="noopener">一次情報 →</a></div><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-dom">国内</span><span class="spname" style="margin-left:.1rem">放射線科・健診</span><h3>胸部X線の診断支援AI</h3><p>AMED公開資料では、低有病率のデータセットで読影時間の中央値が2,437ミリ秒→2,202ミリ秒（9.6%短縮）。</p><div class="pillrow"><span class="pill res">実装効果研究</span><span class="pill ">患者への効果は別評価</span></div><a class="src2" href="https://www.amed.go.jp/content/000161152.pdf" target="_blank" rel="noopener">公開資料（PDF）→</a></div><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-dom">国内</span><span class="spname" style="margin-left:.1rem">病理・婦人科</span><h3>子宮内膜細胞診のAI診断支援</h3><p>中央大学らが2026年2月に発表。過半数の熟練病理医が良性と判定した画像への特異度は約8割、感度は約7割。診断の代替ではなく研究段階です。</p><div class="pillrow"><span class="pill res">研究段階</span></div><a class="src2" href="https://www.chuo-u.ac.jp/aboutus/communication/press/2026/02/84472/" target="_blank" rel="noopener">大学発表 →</a></div></div>
+<div class="catgrid"><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-dom">国内</span><span class="spname" style="margin-left:.1rem">消化器内視鏡</span><h3>EndoBRAIN-EYE：大腸病変検出AIが保険上の技術料加算の対象に</h3><p>国内初の大腸病変「検出」支援AI。2024年6月から内視鏡的大腸ポリープ・粘膜切除術で60点加算の対象と報じられ、鑑別支援のEndoBRAIN-Xも2024年2月に発売。</p><div class="pillrow"><span class="pill ok">保険適用</span></div><a class="src2" href="https://www.cybernet.co.jp/medical-imaging/products/endobrain/" target="_blank" rel="noopener">一次情報 →</a></div><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-dom">国内</span><span class="spname" style="margin-left:.1rem">脳神経外科・脳卒中</span><h3>EIRL Brain Aneurysm 新モデル：感度92.3%、偽陽性は1症例あたり1以下</h3><p>エルピクセルは2025年6月に頭部MRAから脳動脈瘤の候補を検出する新モデルの承認を取得。感度92.3%、1症例あたりの偽陽性が1以下と発表。</p><div class="pillrow"><span class="pill ok">承認済</span></div><a class="src2" href="https://www.innervision.co.jp/sp/products/release/20250801" target="_blank" rel="noopener">一次情報 →</a></div><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-dom">国内</span><span class="spname" style="margin-left:.1rem">皮膚科</span><h3>8種の色素性皮膚病変を診断精度95.9%で判別するAI（近畿大・広島大ほか）</h3><p>日本人の臨床写真979枚で学習、196枚のテストで95.9%、メラノーマ20例は全例正答。内部検証のみで外部検証は今後の課題。</p><div class="pillrow"><span class="pill res">研究段階</span></div><a class="src2" href="https://www.hiroshima-u.ac.jp/news/99383" target="_blank" rel="noopener">一次情報 →</a></div><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-dom">国内</span><span class="spname" style="margin-left:.1rem">精神科</span><h3>XNef-Brainalyzer：うつ病の診断補助AIが管理医療機器として承認</h3><p>ATR・XNef・広島大学が開発。2025年3月承認。安静時fMRIで脳内379領域間の活動の相関を計算し、うつ病の可能性を数値化。臨床エビデンスの確立は進行中。</p><div class="pillrow"><span class="pill ok">承認済</span></div><a class="src2" href="https://www.atr.jp/topics/press_250630.html" target="_blank" rel="noopener">一次情報 →</a></div><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-ovs">USA</span><span class="spname" style="margin-left:.1rem">糖尿病・内科</span><h3>IDx-DR：眼科医がいなくても判定する自律型の糖尿病網膜症AI（FDA）</h3><p>2018年1月にFDAが認可。プライマリケア10施設・900例の登録試験で感度87.4%、特異度89.5%。国内承認品は確認できず。</p><div class="pillrow"><span class="pill">海外承認</span></div><a class="src2" href="https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN180001.pdf" target="_blank" rel="noopener">一次情報 →</a></div><div class="cat" style="border-top-color:var(--home)"><span class="geo geo-ovs">海外</span><span class="spname" style="margin-left:.1rem">麻酔科</span><h3>低血圧予測指数（HPI）：メタ解析で感度83%・特異度83%だが研究間のばらつきが大きい</h3><p>2025年7月公開の22研究の系統的レビュー。術中低血圧の予測で感度・特異度とも83%だが異質性が大きく、術後合併症の報告不足が限界。</p><div class="pillrow"><span class="pill res">研究段階</span></div><a class="src2" href="https://link.springer.com/article/10.1186/s12871-025-03250-4" target="_blank" rel="noopener">一次情報 →</a></div></div>
 </section>
 
 <section class="men" id="events">
@@ -409,11 +405,11 @@ h1.doc{font-family:'Zen Kaku Gothic New','BIZ UDPゴシック',sans-serif;font-w
 <p style="margin:.2rem 0 .6rem">朝礼・ミーティングでそのまま読める司会台本つき。<a href="study-2026-09-02.html" target="_blank" rel="noopener">今日の勉強会ページを開く</a></p>
 <h4 class="sub4">用語解説（医師がよく出会うAI・DX用語）</h4>
 <dl class="gl">
-<dt>プログラム医療機器（SaMD）</dt><dd>ソフトウェア単体で診断・治療を支援する医療機器。PMDAの承認と保険適用は別々に確認する。</dd>
-<dt>アンビエントAI（会話記録AI）</dt><dd>診察の会話を聞き取り、診療録の下書きを作るAI。製品・言語で性能が大きく異なる。</dd>
-<dt>電子カルテ情報共有サービス</dt><dd>診療情報提供書・退院時サマリー・6情報を全国で共有する国の基盤。</dd>
-<dt>外部検証</dt><dd>開発施設と別の集団でAIの性能を確かめること。単施設の成績だけでは自院での性能は分からない。</dd>
-<dt>幻覚（ハルシネーション）</dt><dd>生成AIが事実にない内容をもっともらしく作ってしまうこと。医療文書では原文との照合が必須。</dd>
+<dt>感度・特異度</dt><dd>感度は病気の人を正しく陽性とする割合、特異度は病気でない人を正しく陰性とする割合。必ずセットで読む。</dd>
+<dt>AUC（ROC曲線下面積）</dt><dd>閾値を変えたときの感度と偽陽性率の関係を1つの数にした指標。1.0が完璧、0.5は偶然と同じ。</dd>
+<dt>自動化バイアス</dt><dd>AIの提示結果を過度に信頼し、自分の判断や確認を省いてしまう傾向。見逃しと過剰検査の両方を生む。</dd>
+<dt>デスキリング</dt><dd>AI支援に慣れることで、支援なしの場面で本来の技能（例：腺腫検出率）が下がる現象。技能維持の運用が課題。</dd>
+<dt>FHIR（ファイア）</dt><dd>電子カルテ間で診療情報を標準の形でやり取りする国際規格。国内の情報連携やAI連携の基盤。</dd>
 </dl>
 <h4 class="sub4">生成AIを診療で試す前のチェックリスト</h4>
 <ul class="pick">

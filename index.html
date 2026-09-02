@@ -244,6 +244,30 @@ details.mgroup .tablewrap{margin-top:.4rem;}
 .contact-badge{margin:.5rem 0 0;font-size:.76rem;font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
 .contact-badge a{display:inline-block;color:var(--mut);text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:.08rem .7rem;line-height:1.6;}
 .contact-badge a:hover{color:var(--sub);border-color:var(--sub);}
+
+@media (max-width:560px){.menhead{flex-wrap:wrap;}.menhead .menk{flex-basis:100%;margin-left:0;}}
+/* 今日の2枚 */
+.todaygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem;}
+.tcard{border:1px solid var(--rule);border-radius:14px;padding:1.1rem 1.3rem 1rem;display:flex;flex-direction:column;gap:.35rem;}
+.tcard .tlab{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.12em;margin:0;}
+.tcard h2{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.35rem;margin:0;line-height:1.35;}
+.tcard .date,.tcard .hdate{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.75rem;margin:.15rem 0 .1rem;line-height:1.3;}
+.tcard .theme,.tcard .hthemes{font-size:.9rem;color:var(--sub);margin:0;}
+.tcard .hthemes b{font-size:.78rem;margin-right:.4rem;color:var(--study);}
+.tcard.study .hdate{color:var(--study);}
+.tcard .tnote{font-size:.78rem;color:var(--mut);margin:.2rem 0 .4rem;}
+.tcard .btn,.tcard .cta{margin-top:auto;display:block;width:100%;box-sizing:border-box;text-align:center;font-size:1.02rem;padding:.8rem 1rem;}
+.tcard .ctasub{margin-top:.35rem;}
+/* 職種別・制度 4枚 */
+.rolegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:.8rem;}
+.rcard{border:1px solid var(--rule);border-radius:12px;padding:.85rem 1rem .9rem;display:flex;flex-direction:column;gap:.3rem;}
+.rcard .rlab{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;margin:0;}
+.rcard h3{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.15rem;margin:0;}
+.rcard p{font-size:.8rem;color:var(--sub);margin:0;line-height:1.6;}
+.rcard #reim-status{font-size:.74rem;color:var(--sub);margin:.1rem 0 0;}
+.rcard #reim-status b{font-size:.7rem;margin-right:.3rem;}
+.rcard .cta{margin-top:auto;display:block;width:100%;box-sizing:border-box;text-align:center;font-size:.88rem;padding:.55rem .8rem;}
+.rcard p:last-of-type{margin-bottom:.6rem;}
 </style>
 <div class="wrap">
 <header class="masthead" style="display:block">
@@ -261,81 +285,57 @@ details.mgroup .tablewrap{margin-top:.4rem;}
 <a href="#shiryou"><span class="hn">資料室</span><span class="hd">動画・データ・テンプレ（追加予定）</span></a>
 </nav>
 </header>
-<section class="men latest" id="latest">
-<header class="menhead"><span class="menno">最新号</span><h2>今日のニュースまとめ</h2><span class="menk">毎日更新・国内7テーマ＋海外各1題・WORLD WATCH＋連載2本</span></header>
-<div class="hero" style="background:var(--bnnews)">
-<div class="hleft">
+<section class="men today" id="today">
+<header class="menhead"><span class="menno">きょう</span><h2>今日のニュース・勉強会</h2><span class="menk">毎日更新。朝礼・ミーティングはこの2つから</span></header>
+<div class="todaygrid">
+<div class="tcard latest" id="latest" style="background:var(--bnnews)">
+<p class="tlab" style="color:var(--acc)">最新号｜NEWS</p>
+<h2>今日のニュースまとめ</h2>
 <p class="date">2026年9月2日（水）</p>
 <p class="theme" style="margin:0 0 .2rem">コラム：医療機関等のサイバー対策と点検——チェックリストで足元を確かめる</p>
 <p class="theme">セキュリティ・BCP講座：保守業者・委託先のリスク——「外の入口」を数えて管理する</p>
+<p class="tnote">国内7テーマ＋海外各1題・WORLD WATCH＋連載2本</p>
+<a class="btn" href="news-2026-09-02.html" target="_blank" rel="noopener">今日のニュースまとめを開く</a>
+<span class="ctasub">各セクション末尾の「読み上げ原稿」が勉強会の台本になります</span>
 </div>
-<div><a class="btn" href="news-2026-09-02.html" target="_blank" rel="noopener">今日のニュースまとめを開く</a>
-<span class="ctasub">各セクション末尾の「読み上げ原稿」が勉強会の台本になります</span></div>
-</div>
-</section>
-<section class="men" id="benkyou">
-<header class="menhead"><span class="menno">学ぶ</span><h2>今日の10分勉強会</h2><span class="menk">毎日更新・当日のニュースまとめから自動生成</span></header>
-<div class="hero" style="background:var(--studybg);border-color:var(--study)">
-<div class="hleft">
+<div class="tcard study" id="benkyou" style="background:var(--studybg);border-color:var(--study)">
+<p class="tlab" style="color:var(--study)">学ぶ｜10分勉強会</p>
+<h2>今日の10分勉強会</h2>
 <p class="hdate">2026年9月2日（水）</p>
 <p class="hthemes"><b>きょうのテーマ</b>電子カルテ100%目標と身近な現場DX——自施設の一歩を決める</p>
+<p class="tnote">要点2分・事例4分・安全2分・持ち帰り2分。司会用の台本つき</p>
+<a class="cta" href="study-2026-09-02.html" target="_blank" rel="noopener" style="background:var(--study)">今日の勉強会ページを開く</a>
+<span class="ctasub">当日のニュースまとめから自動生成・約10分</span>
 </div>
-<div><a class="cta" href="study-2026-09-02.html" target="_blank" rel="noopener">今日の勉強会ページを開く</a>
-<span class="ctasub">司会用の台本つき・約10分</span></div>
-</div>
-</section>
-
-<section class="men" id="nursing">
-<header class="menhead"><span class="menno" style="color:var(--nurs)">職種別</span><h2>看護職向け</h2><span class="menk">国内ニュース3件＋海外看護1〜2件</span></header>
-<div class="hero" style="background:var(--nursbg);border-color:var(--nursrule)">
-<div class="hleft">
-<p class="hdate">MediKoto Nursing</p>
-<p class="hthemes"><b style="color:var(--nurs)">看護の現場へ</b>記録・申し送り・退院支援・病棟DXを、看護の視点で紹介</p>
-</div>
-<div><a class="cta" href="nursing-2026-09-02.html" target="_blank" rel="noopener">看護職向けページを開く</a>
-<span class="ctasub">看護のためのDX・AI実践ページ</span></div>
 </div>
 </section>
 
-<section class="men" id="doctors">
-<header class="menhead"><span class="menno" style="color:var(--doc)">職種別</span><h2>医師向け</h2><span class="menk">診療・記録に役立つDX・AI</span></header>
-<div class="hero" style="background:var(--docbg);border-color:var(--docrule)">
-<div class="hleft">
-<p class="hdate">MediKoto Doctors</p>
-<p class="hthemes">医療AIを、臨床・エビデンス・国内承認から判断する。</p>
+<section class="men" id="roles">
+<header class="menhead"><span class="menno">職種別・制度</span><h2>職種別・診療報酬</h2><span class="menk">看護・医師・薬剤師は毎日更新／診療報酬は毎日確認・更新時のみ追加</span></header>
+<div class="rolegrid">
+<div class="rcard" id="nursing" style="background:var(--nursbg);border-color:var(--nursrule);border-top:4px solid var(--nurs)">
+<p class="rlab" style="color:var(--nurs)">MediKoto Nursing</p><h3>看護職向け</h3>
+<p>国内ニュース3件＋海外看護1〜2件。記録・申し送り・退院支援・病棟DXを看護の視点で</p>
+<a class="cta" href="nursing-2026-09-02.html" target="_blank" rel="noopener" style="background:var(--nurs)">看護職向けページを開く</a>
 </div>
-<div><a class="cta" href="doctors-2026-09-02.html" target="_blank" rel="noopener">医師向けページを開く</a>
-<span class="ctasub">医師のためのDX・AI実践ページ</span></div>
+<div class="rcard" id="doctors" style="background:var(--docbg);border-color:var(--docrule);border-top:4px solid var(--doc)">
+<p class="rlab" style="color:var(--doc)">MediKoto Doctors</p><h3>医師向け</h3>
+<p>医療AIを、臨床・エビデンス・国内承認から判断する。診療・記録に役立つDX・AI</p>
+<a class="cta" href="doctors-2026-09-02.html" target="_blank" rel="noopener" style="background:var(--doc)">医師向けページを開く</a>
 </div>
-</section>
-
-<section class="men" id="pharm">
-<header class="menhead"><span class="menno" style="color:var(--pharm)">職種別</span><h2>薬剤師向け</h2><span class="menk">国内ニュース4件＋海外薬剤1〜2件</span></header>
-<div class="hero" style="background:var(--pharmbg);border-color:var(--pharmrule)">
-<div class="hleft">
-<p class="hdate">MediKoto Pharmacists</p>
-<p class="hthemes">薬剤業務を、DX・AIで安全につなぐ。</p>
+<div class="rcard" id="pharm" style="background:var(--pharmbg);border-color:var(--pharmrule);border-top:4px solid var(--pharm)">
+<p class="rlab" style="color:var(--pharm)">MediKoto Pharmacists</p><h3>薬剤師向け</h3>
+<p>国内ニュース4件＋海外薬剤1〜2件。薬剤業務を、DX・AIで安全につなぐ</p>
+<a class="cta" href="pharm-2026-09-02.html" target="_blank" rel="noopener" style="background:var(--pharm)">薬剤師向けページを開く</a>
 </div>
-<div><a class="cta" href="pharm-2026-09-02.html" target="_blank" rel="noopener">薬剤師向けページを開く</a>
-<span class="ctasub">薬剤師のためのDX・AI実践ページ</span></div>
+<div class="rcard" id="reim" style="background:var(--reimbg);border-color:var(--reimrule);border-top:4px solid var(--reim)">
+<p class="rlab" style="color:var(--reim)">MediKoto Reimbursement</p><h3>診療報酬</h3>
+<p>国内情報のみ・公的情報＋民間解説。何が変わった・誰に関係する・いつまで・何を直す</p>
+<p class="hthemes" id="reim-status"><b style="color:var(--reim)">最終確認</b>2026年9月2日（水）　<b style="color:var(--reim)">本日の重要更新</b>1件（九州厚生局 届出受理状況 9/1更新）</p>
+<a class="cta" href="reimbursement.html" target="_blank" rel="noopener" style="background:var(--reim)">診療報酬ページを開く</a>
 </div>
-</section>
-
-<section class="men" id="reim">
-<header class="menhead"><span class="menno" style="color:var(--reim)">制度</span><h2>診療報酬</h2><span class="menk">国内情報のみ・公的情報＋民間解説・更新があった日だけ追加</span></header>
-<div class="hero" style="background:var(--reimbg);border-color:var(--reimrule)">
-<div class="hleft">
-<p class="hdate">MediKoto Reimbursement</p>
-<p class="hthemes">診療報酬を、院内の行動に変える。</p>
-<p class="hthemes" id="reim-status" style="margin-top:.35rem"><b style="color:var(--reim)">最終確認</b>2026年9月2日（水）　<b style="color:var(--reim)">本日の重要更新</b>1件（九州厚生局 施設基準等届出受理状況が9月1日付で更新）</p>
-</div>
-<div><a class="cta" href="reimbursement.html" target="_blank" rel="noopener" style="background:var(--reim)">診療報酬ページを開く</a>
-<span class="ctasub">何が変わった・誰に関係する・いつまで・何を直す</span></div>
 </div>
 </section>
-
-
-
 
 <section class="men" id="simekiri">
 <header class="menhead"><span class="menno">日程</span><h2>補助金・締切</h2><span class="menk">締切が近い順</span></header>
@@ -546,5 +546,4 @@ details.mgroup .tablewrap{margin-top:.4rem;}
   }catch(e){}
 })();
 </script>
-
 </body></html>

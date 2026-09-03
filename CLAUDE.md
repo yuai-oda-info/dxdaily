@@ -23,3 +23,11 @@
 
 2026-09-04：この日、作業ブランチ（`claude/keen-babbage-qncfrl`）にのみpushしてしまい、`main`が
 更新されず本番サイトに反映されない事故が発生した。原因の再発防止のため本ファイルを追加。
+
+## 自動フェイルセーフ（.github/workflows/sync-main.yml）
+
+上記の手動確認に加えて、`claude/keen-babbage-qncfrl` へのpushをトリガーに自動で `main` へ
+早送りマージするGitHub Actionsワークフローを設置済み（`.github/workflows/sync-main.yml`）。
+セッション側で万一 `main` へのpushを忘れても、このワークフローが自動的に `main` を追従させ、
+GitHub Pagesのデプロイが走るようにしている。ただし、これはあくまで保険であり、
+本文書の手順（毎回 `main` へ直接push）を省略してよい理由にはならない。

@@ -1,0 +1,37 @@
+name: Sync main from claude/keen-babbage-qncfrl
+
+# このリポジトリのGitHub Pagesは main ブランチへの push だけを検知してデプロイする。
+# 日々の自動更新タスクは claude/keen-babbage-qncfrl ブランチへコミットするため、
+# そのブランチが更新されたら自動的に main へも早送りマージして反映する。
+# （2026-09-04: main への push 漏れでサイトが更新されない事故が発生したための再発防止策）
+
+on:
+  push:
+    branches:
+      - claude/keen-babbage-qncfrl
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/keen-babbage-qncfrl
+          fetch-depth: 0
+
+      - name: Fast-forward main to claude/keen-babbage-qncfrl
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git checkout -B main origin/main
+          if git merge-base --is-ancestor origin/main claude/keen-babbage-qncfrl; then
+            git merge --ff-only claude/keen-babbage-qncfrl
+            git push origin main
+          else
+            echo "main has commits not present on claude/keen-babbage-qncfrl; skipping automatic fast-forward to avoid overwriting them."
+            exit 1
+          fi

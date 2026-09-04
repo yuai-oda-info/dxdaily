@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yuai-oda-info.github.io/dxdaily/sitemap.xml

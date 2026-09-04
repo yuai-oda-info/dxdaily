@@ -329,6 +329,114 @@ details.mgroup .tablewrap{margin-top:.4rem;}
 .sublead{font-size:.88rem;color:var(--sub);margin:0 0 .9rem;line-height:1.85;}
 @media (max-width:900px){.pillargrid{grid-template-columns:1fr;}}
 
+
+/* --- 4つの入口 --- */
+.entrysec .menhead{border-top-color:var(--medi);}
+.entrylead{font-size:.92rem;color:var(--sub);margin:0 0 1rem;line-height:1.85;}
+.entrygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;}
+.entry{--e:var(--acc);display:flex;flex-direction:column;gap:.2rem;text-decoration:none;color:inherit;
+  border:1px solid var(--rule);border-top:4px solid var(--e);border-radius:12px;padding:.9rem 1rem 1rem;background:var(--panel);}
+.entry:hover{border-color:var(--e);}
+.entry:focus-visible{outline:2px solid var(--e);outline-offset:2px;}
+.entry .eno{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:1.5rem;color:var(--e);line-height:1.1;letter-spacing:.02em;}
+.entry .etitle{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.18rem;line-height:1.4;margin:.15rem 0 0;}
+.entry .esub{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;color:var(--e);margin:0 0 .35rem;}
+.entry .edesc{font-size:.82rem;color:var(--sub);line-height:1.75;margin:0;}
+.entry .elist{font-size:.74rem;color:var(--mut);line-height:1.7;margin:.35rem 0 0;}
+.entry .ego{margin-top:auto;padding-top:.6rem;font-size:.8rem;font-weight:700;color:var(--e);}
+.entryflow{font-size:.84rem;color:var(--sub);margin:1rem 0 0;padding-top:.7rem;border-top:1px dashed var(--rule);line-height:1.9;}
+.entryflow b{font-family:"Zen Kaku Gothic New",sans-serif;color:var(--ink);}
+.entryflow .ar{color:var(--mut);margin:0 .45rem;}
+@media (max-width:900px){.entrygrid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.entrygrid{grid-template-columns:1fr;}}
+/* --- 今日の2枚 --- */
+.todaygrid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;align-items:stretch;}
+.todaygrid2 .tcard{display:flex;flex-direction:column;height:100%;margin:0;}
+.todaygrid2 .btn,.todaygrid2 .cta{display:block;text-align:center;width:100%;box-sizing:border-box;margin-top:auto;margin-bottom:.5rem;}
+.todaygrid2 .ctasub{display:block;font-size:.78rem;line-height:1.6;min-height:2.5rem;margin:0;}
+.todaygrid2 .tnote{font-size:.84rem;line-height:1.7;min-height:2.9rem;}
+@media (max-width:820px){.todaygrid2{grid-template-columns:1fr;}}
+/* --- 国が進める医療DX（1枚） --- */
+.govsec .menhead{border-top-color:var(--govv);}
+.govone{display:grid;grid-template-columns:1.15fr 1fr;gap:1rem 1.6rem;border:1px solid var(--govrule);border-radius:14px;
+  background:var(--govbg);padding:1.1rem 1.3rem 1.2rem;}
+.govone h2{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.35rem;margin:0 0 .3rem;line-height:1.35;}
+.govone .tlab{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.12em;color:var(--gov);margin:0;}
+.govone p{font-size:.9rem;color:var(--sub);margin:0 0 .5rem;line-height:1.85;}
+.govone .gsub b{color:var(--gov);font-family:"Zen Kaku Gothic New",sans-serif;margin-right:.4rem;}
+.govchips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.2rem 0 .8rem;padding:0;list-style:none;}
+.govchips li{font-size:.74rem;font-weight:700;color:var(--gov);background:var(--paper);border:1px solid var(--govrule);
+  border-radius:999px;padding:.15rem .7rem;line-height:1.6;}
+.govone .cta{display:block;text-align:center;width:100%;box-sizing:border-box;background:var(--gov);}
+.govone .ctasub{display:block;font-size:.78rem;color:var(--mut);margin-top:.35rem;}
+.govright{display:flex;flex-direction:column;}
+.govright .cta{margin-top:auto;}
+@media (max-width:820px){.govone{grid-template-columns:1fr;}}
+
+
+/* ヘッダー下の二重線は使わない */
+.masthead{border-bottom:0;padding-bottom:0;}
+.masthead .dateline{margin-bottom:0;}
+.entrysec{margin-top:1rem;}
+.entrysec .menhead{border-bottom:0;margin-bottom:.6rem;}
+/* 近道（そのほかの入口） */
+.shortcut{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .5rem;margin:.8rem 0 0;
+  padding-top:.7rem;border-top:1px solid var(--rule);font-size:.82rem;}
+.shortcut .sclab{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.74rem;color:var(--mut);
+  letter-spacing:.08em;margin-right:.3rem;}
+.shortcut a{display:inline-block;text-decoration:none;color:var(--sub);font-weight:700;
+  border:1px solid var(--rule);border-radius:999px;padding:.16rem .8rem;line-height:1.7;background:var(--paper);}
+.shortcut a:hover{color:var(--acc);border-color:var(--acc);}
+.shortcut a:focus-visible{outline:2px solid var(--acc);outline-offset:2px;}
+@media (max-width:560px){.shortcut{font-size:.78rem;}}
+/* --- 2×2 --- */
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 1.8rem;margin-top:2.2rem;}
+.qcell{--c:var(--acc);min-width:0;display:flex;flex-direction:column;}
+.qcell>.qcard,.qcell>.rolegrid2{flex:1;}
+.qhead{display:flex;align-items:center;gap:.7rem;margin:0 0 .7rem;}
+.qhead h2{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.28rem;margin:0;line-height:1.4;
+  border-left:5px solid var(--c);padding-left:.6rem;}
+.qmore{margin-left:auto;font-size:.78rem;font-weight:700;text-decoration:none;color:var(--c);
+  border:1px solid var(--rule);border-radius:999px;padding:.2rem .8rem;white-space:nowrap;background:var(--paper);}
+.qmore:hover{border-color:var(--c);}
+.qcard{border:1px solid var(--rule);border-radius:14px;background:var(--panel);padding:1rem 1.15rem 1.1rem;
+  display:flex;flex-direction:column;gap:.35rem;height:100%;}
+.qtop{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;}
+.qbadge{font-size:.7rem;font-weight:700;color:#fff;background:var(--c);border-radius:999px;padding:.12rem .7rem;line-height:1.6;}
+.qcard .date,.qcard .hdate{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.05rem;margin:0;color:var(--ink);}
+.qcard .theme,.qcard .hthemes{font-size:.88rem;color:var(--sub);margin:.1rem 0 0;line-height:1.8;}
+.qcard .hthemes b{font-size:.74rem;margin-right:.4rem;}
+.qcard .tnote{font-size:.78rem;color:var(--mut);margin:.35rem 0 .2rem;}
+.qcard .gsub{font-size:.78rem;color:var(--mut);line-height:1.75;margin:.15rem 0 0;}
+.qcard .gsub b{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.72rem;color:var(--gov);margin-right:.35rem;}
+.qcard .btn,.qcard .cta{display:block;width:100%;box-sizing:border-box;text-align:center;margin-top:auto;font-size:.95rem;padding:.65rem 1rem;}
+.qcard .ctasub{display:block;font-size:.75rem;color:var(--mut);margin-top:.35rem;}
+.qtags{display:flex;flex-wrap:wrap;gap:.3rem;margin:.5rem 0 .2rem;padding:0;list-style:none;}
+.qcard .chips{margin:.5rem 0 .2rem;gap:.3rem;}
+.qcard .chips li{font-size:.72rem;font-weight:700;background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:.14rem .65rem;line-height:1.6;}
+.qcard .chips .dot{width:.55em;height:.55em;}
+.qtags li{font-size:.72rem;font-weight:700;color:var(--sub);background:var(--paper);border:1px solid var(--rule);
+  border-radius:999px;padding:.14rem .65rem;line-height:1.6;}
+.qsteps{display:grid;grid-template-columns:repeat(4,1fr);gap:.35rem;margin:.6rem 0 .2rem;padding:0;list-style:none;}
+.qsteps li{border:1px solid var(--rule);border-radius:.5rem;background:var(--paper);padding:.35rem .2rem;text-align:center;}
+.qsteps b{display:block;font-size:.68rem;font-weight:700;color:var(--mut);line-height:1.5;}
+.qsteps span{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.95rem;color:var(--c);}
+/* 職種別カード（説明文なし） */
+.qlead{font-size:.84rem;color:var(--sub);margin:0 0 .6rem;}
+.rolegrid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.6rem;align-content:start;min-width:0;}
+.rolegrid2 .rcard2{display:flex;flex-direction:column;gap:.2rem;border:1px solid var(--rr);border-top:4px solid var(--c);
+  border-radius:.8rem;background:var(--rb);padding:.75rem .85rem .85rem;min-width:0;}
+.rolegrid2 .rlab{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.06em;
+  color:var(--c);margin:0;overflow-wrap:anywhere;}
+.rolegrid2 h3{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.05rem;margin:0 0 .5rem;line-height:1.4;}
+.rolegrid2 a.cta{display:block;width:100%;box-sizing:border-box;text-align:center;margin-top:auto;
+  font-size:.86rem;padding:.5rem .6rem;background:var(--c);color:var(--paper);border-radius:10px;
+  font-weight:700;text-decoration:none;}
+.rolegrid2 a.cta:hover{opacity:.92;}
+.reimnote b{color:var(--reim);margin-right:.3rem;}
+@media (max-width:900px){.quad{grid-template-columns:1fr;gap:1.6rem;}}
+@media (max-width:560px){.rolegrid2{grid-template-columns:repeat(2,1fr);}.qsteps{grid-template-columns:repeat(2,1fr);}}
+
 </style>
 <div class="wrap">
 <header class="masthead" style="display:block">
@@ -338,89 +446,76 @@ details.mgroup .tablewrap{margin-top:.4rem;}
 <p class="brandline">DX ／ AI ／ SECURITY ／ BCP</p>
 <p class="mh-meta">病院・クリニック・介護/在宅事業者の皆さま向け</p>
 <p class="dateline"><b>2026年9月4日（金）</b><span>毎日更新</span><span>作成日時：2026年9月4日（金）6:19（日本時間）</span></p>
-<ul class="chips"><li style="color:var(--med)"><span class="dot" style="background:var(--med)"></span>医療 DX・AI</li><li style="color:var(--hosp)"><span class="dot" style="background:var(--hosp)"></span>病院 DX・AI</li><li style="color:var(--care)"><span class="dot" style="background:var(--care)"></span>介護 DX・AI</li><li style="color:var(--home)"><span class="dot" style="background:var(--home)"></span>在宅 DX・AI</li><li style="color:var(--fund)"><span class="dot" style="background:var(--fund)"></span>補助金・実証</li><li style="color:var(--sec)"><span class="dot" style="background:var(--sec)"></span>サイバーセキュリティ</li><li style="color:var(--brch)"><span class="dot" style="background:var(--brch)"></span>病院・介護 情報漏洩</li></ul>
-<nav class="hub">
-<a href="#latest"><span class="hn">1 今日を知る</span><span class="hd">デイリーニュース・毎日更新</span></a>
-<a href="#benkyou"><span class="hn">2 10分で学ぶ</span><span class="hd">今日の10分勉強会・司会台本つき</span></a>
-<a href="#gov"><span class="hn">3 国の医療DXを理解する</span><span class="hd">12施策の現在地（新設）</span></a>
-<a href="#roles"><span class="hn">職種別・診療報酬</span><span class="hd">看護・医師・薬剤師・相談支援・診療報酬</span></a>
-<a href="#kensaku"><span class="hn">記事検索・バックナンバー</span><span class="hd">全ての号の本文から探せます</span></a>
-</nav>
-</header>
-<section class="men pillars" id="today">
-<header class="menhead"><span class="menno">3本柱</span><h2>MediKotoの3本柱</h2><span class="menk">今日を知る／10分で学ぶ／国の医療DXを理解する</span></header>
-<div class="pillargrid">
 
-<div class="tcard latest" id="latest" style="background:var(--bnnews)">
-<p class="pno" style="background:var(--acc)">1</p>
-<p class="tlab" style="color:var(--acc)">今日を知る｜デイリーニュース</p>
-<h2>今日のニュースまとめ</h2>
-<p class="date">2026年9月4日（金）</p>
+</header>
+<section class="men entrysec" id="hairiguchi">
+<header class="menhead"><span class="menno">入口</span><h2>MediKotoの4つの入口</h2><span class="menk">今日知る → 今日学ぶ → 国の全体像を理解する → 自分の仕事に落とす</span></header>
+<p class="entrylead">ニュースから学び、制度を理解し、自分の仕事に活かす。医療・介護DXの実務ポータルです。</p>
+<div class="entrygrid">
+<a class="entry" href="#latest" style="--e:var(--acc)">
+<span class="eno">01</span><span class="etitle">今日知る</span><span class="ego">今日のニュースへ →</span></a>
+<a class="entry" href="#benkyou" style="--e:var(--study)">
+<span class="eno">02</span><span class="etitle">今日学ぶ</span><span class="ego">今日の10分勉強会へ →</span></a>
+<a class="entry" href="#gov" style="--e:var(--govv)">
+<span class="eno">03</span><span class="etitle">国の医療DX</span><span class="ego">12施策の現在地へ →</span></a>
+<a class="entry" href="#roles" style="--e:var(--reim)">
+<span class="eno">04</span><span class="etitle">自分の仕事で見る</span><span class="ego">職種別・診療報酬へ →</span></a>
+</div>
+<p class="shortcut"><span class="sclab">そのほか</span><a href="#simekiri">補助金・締切</a><a href="#kensaku">記事検索・バックナンバー</a><a href="#shiryou">資料室</a><a href="#douga">動画</a><a href="#ehr">電子カルテ普及率</a><a href="#events">学会・セミナー</a></p>
+</section>
+
+<div class="quad">
+
+<section class="qcell" id="today" style="--c:var(--acc)">
+<div class="qhead"><h2>今日のニュース</h2><a class="qmore" href="#bn">バックナンバー →</a></div>
+<div class="qcard" id="latest">
+<div class="qtop"><p class="date">2026年9月4日（金）</p><span class="qbadge">今日のニュースまとめ</span></div>
 <p class="theme" style="margin:0 0 .2rem">コラム：介護情報基盤との接続——医療の情報と介護の情報は、まず文書3種からつながる</p>
 <p class="theme">セキュリティ・BCP講座：漏えい時の報告と本人通知——「速報3〜5日・確報30日」を初動手順に書き込む</p>
+<ul class="chips"><li style="color:var(--med)"><span class="dot" style="background:var(--med)"></span>医療 DX・AI</li><li style="color:var(--hosp)"><span class="dot" style="background:var(--hosp)"></span>病院 DX・AI</li><li style="color:var(--care)"><span class="dot" style="background:var(--care)"></span>介護 DX・AI</li><li style="color:var(--home)"><span class="dot" style="background:var(--home)"></span>在宅 DX・AI</li><li style="color:var(--fund)"><span class="dot" style="background:var(--fund)"></span>補助金・実証</li><li style="color:var(--sec)"><span class="dot" style="background:var(--sec)"></span>サイバーセキュリティ</li><li style="color:var(--brch)"><span class="dot" style="background:var(--brch)"></span>病院・介護 情報漏洩</li></ul>
 <p class="tnote">国内7テーマ＋海外各1題・WORLD WATCH＋連載2本</p>
 <a class="btn" href="news-2026-09-04.html" rel="noopener">今日のニュースまとめを開く</a>
 <span class="ctasub">各セクション末尾の「読み上げ原稿」が勉強会の台本になります</span>
 </div>
+</section>
 
-<div class="tcard study" id="benkyou" style="background:var(--studybg);border-color:var(--study)">
-<p class="pno" style="background:var(--study)">2</p>
-<p class="tlab" style="color:var(--study)">10分で学ぶ｜今日の10分勉強会</p>
-<h2>今日の10分勉強会</h2>
-<p class="hdate">2026年9月4日（金）</p>
+<section class="qcell" style="--c:var(--study)">
+<div class="qhead"><h2>今日の10分勉強会</h2><a class="qmore" href="#bn-study">バックナンバー →</a></div>
+<div class="qcard" id="benkyou">
+<div class="qtop"><p class="hdate">2026年9月4日（金）</p><span class="qbadge">今日のテーマ</span></div>
 <p class="hthemes"><b>きょうのテーマ</b>電子処方箋は病院2割・薬局9割——自院の導入期限と連携の約束を決める</p>
-<p class="tnote">要点2分・事例4分・安全2分・持ち帰り2分。司会用の台本つき</p>
+<ul class="qsteps"><li><b>要点</b><span>2分</span></li><li><b>事例</b><span>4分</span></li><li><b>安全</b><span>2分</span></li><li><b>持ち帰り</b><span>2分</span></li></ul>
+<p class="tnote">司会用の台本つき。当日のニュースまとめから自動生成</p>
 <a class="cta" href="study-2026-09-04.html" rel="noopener" style="background:var(--study)">今日の勉強会ページを開く</a>
-<span class="ctasub">当日のニュースまとめから自動生成・約10分</span>
+<span class="ctasub">朝礼・部署ミーティングでそのまま使えます</span>
 </div>
+</section>
 
-<div class="tcard govbox" id="gov" style="background:var(--govbg);border-color:var(--govrule)">
-<p class="pno" style="background:var(--gov)">3</p>
-<p class="tlab" style="color:var(--gov)">国の医療DXを理解する<span class="newbadge">NEW</span></p>
-<h2>国が進める医療DX</h2>
+<section class="qcell" id="govsec" style="--c:var(--govv)">
+<div class="qhead"><h2>国が進める医療DX</h2><a class="qmore" href="gov.html" rel="noopener">全体を見る →</a></div>
+<div class="qcard" id="gov" style="background:var(--govbg);border-color:var(--govrule)">
+<div class="qtop"><p class="date">日本の医療DX 全体地図</p></div>
 <p class="gsub"><b>更新</b>制度が動いたときに更新（最終確認 2026年9月4日）</p>
-<p class="gsub"><b>いま追っている施策</b>12施策を「これは何・いつから・誰に関係する・病院は何を準備する・今どこまで」の5項目で整理</p>
-<p class="tnote">つなぐ／変える／広げる・活かす の3つに切り替えて読めます。変わったことは日付つきで履歴に残します</p>
+<p class="theme">電子処方箋、電子カルテ情報共有サービス、標準型電子カルテ、全国医療情報プラットフォームなど、12の主要施策の「これは何・いつから・誰に関係する・何を準備する・現在地」で整理しています。</p>
+<ul class="qtags"><li>マイナ保険証</li><li>電子処方箋</li><li>電子カルテ情報共有サービス</li><li>標準型電子カルテ</li><li>全国医療情報プラットフォーム</li><li>介護情報基盤</li><li>医療等情報の二次利用</li></ul>
 <a class="cta" href="gov.html" rel="noopener" style="background:var(--gov)">国が進める医療DXを開く</a>
 <span class="ctasub">その日のニュースではなく、制度そのものの現在地</span>
 </div>
-
-</div>
-<p class="pillnote">1と2は毎日更新、3は制度が動いたときに更新します。今日の動きは1で、朝礼で配る形は2で、その動きが国のどの施策の話なのかは3で確かめられます。</p>
 </section>
 
-<section class="men subsec" id="roles">
-<header class="menhead"><span class="menno">読み替え</span><h2>職種別・診療報酬</h2><span class="menk">3本柱を、自分の職種と制度の言葉で読む</span></header>
-<p class="sublead">上の3本柱と同じ材料を、看護・医師・薬剤師・相談支援・診療報酬のそれぞれの視点で書き直したページです。自分の部署に関係する部分だけを読みたいときは、こちらから入ってください。いずれも毎日更新しています。</p>
-<div class="rolegrid">
-<div class="rcard" id="nursing" style="background:var(--nursbg);border-color:var(--nursrule);border-top:4px solid var(--nurs)">
-<p class="rlab" style="color:var(--nurs)">MediKoto Nursing</p><h3>看護職向け</h3>
-<p>国内ニュース3件＋海外看護1〜2件。記録・申し送り・退院支援・病棟DXを看護の視点で</p>
-<a class="cta" href="nursing-2026-09-04.html" rel="noopener" style="background:var(--nurs)">看護職向けページを開く</a>
-</div>
-<div class="rcard" id="doctors" style="background:var(--docbg);border-color:var(--docrule);border-top:4px solid var(--doc)">
-<p class="rlab" style="color:var(--doc)">MediKoto Doctors</p><h3>医師向け</h3>
-<p>医療AIを、臨床・エビデンス・国内承認から判断する。診療・記録に役立つDX・AI</p>
-<a class="cta" href="doctors-2026-09-04.html" rel="noopener" style="background:var(--doc)">医師向けページを開く</a>
-</div>
-<div class="rcard" id="pharm" style="background:var(--pharmbg);border-color:var(--pharmrule);border-top:4px solid var(--pharm)">
-<p class="rlab" style="color:var(--pharm)">MediKoto Pharmacists</p><h3>薬剤師向け</h3>
-<p>国内ニュース4件＋海外薬剤1〜2件。薬剤業務を、DX・AIで安全につなぐ</p>
-<a class="cta" href="pharm-2026-09-04.html" rel="noopener" style="background:var(--pharm)">薬剤師向けページを開く</a>
-</div>
-<div class="rcard" id="connect" style="background:var(--connbg);border-color:var(--connrule);border-top:4px solid var(--conn)">
-<p class="rlab" style="color:var(--conn)">MediKoto Connect</p><h3>相談支援・地域連携</h3>
-<p>MSW・社会福祉士／ケアマネジャー／共通テーマの3タブ。退院支援・ケアプラン連携を「今日あなたの部署でやる1つ」まで</p>
-<a class="cta" href="connect-2026-09-04.html" rel="noopener" style="background:var(--conn)">相談支援・連携ページを開く</a>
-</div>
-<div class="rcard" id="reim" style="background:var(--reimbg);border-color:var(--reimrule);border-top:4px solid var(--reim)">
-<p class="rlab" style="color:var(--reim)">MediKoto Reimbursement</p><h3>診療報酬</h3>
-<p>国内情報のみ・公的情報＋民間解説。何が変わった・誰に関係する・いつまで・何を直す</p>
-<p class="hthemes" id="reim-status"><b style="color:var(--reim)">最終確認</b>2026年9月4日（金）　<b style="color:var(--reim)">本日の重要更新</b>3件（厚労省 9月1日付事務連絡：ベースアップ評価料の実績報告書・中間報告書は期限超過分も可及的速やかに提出／九州厚生局「実績報告について」9月3日更新／保医発0831第1号：iPS心筋細胞シート等の留意事項・9月1日適用）</p>
-<a class="cta" href="reimbursement.html" rel="noopener" style="background:var(--reim)">診療報酬ページを開く</a>
-</div>
+<section class="qcell subsec" id="roles" style="--c:var(--reim)">
+<div class="qhead"><h2>職種別・診療報酬</h2><a class="qmore" href="#kensaku">一覧を見る →</a></div>
+<p class="qlead">同じニュースを、自分の仕事の視点で読む</p>
+<div class="rolegrid2">
+<div class="rcard2" id="nursing" style="--c:var(--nurs);--rb:var(--nursbg);--rr:var(--nursrule)"><p class="rlab">MediKoto Nursing</p><h3>看護職向け</h3><a class="cta" href="nursing-2026-09-04.html" rel="noopener">看護職向けページを開く</a></div>
+<div class="rcard2" id="doctors" style="--c:var(--doc);--rb:var(--docbg);--rr:var(--docrule)"><p class="rlab">MediKoto Doctors</p><h3>医師向け</h3><a class="cta" href="doctors-2026-09-04.html" rel="noopener">医師向けページを開く</a></div>
+<div class="rcard2" id="pharm" style="--c:var(--pharm);--rb:var(--pharmbg);--rr:var(--pharmrule)"><p class="rlab">MediKoto Pharmacists</p><h3>薬剤師向け</h3><a class="cta" href="pharm-2026-09-04.html" rel="noopener">薬剤師向けページを開く</a></div>
+<div class="rcard2" id="connect" style="--c:var(--conn);--rb:var(--connbg);--rr:var(--connrule)"><p class="rlab">MediKoto Connect</p><h3>相談支援・地域連携</h3><a class="cta" href="connect-2026-09-04.html" rel="noopener">相談支援・連携ページを開く</a></div>
+<div class="rcard2" id="reim" style="--c:var(--reim);--rb:var(--reimbg);--rr:var(--reimrule)"><p class="rlab">MediKoto Reimbursement</p><h3>診療報酬</h3><a class="cta" href="reimbursement.html" rel="noopener">診療報酬ページを開く</a></div>
 </div>
 </section>
+
+</div>
 
 <section class="men" id="simekiri">
 <header class="menhead"><span class="menno">日程</span><h2>補助金・締切</h2><span class="menk">締切が近い順</span></header>

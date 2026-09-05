@@ -318,7 +318,8 @@ nav.hub{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));}
 
 /* --- pubmeta (公表日・区分) --- */
 .pubmeta{display:inline-block;font-size:.72rem;color:var(--mut,var(--muted));margin:0 .5rem .15rem 0;letter-spacing:.01em;white-space:normal;overflow-wrap:anywhere;}
-.pubmeta b{font-weight:700;color:var(--sub);white-space:nowrap;}
+.pubmeta b{white-space:nowrap;}
+.pubmeta b{font-weight:700;color:var(--sub);}
 .pubmeta .pc{display:inline-block;font-size:.66rem;font-weight:700;border-radius:.35rem;padding:0 .4rem;margin-left:.3rem;border:1px solid var(--mut,var(--muted));color:var(--mut,var(--muted));vertical-align:middle;line-height:1.5;}
 .pubmeta .pc-new{border-color:var(--care);color:var(--care);}
 .pubmeta .pc-deadline{border-color:var(--fund);color:var(--fund);}
@@ -337,7 +338,7 @@ nav.hub{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));}
 
 <p class="slogan" style="font-family:'Zen Kaku Gothic New','BIZ UDPゴシック',sans-serif;font-weight:700;font-size:1.5rem;color:var(--ink);margin:0 0 .1rem;line-height:1.4">相談支援と地域連携を、DX・AIでつなぐ。</p>
 <h1 class="conn" style="font-size:1.02rem;margin:0 0 .25rem">MediKoto Connect</h1>
-<p class="dateline"><b>2026年9月5日（土）</b><span>毎日更新</span><span>作成日時：2026年9月5日（土） 4:58（日本時間）</span><span>発行：MediKoto（メディコト）</span></p>
+<p class="dateline"><b>2026年9月5日（土）</b><span>毎日更新</span><span>作成日時：2026年9月5日（土） 5:00（日本時間）</span><span>発行：MediKoto（メディコト）</span></p>
 <p class="mh-meta">病院のMSW・社会福祉士・地域連携室・入退院支援担当と、ケアマネジャー（居宅介護支援・地域包括支援センター）の皆さま向け　退院支援・ケアプラン・地域連携のDXを「今日あなたの部署でやる1つ」まで</p>
 </header>
 <div class="lead"><p>令和9年度介護報酬改定に向けた論点整理で、認知症関連加算の算定率の低さと科学的介護情報システム（LIFE）の入力負担が焦点になりました。同じ週に、ケアプランデータ連携システムの新しいAPI仕様も確定し、現場のデータ連携は次の段階に進みます。</p></div>
@@ -422,4 +423,6 @@ nav.hub{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));}
   if(location.hash && /^#tab-/.test(location.hash) && document.getElementById(location.hash.slice(1))) show(location.hash.slice(1));
 })();
 </script>
+
+
 </body></html>

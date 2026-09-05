@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://yuai-oda-info.github.io/dxdaily/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://yuai-oda-info.github.io/dxdaily/contact.html</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://yuai-oda-info.github.io/dxdaily/reimbursement.html</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://yuai-oda-info.github.io/dxdaily/gov.html</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://yuai-oda-info.github.io/dxdaily/news.html</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://yuai-oda-info.github.io/dxdaily/study.html</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://yuai-oda-info.github.io/dxdaily/nursing.html</loc><lastmod>2026-09-05</lastmod></url>
@@ -8,9 +11,6 @@
   <url><loc>https://yuai-oda-info.github.io/dxdaily/pharmacists.html</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://yuai-oda-info.github.io/dxdaily/connect.html</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://yuai-oda-info.github.io/dxdaily/hospitalit.html</loc><lastmod>2026-09-05</lastmod></url>
-  <url><loc>https://yuai-oda-info.github.io/dxdaily/reimbursement.html</loc><lastmod>2026-09-05</lastmod></url>
-  <url><loc>https://yuai-oda-info.github.io/dxdaily/gov.html</loc><lastmod>2026-09-05</lastmod></url>
-  <url><loc>https://yuai-oda-info.github.io/dxdaily/contact.html</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://yuai-oda-info.github.io/dxdaily/connect-2026-09-03.html</loc><lastmod>2026-09-03</lastmod></url>
   <url><loc>https://yuai-oda-info.github.io/dxdaily/connect-2026-09-04.html</loc><lastmod>2026-09-04</lastmod></url>
   <url><loc>https://yuai-oda-info.github.io/dxdaily/connect-2026-09-05.html</loc><lastmod>2026-09-05</lastmod></url>
@@ -48,4 +48,7 @@
   <url><loc>https://yuai-oda-info.github.io/dxdaily/study-2026-09-03.html</loc><lastmod>2026-09-03</lastmod></url>
   <url><loc>https://yuai-oda-info.github.io/dxdaily/study-2026-09-04.html</loc><lastmod>2026-09-04</lastmod></url>
   <url><loc>https://yuai-oda-info.github.io/dxdaily/study-2026-09-05.html</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://yuai-oda-info.github.io/dxdaily/doc-hs2026-stage.html</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://yuai-oda-info.github.io/dxdaily/doc-jha2026-o54.html</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://yuai-oda-info.github.io/dxdaily/doc-jhm2026-2j10.html</loc><lastmod>2026-09-05</lastmod></url>
 </urlset>

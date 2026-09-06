@@ -272,7 +272,24 @@ details.notes p { margin:.5rem 0 .2rem; line-height:1.85; }
 <p class="note">※ 日付・金額・締切は各出典で確認済み。数値は発表時点のもので、最終確認は必ず公式ページで行ってください。</p>
 <details class="notes"><summary>読み上げ原稿</summary><p>本日の出典一覧です。厚生労働省の公表資料、自治体の公式ページ、企業の公式プレスリリース、業界メディアの記事から、日付や金額を確認できたものだけを掲載しています。金額や締切は発表時点のものですので、申請などの最終判断の際は、必ずリンク先の公式ページで最新の情報をご確認ください。本日の内容は以上です。ご清聴ありがとうございました。明日もまたお会いしましょう。</p></details>
 </section>
+<nav class="sitenav bottom" aria-label="MediKotoのページ"><a href="./" style="--sn-c:var(--sn-portal)">ポータル</a><a href="news.html" style="--sn-c:var(--sn-news)" class="cur" aria-current="page">ニュース</a><a href="study.html" style="--sn-c:var(--sn-study)">10分勉強会</a><a href="gov.html" style="--sn-c:var(--sn-gov)">国の医療DX</a><a href="nursing.html" style="--sn-c:var(--sn-nurs)">看護</a><a href="doctors.html" style="--sn-c:var(--sn-doc)">医師</a><a href="pharmacists.html" style="--sn-c:var(--sn-pharm)">薬剤師</a><a href="connect.html" style="--sn-c:var(--sn-conn)">相談支援・連携</a><a href="hospitalit.html" style="--sn-c:var(--sn-se)">病院SE</a><a href="reimbursement.html" style="--sn-c:var(--sn-reim)">診療報酬</a></nav>
 <footer class="credit"><span style="color:var(--head);font-weight:700">DX/AI</span> &amp; Information Management, Oda Hospital, Yuaikai Medical Corporation</footer>
 </div>
 
+<style>/* MediKoto sitenav v4 */
+.sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
+  display:flex;flex-wrap:wrap;gap:.4rem;border:1px solid var(--sn-line);border-radius:12px;padding:.45rem;margin:.6rem 0 0;font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
+.sitenav a{flex:1 1 auto;text-align:center;font-size:.86rem;font-weight:700;text-decoration:none;border:1px solid var(--sn-line);border-radius:8px;padding:.42rem .6rem;background:var(--sn-bg);color:var(--sn-c);white-space:nowrap;line-height:1.5;}
+.sitenav a:hover{border-color:var(--sn-c);}
+.sitenav a.cur{background:var(--sn-c);color:#fff;border-color:var(--sn-c);}
+.sitenav a:focus-visible{outline:2px solid var(--sn-c);outline-offset:2px;}
+.sitenav.top{margin:.6rem 0 1.1rem;}
+.sitenav.bottom{margin:2rem 0 0;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-bg:#18232B;--sn-line:#2E3C46;}
+  :root:not([data-theme="light"]) .sitenav a.cur{color:#10181E;}}
+:root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-bg:#18232B;--sn-line:#2E3C46;}
+:root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
+@media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
+@media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
+</style>
 </body></html>

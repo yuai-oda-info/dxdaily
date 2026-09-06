@@ -180,6 +180,23 @@ html{scroll-behavior:smooth;}
 .hub a:hover{border-color:var(--acc);}
 .hub .hn{display:block;font-weight:700;color:var(--acc);font-size:.95rem;}
 .hub .hd{display:block;font-size:.74rem;color:var(--mut);line-height:1.6;}
+/* 疑義解釈まとめ（別ページ）への入口。色が抜けても読めるようリテラルの控えを必ず添える */
+.gigi{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem 1rem;margin:1.1rem 0 0;
+  text-decoration:none;color:inherit;background:var(--panel,#F2F3EF);
+  border:1.5px solid var(--reim,#5B3FA6);border-left:6px solid var(--reim,#5B3FA6);
+  border-radius:10px;padding:.8rem 1.1rem;}
+.gigi:hover{background:var(--reimbg,#F1EDFA);}
+.gigi:focus-visible{outline:2px solid var(--reim,#5B3FA6);outline-offset:2px;}
+.gigi-ic{font-size:1.5rem;line-height:1;flex:none;}
+.gigi-b{flex:1 1 20rem;min-width:0;}
+.gigi-lab{display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--mut,#7C8A94);}
+.gigi-t{display:block;font-family:"Zen Kaku Gothic New","BIZ UDPGothic",sans-serif;font-weight:700;
+  font-size:1.08rem;line-height:1.5;color:var(--reim,#5B3FA6);margin:.05rem 0 .15rem;}
+.gigi-d{display:block;font-size:.82rem;color:var(--sub,#4A5A66);line-height:1.7;}
+.gigi-go{flex:none;font-weight:700;font-size:.88rem;color:var(--paper,#FFFFFF);
+  background:var(--reim,#5B3FA6);border-radius:999px;padding:.32rem 1.1rem;white-space:nowrap;}
+@media (max-width:560px){.gigi-go{width:100%;text-align:center;}}
+
 
 /* --- overseas (WORLD WATCH / US NURSING) --- */
 .geo{display:inline-block;font-size:.68rem;font-weight:700;border-radius:.4rem;padding:.08rem .5rem;margin:0 .35rem .25rem 0;vertical-align:middle;letter-spacing:.02em;}
@@ -309,6 +326,7 @@ h1.reim{font-family:'Zen Kaku Gothic New','BIZ UDPゴシック',sans-serif;font-
 <a href="#theme"><span class="hn">3 テーマ別</span><span class="hd">病棟区分・外来・在宅・DX・薬剤から探す</span></a>
 <a href="#official"><span class="hn">4 公式情報</span><span class="hd">厚労省・中医協・九州厚生局＋民間情報源の扱い</span></a>
 </nav>
+<a class="gigi" href="https://claude.ai/code/artifact/9a8233e1-dc26-4415-87d7-3caa667630f5" rel="noopener"><span class="gigi-ic" aria-hidden="true">📑</span><span class="gigi-b"><span class="gigi-lab">別ページ／過去の問を調べる</span><span class="gigi-t">疑義解釈 実務まとめ（令和8年度改定）</span><span class="gigi-d">令和8年度改定の疑義解釈（全451問）を、加算名・テーマ・キーワードで探せる形に貯めています。今日のニュースではなく、前に出た問を調べたいときはこちら。</span></span><span class="gigi-go">開く →</span></a>
 <section class="men" id="latest">
 <header class="menhead"><span class="menno" style="color:var(--reim)">1</span><h2>最新情報</h2><span class="menk">公的情報を原典に、民間解説で影響を補う</span></header>
 <div class="status"><div><b>最終確認</b>2026年9月6日</div><div class="imp"><b>本日の重要更新</b>なし</div><div><b>前回更新</b>9月1日 ベースアップ評価料等の報告書の取扱い（事務連絡）／9月2日 疑義解釈資料その12</div></div>
@@ -317,7 +335,7 @@ h1.reim{font-family:'Zen Kaku Gothic New','BIZ UDPゴシック',sans-serif;font-
 <p class="nonew">本日、このテーマに新着はありません。</p>
 
 <div class="hl"><span class="tick" style="background:var(--reim)"></span><div class="hlb"><p class="hcat" style="margin:0 0 .15rem"><span class="tag">施設基準</span><span style="font-size:.74rem;color:var(--mut)">2026-09-03</span></p><p class="hh">九州厚生局、ベースアップ評価料の届出ページと実績報告ページを更新</p><p class="hs">届出ページ（更新日9月3日）と実績報告ページ（更新日9月3日）が更新されました。届出様式のうち別紙様式11（訪問看護ベースアップ評価料）は8月26日更新、様式95〜100（医科・歯科外来・在宅）と様式103〜104（調剤）は6月23日更新と示されています。報告書は県ごとの専用メールアドレスへ提出し、メール件名に届出の名称を記載するよう明記されています。</p><p class="who"><b>関係する部門：</b>医事課、人事給与担当、訪問看護ステーション<br><b>やること：</b>提出済みの場合も、使用した様式が最新版かを確認する</p><p class="hsrc"><span class="pubmeta">公表日：<b>2026-09-03</b><span class="pc ">参考資料</span></span><span class="sb sb-pub">公的</span><a href="https://kouseikyoku.mhlw.go.jp/kyushu/iryo_shido/base-up_008.html" target="_blank" rel="noopener">九州厚生局</a></p></div></div>
-<div class="hl"><span class="tick" style="background:var(--reim)"></span><div class="hlb"><p class="hcat" style="margin:0 0 .15rem"><span class="tag">疑義解釈</span><span style="font-size:.74rem;color:var(--mut)">2026-09-02</span></p><p class="hh">疑義解釈資料その12（令和8年9月2日事務連絡）</p><p class="hs">医科（医-1〜医-5）、看護職員処遇改善（看ベ-1）、調剤（調-1〜調-3）、訪問看護療養費（訪看-1）のQ&amp;Aが示されました。特定機能病院等紹介患者受入加算の紹介状の要件、電子的診療情報連携体制整備加算の届出手続きと要件未達時の取扱い、身体的拘束最小化推進体制加算の暦月3か月の一時的変動の取扱い、心不全再入院予防継続管理料の研修は対面が原則でやむを得ない場合のオンライン実施、ベースアップ評価料の非常勤職員のみの場合の常勤換算、訪問看護遠隔診療補助料の連携保険医療機関の主治医要件などが対象です。</p><p class="who"><b>関係する部門：</b>医事課、看護部、薬剤部、訪問看護ステーション、地域連携<br><b>やること：</b>自院で算定している項目に該当するQ&amp;Aを抜き出し、運用と届出内容を照合する</p><p class="hsrc"><span class="pubmeta">公表日：<b>2026-09-02</b><span class="pc ">参考資料</span></span><span class="sb sb-pub">公的</span><a href="https://www.mhlw.go.jp/content/12400000/001744953.pdf" target="_blank" rel="noopener">厚生労働省</a></p></div></div>
+<div class="hl"><span class="tick" style="background:var(--reim)"></span><div class="hlb"><p class="hcat" style="margin:0 0 .15rem"><span class="tag">疑義解釈</span><span style="font-size:.74rem;color:var(--mut)">2026-09-02</span></p><p class="hh">疑義解釈資料その12（令和8年9月2日事務連絡）</p><p class="hs">医科（医-1〜医-5）、看護職員処遇改善（看ベ-1）、調剤（調-1〜調-3）、訪問看護療養費（訪看-1）のQ&amp;Aが示されました。特定機能病院等紹介患者受入加算の紹介状の要件、電子的診療情報連携体制整備加算の届出手続きと要件未達時の取扱い、身体的拘束最小化推進体制加算の暦月3か月の一時的変動の取扱い、心不全再入院予防継続管理料の研修は対面が原則でやむを得ない場合のオンライン実施、ベースアップ評価料の非常勤職員のみの場合の常勤換算、訪問看護遠隔診療補助料の連携保険医療機関の主治医要件などが対象です。　<a href="https://claude.ai/code/artifact/9a8233e1-dc26-4415-87d7-3caa667630f5" rel="noopener">この号の21問すべてを見る →</a></p><p class="who"><b>関係する部門：</b>医事課、看護部、薬剤部、訪問看護ステーション、地域連携<br><b>やること：</b>自院で算定している項目に該当するQ&amp;Aを抜き出し、運用と届出内容を照合する</p><p class="hsrc"><span class="pubmeta">公表日：<b>2026-09-02</b><span class="pc ">参考資料</span></span><span class="sb sb-pub">公的</span><a href="https://www.mhlw.go.jp/content/12400000/001744953.pdf" target="_blank" rel="noopener">厚生労働省</a></p></div></div>
 <div class="hl"><span class="tick" style="background:var(--reim)"></span><div class="hlb"><p class="hcat" style="margin:0 0 .15rem"><span class="tag">通知</span><span style="font-size:.74rem;color:var(--mut)">2026-09-01</span></p><p class="hh">ベースアップ評価料等に係る賃金改善実績報告書（令和7年度分）及び賃金改善中間報告書（令和8年度分）の取扱いについて</p><p class="hs">厚生労働省保険局医療課の事務連絡です。令和8年度における報告書の提出期限は令和8年8月31日であったこと、やむを得ず期限を超過した場合は当該報告書を可及的速やかに地方厚生（支）局長宛てに提出することが示されました。対象は賃金改善実績報告書と賃金改善中間報告書の2種類です。</p><p class="who"><b>関係する部門：</b>医事課、人事給与担当、事務長<br><b>やること：</b>未提出の報告書があれば、可及的速やかに地方厚生（支）局長宛てに提出する</p><p class="hsrc"><span class="pubmeta">公表日：<b>2026-09-01</b><span class="pc ">参考資料</span></span><span class="sb sb-pub">公的</span><a href="https://www.mhlw.go.jp/content/12404000/001744554.pdf" target="_blank" rel="noopener">厚生労働省</a></p></div></div>
 </div>
 <p class="subh">民間解説<small>変更点と経営・現場への影響。点数・要件・期限は原典で確認</small></p>
@@ -392,6 +410,45 @@ h1.reim{font-family:'Zen Kaku Gothic New','BIZ UDPゴシック',sans-serif;font-
 :root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
 @media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
+</style>
+<style>/* MediKoto sitenav v6 */
+.sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
+  display:flex;flex-wrap:wrap;gap:.4rem;border:1px solid var(--sn-line);border-radius:12px;padding:.45rem;margin:.6rem 0 0;font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
+.sitenav a{flex:1 1 auto;text-align:center;font-size:.86rem;font-weight:700;text-decoration:none;border:1px solid var(--sn-line);border-radius:8px;padding:.42rem .6rem;background:var(--sn-bg);color:var(--sn-c);white-space:nowrap;line-height:1.5;}
+.sitenav a:hover{border-color:var(--sn-c);}
+.sitenav a.cur{background:var(--sn-c);color:#fff;border-color:var(--sn-c);}
+.sitenav a:focus-visible{outline:2px solid var(--sn-c);outline-offset:2px;}
+.sitenav.top{margin:.6rem 0 1.1rem;}
+.sitenav.bottom{margin:2rem 0 0;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-bg:#18232B;--sn-line:#2E3C46;}
+  :root:not([data-theme="light"]) .sitenav a.cur{color:#10181E;}}
+:root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-bg:#18232B;--sn-line:#2E3C46;}
+:root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
+@media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
+@media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
+/* バックナンバー枠の色（HTMLだけ増えてCSSが抜ける事故を防ぐため、ここでも定義する） */
+.bnc-gov{background:var(--govbg,#E3F7FA);}
+.bnc-gov .sub4{color:var(--gov,#0A8E9C);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-gov{background:#0C262B;}
+  :root:not([data-theme="light"]) .bnc-gov .sub4{color:#6FD8E6;}}
+:root[data-theme="dark"] .bnc-gov{background:#0C262B;}
+:root[data-theme="dark"] .bnc-gov .sub4{color:#6FD8E6;}
+/* 疑義解釈まとめ（別ページ）への入口。色変数だけに頼らずリテラルの控えを必ず添える */
+.gigi{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem 1rem;margin:1.1rem 0 0;
+  text-decoration:none;color:inherit;background:var(--panel,#F2F3EF);
+  border:1.5px solid var(--reim,#5B3FA6);border-left:6px solid var(--reim,#5B3FA6);
+  border-radius:10px;padding:.8rem 1.1rem;}
+.gigi:hover{background:var(--reimbg,#F1EDF9);}
+.gigi:focus-visible{outline:2px solid var(--reim,#5B3FA6);outline-offset:2px;}
+.gigi-ic{font-size:1.5rem;line-height:1;flex:none;}
+.gigi-b{flex:1 1 20rem;min-width:0;}
+.gigi-lab{display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--mut,#7C8A94);}
+.gigi-t{display:block;font-family:"Zen Kaku Gothic New","BIZ UDPGothic",sans-serif;font-weight:700;
+  font-size:1.08rem;line-height:1.5;color:var(--reim,#5B3FA6);margin:.05rem 0 .15rem;}
+.gigi-d{display:block;font-size:.82rem;color:var(--sub,#4A5A66);line-height:1.7;}
+.gigi-go{flex:none;font-weight:700;font-size:.88rem;color:var(--paper,#FBFAF7);
+  background:var(--reim,#5B3FA6);border-radius:999px;padding:.32rem 1.1rem;white-space:nowrap;}
+@media (max-width:560px){.gigi-go{width:100%;text-align:center;}}
 </style>
 </body>
 </html>

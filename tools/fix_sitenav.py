@@ -13,7 +13,7 @@
 """
 import os, re, sys, glob
 
-MARK = 'MediKoto sitenav v6'
+MARK = 'MediKoto sitenav v7'
 
 # 共通ナビ 10項目（キー, 表示名, 色変数, リンク先＝日付なしの固定入口）
 NAV = [
@@ -72,7 +72,8 @@ CSS = """<style>/* __MARK__ */
 # ファイル名 → そのページのキー（現在ページを塗るため）。長い接頭辞から先に判定する。
 PREFIX = [('index', 'portal'), ('news', 'news'), ('study', 'study'), ('nursing', 'nursing'),
           ('doctors', 'doctors'), ('pharmacists', 'pharm'), ('pharm', 'pharm'),
-          ('connect', 'connect'), ('hospitalit', 'se'), ('reimbursement', 'reim'), ('gov', 'gov')]
+          ('connect', 'connect'), ('hospitalit', 'se'), ('reimbursement', 'reim'), ('gov', 'gov'),
+          ('gigikaishaku', 'reim')]   # 疑義解釈まとめは診療報酬の下位ページ扱い
 
 
 def page_key(path):
@@ -132,7 +133,7 @@ def put_nav(h, cur, insert_if_missing):
     return h, ('ナビ挿入(%s)' % '＋'.join(done) if done else '!! 挿入位置が見つからない')
 
 
-# 疑義解釈まとめの置き場所。リポジトリに gigi.html があればそちらへ、無ければアーティファクトへ。
+# 疑義解釈まとめの置き場所。リポジトリに gigikaishaku.html があればそちらへ、無ければアーティファクトへ。
 GIGI_ART = 'https://claude.ai/code/artifact/9a8233e1-dc26-4415-87d7-3caa667630f5'
 
 GIGI_BAND = ('<a class="gigi" href="%s" rel="noopener">'
@@ -147,7 +148,7 @@ GIGI_BAND = ('<a class="gigi" href="%s" rel="noopener">'
 
 def gigi_count(root):
     """疑義解釈まとめの収録件数を数える。手で書くと必ず古くなるので、実物から数える。"""
-    f = os.path.join(root, 'gigi.html')
+    f = os.path.join(root, 'gigikaishaku.html')
     if not os.path.exists(f):
         return ''
     n = len(re.findall(r'<article class="qa"', open(f, encoding='utf-8').read()))
@@ -184,7 +185,7 @@ def main():
     root = sys.argv[1] if len(sys.argv) > 1 else '.'
     check = '--check' in sys.argv
     files = sorted(f for f in glob.glob(os.path.join(root, '*.html')))
-    gigi_href = 'gigi.html' if os.path.exists(os.path.join(root, 'gigi.html')) else GIGI_ART
+    gigi_href = 'gigikaishaku.html' if os.path.exists(os.path.join(root, 'gigikaishaku.html')) else GIGI_ART
     gigi_n = gigi_count(root)
     nchg = 0
     for f in files:

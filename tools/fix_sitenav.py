@@ -1,10 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""MediKoto：GitHub Pages 公開ファイルの共通ナビ（nav.sitenav）と、色が抜けやすい枠のCSSを現行版にそろえる。"""
+"""MediKoto：GitHub Pages 公開ファイルの共通ナビ（nav.sitenav）と、色が抜けやすい枠のCSSを現行版にそろえる。
+
+・バックナンバー（日付つき）を含む全HTMLのナビを「10項目・日付なしリンク」に統一する。
+・ナビが無い古いページには、ロゴ直下と免責文の直上に挿入する。
+・共通ナビのCSS（--sn-se の色定義、スマホの等幅グリッド）を追記して上書きする。
+・診療報酬ページ（reimbursement.html）に「実務まとめ」への入口を1本入れる。
+・ナビと上記の入口以外（本文・相互リンク・バックナンバー表）には一切触らない。
+
+使い方:  python3 tools/fix_sitenav.py .        # リポジトリ直下で実行
+        python3 tools/fix_sitenav.py . --check # 書き換えずに要修正ファイルを一覧表示
+"""
 import os, re, sys, glob
 
 MARK = 'MediKoto sitenav v7'
 
+# 共通ナビ 10項目（キー, 表示名, 色変数, リンク先＝日付なしの固定入口）
 NAV = [
     ('portal',  'ポータル',      'sn-portal', './'),
     ('news',    'ニュース',      'sn-news',   'news.html'),
@@ -33,12 +44,14 @@ CSS = """<style>/* __MARK__ */
 :root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
 @media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
+/* バックナンバー枠の色（HTMLだけ増えてCSSが抜ける事故を防ぐため、ここでも定義する） */
 .bnc-gov{background:var(--govbg,#E3F7FA);}
 .bnc-gov .sub4{color:var(--gov,#0A8E9C);}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-gov{background:#0C262B;}
   :root:not([data-theme="light"]) .bnc-gov .sub4{color:#6FD8E6;}}
 :root[data-theme="dark"] .bnc-gov{background:#0C262B;}
 :root[data-theme="dark"] .bnc-gov .sub4{color:#6FD8E6;}
+/* 疑義解釈まとめ（別ページ）への入口。色変数だけに頼らずリテラルの控えを必ず添える */
 .gigi{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem 1rem;margin:1.1rem 0 0;
   text-decoration:none;color:inherit;background:var(--panel,#F2F3EF);
   border:1.5px solid var(--reim,#5B3FA6);border-left:6px solid var(--reim,#5B3FA6);
@@ -56,10 +69,11 @@ CSS = """<style>/* __MARK__ */
 @media (max-width:560px){.gigi-go{width:100%;text-align:center;}}
 </style>""".replace('__MARK__', MARK)
 
+# ファイル名 → そのページのキー（現在ページを塗るため）。長い接頭辞から先に判定する。
 PREFIX = [('index', 'portal'), ('news', 'news'), ('study', 'study'), ('nursing', 'nursing'),
           ('doctors', 'doctors'), ('pharmacists', 'pharm'), ('pharm', 'pharm'),
           ('connect', 'connect'), ('hospitalit', 'se'), ('reimbursement', 'reim'), ('gov', 'gov'),
-          ('gigikaishaku', 'reim')]
+          ('gigikaishaku', 'reim')]   # 疑義解釈まとめは診療報酬の下位ページ扱い
 
 
 def page_key(path):
@@ -67,7 +81,7 @@ def page_key(path):
     for pre, key in PREFIX:
         if b == pre + '.html' or b.startswith(pre + '-'):
             return key
-    return None
+    return None            # contact.html・doc-*.html など（どの項目も塗らない）
 
 
 def nav_html(pos, cur):
@@ -79,6 +93,8 @@ def nav_html(pos, cur):
 
 
 def put_css(h):
+    """共通ナビのCSSを本文の一番最後に足す。ページ本体の<style>は<body>内にあるので、
+    それより後ろに置かないと古い指定（スマホで最後の1個だけ伸びる等）に負ける。"""
     if MARK in h:
         return h
     i = h.rfind('</body>')
@@ -99,12 +115,14 @@ def put_nav(h, cur, insert_if_missing):
     if not insert_if_missing:
         return h, 'ナビ無し・対象外'
     done = []
+    # 上：ヘッダーのロゴ（data URI のimgを含む<a>）の直後
     m = (re.search(r'<header[^>]*>\s*<a [^>]*>\s*<img src="data:image/png;base64,[^"]+"[^>]*>\s*</a>', h, re.S)
          or re.search(r'<h1 class="logowrap"[^>]*>.*?</h1>', h, re.S)
          or re.search(r'<img src="data:image/png;base64,[^"]+"[^>]*>\s*</a>', h, re.S))
     if m:
         h = h[:m.end()] + '\n' + top + h[m.end():]
         done.append('上')
+    # 下：免責文の直上（無ければクレジットの直上）
     i = h.find('<p class="disclaimer">')
     if i < 0:
         m2 = re.search(r'<(?:p|footer|div)[^>]*class="[^"]*\bcredit\b', h)
@@ -115,27 +133,30 @@ def put_nav(h, cur, insert_if_missing):
     return h, ('ナビ挿入(%s)' % '＋'.join(done) if done else '!! 挿入位置が見つからない')
 
 
+# 疑義解釈まとめの置き場所。リポジトリに gigikaishaku.html があればそちらへ、無ければアーティファクトへ。
 GIGI_ART = 'https://claude.ai/code/artifact/9a8233e1-dc26-4415-87d7-3caa667630f5'
 
 GIGI_BAND = ('<a class="gigi" href="%s" rel="noopener">'
              '<span class="gigi-ic" aria-hidden="true">\U0001F4D1</span>'
              '<span class="gigi-b">'
-             '<span class="gigi-lab">別ページ／過去の問を調べる</span>'
-             '<span class="gigi-t">疑義解釈 実務まとめ（令和8年度改定）</span>'
-             '<span class="gigi-d">令和8年度改定の疑義解釈%sを、加算名・テーマ・キーワードで探せる形に'
-             '貯めています。今日のニュースではなく、前に出た問を調べたいときはこちら。</span>'
+             '<span class="gigi-lab">別ページ／改定内容と疑義解釈を調べる</span>'
+             '<span class="gigi-t">令和8年度改定 実務まとめ（個別改定項目＋疑義解釈）</span>'
+             '<span class="gigi-d">令和8年度改定で何がどう変わったか%sと、その後に出た疑義解釈を、'
+             '同じテーマ分けで1ページに。改定項目を開くと、その項目の問と答えがぶら下がります。</span>'
              '</span><span class="gigi-go">開く →</span></a>')
 
 
 def gigi_count(root):
+    """疑義解釈まとめの収録件数を数える。手で書くと必ず古くなるので、実物から数える。"""
     f = os.path.join(root, 'gigikaishaku.html')
     if not os.path.exists(f):
         return ''
-    n = len(re.findall(r'<article class="qa"', open(f, encoding='utf-8').read()))
-    return ('（全%d問）' % n) if n else ''
+    n = len(re.findall(r'"kd":"', open(f, encoding='utf-8').read()))
+    return ('（改定項目%d件）' % n) if n else ''
 
 
 def put_gigi(h, href, note_n=''):
+    """診療報酬ページに疑義解釈まとめへの入口を入れる。既にあれば何もしない（何度走らせても安全）。"""
     if 'class="gigi"' in h:
         return h, ''
     m = re.search(r'<nav class="hub"[^>]*>.*?</nav>', h, re.S)
@@ -149,6 +170,7 @@ def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
     cur = page_key(path)
     h = put_css(src)
     h, note = put_nav(h, cur, insert_if_missing=(cur is not None))
+    # 入口は日付なしの診療報酬ページだけに入れる（バックナンバーはその日の記録なので触らない）
     if os.path.basename(path) == 'reimbursement.html':
         h, n2 = put_gigi(h, gigi_href, gigi_n)
         if n2:
@@ -174,6 +196,7 @@ def main():
         if note.startswith('!!'):
             print('%-34s %s' % (os.path.basename(f), note))
     print('---- %d / %d ファイルを%s' % (nchg, len(files), '要修正として検出' if check else '更新'))
+    # 検証：全ファイルのナビが10本・日付なしになっているか
     bad = []
     for f in files:
         h = open(f, encoding='utf-8').read()

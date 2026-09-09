@@ -18,8 +18,8 @@ MARK = 'MediKoto sitenav v7'
 # 共通ナビ 10項目（キー, 表示名, 色変数, リンク先＝日付なしの固定入口）
 NAV = [
     ('portal',  'ポータル',      'sn-portal', './'),
-    ('news',    'ニュース',      'sn-news',   'news.html'),
-    ('study',   '10分勉強会',    'sn-study',  'study.html'),
+    ('news',    'ヘッドライン',  'sn-news',   'news.html'),
+    ('study',   '勉強会',        'sn-study',  'study.html'),
     ('gov',     '国の医療DX',    'sn-gov',    'gov.html'),
     ('nursing', '看護',          'sn-nurs',   'nursing.html'),
     ('doctors', '医師',          'sn-doc',    'doctors.html'),

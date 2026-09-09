@@ -115,14 +115,12 @@ def put_nav(h, cur, insert_if_missing):
     if not insert_if_missing:
         return h, 'ナビ無し・対象外'
     done = []
-    # 上：ヘッダーのロゴ（data URI のimgを含む<a>）の直後
     m = (re.search(r'<header[^>]*>\s*<a [^>]*>\s*<img src="data:image/png;base64,[^"]+"[^>]*>\s*</a>', h, re.S)
          or re.search(r'<h1 class="logowrap"[^>]*>.*?</h1>', h, re.S)
          or re.search(r'<img src="data:image/png;base64,[^"]+"[^>]*>\s*</a>', h, re.S))
     if m:
         h = h[:m.end()] + '\n' + top + h[m.end():]
         done.append('上')
-    # 下：免責文の直上（無ければクレジットの直上）
     i = h.find('<p class="disclaimer">')
     if i < 0:
         m2 = re.search(r'<(?:p|footer|div)[^>]*class="[^"]*\bcredit\b', h)
@@ -133,7 +131,6 @@ def put_nav(h, cur, insert_if_missing):
     return h, ('ナビ挿入(%s)' % '＋'.join(done) if done else '!! 挿入位置が見つからない')
 
 
-# 疑義解釈まとめの置き場所。リポジトリに gigikaishaku.html があればそちらへ、無ければアーティファクトへ。
 GIGI_ART = 'https://claude.ai/code/artifact/9a8233e1-dc26-4415-87d7-3caa667630f5'
 
 GIGI_BAND = ('<a class="gigi" href="%s" rel="noopener">'
@@ -147,7 +144,6 @@ GIGI_BAND = ('<a class="gigi" href="%s" rel="noopener">'
 
 
 def gigi_count(root):
-    """疑義解釈まとめの収録件数を数える。手で書くと必ず古くなるので、実物から数える。"""
     f = os.path.join(root, 'gigikaishaku.html')
     if not os.path.exists(f):
         return ''
@@ -156,7 +152,6 @@ def gigi_count(root):
 
 
 def put_gigi(h, href, note_n=''):
-    """診療報酬ページに疑義解釈まとめへの入口を入れる。既にあれば何もしない（何度走らせても安全）。"""
     if 'class="gigi"' in h:
         return h, ''
     m = re.search(r'<nav class="hub"[^>]*>.*?</nav>', h, re.S)
@@ -170,7 +165,6 @@ def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
     cur = page_key(path)
     h = put_css(src)
     h, note = put_nav(h, cur, insert_if_missing=(cur is not None))
-    # 入口は日付なしの診療報酬ページだけに入れる（バックナンバーはその日の記録なので触らない）
     if os.path.basename(path) == 'reimbursement.html':
         h, n2 = put_gigi(h, gigi_href, gigi_n)
         if n2:
@@ -196,7 +190,6 @@ def main():
         if note.startswith('!!'):
             print('%-34s %s' % (os.path.basename(f), note))
     print('---- %d / %d ファイルを%s' % (nchg, len(files), '要修正として検出' if check else '更新'))
-    # 検証：全ファイルのナビが10本・日付なしになっているか
     bad = []
     for f in files:
         h = open(f, encoding='utf-8').read()

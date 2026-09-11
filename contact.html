@@ -25,6 +25,7 @@
 <body>
 
 
+
 <style>
 :root{
   --paper:#FFFFFF; --ink:#1A242E; --sub:#4A5A66; --mut:#7C8A94; --rule:#D9DDE0; --rule2:#1A242E;
@@ -226,6 +227,8 @@ textarea{min-height:150px;resize:vertical}
   });
 })();
 </script>
+
+
 <style>/* MediKoto sitenav v7 */
 .sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
   display:flex;flex-wrap:wrap;gap:.4rem;border:1px solid var(--sn-line);border-radius:12px;padding:.45rem;margin:.6rem 0 0;font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
@@ -241,12 +244,14 @@ textarea{min-height:150px;resize:vertical}
 :root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
 @media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
+/* バックナンバー枠の色（HTMLだけ増えてCSSが抜ける事故を防ぐため、ここでも定義する） */
 .bnc-gov{background:var(--govbg,#E3F7FA);}
 .bnc-gov .sub4{color:var(--gov,#0A8E9C);}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-gov{background:#0C262B;}
   :root:not([data-theme="light"]) .bnc-gov .sub4{color:#6FD8E6;}}
 :root[data-theme="dark"] .bnc-gov{background:#0C262B;}
 :root[data-theme="dark"] .bnc-gov .sub4{color:#6FD8E6;}
+/* 疑義解釈まとめ（別ページ）への入口。色変数だけに頼らずリテラルの控えを必ず添える */
 .gigi{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem 1rem;margin:1.1rem 0 0;
   text-decoration:none;color:inherit;background:var(--panel,#F2F3EF);
   border:1.5px solid var(--reim,#5B3FA6);border-left:6px solid var(--reim,#5B3FA6);

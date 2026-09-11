@@ -1,10 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""MediKoto：GitHub Pages 公開ファイルの共通ナビ（nav.sitenav）と、色が抜けやすい枠のCSSを現行版にそろえる。"""
+"""MediKoto：GitHub Pages 公開ファイルの共通ナビ（nav.sitenav）と、色が抜けやすい枠のCSSを現行版にそろえる。
+
+・バックナンバー（日付つき）を含む全HTMLのナビを「10項目・日付なしリンク」に統一する。
+・ナビが無い古いページには、ロゴ直下と免責文の直上に挿入する。
+・共通ナビのCSS（--sn-se の色定義、スマホの等幅グリッド）を追記して上書きする。
+・診療報酬ページ（reimbursement.html）に「実務まとめ」への入口を1本入れる。
+・ナビと上記の入口以外（本文・相互リンク・バックナンバー表）には一切触らない。
+
+使い方:  python3 tools/fix_sitenav.py .        # リポジトリ直下で実行
+        python3 tools/fix_sitenav.py . --check # 書き換えずに要修正ファイルを一覧表示
+"""
 import os, re, sys, glob
 
 MARK = 'MediKoto sitenav v7'
 
+# 共通ナビ 10項目（キー, 表示名, 色変数, リンク先＝日付なしの固定入口）
 NAV = [
     ('portal',  'ポータル',      'sn-portal', './'),
     ('news',    'ヘッドライン',  'sn-news',   'news.html'),
@@ -33,12 +44,14 @@ CSS = """<style>/* __MARK__ */
 :root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
 @media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
+/* バックナンバー枠の色（HTMLだけ増えてCSSが抜ける事故を防ぐため、ここでも定義する） */
 .bnc-gov{background:var(--govbg,#E3F7FA);}
 .bnc-gov .sub4{color:var(--gov,#0A8E9C);}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-gov{background:#0C262B;}
   :root:not([data-theme="light"]) .bnc-gov .sub4{color:#6FD8E6;}}
 :root[data-theme="dark"] .bnc-gov{background:#0C262B;}
 :root[data-theme="dark"] .bnc-gov .sub4{color:#6FD8E6;}
+/* 疑義解釈まとめ（別ページ）への入口。色変数だけに頼らずリテラルの控えを必ず添える */
 .gigi{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem 1rem;margin:1.1rem 0 0;
   text-decoration:none;color:inherit;background:var(--panel,#F2F3EF);
   border:1.5px solid var(--reim,#5B3FA6);border-left:6px solid var(--reim,#5B3FA6);
@@ -56,10 +69,11 @@ CSS = """<style>/* __MARK__ */
 @media (max-width:560px){.gigi-go{width:100%;text-align:center;}}
 </style>""".replace('__MARK__', MARK)
 
+# ファイル名 → そのページのキー（現在ページを塗るため）。長い接頭辞から先に判定する。
 PREFIX = [('index', 'portal'), ('news', 'news'), ('study', 'study'), ('nursing', 'nursing'),
           ('doctors', 'doctors'), ('pharmacists', 'pharm'), ('pharm', 'pharm'),
           ('connect', 'connect'), ('hospitalit', 'se'), ('reimbursement', 'reim'), ('gov', 'gov'),
-          ('gigikaishaku', 'reim')]
+          ('gigikaishaku', 'reim')]   # 疑義解釈まとめは診療報酬の下位ページ扱い
 
 
 def page_key(path):
@@ -67,7 +81,7 @@ def page_key(path):
     for pre, key in PREFIX:
         if b == pre + '.html' or b.startswith(pre + '-'):
             return key
-    return None
+    return None            # contact.html・doc-*.html など（どの項目も塗らない）
 
 
 def nav_html(pos, cur):
@@ -79,6 +93,8 @@ def nav_html(pos, cur):
 
 
 def put_css(h):
+    """共通ナビのCSSを本文の一番最後に足す。ページ本体の<style>は<body>内にあるので、
+    それより後ろに置かないと古い指定（スマホで最後の1個だけ伸びる等）に負ける。"""
     if MARK in h:
         return h
     i = h.rfind('</body>')

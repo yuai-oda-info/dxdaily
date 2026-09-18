@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""MediKoto：全HTMLの共通ナビ（11項目）とCSSをそろえる。
+"""MediKoto：全HTMLの共通ナビ（11項目）とCSSをそろえ、weekly-study.html を作り直す。
 使い方: python3 tools/fix_sitenav.py . [--check]
 """
 import os, re, sys, glob
@@ -11,7 +11,7 @@ NAV = [
     ('portal',  'ポータル',      'sn-portal', './'),
     ('news',    'ヘッドライン',  'sn-news',   'news.html'),
     ('study',   '今日の勉強会',  'sn-study',  'study.html'),
-    ('weekly',  '週間実践DX',  'sn-study',  'weekly-study.html'),
+    ('weekly',  '事例DX',      'sn-study',  'weekly-study.html'),
     ('gov',     '国の医療DX',    'sn-gov',    'gov.html'),
     ('nursing', '看護',          'sn-nurs',   'nursing.html'),
     ('doctors', '医師',          'sn-doc',    'doctors.html'),

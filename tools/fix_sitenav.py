@@ -11,7 +11,7 @@ NAV = [
     ('portal',  'ポータル',      'sn-portal', './'),
     ('news',    'ヘッドライン',  'sn-news',   'news.html'),
     ('study',   '今日の勉強会',  'sn-study',  'study.html'),
-    ('weekly',  '週間勉強会',    'sn-study',  'weekly-study.html'),
+    ('weekly',  '週間実践DX',    'sn-study',  'weekly-study.html'),
     ('gov',     '国の医療DX',    'sn-gov',    'gov.html'),
     ('nursing', '看護',          'sn-nurs',   'nursing.html'),
     ('doctors', '医師',          'sn-doc',    'doctors.html'),

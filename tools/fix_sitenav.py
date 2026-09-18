@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""MediKoto：全HTMLの共通ナビ（11項目）とCSSをそろえ、weekly-study.html を作り直す。
+"""MediKoto：全HTMLの共通ナビ（11項目）とCSSをそろえ、事例DXの保存版とポータルのバックナンバー表を作る。
 使い方: python3 tools/fix_sitenav.py . [--check]
 """
-import os, re, sys, glob
+import os, re, sys, glob, datetime
 
 MARK = 'MediKoto sitenav v8'
 
@@ -166,9 +166,57 @@ def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
     return changed, note
 
 
+
+# ---- 事例DX：日付つき保存版とポータルのバックナンバー表（2026-09-18追加） ----
+BASE = 'https://yuai-oda-info.github.io/dxdaily/'
+WD = '月火水木金土日'
+
+
+def set_canon(h, url):
+    h = re.sub(r'(<link rel="canonical" href=")[^"]*', lambda m: m.group(1) + url, h)
+    return re.sub(r'(<meta property="og:url" content=")[^"]*', lambda m: m.group(1) + url, h)
+
+
+def jirei(root):
+    w = os.path.join(root, 'weekly-study.html')
+    if not os.path.exists(w):
+        return '!! 事例DX: weekly-study.html が無い'
+    today = (datetime.datetime.utcnow() + datetime.timedelta(hours=9)).date().isoformat()
+    dn = 'weekly-study-%s.html' % today
+    h = set_canon(open(w, encoding='utf-8').read(), BASE + dn)
+    for f in (w, os.path.join(root, dn)):
+        open(f, 'w', encoding='utf-8').write(h)
+    rows = []
+    for f in sorted(glob.glob(os.path.join(root, 'weekly-study-2*.html')), reverse=True):
+        ds = os.path.basename(f)[13:23]
+        if ds == today:
+            continue
+        d = datetime.date.fromisoformat(ds)
+        names = [re.sub(r'（[^）]*）', '', x).strip() for x in
+                 re.findall(r'<b>事例</b>\s*(.*?)\s*／', open(f, encoding='utf-8').read())]
+        rows.append('<tr><td class="d">%d年%d月%d日（%s）</td><td>%s</td><td><a href="%s" rel="noopener">開く</a></td></tr>'
+                    % (d.year, d.month, d.day, WD[d.weekday()], '／'.join(names) or '事例DX', os.path.basename(f)))
+    n = len(rows)
+    if not rows:
+        rows = ['<tr class="bn-empty"><td colspan="3">バックナンバーは明日から1日1行ずつ増えます。</td></tr>']
+    blk = ('<div class="bnc bnc-jirei"><style>.bnc-jirei{--bk:var(--study,#C56A15);background:transparent;}.bnc-jirei .sub4{color:var(--study,#C56A15);}</style>\n<details class="bnfold"><summary><h4 class="sub4">事例DXのバックナンバー</h4></summary>\n'
+           '<div id="bn-jirei"><div class="tablewrap"><table>\n<thead><tr><th>日付</th><th>取り上げた事例（医師／薬剤師／相談支援・連携／病院SE）</th><th>リンク</th></tr></thead>\n<tbody>\n'
+           + '\n'.join(rows) + '\n</tbody>\n</table></div></div>\n</details></div>')
+    p = os.path.join(root, 'index.html')
+    if not os.path.exists(p):
+        return '!! 事例DX: index.html が無い'
+    x = re.sub(r'\n?<div class="bnc bnc-jirei">.*?</details></div>', '', open(p, encoding='utf-8').read(), flags=re.S)
+    m = re.search(r'<div class="bnc bnc-study">.*?</details></div>', x, re.S)
+    if not m:
+        return '!! 事例DX: ポータルに勉強会のバックナンバー枠が無い'
+    x = x[:m.end()] + '\n' + blk + x[m.end():]
+    open(p, 'w', encoding='utf-8').write(x)
+    return 'OK: 事例DXの保存版 %s を作成・ポータルのバックナンバー %d行' % (dn, n)
+
 def main():
     root = sys.argv[1] if len(sys.argv) > 1 else '.'
     check = '--check' in sys.argv
+    jr = jirei(root) if not check else ''   # 先に保存版を作り、下の一括処理の対象に含める
     files = sorted(f for f in glob.glob(os.path.join(root, '*.html')))
     gigi_href = 'gigikaishaku.html' if os.path.exists(os.path.join(root, 'gigikaishaku.html')) else GIGI_ART
     gigi_n = gigi_count(root)
@@ -193,6 +241,8 @@ def main():
         print('!! ナビが正しくないファイル:', ', '.join(sorted(set(bad))))
         return 1
     print('OK: 全ファイルの共通ナビは11項目・日付なしリンク')
+    if jr:
+        print(jr)
     r = os.path.join(root, 'reimbursement.html')
     if os.path.exists(r):
         ok = 'class="gigi"' in open(r, encoding='utf-8').read()

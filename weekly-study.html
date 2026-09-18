@@ -373,6 +373,21 @@ table.wkt td.d{white-space:nowrap;font-weight:700;}
 .wkcase .c3tbl td.ba{font-weight:700;font-variant-numeric:tabular-nums;}
 .wkcase .c3none{margin:.6rem 0 0;font-size:.84rem;color:var(--mut);border-left:3px solid var(--rule);padding-left:.6rem;}
 </style>
+<style>/* 事例DX 分野カラー v1（各職種ページと同じ色。節のidで決まるので本文のマークアップに依存しない） */
+:root{--doc:#285F9D;--docbg:#EEF5FC;--docrule:#CFE0F1;--pharm:#2F8F6B;--pharmbg:#EAF5EF;--pharmrule:#C9E5D8;--conn:#7A5230;--connbg:#F5EEE8;--connrule:#E3D3C4;--se:#8E7414;--sebg:#FBF3DA;--serule:#EBDFB6;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--doc:#7FB3F0;--docbg:#16202B;--docrule:#2C3E52;--pharm:#5FCB9E;--pharmbg:#14241D;--pharmrule:#274A3B;--conn:#D2A27E;--connbg:#241A14;--connrule:#4A3A2E;--se:#E3C64F;--sebg:#221D0C;--serule:#4A4021;}}
+:root[data-theme="dark"]{--doc:#7FB3F0;--docbg:#16202B;--docrule:#2C3E52;--pharm:#5FCB9E;--pharmbg:#14241D;--pharmrule:#274A3B;--conn:#D2A27E;--connbg:#241A14;--connrule:#4A3A2E;--se:#E3C64F;--sebg:#221D0C;--serule:#4A4021;}
+#w-doc{--c:var(--doc);--cbg:var(--docbg);--crule:var(--docrule);}
+#w-pharm{--c:var(--pharm);--cbg:var(--pharmbg);--crule:var(--pharmrule);}
+#w-conn{--c:var(--conn);--cbg:var(--connbg);--crule:var(--connrule);}
+#w-se{--c:var(--se);--cbg:var(--sebg);--crule:var(--serule);}
+#w-doc .wkcase,#w-pharm .wkcase,#w-conn .wkcase,#w-se .wkcase{background:var(--cbg);border:1px solid var(--crule);border-left:5px solid var(--c);}
+#w-doc .menno,#w-pharm .menno,#w-conn .menno,#w-se .menno{color:var(--c)!important;}
+.wkcase .c3step .n{color:var(--c);}
+.wkcase .c3tbl th{border-bottom-color:var(--c);}
+.wkcase .imp .dot{background:var(--c)!important;}
+.wkjump a[href="#w-doc"]{--c:var(--doc);}.wkjump a[href="#w-pharm"]{--c:var(--pharm);}.wkjump a[href="#w-conn"]{--c:var(--conn);}.wkjump a[href="#w-se"]{--c:var(--se);}
+</style>
 <nav class="wkjump" aria-label="4分野">
 <a href="#w-doc" style="--c:var(--doc)">医師</a>
 <a href="#w-pharm" style="--c:var(--pharm)">薬剤師</a>
@@ -394,6 +409,7 @@ table.wkt td.d{white-space:nowrap;font-weight:700;}
 <div class="tablewrap"><table class="c3tbl"><thead><tr><th>指標</th><th>導入前 → 導入後</th><th>測定条件</th></tr></thead><tbody><tr><td>便意切迫感の主治医による正確な把握</td><td class="ba">約30％ → （匿名ePRO導入後の把握率は記載なし）</td><td>記載なし（出典に測定条件の詳細記載なし）</td></tr><tr><td>匿名ePROの回答回収率</td><td class="ba">登録322名中277名（86.0％）が回答</td><td>千葉県内15のIBD拠点病院での匿名ePRO登録者を対象</td></tr></tbody></table></div>
 <p class="c3none">出典に記載がないもの：匿名ePRO導入後に主治医が便意切迫感を把握できた具体的な割合／秘密計算の暗号方式の詳細／患者の年齢構成や疾患の重症度別内訳（推測せず「記載なし」としています）</p>
 <div class="imp"><h3>現場への示唆</h3><ul><li><span class="dot" style="background:var(--doc)"></span>申告しにくい症状を洗い出し対象を絞る</li><li><span class="dot" style="background:var(--doc)"></span>導入後の回答回収率を記録する</li></ul></div>
+<div class="script" style="display:none" aria-hidden="true"><p class="slab">司会用そのまま読み上げ</p><p>1つ目、医師の実践事例です。千葉大学医学部附属病院ほか、千葉県内15の炎症性腸疾患の拠点病院が参加した取り組みです。便意切迫感のように羞恥心を伴い、診察室の短い時間では患者が主治医にうまく伝えられない症状がありました。実際、主治医が正確に把握できていた割合はおよそ30パーセントにとどまっていたとされています。そこで、誰がどう答えたか個票を復元できない秘密計算という技術を使い、匿名で回答できる患者報告システムを導入しました。症状や服薬状況を、患者本人が診察の外で、匿名のまま直接入力できる仕組みです。登録した322名のうち277名、86パーセントから回答が集まりました。個票を復元できない設計にしたことで、答えにくい症状も答えやすくなったとみられます。自院で考えるときは、まず対象を1つの症状や疾患に絞り、匿名での回答の集まりやすさと、診察で追加確認が必要になった件数の両方を記録しておくと、効果を確かめやすくなります。</p></div>
 <p class="il">▶ 出典：<a class="src" href="https://medit.tech/privacy-preserving-digital-platform-for-patient-reported-outcomes-in-inflammatory-bowel-disease/" target="_blank" rel="noopener">Med IT Tech（研究紹介記事）</a> <span class="pubmeta">公表日：<b>2026-06-18</b><span class="pc ">過去事例</span></span>　▶ 掲載：<a class="src" href="doctors-2026-09-17.html">9月17日の医師ページ</a></p>
 </div>
 </section>
@@ -401,38 +417,40 @@ table.wkt td.d{white-space:nowrap;font-weight:700;}
 <section class="men" id="w-pharm">
 <header class="menhead"><span class="menno" style="color:var(--pharm)">2</span><h2>薬剤師</h2></header>
 <div class="wkcase" style="--c:var(--pharm)">
-<p class="coltheme">薬剤業務向上加算に基づく薬剤師出向で病棟薬剤業務体制を整え、出向後6か月で提案の9割近くを採択につなげた藤田医科大学病院・第一なるみ病院</p>
-<p class="c3meta"><b>事例</b>　藤田医科大学病院 薬剤部・第一なるみ病院　／　<b>領域</b>　薬剤師出向による病棟薬剤業務体制の整備</p>
+<p class="coltheme">服薬状況などのトレーシングレポートを電子化し、診療記録への転記を1症例3.1分→0.7分、薬局へのフィードバックを7.2分→3.8分に短縮した京都大学医学部附属病院 薬剤部</p>
+<p class="c3meta"><b>事例</b>　京都大学医学部附属病院 薬剤部　／　<b>領域</b>　電子トレーシングレポートシステムによる薬局との情報共有</p>
 <div class="colbody">
-<div class="c3step"><h3><span class="n">1</span>何に困っていたか</h3><p>第一なるみ病院では、病棟薬剤業務の体制を整える必要がありましたが、単独の病院内だけでは体制づくりのノウハウや人員配置を整備しにくいという事情がありました。</p></div>
-<div class="c3step"><h3><span class="n">2</span>どんな仕組みを取り入れたか</h3><p>薬剤業務向上加算という制度に基づき、藤田医科大学病院 薬剤部から第一なるみ病院へ薬剤師が出向する形をとりました。出向した薬剤師が病棟薬剤業務の体制整備に関わり、入院患者に対する薬学的な介入や処方提案を行う仕組みを整えています。</p></div>
-<div class="c3step"><h3><span class="n">3</span>何が良くなったか</h3><p>出向後6か月の時点で、379の入院例のうち61例（16.1％）に薬剤師が介入し、そのうち53例（86.9％）で薬剤師の提案が採択されました。</p></div>
-<div class="c3step"><h3><span class="n">4</span>導入時の工夫・残った課題</h3><p>出向という形で他院の薬剤師が体制整備に加わることで、病棟薬剤業務の立ち上げを自院単独より進めやすくした点がうかがえます。一方で、出向前の介入件数や提案採択率との比較、出向した薬剤師の人数や出向期間、379例という入院例の抽出条件については、表に示された数値以上の詳細は分かりません。</p></div>
-<div class="c3step"><h3><span class="n">5</span>自院で考える際のポイント</h3><p>採択率だけでなく、介入対象とした入院例が全体の何割かという分母を合わせて見ると、体制の負荷と効果の両方を比べやすくなります。自院で出向を検討する場合は、出向前後で同じ期間・同じ基準で介入件数と採択件数を記録しておくと、効果を後から確認しやすくなります。</p></div>
+<div class="c3step"><h3><span class="n">1</span>何に困っていたか</h3><p>京都大学医学部附属病院 薬剤部では、薬局から寄せられる服薬状況や副作用の有無などの報告（トレーシングレポート）を、電子カルテなどの診療記録へあらためて書き写す作業に時間がかかっていました。加えて、薬局へ経過や確認事項を返信するフィードバックの作成にも手間がかかり、薬剤師の業務時間を圧迫していたことがうかがえます。</p></div>
+<div class="c3step"><h3><span class="n">2</span>どんな仕組みを取り入れたか</h3><p>そこで、電子トレーシングレポートシステムを導入し、薬局とのやり取りを紙のやり取りや電話に頼らず、システム上でおこなえるようにしました。薬局側が服薬状況などの情報をシステムに入力すると、病院側がそれを受け取り、診療記録への反映や、薬局へ返すフィードバックの作成に活用できる仕組みです。業務時間と情報共有の両面について、導入前後で評価がおこなわれました。</p></div>
+<div class="c3step"><h3><span class="n">3</span>何が良くなったか</h3><p>導入前後を比べると、診療記録への転記にかかる時間は1症例あたり3.1分から0.7分に短くなりました。薬局へのフィードバックの作成にかかる時間も、7.2分から3.8分に短くなっています。いずれも半分以下の時間に収まっている点が特徴です。</p></div>
+<div class="c3step"><h3><span class="n">4</span>導入時の工夫・残った課題</h3><p>1件あたりの削減幅は数分ですが、日々扱う症例数を考えると積み重ねの負担は小さくありません。一方で、対象とした症例数や観察した期間、電子化する前の具体的な運用方法（紙かファックスに頼っていたのか等）、システムを実際に操作する担当者の範囲については、出典に詳しい記載がなく分かりません。</p></div>
+<div class="c3step"><h3><span class="n">5</span>自院で考える際のポイント</h3><p>導入を検討する際は、対象業務（転記・フィードバック作成など）を1つに絞り、電子化する前と後で同じ基準・同じ単位（1症例あたりの分数など）で作業時間を測っておくと比較しやすくなります。自院・自薬局で考える場合は、まず紙やファックスでのやり取りが残っている業務を洗い出し、電子化した場合にどこまで時間短縮が見込めるかを小さく試してから、対象を広げるかどうかを判断すると進めやすくなります。</p></div>
 </div>
-<div class="tablewrap"><table class="c3tbl"><thead><tr><th>指標</th><th>導入前 → 導入後</th><th>測定条件</th></tr></thead><tbody><tr><td>薬剤師の提案採択率</td><td class="ba">記載なし → 53例／61例（86.9％）</td><td>出向後6か月時点、薬剤師が介入した61例における提案の採択数</td></tr><tr><td>介入対象となった入院例の割合</td><td class="ba">記載なし → 379入院例中61例（16.1％）</td><td>出向後6か月間に薬剤師が介入対象とした入院例の割合</td></tr></tbody></table></div>
-<p class="c3none">出典に記載がないもの：出向した薬剤師の人数・出向期間の詳細／出向前（体制整備前）の介入件数・提案採択率との比較／379入院例の抽出条件や対象病棟（推測せず「記載なし」としています）</p>
-<div class="imp"><h3>現場への示唆</h3><ul><li><span class="dot" style="background:var(--pharm)"></span>介入件数と採択件数を同じ基準で記録する</li><li><span class="dot" style="background:var(--pharm)"></span>出向受け入れ後の体制整備状況を確認する</li></ul></div>
-<p class="il">▶ 出典：<a class="src" href="https://www.jstage.jst.go.jp/article/jjphcs/52/9/52_630/_article/-char/ja" target="_blank" rel="noopener">医療薬学 52巻9号 630-637（日本医療薬学会）</a> <span class="pubmeta">公表日：<b>2026-09-10</b><span class="pc ">過去事例</span></span>　▶ 掲載：<a class="src" href="pharm-2026-09-17.html">9月17日の薬剤師ページ</a></p>
+<div class="tablewrap"><table class="c3tbl"><thead><tr><th>指標</th><th>導入前 → 導入後</th><th>測定条件</th></tr></thead><tbody><tr><td>診療記録への転記にかかる時間</td><td class="ba">1症例あたり3.1分 → 0.7分</td><td>記載なし（対象症例数・観察期間は出典に記載なし）</td></tr><tr><td>薬局へのフィードバック作成にかかる時間</td><td class="ba">7.2分 → 3.8分</td><td>記載なし（同上）</td></tr></tbody></table></div>
+<p class="c3none">出典に記載がないもの：対象とした症例数・観察期間／電子化する前の具体的な運用方法（紙・ファックス等）／システムを操作する担当者の範囲（推測せず「記載なし」としています）</p>
+<div class="imp"><h3>現場への示唆</h3><ul><li><span class="dot" style="background:var(--pharm)"></span>紙・ファックスに頼る業務を洗い出す</li><li><span class="dot" style="background:var(--pharm)"></span>転記・返信の作業時間を記録し比べる</li></ul></div>
+<div class="script" style="display:none" aria-hidden="true"><p class="slab">司会用そのまま読み上げ</p><p>2つ目、薬剤師の実践事例です。京都大学医学部附属病院薬剤部の取り組みです。薬局から寄せられる服薬状況などの報告を、診療記録に書き写す作業や、薬局へ返信を書く作業に時間がかかっていました。そこで、電子トレーシングレポートシステムを導入し、薬局とのやり取りを紙や電話に頼らず、システム上でおこなえるようにしました。導入前後を比べると、診療記録への書き写しにかかる時間は、1症例あたり3.1分から0.7分に短くなりました。薬局への返信にかかる時間も、7.2分から3.8分に短くなっています。時間の差はどちらも数分ずつですが、日々の件数を考えると積み重ねの負担は小さくありません。対象となった症例の数や観察した期間、電子化する前の運用方法については、出典に詳しい記載がなく分かりません。自院で考えるときは、紙やファックスでのやり取りが残っている業務を洗い出し、電子化した場合の作業時間を導入前と同じ基準で測っておくと、効果を比べやすくなります。</p></div>
+<p class="il">▶ 出典：<a class="src" href="https://www.jstage.jst.go.jp/article/jjphcs/52/9/52_597/_article/-char/ja" target="_blank" rel="noopener">医療薬学 52巻9号 597-606（日本医療薬学会）</a> <span class="pubmeta">公表日：<b>2026-09-10</b><span class="pc ">過去事例</span></span>　▶ 掲載：<a class="src" href="pharm-2026-09-17.html">9月17日の薬剤師ページ</a></p>
 </div>
 </section>
 
 <section class="men" id="w-conn">
 <header class="menhead"><span class="menno" style="color:var(--conn)">3</span><h2>相談支援・連携</h2></header>
 <div class="wkcase" style="--c:var(--conn)">
-<p class="coltheme">入退院支援連携ガイドブックと参考様式で医療機関とケアマネの情報共有を進め、活用率を医療機関67％・ケアマネ等78％まで高めた長崎県諫早市</p>
-<p class="c3meta"><b>事例</b>　長崎県諫早市（健康保険部地域包括ケア推進課）　／　<b>領域</b>　入退院時の医療・介護間の情報連携</p>
+<p class="coltheme">居宅介護支援の記録・議事録作成に介護特化型AIを使い、作成時間を1件22.7分→12.2分、残業なし職員を63％→88％に高めた社会福祉法人青祥会</p>
+<p class="c3meta"><b>事例</b>　社会福祉法人青祥会 アンタレスケアプランセンター／秦荘ケアプランセンター（厚生労働省 令和7年度生産性向上の取組に関する調査事業）　／　<b>領域</b>　居宅介護支援の記録・議事録作成へのAI活用</p>
 <div class="colbody">
-<div class="c3step"><h3><span class="n">1</span>何に困っていたか</h3><p>入院や退院の際に、医療機関からケアマネジャーなど介護の担当者へ患者の情報が十分に伝わらないことがありました。2017年の調査では、退院時に情報提供がなかったケースが29％にのぼっていたとされています。</p></div>
-<div class="c3step"><h3><span class="n">2</span>どんな仕組みを取り入れたか</h3><p>諫早市は、入院や退院の場面で医療機関とケアマネジャーなど介護の担当者が円滑に情報を共有できるよう「諫早市入退院支援連携ガイドブック」を作成し、参考様式として「入退院時情報提供書」を示しました。市の在宅医療・介護連携支援センターが相談窓口となり、様式の使い方を含めて普及を進めています。</p></div>
-<div class="c3step"><h3><span class="n">3</span>何が良くなったか</h3><p>2024年度には、参考様式の活用率が医療機関で67％、ケアマネジャー等で78％に達しました。退院時に情報提供がなかった2017年の29％という状況から、様式を使った情報共有が広がっている様子がうかがえます。</p></div>
-<div class="c3step"><h3><span class="n">4</span>導入時の工夫・残った課題</h3><p>ガイドブックと様式をセットで示し、相談窓口を置くことで、施設ごとにやり方が異なりがちな情報提供のしかたをそろえようとしている点がうかがえます。一方で、活用率が67％・78％にとどまっている理由や、未活用の施設が抱える事情については、出典からは分かりません。</p></div>
-<div class="c3step"><h3><span class="n">5</span>自院で考える際のポイント</h3><p>様式そのものより「使われている割合」を継続して確認できる仕組みがあるかを見ると、定着度合いを比べやすくなります。自院・自法人で導入する場合は、まず退院支援に関わる部署を1つ選び、参考様式を使った件数と使わなかった件数を数か月分記録してから、対象を広げるかどうかを検討すると進めやすくなります。</p></div>
+<div class="c3step"><h3><span class="n">1</span>何に困っていたか</h3><p>社会福祉法人青祥会のアンタレスケアプランセンター、秦荘ケアプランセンターでは、ケアマネジャーが利用者宅を訪問したあと、面談などの記録や会議の議事録を作成する業務に時間がかかり、残業につながっていたことがうかがえます。介護支援専門員が担う記録業務は、訪問件数が多いほど積み重なり、負担が大きくなりやすい業務です。</p></div>
+<div class="c3step"><h3><span class="n">2</span>どんな仕組みを取り入れたか</h3><p>そこで、厚生労働省の令和7年度「生産性向上の取組に関する調査事業」のなかで、居宅介護支援の記録・議事録作成に、介護に特化したAI（人工知能）を導入しました。介護支援専門員8名がこのAIを使い、面談などの内容から議事録を作成する業務に活用しています。従来は職員がそれぞれ手作業でまとめていた記録を、AIが下書きとして生成する形に変えたとみられます。</p></div>
+<div class="c3step"><h3><span class="n">3</span>何が良くなったか</h3><p>導入前後を比べると、議事録の作成にかかる時間は1件あたり22.7分から12.2分に、46％短くなりました。あわせて、残業のない職員の割合も63％から88％に増えています。記録の負担と残業の両方が、同じ時期に改善している点が特徴です。</p></div>
+<div class="c3step"><h3><span class="n">4</span>導入時の工夫・残った課題</h3><p>AIへの入力方法（音声入力かテキスト入力か等）や、AIが作成した議事録を職員がどこまで確認・修正しているかについては、出典に記載がなく分かりません。調査対象とした期間や、8名の内訳（経験年数など）も、表に示された数値以上の詳細は分かりません。</p></div>
+<div class="c3step"><h3><span class="n">5</span>自院で考える際のポイント</h3><p>記録業務のどの部分にAIを使えるかをまず絞り込み、作成時間と残業の状況をあわせて記録しておくと、効果を確かめやすくなります。自法人で検討する場合は、少人数・一部の事業所で試験的に導入し、作成時間だけでなく、AIが作った文章をどの程度手直ししているかも記録しておくと、本格導入の判断材料になります。あわせて、個人情報を含む記録をAIに入力してよいかを、事前に法人内で確認しておくことも大切です。</p></div>
 </div>
-<div class="tablewrap"><table class="c3tbl"><thead><tr><th>指標</th><th>導入前 → 導入後</th><th>測定条件</th></tr></thead><tbody><tr><td>退院時の情報提供の有無</td><td class="ba">情報提供なし 29％（2017年調査） → （2024年度の同一指標は記載なし）</td><td>2017年の調査時点</td></tr><tr><td>参考様式「入退院時情報提供書」の活用率</td><td class="ba">記載なし → 医療機関67％・ケアマネ等78％（2024年度）</td><td>2024年度、諫早市内の医療機関・ケアマネジャー等を対象</td></tr></tbody></table></div>
-<p class="c3none">出典に記載がないもの：2024年度時点での「情報提供なし」率（2017年の29％と直接比較できる同一指標の後年値）／活用率67％・78％の調査対象数や回答方法／未活用だった施設の理由（推測せず「記載なし」としています）</p>
-<div class="imp"><h3>現場への示唆</h3><ul><li><span class="dot" style="background:var(--conn)"></span>退院支援での様式活用率を定期的に確認する</li><li><span class="dot" style="background:var(--conn)"></span>未活用部署の理由を洗い出す</li></ul></div>
-<p class="il">▶ 出典：<a class="src" href="https://zaitakupf.mhlw.go.jp/example/959/" target="_blank" rel="noopener">厚生労働省 在宅医療・介護連携支援プラットフォーム</a> <span class="pubmeta">公表日：<b>2026-03-19</b><span class="pc ">過去事例</span></span>　▶ 掲載：<a class="src" href="connect-2026-09-13.html">9月13日の相談支援・連携ページ</a></p>
+<div class="tablewrap"><table class="c3tbl"><thead><tr><th>指標</th><th>導入前 → 導入後</th><th>測定条件</th></tr></thead><tbody><tr><td>議事録作成時間（1件あたり）</td><td class="ba">22.7分 → 12.2分（46％短縮）</td><td>介護支援専門員8名が対象、令和7年度厚労省生産性向上の取組に関する調査事業</td></tr><tr><td>残業のない職員の割合</td><td class="ba">63％ → 88％</td><td>同上</td></tr></tbody></table></div>
+<p class="c3none">出典に記載がないもの：AIへの入力方法（音声・テキスト等）の詳細／AIが作成した議事録を職員が確認・修正する範囲／調査対象期間、職員8名の内訳（推測せず「記載なし」としています）</p>
+<div class="imp"><h3>現場への示唆</h3><ul><li><span class="dot" style="background:var(--conn)"></span>記録業務のどこにAIを使えるか確認する</li><li><span class="dot" style="background:var(--conn)"></span>作成時間と残業状況をあわせて記録する</li></ul></div>
+<div class="script" style="display:none" aria-hidden="true"><p class="slab">司会用そのまま読み上げ</p><p>3つ目、相談支援・連携の実践事例です。社会福祉法人青祥会のケアプランセンターの取り組みです。ケアマネジャーが利用者宅を訪問したあと、面談などの記録や議事録の作成に時間がかかり、残業につながっていたことがうかがえます。そこで、厚生労働省の令和7年度の生産性向上に関する調査事業のなかで、記録・議事録の作成に介護に特化したエーアイを導入し、介護支援専門員8名がこれを使いました。導入前後を比べると、議事録の作成時間は1件あたり22.7分から12.2分に、46パーセント短くなりました。残業のない職員の割合も63パーセントから88パーセントに増えています。エーアイへの入力方法や、作成した議事録を人がどこまで確認しているかは、出典に記載がなく分かりません。それでも、記録の負担と残業の両方が同時に改善している点は注目できます。自院で考えるときは、記録業務のどの部分にエーアイを使えるか絞り込み、作成時間と残業の状況をあわせて記録しておくと、効果を確かめやすくなります。</p></div>
+<p class="il">▶ 出典：<a class="src" href="https://prtimes.jp/main/html/rd/p/000000016.000049236.html" target="_blank" rel="noopener">PR TIMES（株式会社scoville）</a> <span class="pubmeta">公表日：<b>2026-08-24</b><span class="pc ">過去事例</span></span>　▶ 掲載：<a class="src" href="connect-2026-09-16.html">9月16日の相談支援・連携ページ</a></p>
 </div>
 </section>
 
@@ -451,6 +469,7 @@ table.wkt td.d{white-space:nowrap;font-weight:700;}
 <div class="tablewrap"><table class="c3tbl"><thead><tr><th>指標</th><th>障害時 → 対応後</th><th>測定条件</th></tr></thead><tbody><tr><td>外来予約への影響</td><td class="ba">約1,500件のうち約500件を延期</td><td>システム障害発生時の外来予約件数</td></tr><tr><td>予定手術・救急受け入れへの影響</td><td class="ba">予定手術56件のうち18件を延期／救急受け入れを約53時間停止</td><td>システム障害発生時の対応</td></tr><tr><td>再発防止策</td><td class="ba">監視装置の更新方式を自動から手動へ変更、VPN等の外部接続経路・保守用アカウントを棚卸し</td><td>障害後の対応として実施</td></tr></tbody></table></div>
 <p class="c3none">出典に記載がないもの：手動更新への切り替え後の検知精度や運用負荷の変化／外部接続経路の点検・保守用アカウント整理を継続する頻度／障害の発生日時や復旧までの具体的な期間（推測せず「記載なし」としています）</p>
 <div class="imp"><h3>現場への示唆</h3><ul><li><span class="dot" style="background:var(--se)"></span>監視装置の更新方式を自動か手動か確認する</li><li><span class="dot" style="background:var(--se)"></span>外部接続経路と保守用アカウントを棚卸しする</li></ul></div>
+<div class="script" style="display:none" aria-hidden="true"><p class="slab">司会用そのまま読み上げ</p><p>4つ目、病院SEの実践事例です。市立奈良病院の取り組みです。院内ネットワークを見守るセキュリティ監視装置が、ソフトウェアの自動更新をきっかけに通信を誤って異常と判定し、自動で遮断する事態が連鎖しました。外来予約はおよそ1,500件のうち500件を延期し、予定していた手術56件のうち18件を延期、救急の受け入れもおよそ53時間止まってしまいました。そこで、再発を防ぐために、監視装置の更新方式を自動から手動に切り替えました。あわせて、外部からの接続経路を点検して不要な経路を閉じ、保守用のアカウントも棚卸しして整理しています。装置の自動更新という、便利なはずの仕組みが遮断の連鎖を招いた点は、多くの病院にとっても他人事ではありません。更新を手動にしたことで検知の精度自体が落ちないかどうかは、出典からは分かりません。自院で考えるときは、自動更新の対象になっている装置をすべて洗い出し、更新方式と外部接続経路、保守用アカウントの一覧を作って、定期的に見直す運用を決めておくことが今日の確認です。</p></div>
 <p class="il">▶ 出典：<a class="src" href="https://www.city.nara.lg.jp/soshiki/93/273750.html" target="_blank" rel="noopener">奈良市（施設公式）</a> <span class="pubmeta">公表日：<b>2026-08-31</b><span class="pc ">過去事例</span></span>　▶ 掲載：<a class="src" href="hospitalit-2026-09-16.html">9月16日の病院SEページ</a></p>
 </div>
 </section>

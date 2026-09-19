@@ -1,14 +1,17 @@
-name: Sync main from claude/keen-babbage-qncfrl
+name: Sync main from claude/* session branch
 
 # このリポジトリのGitHub Pagesは main ブランチへの push だけを検知してデプロイする。
-# 日々の自動更新タスクは claude/keen-babbage-qncfrl ブランチへコミットするため、
-# そのブランチが更新されたら自動的に main へも早送りマージして反映する。
-# （2026-09-04: main への push 漏れでサイトが更新されない事故が発生したための再発防止策）
+# 日々の自動更新タスクは claude/... というセッション専用ブランチ（セッションごとに名前が変わる）
+# へコミットするため、そのブランチが更新されたら自動的に main へも早送りマージして反映する。
+# （2026-09-04: main への push 漏れでサイトが更新されない事故が発生したための再発防止策。
+#  2026-09-19: ブランチ名を claude/keen-babbage-qncfrl に固定していたため、セッションのブランチ名が
+#  変わると本ワークフローが一切発火せず、mainへの反映が数日分止まっていた事故が発生。
+#  ブランチ名をワイルドカード化し、常に発火したブランチ自身をmainへ早送りするよう修正。）
 
 on:
   push:
     branches:
-      - claude/keen-babbage-qncfrl
+      - 'claude/**'
 
 permissions:
   contents: write
@@ -19,19 +22,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: claude/keen-babbage-qncfrl
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
 
-      - name: Fast-forward main to claude/keen-babbage-qncfrl
+      - name: Fast-forward main to ${{ github.ref_name }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git checkout -B main origin/main
-          if git merge-base --is-ancestor origin/main claude/keen-babbage-qncfrl; then
-            git merge --ff-only claude/keen-babbage-qncfrl
+          if git merge-base --is-ancestor origin/main "${{ github.ref_name }}"; then
+            git merge --ff-only "${{ github.ref_name }}"
             git push origin main
           else
-            echo "main has commits not present on claude/keen-babbage-qncfrl; skipping automatic fast-forward to avoid overwriting them."
+            echo "main has commits not present on ${{ github.ref_name }}; skipping automatic fast-forward to avoid overwriting them."
             exit 1
           fi

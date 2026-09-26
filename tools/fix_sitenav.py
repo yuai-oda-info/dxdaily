@@ -34,6 +34,8 @@ CSS = """<style>/* __MARK__ */
   :root:not([data-theme="light"]) .sitenav a.cur{color:#10181E;}}
 :root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-bg:#18232B;--sn-line:#2E3C46;}
 :root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
+@media (min-width:641px){.sitenav a{padding:.42rem .45rem;font-size:.84rem;}}
+@media (min-width:641px) and (max-width:900px){.sitenav{display:grid;grid-template-columns:repeat(6,1fr);}.sitenav a{flex:none;min-width:0;}}
 @media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
 /* バックナンバー枠の色（HTMLだけ増えてCSSが抜ける事故を防ぐため、ここでも定義する） */

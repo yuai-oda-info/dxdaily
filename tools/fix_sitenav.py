@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""MediKoto：全HTMLの共通ナビ（11項目）とCSSをそろえ、事例DXの保存版とポータルのバックナンバー表を作る。
+"""MediKoto：全HTMLの共通ナビ（12項目・v9）とCSSをそろえ、事例DX・海外DXの保存版とポータルのバックナンバー表を作る。
 使い方: python3 tools/fix_sitenav.py . [--check]
 """
-import os, re, sys, glob, datetime
+import os, re, sys, glob, datetime, json
 
-MARK = 'MediKoto sitenav v8'
+MARK = 'MediKoto sitenav v9'
+MARK_RE = re.compile(r'\n?<style>/\* MediKoto sitenav v\d+ \*/.*?</style>\n?', re.S)
 
 NAV = [
     ('portal',  'ポータル',      'sn-portal', './'),
@@ -19,23 +20,24 @@ NAV = [
     ('connect', '相談支援・連携', 'sn-conn',   'connect.html'),
     ('se',      '病院SE',        'sn-se',     'hospitalit.html'),
     ('reim',    '診療報酬',      'sn-reim',   'reimbursement.html'),
+    ('global',  '海外DX',        'sn-ovs',    'global.html'),      # 2026-09-26追加（MediKoto Global）
 ]
 
 CSS = """<style>/* __MARK__ */
-.sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
-  display:flex;flex-wrap:wrap;gap:.4rem;border:1px solid var(--sn-line);border-radius:12px;padding:.45rem;margin:.6rem 0 0;font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
-.sitenav a{flex:1 1 auto;text-align:center;font-size:.86rem;font-weight:700;text-decoration:none;border:1px solid var(--sn-line);border-radius:8px;padding:.42rem .6rem;background:var(--sn-bg);color:var(--sn-c);white-space:nowrap;line-height:1.5;}
+.sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-ovs:#4E6E8E;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
+  display:flex;flex-wrap:wrap;gap:.35rem;border:1px solid var(--sn-line);border-radius:12px;padding:.45rem;margin:.6rem 0 0;font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
+.sitenav a{flex:1 1 auto;text-align:center;font-size:.8rem;font-weight:700;text-decoration:none;border:1px solid var(--sn-line);border-radius:8px;padding:.4rem .5rem;background:var(--sn-bg);color:var(--sn-c);white-space:nowrap;line-height:1.5;}
 .sitenav a:hover{border-color:var(--sn-c);}
 .sitenav a.cur{background:var(--sn-c);color:#fff;border-color:var(--sn-c);}
 .sitenav a:focus-visible{outline:2px solid var(--sn-c);outline-offset:2px;}
 .sitenav.top{margin:.6rem 0 1.1rem;}
 .sitenav.bottom{margin:2rem 0 0;}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-bg:#18232B;--sn-line:#2E3C46;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-bg:#18232B;--sn-line:#2E3C46;}
   :root:not([data-theme="light"]) .sitenav a.cur{color:#10181E;}}
-:root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-bg:#18232B;--sn-line:#2E3C46;}
+:root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-bg:#18232B;--sn-line:#2E3C46;}
 :root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
-@media (min-width:641px){.sitenav a{padding:.42rem .45rem;font-size:.84rem;}}
-@media (min-width:641px) and (max-width:900px){.sitenav{display:grid;grid-template-columns:repeat(6,1fr);}.sitenav a{flex:none;min-width:0;}}
+@media (min-width:641px){.sitenav a{padding:.4rem .42rem;font-size:.8rem;}}
+@media (min-width:641px) and (max-width:900px){.sitenav{display:grid;grid-template-columns:repeat(6,1fr);}.sitenav a{flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
 /* バックナンバー枠の色（HTMLだけ増えてCSSが抜ける事故を防ぐため、ここでも定義する） */
@@ -45,6 +47,12 @@ CSS = """<style>/* __MARK__ */
   :root:not([data-theme="light"]) .bnc-gov .sub4{color:#6FD8E6;}}
 :root[data-theme="dark"] .bnc-gov{background:#0C262B;}
 :root[data-theme="dark"] .bnc-gov .sub4{color:#6FD8E6;}
+.bnc-global{--bk:var(--ovs,#4E6E8E);background:transparent;}
+.bnc-global .sub4{color:var(--ovs,#4E6E8E);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-global{--bk:#8FB0CC;}
+  :root:not([data-theme="light"]) .bnc-global .sub4{color:#8FB0CC;}}
+:root[data-theme="dark"] .bnc-global{--bk:#8FB0CC;}
+:root[data-theme="dark"] .bnc-global .sub4{color:#8FB0CC;}
 /* 疑義解釈まとめ（別ページ）への入口。色変数だけに頼らずリテラルの控えを必ず添える */
 .gigi{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem 1rem;margin:1.1rem 0 0;
   text-decoration:none;color:inherit;background:var(--panel,#F2F3EF);
@@ -66,8 +74,8 @@ CSS = """<style>/* __MARK__ */
 PREFIX = [('weekly-study', 'weekly'), ('index', 'portal'), ('news', 'news'), ('study', 'study'), ('nursing', 'nursing'),
           ('doctors', 'doctors'), ('pharmacists', 'pharm'), ('pharm', 'pharm'),
           ('connect', 'connect'), ('hospitalit', 'se'), ('reimbursement', 'reim'), ('gov', 'gov'),
+          ('global', 'global'),       # 海外DX（MediKoto Global）
           ('gigikaishaku', 'reim')]   # 疑義解釈まとめは診療報酬の下位ページ扱い
-
 
 def page_key(path):
     b = os.path.basename(path)
@@ -76,7 +84,6 @@ def page_key(path):
             return key
     return None            # contact.html・doc-*.html など（どの項目も塗らない）
 
-
 def nav_html(pos, cur):
     a = []
     for key, label, var, href in NAV:
@@ -84,17 +91,16 @@ def nav_html(pos, cur):
         a.append('<a href="%s" style="--sn-c:var(--%s)"%s>%s</a>' % (href, var, c, label))
     return '<nav class="sitenav %s" aria-label="MediKotoのページ">%s</nav>' % (pos, ''.join(a))
 
-
 def put_css(h):
     if MARK in h:
         return h
+    h = MARK_RE.sub('\n', h)       # 古い版（v8以前）の共通CSSは置き換える
     i = h.rfind('</body>')
     if i < 0:
         i = h.rfind('</html>')
     if i >= 0:
         return h[:i] + CSS + '\n' + h[i:]
     return h.rstrip() + '\n' + CSS + '\n'
-
 
 def put_nav(h, cur, insert_if_missing):
     top, bot = nav_html('top', cur), nav_html('bottom', cur)
@@ -121,7 +127,6 @@ def put_nav(h, cur, insert_if_missing):
         done.append('下')
     return h, ('ナビ挿入(%s)' % '＋'.join(done) if done else '!! 挿入位置が見つからない')
 
-
 GIGI_ART = 'https://claude.ai/code/artifact/9a8233e1-dc26-4415-87d7-3caa667630f5'
 
 GIGI_BAND = ('<a class="gigi" href="%s" rel="noopener">'
@@ -133,14 +138,12 @@ GIGI_BAND = ('<a class="gigi" href="%s" rel="noopener">'
              '同じテーマ分けで1ページに。改定項目を開くと、その項目の問と答えがぶら下がります。</span>'
              '</span><span class="gigi-go">開く →</span></a>')
 
-
 def gigi_count(root):
     f = os.path.join(root, 'gigikaishaku.html')
     if not os.path.exists(f):
         return ''
     n = len(re.findall(r'"kd":"', open(f, encoding='utf-8').read()))
     return ('（改定項目%d件）' % n) if n else ''
-
 
 def put_gigi(h, href, note_n=''):
     if 'class="gigi"' in h:
@@ -149,7 +152,6 @@ def put_gigi(h, href, note_n=''):
     if not m:
         return h, '!! hubナビが見つからない（入口を入れられない）'
     return h[:m.end()] + '\n' + (GIGI_BAND % (href, note_n)) + h[m.end():], '疑義解釈まとめへの入口を挿入'
-
 
 def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
     src = open(path, encoding='utf-8').read()
@@ -165,17 +167,13 @@ def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
         open(path, 'w', encoding='utf-8').write(h)
     return changed, note
 
-
-
 # ---- 事例DX：日付つき保存版とポータルのバックナンバー表（2026-09-18追加） ----
 BASE = 'https://yuai-oda-info.github.io/dxdaily/'
 WD = '月火水木金土日'
 
-
 def set_canon(h, url):
     h = re.sub(r'(<link rel="canonical" href=")[^"]*', lambda m: m.group(1) + url, h)
     return re.sub(r'(<meta property="og:url" content=")[^"]*', lambda m: m.group(1) + url, h)
-
 
 def jirei(root):
     w = os.path.join(root, 'weekly-study.html')
@@ -213,10 +211,81 @@ def jirei(root):
     open(p, 'w', encoding='utf-8').write(x)
     return 'OK: 事例DXの保存版 %s を作成・ポータルのバックナンバー %d行' % (dn, n)
 
+# ---- 海外DX（MediKoto Global）：ポータルのバックナンバー表と archive-data（2026-09-26追加） ----
+def global_theme_of(path, ds):
+    """海外DXページの search-lite（[日付, 日付表記, k, テーマ] の配列）から、その日の k=global のテーマを取る。"""
+    h = open(path, encoding='utf-8').read()
+    m = re.search(r'id="search-lite"[^>]*>(.*?)</script>', h, re.S)
+    if m:
+        try:
+            for row in json.loads(m.group(1)):
+                if isinstance(row, list) and len(row) >= 4 and row[0] == ds and row[2] == 'global':
+                    return row[3]
+        except Exception:
+            pass
+    m = re.search(r'<title>MediKoto Global｜(.*?)</title>', h)
+    return m.group(1) if m else '海外DX'
+
+def global_bn(root):
+    p = os.path.join(root, 'index.html')
+    if not os.path.exists(p):
+        return '!! 海外DX: index.html が無い'
+    today = (datetime.datetime.utcnow() + datetime.timedelta(hours=9)).date().isoformat()
+    files = sorted(glob.glob(os.path.join(root, 'global-2*.html')), reverse=True)
+    if not files and not os.path.exists(os.path.join(root, 'global.html')):
+        return '海外DX: まだ global-*.html が無い（表は作らない）'
+    # 固定入口 global.html が無ければ最新号を写す
+    g = os.path.join(root, 'global.html')
+    if files and not os.path.exists(g):
+        open(g, 'w', encoding='utf-8').write(open(files[0], encoding='utf-8').read())
+    rows = []
+    for f in files:
+        ds = os.path.basename(f)[7:17]
+        if ds == today:
+            continue                     # 実行日の号は載せない（ポータルと同じ規則）
+        d = datetime.date.fromisoformat(ds)
+        rows.append('<tr><td class="d">%d年%d月%d日（%s）</td><td>%s</td><td><a href="%s" rel="noopener">開く</a></td></tr>'
+                    % (d.year, d.month, d.day, WD[d.weekday()], global_theme_of(f, ds), os.path.basename(f)))
+    n = len(rows)
+    if not rows:
+        rows = ['<tr class="bn-empty"><td colspan="3">初号を発行したばかりのため、過去の号はまだありません。翌日から前日の号がここに並びます。</td></tr>']
+    blk = ('<div class="bnc bnc-global"><style>.bnc-global{--bk:var(--ovs,#4E6E8E);background:transparent;}.bnc-global .sub4{color:var(--ovs,#4E6E8E);}</style>\n'
+           '<details class="bnfold"><summary><h4 class="sub4">MediKoto Global（海外DX）のバックナンバー</h4></summary>\n'
+           '<p style="font-size:.78rem;color:var(--mut);margin:.1rem 0 .4rem">各ページに載った海外の医療・介護DXを1枚に集めた面。毎日更新。最新号は共通ナビの「海外DX」からどうぞ。</p>\n'
+           '<div id="bn-global"><div class="tablewrap"><table>\n<thead><tr><th>日付</th><th>テーマ</th><th>リンク</th></tr></thead>\n<tbody>\n'
+           + '\n'.join(rows) + '\n</tbody>\n</table></div></div>\n</details></div>')
+    x = open(p, encoding='utf-8').read()
+    x = re.sub(r'\n?<div class="bnc bnc-global">.*?</details></div>', '', x, flags=re.S)
+    m = re.search(r'<div class="bnc bnc-reim">.*?</details></div>', x, re.S)
+    if not m:
+        return '!! 海外DX: ポータルに診療報酬のバックナンバー枠が無い'
+    x = x[:m.end()] + '\n\n' + blk + x[m.end():]
+    # archive-data の global_url が claude.ai のままなら、その日付の保存版へ
+    a0 = x.find('id="archive-data">')
+    if a0 > 0:
+        a0 += len('id="archive-data">'); a1 = x.find('</script>', a0)
+        try:
+            A = json.loads(x[a0:a1])
+            ents = [A.get('latest')] + list(A.get('archive', []))
+            for e in ents:
+                if not isinstance(e, dict):
+                    continue
+                u = e.get('global_url', '')
+                if 'claude.ai' in u and e.get('date'):
+                    cand = 'global-%s.html' % e['date']
+                    if os.path.exists(os.path.join(root, cand)):
+                        e['global_url'] = cand
+            x = x[:a0] + json.dumps(A, ensure_ascii=False) + x[a1:]
+        except Exception as ex:
+            print('!! 海外DX: archive-data を読めない', ex)
+    open(p, 'w', encoding='utf-8').write(x)
+    return 'OK: 海外DX：ポータルのバックナンバー %d行（global-*.html %d本）' % (n, len(files))
+
 def main():
     root = sys.argv[1] if len(sys.argv) > 1 else '.'
     check = '--check' in sys.argv
     jr = jirei(root) if not check else ''   # 先に保存版を作り、下の一括処理の対象に含める
+    gb = global_bn(root) if not check else ''  # 海外DXのバックナンバー表（ポータル）
     files = sorted(f for f in glob.glob(os.path.join(root, '*.html')))
     gigi_href = 'gigikaishaku.html' if os.path.exists(os.path.join(root, 'gigikaishaku.html')) else GIGI_ART
     gigi_n = gigi_count(root)
@@ -240,9 +309,13 @@ def main():
     if bad:
         print('!! ナビが正しくないファイル:', ', '.join(sorted(set(bad))))
         return 1
-    print('OK: 全ファイルの共通ナビは11項目・日付なしリンク')
+    print('OK: 全ファイルの共通ナビは%d項目・日付なしリンク' % len(NAV))
     if jr:
         print(jr)
+    if gb:
+        print(gb)
+        if gb.startswith('!!'):
+            return 1
     r = os.path.join(root, 'reimbursement.html')
     if os.path.exists(r):
         ok = 'class="gigi"' in open(r, encoding='utf-8').read()
@@ -251,7 +324,6 @@ def main():
         if not ok:
             return 1
     return 0
-
 
 if __name__ == '__main__':
     sys.exit(main())

@@ -4,6 +4,8 @@
   // ポータルの「緊急」印：期限（公表日から7日間）を過ぎたら隠す
   var now=new Date(Date.now()+9*3600*1000).toISOString().slice(0,10);
   [].slice.call(document.querySelectorAll('.ed-alert[data-until]')).forEach(function(el){if(now>el.getAttribute('data-until'))el.setAttribute('data-expired','');});
+  // 学会・セミナー欄：最終日を過ぎた催しは隠す（毎朝の更新でも外すが、日付が変わってから更新までの間の分）
+  [].slice.call(document.querySelectorAll('.evcard[data-end]')).forEach(function(el){if(now>el.getAttribute('data-end'))el.hidden=true;});
   // データソース：ポータルの上にポップアップで出す（ボタンが無いページでは何もしない）
   var dsOpen=document.getElementById('ds-open'),dsm=document.getElementById('dsm'),dsb=document.getElementById('dsm-body'),lastFocus=null;
   if(dsOpen&&dsm){

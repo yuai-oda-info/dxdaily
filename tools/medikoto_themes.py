@@ -469,6 +469,112 @@ def sitemap(root, today):
         open(p, 'w', encoding='utf-8').write(x)
     return 'OK: sitemap に %d件追加' % len(add) if add else ''
 
+# ---------------------------------------------------------------- 5. 学会・セミナー欄：終わった催しを外す
+EV_KW = re.compile(r'申込|締切|受付|期限|期間|〆')
+EV_DATE = re.compile(r'(?:(\d{4})年)?(?:(\d{1,2})月)?(\d{1,2})日')
+
+def event_end(text, today):
+    """催しの最終日（読めなければ None）。（）の中と、申込・締切などの語より後ろの日付は数えない。"""
+    t = re.sub(r'（[^）]*）|\([^)]*\)', ' ', text)
+    t = re.sub(r'^\s*(開催|会期|日時)[：:]\s*', '', t)
+    y = m = None
+    found = []
+    for seg in t.split('／'):
+        k = EV_KW.search(seg)
+        part = seg[:k.start()] if k else seg
+        for mm in EV_DATE.finditer(part):
+            if mm.group(1):
+                y = int(mm.group(1))
+            if mm.group(2):
+                m = int(mm.group(2))
+            if m is None:
+                continue
+            yy = y
+            if yy is None:   # 年が書いていないとき：今年。半年以上前になるなら来年
+                yy = today.year
+                try:
+                    if datetime.date(yy, m, int(mm.group(3))) < today - datetime.timedelta(days=180):
+                        yy += 1
+                except ValueError:
+                    continue
+            try:
+                found.append(datetime.date(yy, m, int(mm.group(3))))
+            except ValueError:
+                pass
+    return max(found) if found else None
+
+def _div_end(h, i):
+    """h[i] から始まる <div ...> に対応する </div> の直後の位置。"""
+    depth = 0
+    for mm in re.finditer(r'<div\b|</div>', h[i:]):
+        depth += 1 if mm.group(0) != '</div>' else -1
+        if depth == 0:
+            return i + mm.end()
+    return -1
+
+def prune_events(root, today):
+    """ポータル・各ページの学会・セミナー欄（div.evcard）から、最終日が今日より前の催しを外す。
+    対象は日付なしの固定入口と、今日の日付つきファイル（過去の号はその日の記録なので触らない）。"""
+    fixed = {'index', 'news', 'study', 'weekly-study', 'gov', 'cyber', 'infection', 'nursing', 'doctors', 'pharmacists',
+             'connect', 'hospitalit', 'reimbursement', 'global'}
+    tag = today.isoformat()
+    out = []
+    for f in sorted(glob.glob(os.path.join(root, '*.html'))):
+        b = os.path.basename(f)[:-5]
+        if not (b in fixed or b.endswith('-' + tag)):
+            continue
+        h = open(f, encoding='utf-8').read()
+        if 'class="evcard' not in h:
+            continue
+        removed = []
+        pos = 0
+        res = []
+        for mm in re.finditer(r'<div class="evcard"[^>]*>', h):
+            if mm.start() < pos:
+                continue
+            e = _div_end(h, mm.start())
+            if e < 0:
+                break
+            card = h[mm.start():e]
+            dm = re.search(r'<p class="evd">(.*?)</p>', card, re.S)
+            end = event_end(re.sub(r'<[^>]+>', '', dm.group(1)), today) if dm else None
+            res.append(h[pos:mm.start()])
+            if end and end < today:
+                tm = re.search(r'<p class="evt">(.*?)</p>', card, re.S)
+                removed.append(re.sub(r'<[^>]+>', '', tm.group(1)) if tm else '?')
+            else:
+                open_tag = '<div class="evcard"%s>' % ((' data-end="%s"' % end.isoformat()) if end else '')
+                res.append(open_tag + card[mm.end() - mm.start():])
+            pos = e
+        res.append(h[pos:])
+        x = ''.join(res)
+        if removed:
+            # 列ごとの件数表記を合わせ、空になった列には一言を置く
+            def fixcol(cm):
+                col = cm.group(0)
+                n = col.count('<div class="evcard')
+                col = re.sub(r'(<span class="evnote">[^<]*?に)\d+(件</span>)', lambda z: z.group(1) + str(n) + z.group(2), col, count=1) if n else col
+                if n == 0 and 'class="evnone"' not in col:
+                    col = col[:-6] + '<p class="evnone" style="margin:.4rem 0;font-size:.85rem;color:var(--mut,#5E6B74)">開催が近い予定は確認中です（終わった催しは日付で自動的に外しています）。</p></div>'
+                return col
+            cols = []
+            p0 = 0
+            for cm in re.finditer(r'<div class="evcol[^"]*">', x):
+                if cm.start() < p0:
+                    continue
+                e = _div_end(x, cm.start())
+                if e < 0:
+                    break
+                cols.append(x[p0:cm.start()])
+                cols.append(fixcol(re.match(r'.*', x[cm.start():e], re.S)))
+                p0 = e
+            cols.append(x[p0:])
+            x = ''.join(cols)
+            out.append('%s %d件（%s）' % (os.path.basename(f), len(removed), '・'.join(removed)))
+        if x != h:
+            open(f, 'w', encoding='utf-8').write(x)
+    return ('OK: 学会・セミナー欄から終わった催しを外した：' + '／'.join(out)) if out else 'OK: 学会・セミナー欄に終わった催しは無し'
+
 # ---------------------------------------------------------------- まとめて実行
 def run(root):
     today = today_jst()
@@ -476,6 +582,7 @@ def run(root):
     if not os.path.exists(sp):
         return ['!! テーマ: data/sources.json が無い（データソースの処理を飛ばした）']
     data = json.load(open(sp, encoding='utf-8'))
+    ev = prune_events(root, today)          # 先に外す（外した催しの出典は数えない）
     pages, doms = scan(root, data.get('ignore_domains', []))
     msgs = apply_manual(root, data, today)
     msgs += update_registry(data, pages, doms, today)
@@ -486,6 +593,7 @@ def run(root):
     s = sitemap(root, today)
     if s:
         msgs.append(s)
+    msgs.append(ev)
     return msgs
 
 if __name__ == '__main__':

@@ -461,6 +461,10 @@
   "congre.co.jp": [
    "学会の大会サイト（コングレ）",
    "公的"
+  ],
+  "openevidence.com": [
+   "OpenEvidence",
+   "企業発表"
   ]
  },
  "groups": [
@@ -608,7 +612,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）"
     },
     {
      "name": "いきいき働く医療機関サポートWeb（いきサポ）",
@@ -628,7 +632,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-01"
     },
     {
@@ -708,7 +712,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-02"
     },
     {
@@ -785,7 +789,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-09-21"
     }
    ]
@@ -1015,7 +1019,7 @@
      "fixed": true,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-02"
     },
     {
@@ -1081,10 +1085,10 @@
    "name": "厚生局・自治体",
    "items": [
     {
-     "name": "九州厚生局（施設基準・届出受理状況）",
+     "name": "九州厚生局（沖縄事務所を含む）",
      "url": "https://kouseikyoku.mhlw.go.jp/kyushu/iryo_shido/r08_shinryohoshu_00001.html",
      "label": "公的",
-     "what": "届出様式、受理状況（月2回）、経過措置の期限",
+     "what": "届出様式、施設基準の届出受理状況（直近の届出は月2回。沖縄県分は沖縄事務所）、経過措置の期限",
      "freq": "毎日",
      "pages": [
       "reim",
@@ -1097,7 +1101,10 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-02"
+     "last_used": "2026-10-02",
+     "paths": [
+      "kouseikyoku.mhlw.go.jp/kyushu/"
+     ]
     },
     {
      "name": "佐賀県",
@@ -1177,6 +1184,164 @@
      "fixed": false,
      "status": "active",
      "last_used": "2026-09-28"
+    },
+    {
+     "name": "北海道厚生局",
+     "url": "https://kouseikyoku.mhlw.go.jp/hokkaido/",
+     "label": "公的",
+     "what": "施設基準の届出受理状況（名簿は毎月上旬、直近の届出は毎月1日・15日）、適時調査の主な指摘事項",
+     "freq": "週1",
+     "pages": [
+      "reim"
+     ],
+     "domains": [
+      "kouseikyoku.mhlw.go.jp"
+     ],
+     "paths": [
+      "kouseikyoku.mhlw.go.jp/hokkaido/"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "地方厚生局を全国分そろえる"
+    },
+    {
+     "name": "東北厚生局",
+     "url": "https://kouseikyoku.mhlw.go.jp/tohoku/",
+     "label": "公的",
+     "what": "施設基準の届出受理状況（直近の届出は毎月2回）、個別指導・適時調査の主な指摘事項",
+     "freq": "週1",
+     "pages": [
+      "reim"
+     ],
+     "domains": [
+      "kouseikyoku.mhlw.go.jp"
+     ],
+     "paths": [
+      "kouseikyoku.mhlw.go.jp/tohoku/"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "地方厚生局を全国分そろえる"
+    },
+    {
+     "name": "関東信越厚生局",
+     "url": "https://kouseikyoku.mhlw.go.jp/kantoshinetsu/",
+     "label": "公的",
+     "what": "施設基準の届出受理状況（名簿は毎月、直近の届出は処理日ごと）",
+     "freq": "週1",
+     "pages": [
+      "reim"
+     ],
+     "domains": [
+      "kouseikyoku.mhlw.go.jp"
+     ],
+     "paths": [
+      "kouseikyoku.mhlw.go.jp/kantoshinetsu/"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "地方厚生局を全国分そろえる",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "東海北陸厚生局",
+     "url": "https://kouseikyoku.mhlw.go.jp/tokaihokuriku/",
+     "label": "公的",
+     "what": "施設基準の届出受理状況（直近の届出は毎月10日・25日）、個別指導・適時調査の主な指摘事項",
+     "freq": "週1",
+     "pages": [
+      "reim"
+     ],
+     "domains": [
+      "kouseikyoku.mhlw.go.jp"
+     ],
+     "paths": [
+      "kouseikyoku.mhlw.go.jp/tokaihokuriku/"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "地方厚生局を全国分そろえる",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "近畿厚生局",
+     "url": "https://kouseikyoku.mhlw.go.jp/kinki/",
+     "label": "公的",
+     "what": "施設基準の届出受理状況（直近の届出は毎月2回）",
+     "freq": "週1",
+     "pages": [
+      "reim"
+     ],
+     "domains": [
+      "kouseikyoku.mhlw.go.jp"
+     ],
+     "paths": [
+      "kouseikyoku.mhlw.go.jp/kinki/"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "地方厚生局を全国分そろえる",
+     "last_used": "2026-09-02"
+    },
+    {
+     "name": "中国四国厚生局",
+     "url": "https://kouseikyoku.mhlw.go.jp/chugokushikoku/",
+     "label": "公的",
+     "what": "施設基準の届出受理状況（直近の届出は毎月2回）、個別指導・適時調査の主な指摘事項",
+     "freq": "週1",
+     "pages": [
+      "reim"
+     ],
+     "domains": [
+      "kouseikyoku.mhlw.go.jp"
+     ],
+     "paths": [
+      "kouseikyoku.mhlw.go.jp/chugokushikoku/"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "地方厚生局を全国分そろえる"
+    },
+    {
+     "name": "四国厚生支局",
+     "url": "https://kouseikyoku.mhlw.go.jp/shikoku/",
+     "label": "公的",
+     "what": "施設基準の届出受理状況（直近の届出は毎月10日・25日）、個別指導・適時調査の主な指摘事項",
+     "freq": "週1",
+     "pages": [
+      "reim"
+     ],
+     "domains": [
+      "kouseikyoku.mhlw.go.jp"
+     ],
+     "paths": [
+      "kouseikyoku.mhlw.go.jp/shikoku/"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "地方厚生局を全国分そろえる",
+     "last_used": "2026-09-08"
     }
    ]
   },
@@ -1461,7 +1626,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-09-23"
     },
     {
@@ -1481,7 +1646,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-09-29"
     },
     {
@@ -1508,7 +1673,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-02"
     }
    ]
@@ -1651,7 +1816,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-09-20"
     }
    ]
@@ -1718,8 +1883,29 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-09-30"
+    },
+    {
+     "name": "OpenEvidence（オープンエビデンス）",
+     "url": "https://www.openevidence.com/announcements",
+     "label": "企業発表",
+     "what": "医療者向けAI医学検索の新機能・提携の発表。検索の回答は出典にせず、回答が示す論文を開いて確かめてから載せる",
+     "freq": "週1",
+     "pages": [
+      "doc",
+      "ovs"
+     ],
+     "domains": [
+      "openevidence.com",
+      "patients.openevidence.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "医療AI検索 OpenEvidence の一次発表を確かめるため"
     }
    ]
   },
@@ -1856,7 +2042,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-09-22"
     },
     {
@@ -1877,7 +2063,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-09-27"
     },
     {
@@ -1959,7 +2145,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-09-22"
     },
     {
@@ -1981,7 +2167,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-02"
     },
     {
@@ -2001,7 +2187,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-09-27"
     },
     {
@@ -2119,7 +2305,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-01"
     },
     {
@@ -2141,7 +2327,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-02"
     },
     {
@@ -2161,7 +2347,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-09-29"
     },
     {
@@ -2238,7 +2424,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-02"
     },
     {
@@ -2277,7 +2463,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-02"
     },
     {
@@ -2297,7 +2483,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-09-25"
     },
     {
@@ -2354,7 +2540,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-02"
     },
     {
@@ -2375,7 +2561,7 @@
      "fixed": false,
      "status": "active",
      "added": "2026-10-02",
-     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-02"
     }
    ]
@@ -2878,13 +3064,13 @@
    "date": "2026-10-02",
    "action": "追加",
    "name": "厚生労働省 在宅医療・介護連携推進事業に係るプラットフォーム",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "いきいき働く医療機関サポートWeb（いきサポ）",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
@@ -2902,13 +3088,13 @@
    "date": "2026-10-02",
    "action": "追加",
    "name": "内閣府 医療等情報の利活用の推進に関する検討会（資料）",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "警察庁",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-01",
@@ -2938,7 +3124,7 @@
    "date": "2026-10-02",
    "action": "追加",
    "name": "JVN（Japan Vulnerability Notes）",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
@@ -2956,110 +3142,176 @@
    "date": "2026-10-02",
    "action": "追加",
    "name": "日本医師会",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "日本内科学会",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "学術集会の公式サイト（学会の大会ページ）",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "Springer Link",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "PR Newswire",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "医療テックニュース",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "医学書院",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "Federal Register（米国官報）",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "ASPR TRACIE（米国保健福祉省の災害医療支援）",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "VA News（米国退役軍人省）",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "NHS England Digital",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "GOV.UK（英国政府）",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "Australian Digital Health Agency",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "AONL（米国看護管理者協会）",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "Mayo Clinic News Network",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "Cleveland Clinic Newsroom",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "Fierce Healthcare",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
   },
   {
    "date": "2026-10-02",
    "action": "追加",
    "name": "The HIPAA Journal",
-   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+   "reason": "掲載実績から追加（8/28〜10/2の出典）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "北海道厚生局",
+   "reason": "地方厚生局を全国分そろえる"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "東北厚生局",
+   "reason": "地方厚生局を全国分そろえる"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "関東信越厚生局",
+   "reason": "地方厚生局を全国分そろえる"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "東海北陸厚生局",
+   "reason": "地方厚生局を全国分そろえる"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "近畿厚生局",
+   "reason": "地方厚生局を全国分そろえる"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "中国四国厚生局",
+   "reason": "地方厚生局を全国分そろえる"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "四国厚生支局",
+   "reason": "地方厚生局を全国分そろえる"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "変更",
+   "name": "九州厚生局（沖縄事務所を含む）",
+   "reason": "地方厚生局を全国分そろえる"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "OpenEvidence（オープンエビデンス）",
+   "reason": "医療AI検索 OpenEvidence の一次発表を確かめるため"
   }
  ],
- "baseline_note": "2026-10-02 公開時点で出典に載っていた発信元とURL数。ここから2件以上増えた発信元だけを自動追加する"
+ "baseline_note": "2026-10-02 公開時点で出典に載っていた発信元とURL数。ここから2件以上増えた発信元だけを自動追加する",
+ "manual_applied": [
+  "add-kouseikyoku-chugokushikoku",
+  "add-kouseikyoku-hokkaido",
+  "add-kouseikyoku-kantoshinetsu",
+  "add-kouseikyoku-kinki",
+  "add-kouseikyoku-shikoku",
+  "add-kouseikyoku-tohoku",
+  "add-kouseikyoku-tokaihokuriku",
+  "add-openevidence",
+  "reword-auto-note-20261002",
+  "upd-kouseikyoku-kyushu"
+ ]
 }

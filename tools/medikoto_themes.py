@@ -93,12 +93,14 @@ def scan(root, ignore):
                 continue
             u = u.split('?')[0]
             pages[key]['dom'].setdefault(dom, set()).add(u)
-            info = doms.setdefault(dom, {'urls': set(), 'pages': set(), 'last': None})
+            info = doms.setdefault(dom, {'urls': set(), 'pages': set(), 'last': None, 'ulast': {}})
             info['urls'].add(u)
             info['pages'].add(key)
             dd = d or today
             if info['last'] is None or dd > info['last']:
                 info['last'] = dd
+            if u not in info['ulast'] or dd > info['ulast'][u]:
+                info['ulast'][u] = dd
     return pages, doms
 
 # ---------------------------------------------------------------- 2. 情報源の更新（自動追加・最後に使った日）
@@ -114,6 +116,71 @@ def guess_label(dom):
     if re.search(r'\.or\.jp$', dom):
         return '公的'
     return '報道'
+
+def bare(u):
+    return re.sub(r'^https?://(www\.)?', '', u).lower()
+
+def item_urls(it, doms):
+    """登録先が使われたURL（paths があれば、その先頭に合うURLだけ）。"""
+    paths = [bare(x) for x in it.get('paths', [])]
+    out = []
+    for d in it.get('domains', []):
+        if d not in doms:
+            continue
+        for u in doms[d]['urls']:
+            if not paths or any(bare(u).startswith(x) for x in paths):
+                out.append((d, u))
+    return out
+
+def apply_manual(root, data, today):
+    """data/sources_manual.json（手で決めた追加・変更）を1回ずつ取り込む。取り込んだ id は data['manual_applied'] に残す。"""
+    mp = os.path.join(root, 'data', 'sources_manual.json')
+    if not os.path.exists(mp):
+        return []
+    man = json.load(open(mp, encoding='utf-8'))
+    done = set(data.setdefault('manual_applied', []))
+    msgs = []
+    allit = lambda: [(g, it) for g in data['groups'] for it in g['items']]
+    for dom, v in man.get('domain_names', {}).items():
+        data.setdefault('domain_names', {})[dom] = v
+    for op in man.get('ops', []):
+        oid = op.get('id')
+        if not oid or oid in done:
+            continue
+        if op['op'] == 'add':
+            it = dict(op['item'])
+            if any(x['name'] == it['name'] for _, x in allit()):
+                done.add(oid)
+                continue
+            g = next((g for g in data['groups'] if g['name'] == op['group']), None)
+            if g is None:
+                g = {'name': op['group'], 'items': []}
+                data['groups'].append(g)
+            it.setdefault('status', 'active')
+            it.setdefault('added', op.get('date', today.isoformat()))
+            it.setdefault('added_reason', op.get('reason', ''))
+            g['items'].append(it)
+            data.setdefault('log', []).append({'date': it['added'], 'action': '追加', 'name': it['name'], 'reason': it['added_reason']})
+            msgs.append('情報源を追加: %s' % it['name'])
+        elif op['op'] == 'reword':   # 追加理由・記録の言い回しを直す（公開ページに出る文）
+            for _, x in allit():
+                if op['from'] in x.get('added_reason', ''):
+                    x['added_reason'] = x['added_reason'].replace(op['from'], op['to'])
+            for lg in data.get('log', []):
+                if op['from'] in lg.get('reason', ''):
+                    lg['reason'] = lg['reason'].replace(op['from'], op['to'])
+        elif op['op'] == 'update':
+            hit = [x for _, x in allit() if x['name'] == op['name']]
+            for x in hit:
+                x.update(op['set'])
+                if op.get('rename'):
+                    x['name'] = op['rename']
+            if hit:
+                data.setdefault('log', []).append({'date': op.get('date', today.isoformat()), 'action': '変更', 'name': op.get('rename') or op['name'], 'reason': op.get('reason', '')})
+                msgs.append('情報源を変更: %s' % (op.get('rename') or op['name']))
+        done.add(oid)
+    data['manual_applied'] = sorted(done)
+    return msgs
 
 def update_registry(data, pages, doms, today):
     msgs = []
@@ -150,14 +217,14 @@ def update_registry(data, pages, doms, today):
         msgs.append('情報源を自動追加: %s（%s・%d件）' % (it['name'], lab, n))
     for g in data['groups']:
         for it in g['items']:
-            last = [doms[d]['last'] for d in it.get('domains', []) if d in doms and doms[d]['last']]
+            last = [doms[d]['ulast'][u] for d, u in item_urls(it, doms)]
             if last:
                 it['last_used'] = max(last).isoformat()
     data['updated'] = today.isoformat()
     return msgs
 
 def item_count(it, doms):
-    return sum(len(doms[d]['urls']) for d in it.get('domains', []) if d in doms)
+    return len(item_urls(it, doms))
 
 # ---------------------------------------------------------------- 3. 一覧の中身（ポップアップと単独ページで共通）
 def kind_chip(it):
@@ -176,6 +243,8 @@ def fragment(data, pages, doms, today, page_link_prefix=''):
     # 発信元の表示名（登録先の名前を優先）
     dn = {}
     for it in items:
+        if it.get('paths'):
+            continue
         for d in it.get('domains', []):
             dn.setdefault(d, (it['name'].split('（')[0], it['label']))
     for d, v in names.items():
@@ -408,7 +477,8 @@ def run(root):
         return ['!! テーマ: data/sources.json が無い（データソースの処理を飛ばした）']
     data = json.load(open(sp, encoding='utf-8'))
     pages, doms = scan(root, data.get('ignore_domains', []))
-    msgs = update_registry(data, pages, doms, today)
+    msgs = apply_manual(root, data, today)
+    msgs += update_registry(data, pages, doms, today)
     json.dump(data, open(sp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     frag = fragment(data, pages, doms, today)
     msgs += portal(root, frag, today)

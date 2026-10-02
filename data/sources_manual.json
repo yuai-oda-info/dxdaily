@@ -1,0 +1,242 @@
+{
+ "about": "情報源の手での追加・変更。tools/medikoto_themes.py が毎朝 data/sources.json に1回ずつ取り込む（取り込んだ id は sources.json の manual_applied に残る）。",
+ "domain_names": {
+  "kouseikyoku.mhlw.go.jp": [
+   "地方厚生局",
+   "公的"
+  ],
+  "openevidence.com": [
+   "OpenEvidence",
+   "企業発表"
+  ]
+ },
+ "ops": [
+  {
+   "id": "reword-auto-note-20261002",
+   "op": "reword",
+   "from": "。本番では毎朝自動）",
+   "to": "）"
+  },
+  {
+   "id": "add-kouseikyoku-hokkaido",
+   "op": "add",
+   "group": "厚生局・自治体",
+   "date": "2026-10-02",
+   "reason": "地方厚生局を全国分そろえる",
+   "item": {
+    "name": "北海道厚生局",
+    "url": "https://kouseikyoku.mhlw.go.jp/hokkaido/",
+    "label": "公的",
+    "what": "施設基準の届出受理状況（名簿は毎月上旬、直近の届出は毎月1日・15日）、適時調査の主な指摘事項",
+    "freq": "週1",
+    "pages": [
+     "reim"
+    ],
+    "domains": [
+     "kouseikyoku.mhlw.go.jp"
+    ],
+    "paths": [
+     "kouseikyoku.mhlw.go.jp/hokkaido/"
+    ],
+    "note": "",
+    "kind": "参照先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-kouseikyoku-tohoku",
+   "op": "add",
+   "group": "厚生局・自治体",
+   "date": "2026-10-02",
+   "reason": "地方厚生局を全国分そろえる",
+   "item": {
+    "name": "東北厚生局",
+    "url": "https://kouseikyoku.mhlw.go.jp/tohoku/",
+    "label": "公的",
+    "what": "施設基準の届出受理状況（直近の届出は毎月2回）、個別指導・適時調査の主な指摘事項",
+    "freq": "週1",
+    "pages": [
+     "reim"
+    ],
+    "domains": [
+     "kouseikyoku.mhlw.go.jp"
+    ],
+    "paths": [
+     "kouseikyoku.mhlw.go.jp/tohoku/"
+    ],
+    "note": "",
+    "kind": "参照先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-kouseikyoku-kantoshinetsu",
+   "op": "add",
+   "group": "厚生局・自治体",
+   "date": "2026-10-02",
+   "reason": "地方厚生局を全国分そろえる",
+   "item": {
+    "name": "関東信越厚生局",
+    "url": "https://kouseikyoku.mhlw.go.jp/kantoshinetsu/",
+    "label": "公的",
+    "what": "施設基準の届出受理状況（名簿は毎月、直近の届出は処理日ごと）",
+    "freq": "週1",
+    "pages": [
+     "reim"
+    ],
+    "domains": [
+     "kouseikyoku.mhlw.go.jp"
+    ],
+    "paths": [
+     "kouseikyoku.mhlw.go.jp/kantoshinetsu/"
+    ],
+    "note": "",
+    "kind": "参照先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-kouseikyoku-tokaihokuriku",
+   "op": "add",
+   "group": "厚生局・自治体",
+   "date": "2026-10-02",
+   "reason": "地方厚生局を全国分そろえる",
+   "item": {
+    "name": "東海北陸厚生局",
+    "url": "https://kouseikyoku.mhlw.go.jp/tokaihokuriku/",
+    "label": "公的",
+    "what": "施設基準の届出受理状況（直近の届出は毎月10日・25日）、個別指導・適時調査の主な指摘事項",
+    "freq": "週1",
+    "pages": [
+     "reim"
+    ],
+    "domains": [
+     "kouseikyoku.mhlw.go.jp"
+    ],
+    "paths": [
+     "kouseikyoku.mhlw.go.jp/tokaihokuriku/"
+    ],
+    "note": "",
+    "kind": "参照先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-kouseikyoku-kinki",
+   "op": "add",
+   "group": "厚生局・自治体",
+   "date": "2026-10-02",
+   "reason": "地方厚生局を全国分そろえる",
+   "item": {
+    "name": "近畿厚生局",
+    "url": "https://kouseikyoku.mhlw.go.jp/kinki/",
+    "label": "公的",
+    "what": "施設基準の届出受理状況（直近の届出は毎月2回）",
+    "freq": "週1",
+    "pages": [
+     "reim"
+    ],
+    "domains": [
+     "kouseikyoku.mhlw.go.jp"
+    ],
+    "paths": [
+     "kouseikyoku.mhlw.go.jp/kinki/"
+    ],
+    "note": "",
+    "kind": "参照先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-kouseikyoku-chugokushikoku",
+   "op": "add",
+   "group": "厚生局・自治体",
+   "date": "2026-10-02",
+   "reason": "地方厚生局を全国分そろえる",
+   "item": {
+    "name": "中国四国厚生局",
+    "url": "https://kouseikyoku.mhlw.go.jp/chugokushikoku/",
+    "label": "公的",
+    "what": "施設基準の届出受理状況（直近の届出は毎月2回）、個別指導・適時調査の主な指摘事項",
+    "freq": "週1",
+    "pages": [
+     "reim"
+    ],
+    "domains": [
+     "kouseikyoku.mhlw.go.jp"
+    ],
+    "paths": [
+     "kouseikyoku.mhlw.go.jp/chugokushikoku/"
+    ],
+    "note": "",
+    "kind": "参照先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-kouseikyoku-shikoku",
+   "op": "add",
+   "group": "厚生局・自治体",
+   "date": "2026-10-02",
+   "reason": "地方厚生局を全国分そろえる",
+   "item": {
+    "name": "四国厚生支局",
+    "url": "https://kouseikyoku.mhlw.go.jp/shikoku/",
+    "label": "公的",
+    "what": "施設基準の届出受理状況（直近の届出は毎月10日・25日）、個別指導・適時調査の主な指摘事項",
+    "freq": "週1",
+    "pages": [
+     "reim"
+    ],
+    "domains": [
+     "kouseikyoku.mhlw.go.jp"
+    ],
+    "paths": [
+     "kouseikyoku.mhlw.go.jp/shikoku/"
+    ],
+    "note": "",
+    "kind": "参照先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "upd-kouseikyoku-kyushu",
+   "op": "update",
+   "name": "九州厚生局（施設基準・届出受理状況）",
+   "rename": "九州厚生局（沖縄事務所を含む）",
+   "date": "2026-10-02",
+   "reason": "地方厚生局を全国分そろえる",
+   "set": {
+    "paths": [
+     "kouseikyoku.mhlw.go.jp/kyushu/"
+    ],
+    "what": "届出様式、施設基準の届出受理状況（直近の届出は月2回。沖縄県分は沖縄事務所）、経過措置の期限"
+   }
+  },
+  {
+   "id": "add-openevidence",
+   "op": "add",
+   "group": "医療機関・企業の発表",
+   "date": "2026-10-02",
+   "reason": "医療AI検索 OpenEvidence の一次発表を確かめるため",
+   "item": {
+    "name": "OpenEvidence（オープンエビデンス）",
+    "url": "https://www.openevidence.com/announcements",
+    "label": "企業発表",
+    "what": "医療者向けAI医学検索の新機能・提携の発表。検索の回答は出典にせず、回答が示す論文を開いて確かめてから載せる",
+    "freq": "週1",
+    "pages": [
+     "doc",
+     "ovs"
+    ],
+    "domains": [
+     "openevidence.com",
+     "patients.openevidence.com"
+    ],
+    "note": "",
+    "kind": "参照先",
+    "fixed": false
+   }
+  }
+ ]
+}

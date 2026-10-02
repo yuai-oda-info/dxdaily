@@ -1,0 +1,3065 @@
+{
+ "version": 1,
+ "updated": "2026-10-02",
+ "rules": {
+  "auto_min_urls": 2,
+  "demote_days": 90,
+  "promote_weeks": [
+   4,
+   8
+  ],
+  "private_cap": "2〜3.5割（上限3.5割）"
+ },
+ "ignore_domains": [
+  "fonts.googleapis.com",
+  "fonts.gstatic.com",
+  "yuai-oda-info.github.io",
+  "claude.ai",
+  "view.officeapps.live.com",
+  "googletagmanager.com",
+  "youtube.com",
+  "youtu.be",
+  "doi.org"
+ ],
+ "domain_names": {
+  "mhlw.go.jp": [
+   "厚生労働省",
+   "公的"
+  ],
+  "zaitakupf.mhlw.go.jp": [
+   "厚生労働省（在宅医療関連サイト）",
+   "公的"
+  ],
+  "iryou-kinmukankyou.mhlw.go.jp": [
+   "いきサポ（医療勤務環境改善）",
+   "公的"
+  ],
+  "digital.go.jp": [
+   "デジタル庁",
+   "公的"
+  ],
+  "caicm.go.jp": [
+   "内閣感染症危機管理統括庁",
+   "公的"
+  ],
+  "cas.go.jp": [
+   "内閣官房",
+   "公的"
+  ],
+  "www8.cao.go.jp": [
+   "内閣府",
+   "公的"
+  ],
+  "wam.go.jp": [
+   "WAM NET",
+   "公的"
+  ],
+  "public-comment.e-gov.go.jp": [
+   "e-Gov パブリック・コメント",
+   "公的"
+  ],
+  "ppc.go.jp": [
+   "個人情報保護委員会",
+   "公的"
+  ],
+  "npa.go.jp": [
+   "警察庁",
+   "公的"
+  ],
+  "pmda.go.jp": [
+   "PMDA",
+   "公的"
+  ],
+  "hpdx.or.jp": [
+   "DX審査支払機構",
+   "公的"
+  ],
+  "amed.go.jp": [
+   "AMED",
+   "公的"
+  ],
+  "kokuho.or.jp": [
+   "国民健康保険中央会",
+   "公的"
+  ],
+  "id-info.jihs.go.jp": [
+   "JIHS 感染症情報提供サイト",
+   "公的"
+  ],
+  "amr.jihs.go.jp": [
+   "JIHS AMR臨床リファレンスセンター",
+   "公的"
+  ],
+  "janis.mhlw.go.jp": [
+   "JANIS",
+   "公的"
+  ],
+  "med-safe.jp": [
+   "日本医療機能評価機構 医療安全情報",
+   "公的"
+  ],
+  "jpcert.or.jp": [
+   "JPCERT/CC",
+   "公的"
+  ],
+  "ipa.go.jp": [
+   "IPA",
+   "公的"
+  ],
+  "jvn.jp": [
+   "JVN",
+   "公的"
+  ],
+  "cyber.go.jp": [
+   "国家サイバー統括室",
+   "公的"
+  ],
+  "mist.mhlw.go.jp": [
+   "MIST",
+   "公的"
+  ],
+  "security-next.com": [
+   "Security NEXT",
+   "報道"
+  ],
+  "kouseikyoku.mhlw.go.jp": [
+   "地方厚生局",
+   "公的"
+  ],
+  "pref.saga.lg.jp": [
+   "佐賀県",
+   "公的"
+  ],
+  "hokeniryo.metro.tokyo.lg.jp": [
+   "東京都保健医療局",
+   "公的"
+  ],
+  "it-shien.smrj.go.jp": [
+   "中小機構 デジタル化・AI導入補助金",
+   "公的"
+  ],
+  "j-net21.smrj.go.jp": [
+   "J-Net21 支援情報ヘッドライン",
+   "公的"
+  ],
+  "ajha.or.jp": [
+   "全日本病院協会",
+   "公的"
+  ],
+  "hospital.or.jp": [
+   "日本病院会",
+   "公的"
+  ],
+  "jami.jp": [
+   "日本医療情報学会",
+   "公的"
+  ],
+  "nurse.or.jp": [
+   "日本看護協会",
+   "公的"
+  ],
+  "kango-award.jp": [
+   "看護業務効率化先進事例アワード",
+   "公的"
+  ],
+  "zenhokan.or.jp": [
+   "全国訪問看護事業協会",
+   "公的"
+  ],
+  "jvnf.or.jp": [
+   "日本訪問看護財団",
+   "公的"
+  ],
+  "jshp.or.jp": [
+   "日本病院薬剤師会",
+   "公的"
+  ],
+  "nichiyaku.or.jp": [
+   "日本薬剤師会",
+   "公的"
+  ],
+  "jsphcs.jp": [
+   "日本医療薬学会",
+   "公的"
+  ],
+  "jaswhs.or.jp": [
+   "日本医療ソーシャルワーカー協会",
+   "公的"
+  ],
+  "jacsw.or.jp": [
+   "日本社会福祉士会",
+   "公的"
+  ],
+  "jcma.or.jp": [
+   "日本介護支援専門員協会",
+   "公的"
+  ],
+  "jscm.jp": [
+   "日本ケアマネジメント学会",
+   "公的"
+  ],
+  "med.or.jp": [
+   "日本医師会",
+   "公的"
+  ],
+  "naika.or.jp": [
+   "日本内科学会",
+   "公的"
+  ],
+  "jstage.jst.go.jp": [
+   "J-STAGE",
+   "研究"
+  ],
+  "pubmed.ncbi.nlm.nih.gov": [
+   "PubMed／PubMed Central",
+   "研究"
+  ],
+  "mhlw-grants.niph.go.jp": [
+   "厚生労働科学研究成果データベース",
+   "研究"
+  ],
+  "nature.com": [
+   "Nature Portfolio",
+   "研究"
+  ],
+  "jamanetwork.com": [
+   "JAMA Network",
+   "研究"
+  ],
+  "academic.oup.com": [
+   "Oxford Academic",
+   "研究"
+  ],
+  "link.springer.com": [
+   "Springer Link",
+   "研究"
+  ],
+  "prtimes.jp": [
+   "PR TIMES",
+   "企業発表"
+  ],
+  "prnewswire.com": [
+   "PR Newswire",
+   "企業発表"
+  ],
+  "gemmed.ghc-j.com": [
+   "GemMed",
+   "報道"
+  ],
+  "cbnews.jp": [
+   "CBnews",
+   "報道"
+  ],
+  "yakuji.co.jp": [
+   "薬事日報",
+   "報道"
+  ],
+  "joint-kaigo.com": [
+   "介護ニュースJoint",
+   "報道"
+  ],
+  "innervision.co.jp": [
+   "インナービジョン",
+   "報道"
+  ],
+  "medit.tech": [
+   "Med IT Tech",
+   "報道"
+  ],
+  "medicaltech-news.com": [
+   "MedicalTech News",
+   "報道"
+  ],
+  "igaku-shoin.co.jp": [
+   "医学書院",
+   "報道"
+  ],
+  "aitimes.media": [
+   "The Medical AI Times",
+   "報道"
+  ],
+  "m3.com": [
+   "m3.com",
+   "報道"
+  ],
+  "healthit.gov": [
+   "ONC／ASTP",
+   "公的"
+  ],
+  "federalregister.gov": [
+   "Federal Register",
+   "公的"
+  ],
+  "asprtracie.hhs.gov": [
+   "ASPR TRACIE",
+   "公的"
+  ],
+  "news.va.gov": [
+   "VA News",
+   "公的"
+  ],
+  "cms.gov": [
+   "CMS",
+   "公的"
+  ],
+  "fda.gov": [
+   "FDA",
+   "公的"
+  ],
+  "hhs.gov": [
+   "HHS",
+   "公的"
+  ],
+  "ahrq.gov": [
+   "AHRQ",
+   "公的"
+  ],
+  "england.nhs.uk": [
+   "NHS England",
+   "公的"
+  ],
+  "digital.nhs.uk": [
+   "NHS England Digital",
+   "公的"
+  ],
+  "gov.uk": [
+   "GOV.UK（英国政府）",
+   "公的"
+  ],
+  "digitalhealth.gov.au": [
+   "Australian Digital Health Agency",
+   "公的"
+  ],
+  "ncsc.gov.uk": [
+   "NCSC",
+   "公的"
+  ],
+  "ashp.org": [
+   "ASHP",
+   "公的"
+  ],
+  "nursingworld.org": [
+   "American Nurses Association",
+   "公的"
+  ],
+  "aonl.org": [
+   "AONL",
+   "公的"
+  ],
+  "aha.org": [
+   "AHA",
+   "公的"
+  ],
+  "newsnetwork.mayoclinic.org": [
+   "Mayo Clinic News Network",
+   "施設公式"
+  ],
+  "newsroom.clevelandclinic.org": [
+   "Cleveland Clinic Newsroom",
+   "施設公式"
+  ],
+  "healthcareitnews.com": [
+   "Healthcare IT News",
+   "報道"
+  ],
+  "beckershospitalreview.com": [
+   "Becker's Hospital Review",
+   "報道"
+  ],
+  "fiercehealthcare.com": [
+   "Fierce Healthcare",
+   "報道"
+  ],
+  "hipaajournal.com": [
+   "The HIPAA Journal",
+   "報道"
+  ],
+  "ssk.or.jp": [
+   "社会保険診療報酬支払基金（旧）",
+   "公的"
+  ],
+  "cfa.go.jp": [
+   "こども家庭庁",
+   "公的"
+  ],
+  "cases.iryohokenjyoho-portalsite.jp": [
+   "医療機関等向け総合ポータル（事例）",
+   "公的"
+  ],
+  "city.nara.lg.jp": [
+   "奈良市",
+   "公的"
+  ],
+  "pref.shiga.lg.jp": [
+   "滋賀県",
+   "公的"
+  ],
+  "city.musashimurayama.lg.jp": [
+   "武蔵村山市",
+   "公的"
+  ],
+  "news.ashp.org": [
+   "ASHP",
+   "公的"
+  ],
+  "aizawahospital.jp": [
+   "相澤病院",
+   "施設公式"
+  ],
+  "oici.jp": [
+   "大阪国際がんセンター",
+   "施設公式"
+  ],
+  "ntt.com": [
+   "NTTドコモビジネス",
+   "企業発表"
+  ],
+  "nms.ac.jp": [
+   "日本医科大学武蔵小杉病院",
+   "施設公式"
+  ],
+  "shirobon.net": [
+   "しろぼんねっと",
+   "報道"
+  ],
+  "wic-net.com": [
+   "WIC-NET",
+   "報道"
+  ],
+  "med-cpa.jp": [
+   "解説記事（med-cpa）",
+   "報道"
+  ],
+  "ajhc.or.jp": [
+   "日本病院会（資料掲載）",
+   "公的"
+  ],
+  "knowlety.jp": [
+   "解説サイト（knowlety）",
+   "報道"
+  ],
+  "jscm.org": [
+   "日本臨床微生物学会",
+   "研究"
+  ],
+  "kansen.pref.saga.jp": [
+   "佐賀県感染症情報センター",
+   "公的"
+  ],
+  "pref.hokkaido.lg.jp": [
+   "北海道",
+   "公的"
+  ],
+  "pref.iwate.jp": [
+   "岩手県",
+   "公的"
+  ],
+  "city.kashiwa.lg.jp": [
+   "柏市",
+   "公的"
+  ],
+  "congre.co.jp": [
+   "学会の大会サイト（コングレ）",
+   "公的"
+  ]
+ },
+ "groups": [
+  {
+   "name": "国・公的機関",
+   "items": [
+    {
+     "name": "厚生労働省（報道発表・通知・審議会資料）",
+     "url": "https://www.mhlw.go.jp/stf/houdou/index.html",
+     "label": "公的",
+     "what": "報道発表、通知・事務連絡、審議会・検討会の資料",
+     "freq": "毎日",
+     "pages": [
+      "hl",
+      "gov",
+      "nurs",
+      "doc",
+      "pharm",
+      "conn",
+      "se",
+      "reim",
+      "portal"
+     ],
+     "domains": [
+      "mhlw.go.jp"
+     ],
+     "note": "省のサイト全体の合計",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "厚生労働省 医療等情報利活用ワーキンググループ",
+     "url": "https://www.mhlw.go.jp/stf/shingi/other-isei_210261.html",
+     "label": "公的",
+     "what": "電子カルテ情報共有サービス、標準化、ガイドライン改定の資料",
+     "freq": "開催ごと",
+     "pages": [
+      "gov",
+      "se",
+      "hl"
+     ],
+     "domains": [],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active"
+    },
+    {
+     "name": "厚生労働省 医療分野のサイバーセキュリティ対策",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/johoka/cyber-security.html",
+     "label": "公的",
+     "what": "チェックリスト、安全管理ガイドライン、注意喚起",
+     "freq": "毎日",
+     "pages": [
+      "cyb",
+      "se",
+      "hl"
+     ],
+     "domains": [],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active"
+    },
+    {
+     "name": "厚生労働省 令和8年度診療報酬改定",
+     "url": "https://www.mhlw.go.jp/stf/newpage_67729.html",
+     "label": "公的",
+     "what": "告示・通知、疑義解釈資料、施設基準の届出",
+     "freq": "毎日",
+     "pages": [
+      "reim",
+      "hl"
+     ],
+     "domains": [],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active"
+    },
+    {
+     "name": "中央社会保険医療協議会（中医協）総会",
+     "url": "https://www.mhlw.go.jp/stf/shingi/shingi-chuo_128154.html",
+     "label": "公的",
+     "what": "総会の議題と資料、次期改定の論点",
+     "freq": "毎日",
+     "pages": [
+      "reim"
+     ],
+     "domains": [
+      "mhlw.go.jp"
+     ],
+     "note": "開催は隔週水曜",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "厚生労働省 医療用医薬品の供給状況",
+     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/kouhatu-iyaku/04_00003.html",
+     "label": "公的",
+     "what": "限定出荷・供給停止の掲載文書と更新日",
+     "freq": "毎日〜週1",
+     "pages": [
+      "pharm"
+     ],
+     "domains": [],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active"
+    },
+    {
+     "name": "厚生労働省 医療措置協定とG-MISでの報告",
+     "url": "https://www.mhlw.go.jp/stf/0000089060_00003.html",
+     "label": "公的",
+     "what": "協定を結んだ医療機関の報告、入力要領",
+     "freq": "週1",
+     "pages": [
+      "inf"
+     ],
+     "domains": [],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "感染症DXの調査で追加"
+    },
+    {
+     "name": "厚生労働省 在宅医療・介護連携推進事業に係るプラットフォーム",
+     "url": "https://zaitakupf.mhlw.go.jp/",
+     "label": "公的",
+     "what": "在宅医療・介護連携の国の施策と先行事例",
+     "freq": "随時",
+     "pages": [
+      "conn"
+     ],
+     "domains": [],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+    },
+    {
+     "name": "いきいき働く医療機関サポートWeb（いきサポ）",
+     "url": "https://iryou-kinmukankyou.mhlw.go.jp/",
+     "label": "公的",
+     "what": "医療勤務環境の改善、タスク・シフトの事例",
+     "freq": "随時",
+     "pages": [
+      "nurs",
+      "reim"
+     ],
+     "domains": [
+      "iryou-kinmukankyou.mhlw.go.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-10-01"
+    },
+    {
+     "name": "デジタル庁 電子処方箋ダッシュボード",
+     "url": "https://www.digital.go.jp/resources/govdashboard/electronic-prescription",
+     "label": "公的",
+     "what": "電子処方箋の導入状況",
+     "freq": "月1",
+     "pages": [
+      "pharm",
+      "gov"
+     ],
+     "domains": [
+      "digital.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "内閣感染症危機管理統括庁",
+     "url": "https://www.caicm.go.jp/",
+     "label": "公的",
+     "what": "政府行動計画、サーベイランスのガイドライン",
+     "freq": "週1",
+     "pages": [
+      "inf"
+     ],
+     "domains": [
+      "caicm.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "感染症DXの調査で追加",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "内閣官房（新型インフルエンザ等対策推進会議の資料）",
+     "url": "https://www.cas.go.jp/",
+     "label": "公的",
+     "what": "電子カルテと発生届の連携などの進み具合",
+     "freq": "随時",
+     "pages": [
+      "inf",
+      "gov"
+     ],
+     "domains": [
+      "cas.go.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "感染症DXの調査で追加",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "内閣府 医療等情報の利活用の推進に関する検討会（資料）",
+     "url": "https://www8.cao.go.jp/iryou/studygloup/pdf/chukanmatome.pdf",
+     "label": "公的",
+     "what": "医療等情報の二次利用の検討",
+     "freq": "随時",
+     "pages": [
+      "gov"
+     ],
+     "domains": [
+      "www8.cao.go.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "WAM NET 介護保険最新情報",
+     "url": "https://www.wam.go.jp/gyoseiShiryou/",
+     "label": "公的",
+     "what": "介護の事務連絡・通知（Vol.番号つき）",
+     "freq": "毎日",
+     "pages": [
+      "conn",
+      "nurs"
+     ],
+     "domains": [
+      "wam.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "e-Gov パブリック・コメント",
+     "url": "https://public-comment.e-gov.go.jp/",
+     "label": "公的",
+     "what": "省令・基準の改正案",
+     "freq": "毎日",
+     "pages": [
+      "conn"
+     ],
+     "domains": [
+      "public-comment.e-gov.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "個人情報保護委員会",
+     "url": "https://www.ppc.go.jp/",
+     "label": "公的",
+     "what": "漏えい・誤送付の注意喚起、医療・介護のガイダンス",
+     "freq": "毎日",
+     "pages": [
+      "conn",
+      "se",
+      "hl"
+     ],
+     "domains": [
+      "ppc.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "警察庁",
+     "url": "https://www.npa.go.jp/",
+     "label": "公的",
+     "what": "サイバー犯罪・ランサムウェア被害の統計",
+     "freq": "随時",
+     "pages": [
+      "se"
+     ],
+     "domains": [
+      "npa.go.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-09-21"
+    }
+   ]
+  },
+  {
+   "name": "審査・研究・運営機関",
+   "items": [
+    {
+     "name": "PMDA（医薬品医療機器総合機構）",
+     "url": "https://www.pmda.go.jp/",
+     "label": "公的",
+     "what": "安全性情報、添付文書改訂、回収、プログラム医療機器の承認",
+     "freq": "毎日",
+     "pages": [
+      "pharm",
+      "doc",
+      "hl"
+     ],
+     "domains": [
+      "pmda.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "DX審査支払機構（医療情報基盤・診療報酬審査支払機構）",
+     "url": "https://www.hpdx.or.jp/",
+     "label": "公的",
+     "what": "オンライン資格確認、オンライン請求、電子処方箋の運用",
+     "freq": "毎日",
+     "pages": [
+      "gov",
+      "se",
+      "reim",
+      "portal"
+     ],
+     "domains": [
+      "hpdx.or.jp",
+      "ssk.or.jp"
+     ],
+     "note": "2026年10月1日に支払基金から名称変更（掲載URLは旧サイトを含む）",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "added": "2026-10-01",
+     "added_reason": "情報源に追加（支払基金の名称変更に合わせて）",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "AMED（日本医療研究開発機構）",
+     "url": "https://www.amed.go.jp/news/",
+     "label": "公的",
+     "what": "採択課題、研究成果",
+     "freq": "随時",
+     "pages": [
+      "doc",
+      "hl"
+     ],
+     "domains": [
+      "amed.go.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "国民健康保険中央会 ケアプランデータ連携システム",
+     "url": "https://www.kokuho.or.jp/system/care/careplan/",
+     "label": "公的",
+     "what": "導入状況、仕様、介護情報基盤への移行",
+     "freq": "毎日",
+     "pages": [
+      "conn"
+     ],
+     "domains": [
+      "kokuho.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "JIHS 感染症情報提供サイト",
+     "url": "https://id-info.jihs.go.jp/",
+     "label": "公的",
+     "what": "発生動向の公表先（流行状況はこちらを案内）",
+     "freq": "週1",
+     "pages": [
+      "inf"
+     ],
+     "domains": [
+      "id-info.jihs.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "感染症DXの調査で追加",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "JIHS AMR臨床リファレンスセンター（J-SIPHE・OASCIS）",
+     "url": "https://amr.jihs.go.jp/",
+     "label": "公的",
+     "what": "サーベイランスの仕様変更、病院の事例紹介",
+     "freq": "週1",
+     "pages": [
+      "inf",
+      "pharm"
+     ],
+     "domains": [
+      "amr.jihs.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "感染症DXの調査で追加",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "JANIS（院内感染対策サーベイランス）",
+     "url": "https://janis.mhlw.go.jp/",
+     "label": "公的",
+     "what": "年報、アンチバイオグラム作成ツール",
+     "freq": "週1",
+     "pages": [
+      "inf"
+     ],
+     "domains": [
+      "janis.mhlw.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "感染症DXの調査で追加",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "日本医療機能評価機構 医療安全情報",
+     "url": "https://www.med-safe.jp/",
+     "label": "公的",
+     "what": "医療事故情報、1テーマ・1アクションの安全情報",
+     "freq": "月1",
+     "pages": [
+      "nurs",
+      "hl"
+     ],
+     "domains": [
+      "med-safe.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "name": "セキュリティ",
+   "items": [
+    {
+     "name": "JPCERT/CC",
+     "url": "https://www.jpcert.or.jp/",
+     "label": "公的",
+     "what": "注意喚起、週刊報告",
+     "freq": "毎日",
+     "pages": [
+      "se",
+      "cyb",
+      "hl"
+     ],
+     "domains": [
+      "jpcert.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "IPA（情報処理推進機構）",
+     "url": "https://www.ipa.go.jp/security/",
+     "label": "公的",
+     "what": "重要なセキュリティ情報、脆弱性の注意喚起",
+     "freq": "毎日",
+     "pages": [
+      "se",
+      "cyb"
+     ],
+     "domains": [
+      "ipa.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "JVN（Japan Vulnerability Notes）",
+     "url": "https://jvn.jp/",
+     "label": "公的",
+     "what": "製品ごとの脆弱性対策情報",
+     "freq": "毎日",
+     "pages": [
+      "se"
+     ],
+     "domains": [
+      "jvn.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "国家サイバー統括室",
+     "url": "https://www.cyber.go.jp/news/list",
+     "label": "公的",
+     "what": "政府のサイバー関連の新着・注意喚起",
+     "freq": "毎日",
+     "pages": [
+      "se",
+      "cyb"
+     ],
+     "domains": [
+      "cyber.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "last_used": "2026-09-26"
+    },
+    {
+     "name": "MIST（医療機関向けセキュリティ教育支援ポータル）",
+     "url": "https://mist.mhlw.go.jp/",
+     "label": "公的",
+     "what": "研修、初動対応支援",
+     "freq": "週1",
+     "pages": [
+      "se",
+      "cyb",
+      "portal"
+     ],
+     "domains": [
+      "mist.mhlw.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "Security NEXT",
+     "url": "https://www.security-next.com/",
+     "label": "報道",
+     "what": "被害公表の所在確認（掲載は公式発表にリンク）",
+     "freq": "毎日",
+     "pages": [
+      "se"
+     ],
+     "domains": [
+      "security-next.com"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-09-29"
+    }
+   ]
+  },
+  {
+   "name": "厚生局・自治体",
+   "items": [
+    {
+     "name": "九州厚生局（施設基準・届出受理状況）",
+     "url": "https://kouseikyoku.mhlw.go.jp/kyushu/iryo_shido/r08_shinryohoshu_00001.html",
+     "label": "公的",
+     "what": "届出様式、受理状況（月2回）、経過措置の期限",
+     "freq": "毎日",
+     "pages": [
+      "reim",
+      "portal"
+     ],
+     "domains": [
+      "kouseikyoku.mhlw.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": true,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "佐賀県",
+     "url": "https://www.pref.saga.lg.jp/",
+     "label": "公的",
+     "what": "感染症サーベイランスの利用申請、医療措置協定の一覧",
+     "freq": "週1",
+     "pages": [
+      "inf"
+     ],
+     "domains": [
+      "pref.saga.lg.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "感染症DXの調査で追加",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "東京都保健医療局",
+     "url": "https://www.hokeniryo.metro.tokyo.lg.jp/",
+     "label": "公的",
+     "what": "医療機関のサイバー対策補助など都の施策",
+     "freq": "随時",
+     "pages": [
+      "nurs",
+      "hl",
+      "portal"
+     ],
+     "domains": [
+      "hokeniryo.metro.tokyo.lg.jp",
+      "metro.tokyo.lg.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "中小機構 デジタル化・AI導入補助金",
+     "url": "https://it-shien.smrj.go.jp/",
+     "label": "公的",
+     "what": "公募の回、締切",
+     "freq": "週1",
+     "pages": [
+      "hl",
+      "portal"
+     ],
+     "domains": [
+      "it-shien.smrj.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "J-Net21 支援情報ヘッドライン",
+     "url": "https://j-net21.smrj.go.jp/snavi/index.html",
+     "label": "公的",
+     "what": "補助金・助成金の日次確認と締切の裏取り",
+     "freq": "毎日",
+     "pages": [
+      "hl",
+      "portal"
+     ],
+     "domains": [
+      "j-net21.smrj.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-09-28"
+    }
+   ]
+  },
+  {
+   "name": "学会・団体",
+   "items": [
+    {
+     "name": "全日本病院協会",
+     "url": "https://www.ajha.or.jp/",
+     "label": "公的",
+     "what": "要望・意見、病院経営とDXの調査、研修・学会日程",
+     "freq": "毎日",
+     "pages": [
+      "hl",
+      "reim",
+      "portal"
+     ],
+     "domains": [
+      "ajha.or.jp"
+     ],
+     "note": "団体の意見は行政の決定と分けて書く",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-09-28"
+    },
+    {
+     "name": "日本病院会",
+     "url": "https://www.hospital.or.jp/",
+     "label": "公的",
+     "what": "会員向けに掲載された通知・事務連絡",
+     "freq": "随時",
+     "pages": [
+      "se",
+      "cyb"
+     ],
+     "domains": [
+      "hospital.or.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "サイバーDXの調査で追加",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "日本医療情報学会（JAMI）",
+     "url": "https://www.jami.jp/",
+     "label": "公的",
+     "what": "標準規格（HL7 FHIR・SS-MIX2）、提言、大会",
+     "freq": "週2〜3回",
+     "pages": [
+      "hl",
+      "nurs",
+      "se",
+      "portal"
+     ],
+     "domains": [
+      "jami.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "日本看護協会",
+     "url": "https://www.nurse.or.jp/",
+     "label": "公的",
+     "what": "看護業務効率化、調査、研修",
+     "freq": "随時",
+     "pages": [
+      "nurs"
+     ],
+     "domains": [
+      "nurse.or.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "看護業務効率化先進事例アワード",
+     "url": "https://kango-award.jp/",
+     "label": "公的",
+     "what": "看護DXの受賞事例",
+     "freq": "随時",
+     "pages": [
+      "nurs"
+     ],
+     "domains": [
+      "kango-award.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "全国訪問看護事業協会",
+     "url": "https://www.zenhokan.or.jp/",
+     "label": "公的",
+     "what": "訪問看護の制度対応、研修",
+     "freq": "随時",
+     "pages": [
+      "nurs"
+     ],
+     "domains": [
+      "zenhokan.or.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "日本訪問看護財団",
+     "url": "https://www.jvnf.or.jp/",
+     "label": "公的",
+     "what": "訪問看護の研修、調査",
+     "freq": "随時",
+     "pages": [
+      "nurs"
+     ],
+     "domains": [
+      "jvnf.or.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "日本病院薬剤師会",
+     "url": "https://www.jshp.or.jp/",
+     "label": "公的",
+     "what": "病院薬剤業務、調査、制度対応",
+     "freq": "週2〜3回",
+     "pages": [
+      "pharm"
+     ],
+     "domains": [
+      "jshp.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-09-30"
+    },
+    {
+     "name": "日本薬剤師会",
+     "url": "https://www.nichiyaku.or.jp/",
+     "label": "公的",
+     "what": "薬局DX、電子処方箋、調剤報酬",
+     "freq": "週2〜3回",
+     "pages": [
+      "pharm"
+     ],
+     "domains": [
+      "nichiyaku.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-09-29"
+    },
+    {
+     "name": "日本医療薬学会",
+     "url": "https://www.jsphcs.jp/",
+     "label": "公的",
+     "what": "学術集会、専門薬剤師",
+     "freq": "週1",
+     "pages": [
+      "pharm"
+     ],
+     "domains": [
+      "jsphcs.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-01"
+    },
+    {
+     "name": "日本医療ソーシャルワーカー協会",
+     "url": "https://www.jaswhs.or.jp/",
+     "label": "公的",
+     "what": "研修、提言",
+     "freq": "週1",
+     "pages": [
+      "conn"
+     ],
+     "domains": [
+      "jaswhs.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "日本社会福祉士会",
+     "url": "https://www.jacsw.or.jp/",
+     "label": "公的",
+     "what": "研修、提言",
+     "freq": "週1",
+     "pages": [
+      "conn"
+     ],
+     "domains": [
+      "jacsw.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-09-17"
+    },
+    {
+     "name": "日本介護支援専門員協会",
+     "url": "https://www.jcma.or.jp/",
+     "label": "公的",
+     "what": "研修、提言",
+     "freq": "週1",
+     "pages": [
+      "conn"
+     ],
+     "domains": [
+      "jcma.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "日本ケアマネジメント学会",
+     "url": "https://www.jscm.jp/",
+     "label": "公的",
+     "what": "学術集会、研究",
+     "freq": "週1",
+     "pages": [
+      "conn"
+     ],
+     "domains": [
+      "jscm.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "日本医師会",
+     "url": "https://www.med.or.jp/",
+     "label": "公的",
+     "what": "医療DXへの見解、会員向けの通知",
+     "freq": "随時",
+     "pages": [
+      "doc",
+      "hl"
+     ],
+     "domains": [
+      "med.or.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-09-23"
+    },
+    {
+     "name": "日本内科学会",
+     "url": "https://www.naika.or.jp/",
+     "label": "公的",
+     "what": "学術集会、提言",
+     "freq": "随時",
+     "pages": [
+      "doc"
+     ],
+     "domains": [
+      "naika.or.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-09-29"
+    },
+    {
+     "name": "学術集会の公式サイト（学会の大会ページ）",
+     "url": "",
+     "label": "公的",
+     "what": "大会の日程・演題・参加登録",
+     "freq": "随時",
+     "pages": [
+      "portal",
+      "nurs",
+      "doc",
+      "pharm",
+      "se"
+     ],
+     "domains": [
+      "congre.co.jp",
+      "c-linkage.co.jp",
+      "convention.jtbcom.co.jp",
+      "site2.convention.co.jp"
+     ],
+     "note": "大会ごとに運営事務局のサイトが変わる",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-10-02"
+    }
+   ]
+  },
+  {
+   "name": "研究・論文",
+   "items": [
+    {
+     "name": "J-STAGE",
+     "url": "https://www.jstage.jst.go.jp/",
+     "label": "研究",
+     "what": "国内の論文（導入前後の比較など）",
+     "freq": "週1",
+     "pages": [
+      "doc",
+      "pharm",
+      "nurs",
+      "inf"
+     ],
+     "domains": [
+      "jstage.jst.go.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "PubMed／PubMed Central",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/",
+     "label": "研究",
+     "what": "海外の論文",
+     "freq": "週1",
+     "pages": [
+      "doc",
+      "pharm"
+     ],
+     "domains": [
+      "pubmed.ncbi.nlm.nih.gov",
+      "pmc.ncbi.nlm.nih.gov"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-09-27"
+    },
+    {
+     "name": "厚生労働科学研究成果データベース",
+     "url": "https://mhlw-grants.niph.go.jp/",
+     "label": "研究",
+     "what": "厚労科研の報告書",
+     "freq": "随時",
+     "pages": [
+      "nurs",
+      "doc"
+     ],
+     "domains": [
+      "mhlw-grants.niph.go.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active"
+    },
+    {
+     "name": "Nature Portfolio（Nature Medicine・npj Digital Medicine ほか）",
+     "url": "https://www.nature.com/",
+     "label": "研究",
+     "what": "医療AI・デジタルヘルスの論文",
+     "freq": "随時",
+     "pages": [
+      "doc",
+      "ovs"
+     ],
+     "domains": [
+      "nature.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "JAMA Network",
+     "url": "https://jamanetwork.com/",
+     "label": "研究",
+     "what": "臨床研究、医療AIの評価",
+     "freq": "随時",
+     "pages": [
+      "doc",
+      "ovs"
+     ],
+     "domains": [
+      "jamanetwork.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "Oxford Academic（JAMIA ほか）",
+     "url": "https://academic.oup.com/",
+     "label": "研究",
+     "what": "医療情報学の論文",
+     "freq": "随時",
+     "pages": [
+      "doc",
+      "se",
+      "ovs"
+     ],
+     "domains": [
+      "academic.oup.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "Springer Link",
+     "url": "https://link.springer.com/",
+     "label": "研究",
+     "what": "医療情報・看護の論文",
+     "freq": "随時",
+     "pages": [
+      "doc",
+      "ovs"
+     ],
+     "domains": [
+      "link.springer.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-09-20"
+    }
+   ]
+  },
+  {
+   "name": "医療機関・企業の発表",
+   "items": [
+    {
+     "name": "病院・大学・医療法人の公式サイト",
+     "url": "",
+     "label": "施設公式",
+     "what": "導入の結果、運用方法、障害・被害の公表",
+     "freq": "随時",
+     "pages": [
+      "hl",
+      "nurs",
+      "doc",
+      "pharm",
+      "conn",
+      "se",
+      "cyb",
+      "inf"
+     ],
+     "domains": [],
+     "note": "施設自身の公表だけを使う",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active"
+    },
+    {
+     "name": "PR TIMES",
+     "url": "https://prtimes.jp/",
+     "label": "企業発表",
+     "what": "新製品・導入の発表（発信者が病院なら施設公式として扱う）",
+     "freq": "毎日",
+     "pages": [
+      "hl",
+      "nurs",
+      "doc"
+     ],
+     "domains": [
+      "prtimes.jp"
+     ],
+     "note": "効果や精度は施設資料・論文で裏取り",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "PR Newswire",
+     "url": "https://www.prnewswire.com/",
+     "label": "企業発表",
+     "what": "海外企業・病院の発表",
+     "freq": "随時",
+     "pages": [
+      "ovs"
+     ],
+     "domains": [
+      "prnewswire.com"
+     ],
+     "note": "効果や精度は一次資料で裏取り",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-09-30"
+    }
+   ]
+  },
+  {
+   "name": "業界メディア（話題の発見用）",
+   "items": [
+    {
+     "name": "GemMed",
+     "url": "https://gemmed.ghc-j.com/",
+     "label": "報道",
+     "what": "改定内容の速報、病院経営への影響",
+     "freq": "毎日",
+     "pages": [
+      "reim",
+      "hl"
+     ],
+     "domains": [
+      "gemmed.ghc-j.com"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "CBnews",
+     "url": "https://www.cbnews.jp/",
+     "label": "報道",
+     "what": "経営・運用・改定対応",
+     "freq": "毎日",
+     "pages": [
+      "reim",
+      "hl"
+     ],
+     "domains": [
+      "cbnews.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "薬事日報",
+     "url": "https://www.yakuji.co.jp/",
+     "label": "報道",
+     "what": "薬事・薬局の動き",
+     "freq": "毎日",
+     "pages": [
+      "pharm"
+     ],
+     "domains": [
+      "yakuji.co.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "介護ニュースJoint",
+     "url": "https://www.joint-kaigo.com/",
+     "label": "報道",
+     "what": "介護保険の制度・審議会の動き",
+     "freq": "毎日",
+     "pages": [
+      "conn"
+     ],
+     "domains": [
+      "joint-kaigo.com"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-09-28"
+    },
+    {
+     "name": "インナービジョン",
+     "url": "https://www.innervision.co.jp/",
+     "label": "報道",
+     "what": "医療ITの動き",
+     "freq": "随時",
+     "pages": [
+      "se",
+      "doc"
+     ],
+     "domains": [
+      "innervision.co.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "Med IT Tech",
+     "url": "https://medit.tech/",
+     "label": "報道",
+     "what": "医療ITの動き",
+     "freq": "随時",
+     "pages": [
+      "se",
+      "hl"
+     ],
+     "domains": [
+      "medit.tech"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-09-23"
+    },
+    {
+     "name": "医療テックニュース",
+     "url": "https://medicaltech-news.com/",
+     "label": "報道",
+     "what": "医療ITの製品・導入事例・行政動向",
+     "freq": "随時",
+     "pages": [
+      "se",
+      "hl"
+     ],
+     "domains": [
+      "medicaltech-news.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-09-22"
+    },
+    {
+     "name": "医学書院",
+     "url": "https://www.igaku-shoin.co.jp/",
+     "label": "報道",
+     "what": "看護・医療の専門誌の記事",
+     "freq": "随時",
+     "pages": [
+      "nurs",
+      "doc"
+     ],
+     "domains": [
+      "igaku-shoin.co.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-09-27"
+    },
+    {
+     "name": "The Medical AI Times",
+     "url": "https://aitimes.media/",
+     "label": "報道",
+     "what": "医療AIの研究・製品・規制の解説",
+     "freq": "毎日",
+     "pages": [
+      "doc",
+      "hl"
+     ],
+     "domains": [
+      "aitimes.media"
+     ],
+     "note": "元の論文・発表にリンクする",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-09-24"
+    },
+    {
+     "name": "m3.com 医療維新",
+     "url": "https://www.m3.com/news/iryoishin",
+     "label": "報道",
+     "what": "医師・病院団体の反応（会員限定の記事あり）",
+     "freq": "毎日",
+     "pages": [
+      "reim",
+      "doc"
+     ],
+     "domains": [
+      "m3.com"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "name": "海外",
+   "items": [
+    {
+     "name": "ONC／ASTP（HealthIT.gov）",
+     "url": "https://www.healthit.gov/",
+     "label": "公的",
+     "what": "米国の医療IT政策、相互運用性",
+     "freq": "随時",
+     "pages": [
+      "ovs",
+      "hl"
+     ],
+     "domains": [
+      "healthit.gov"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "Federal Register（米国官報）",
+     "url": "https://www.federalregister.gov/",
+     "label": "公的",
+     "what": "米国の規則案・最終規則",
+     "freq": "随時",
+     "pages": [
+      "ovs"
+     ],
+     "domains": [
+      "federalregister.gov"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-09-22"
+    },
+    {
+     "name": "ASPR TRACIE（米国保健福祉省の災害医療支援）",
+     "url": "https://asprtracie.hhs.gov/",
+     "label": "公的",
+     "what": "病院のサイバー・災害時の事業継続",
+     "freq": "随時",
+     "pages": [
+      "se",
+      "nurs",
+      "ovs"
+     ],
+     "domains": [
+      "asprtracie.hhs.gov"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "VA News（米国退役軍人省）",
+     "url": "https://news.va.gov/",
+     "label": "公的",
+     "what": "退役軍人病院のデジタル施策",
+     "freq": "随時",
+     "pages": [
+      "ovs"
+     ],
+     "domains": [
+      "news.va.gov"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-09-27"
+    },
+    {
+     "name": "CMS（米国メディケア・メディケイド・サービスセンター）",
+     "url": "https://www.cms.gov/",
+     "label": "公的",
+     "what": "診療報酬、相互運用性の枠組み",
+     "freq": "随時",
+     "pages": [
+      "ovs",
+      "conn"
+     ],
+     "domains": [
+      "cms.gov"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "FDA（米国食品医薬品局）",
+     "url": "https://www.fda.gov/",
+     "label": "公的",
+     "what": "AI医療機器、医薬品の安全性情報",
+     "freq": "週1",
+     "pages": [
+      "ovs",
+      "pharm",
+      "doc"
+     ],
+     "domains": [
+      "fda.gov"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "HHS（米国保健福祉省）",
+     "url": "https://www.hhs.gov/",
+     "label": "公的",
+     "what": "HIPAA、情報漏えいの是正",
+     "freq": "随時",
+     "pages": [
+      "ovs",
+      "se"
+     ],
+     "domains": [
+      "hhs.gov"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "AHRQ（米国医療研究品質庁）",
+     "url": "https://www.ahrq.gov/",
+     "label": "公的",
+     "what": "医療の質・移行期ケアの研究",
+     "freq": "随時",
+     "pages": [
+      "ovs",
+      "conn",
+      "nurs"
+     ],
+     "domains": [
+      "ahrq.gov"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "NHS England",
+     "url": "https://www.england.nhs.uk/",
+     "label": "公的",
+     "what": "英国の退院支援、デジタル施策",
+     "freq": "随時",
+     "pages": [
+      "ovs",
+      "conn"
+     ],
+     "domains": [
+      "england.nhs.uk"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-09-30"
+    },
+    {
+     "name": "NHS England Digital",
+     "url": "https://digital.nhs.uk/",
+     "label": "公的",
+     "what": "英国の医療ITの運用・サイバー対策",
+     "freq": "随時",
+     "pages": [
+      "se",
+      "ovs"
+     ],
+     "domains": [
+      "digital.nhs.uk"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-10-01"
+    },
+    {
+     "name": "GOV.UK（英国政府）",
+     "url": "https://www.gov.uk/",
+     "label": "公的",
+     "what": "英国政府の発表",
+     "freq": "随時",
+     "pages": [
+      "ovs",
+      "gov",
+      "hl"
+     ],
+     "domains": [
+      "gov.uk"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "Australian Digital Health Agency",
+     "url": "https://www.digitalhealth.gov.au/",
+     "label": "公的",
+     "what": "豪州の医療DX",
+     "freq": "随時",
+     "pages": [
+      "ovs"
+     ],
+     "domains": [
+      "digitalhealth.gov.au"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-09-29"
+    },
+    {
+     "name": "NCSC（英国 国家サイバーセキュリティセンター）",
+     "url": "https://www.ncsc.gov.uk/",
+     "label": "公的",
+     "what": "サイバー対策の指針、注意喚起",
+     "freq": "随時",
+     "pages": [
+      "se",
+      "ovs"
+     ],
+     "domains": [
+      "ncsc.gov.uk"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "ASHP（米国医療薬剤師会）",
+     "url": "https://www.ashp.org/",
+     "label": "公的",
+     "what": "薬剤師のAI活用、実装指針",
+     "freq": "週1",
+     "pages": [
+      "pharm"
+     ],
+     "domains": [
+      "news.ashp.org"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "American Nurses Association",
+     "url": "https://www.nursingworld.org/",
+     "label": "公的",
+     "what": "米国の看護とテクノロジー",
+     "freq": "随時",
+     "pages": [
+      "nurs",
+      "ovs"
+     ],
+     "domains": [
+      "nursingworld.org"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "AONL（米国看護管理者協会）",
+     "url": "https://www.aonl.org/",
+     "label": "公的",
+     "what": "看護管理とテクノロジー",
+     "freq": "随時",
+     "pages": [
+      "nurs",
+      "ovs"
+     ],
+     "domains": [
+      "aonl.org"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "AHA（米国病院協会）",
+     "url": "https://www.aha.org/",
+     "label": "公的",
+     "what": "米国の病院経営・サイバー対策",
+     "freq": "随時",
+     "pages": [
+      "ovs"
+     ],
+     "domains": [
+      "aha.org"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-01"
+    },
+    {
+     "name": "Mayo Clinic News Network",
+     "url": "https://newsnetwork.mayoclinic.org/",
+     "label": "施設公式",
+     "what": "病院のAI・デジタル導入の発表",
+     "freq": "随時",
+     "pages": [
+      "ovs",
+      "doc"
+     ],
+     "domains": [
+      "newsnetwork.mayoclinic.org"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "Cleveland Clinic Newsroom",
+     "url": "https://newsroom.clevelandclinic.org/",
+     "label": "施設公式",
+     "what": "病院のAI・デジタル導入の発表",
+     "freq": "随時",
+     "pages": [
+      "ovs"
+     ],
+     "domains": [
+      "newsroom.clevelandclinic.org"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-09-25"
+    },
+    {
+     "name": "Healthcare IT News",
+     "url": "https://www.healthcareitnews.com/",
+     "label": "報道",
+     "what": "海外事例の所在確認（掲載は一次情報へ）",
+     "freq": "随時",
+     "pages": [
+      "ovs"
+     ],
+     "domains": [
+      "healthcareitnews.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "Becker's Hospital Review",
+     "url": "https://www.beckershospitalreview.com/",
+     "label": "報道",
+     "what": "米国の病院DXの所在確認",
+     "freq": "随時",
+     "pages": [
+      "ovs",
+      "nurs"
+     ],
+     "domains": [
+      "beckershospitalreview.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "Fierce Healthcare",
+     "url": "https://www.fiercehealthcare.com/",
+     "label": "報道",
+     "what": "米国の医療経営・ITの所在確認",
+     "freq": "随時",
+     "pages": [
+      "ovs"
+     ],
+     "domains": [
+      "fiercehealthcare.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-10-02"
+    },
+    {
+     "name": "The HIPAA Journal",
+     "url": "https://www.hipaajournal.com/",
+     "label": "報道",
+     "what": "米国の医療情報漏えいの所在確認",
+     "freq": "随時",
+     "pages": [
+      "se",
+      "ovs"
+     ],
+     "domains": [
+      "hipaajournal.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-02",
+     "added_reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）",
+     "last_used": "2026-10-02"
+    }
+   ]
+  }
+ ],
+ "baseline_domains": {
+  "27kinki-yaku.jp": 1,
+  "64jsha.mq-con.jp": 1,
+  "aannet.org": 1,
+  "about.kaiserpermanente.org": 1,
+  "academic.oup.com": 40,
+  "academy.impress.co.jp": 1,
+  "accessdata.fda.gov": 1,
+  "aging.senate.gov": 1,
+  "aha.org": 20,
+  "ahrq.gov": 6,
+  "ai.jmir.org": 1,
+  "ai.nejm.org": 2,
+  "aitimes.media": 6,
+  "aizawahospital.jp": 1,
+  "ajha.or.jp": 16,
+  "allm.net": 1,
+  "ama-assn.org": 1,
+  "amed.go.jp": 16,
+  "antiphishing.jp": 1,
+  "aomori-cma.or.jp": 1,
+  "aonl.org": 4,
+  "arpa-h.gov": 1,
+  "asa-hosp.city.hiroshima.jp": 1,
+  "ashp.org": 2,
+  "asprtracie.hhs.gov": 5,
+  "atmarkit.itmedia.co.jp": 1,
+  "atr.jp": 1,
+  "audit.contec.com": 1,
+  "aviatrix.ai": 1,
+  "aws.amazon.com": 1,
+  "baycare.org": 1,
+  "baylorgenetics.com": 1,
+  "beckershospitalreview.com": 17,
+  "bleepingcomputer.com": 1,
+  "blog.hl7.org": 1,
+  "bm-sms.co.jp": 1,
+  "bmjgroup.com": 1,
+  "buildingbetterhealthcare.com": 1,
+  "businesswire.com": 2,
+  "c-linkage.co.jp": 7,
+  "cambridge.org": 1,
+  "care-news.jp": 3,
+  "carebook.jp": 1,
+  "caremanagement.jp": 1,
+  "carenet.com": 3,
+  "careplan-renkei-support.jp": 1,
+  "cas.go.jp": 1,
+  "cases.iryohokenjyoho-portalsite.jp": 3,
+  "cbnews.jp": 32,
+  "cdc.gov": 1,
+  "cfa.go.jp": 1,
+  "chiba-u.ac.jp": 1,
+  "chromereleases.googleblog.com": 1,
+  "chuikyo.news": 1,
+  "chuo-u.ac.jp": 1,
+  "chushi65.jp": 1,
+  "cisa.gov": 1,
+  "city.chiba.jp": 1,
+  "city.edogawa.tokyo.jp": 1,
+  "city.musashimurayama.lg.jp": 1,
+  "city.nara.lg.jp": 3,
+  "city.okayama.jp": 1,
+  "city.ono.hyogo.jp": 1,
+  "city.osaka.lg.jp": 3,
+  "city.ota.tokyo.jp": 1,
+  "city.ryugasaki.ibaraki.jp": 1,
+  "cloud.google.com": 1,
+  "cms.gov": 44,
+  "comimi.jp": 1,
+  "congre.co.jp": 12,
+  "congress.jsco.or.jp": 2,
+  "convention.jtbcom.co.jp": 6,
+  "cotocellar.com": 1,
+  "credo-m.co.jp": 1,
+  "crosslog.life": 1,
+  "csrc.nist.gov": 1,
+  "csrwire.com": 1,
+  "cyber.go.jp": 3,
+  "cybernet.co.jp": 1,
+  "cybersecuritydive.com": 1,
+  "democrats-veterans.house.gov": 1,
+  "dent.osaka-u.ac.jp": 1,
+  "developer.chrome.com": 1,
+  "digital.go.jp": 14,
+  "digital.nhs.uk": 10,
+  "digitalhealth.gov.au": 5,
+  "digitalhealth.net": 1,
+  "dimio.jp": 1,
+  "do-kaigoshien.jp": 1,
+  "dr-net.co.jp": 1,
+  "em-group.v2.nex-pro.com": 2,
+  "ema.europa.eu": 1,
+  "england.nhs.uk": 12,
+  "enterprisezine.jp": 1,
+  "eurekalert.org": 2,
+  "event-marketing.co.jp": 1,
+  "evidence.nihr.ac.uk": 1,
+  "ewellibow.jp": 4,
+  "fda.gov": 34,
+  "federalregister.gov": 4,
+  "fiercehealthcare.com": 8,
+  "financialcontent.com": 1,
+  "forest.watch.impress.co.jp": 1,
+  "frontiersin.org": 3,
+  "ftc.gov": 1,
+  "ftp.orca.med.or.jp": 1,
+  "fujifilm.com": 3,
+  "fujita-hu.ac.jp": 1,
+  "fukagawa-naika.com": 1,
+  "fukushizaidan.jp": 1,
+  "g-regi.jp": 2,
+  "gakkai.co.jp": 1,
+  "gankenshin50.mhlw.go.jp": 1,
+  "gao.gov": 1,
+  "gehealthcare.com": 2,
+  "gemmed.ghc-j.com": 1,
+  "gh.opho.jp": 3,
+  "gibraltarsolutions.com": 1,
+  "global.fujitsu": 1,
+  "gov.ca.gov": 1,
+  "gov.uk": 12,
+  "gulfshorebusiness.com": 1,
+  "gunma-u.ac.jp": 1,
+  "h.u-tokyo.ac.jp": 3,
+  "hackensackmeridianhealth.org": 1,
+  "hai.stanford.edu": 1,
+  "haip-cip.org": 1,
+  "hama-med.ac.jp": 1,
+  "handa-hospital.jp": 1,
+  "hcit.or.jp": 2,
+  "hcpf.colorado.gov": 1,
+  "hcr.or.jp": 2,
+  "health-isac.org": 1,
+  "healthcareitnews.com": 40,
+  "healthexec.com": 1,
+  "healthit.gov": 11,
+  "healthitanswers.net": 1,
+  "healthsectorcouncil.org": 2,
+  "healthsystemcio.com": 3,
+  "helpany.com": 1,
+  "henryford.com": 1,
+  "hgpi.org": 1,
+  "hhs.gov": 21,
+  "himss.org": 2,
+  "hipaajournal.com": 4,
+  "hiroshima-u.ac.jp": 1,
+  "hisamitsu.co.jp": 1,
+  "histalk2.com": 1,
+  "hitconsultant.net": 2,
+  "hl7.jp": 1,
+  "hojyokin-portal.jp": 1,
+  "hokeniryo.metro.tokyo.lg.jp": 8,
+  "hopkinsmedicine.org": 1,
+  "hosp.tohoku.ac.jp": 2,
+  "hospex.jma.or.jp": 1,
+  "hospital-topmanagement-seminar.mhlw.go.jp": 1,
+  "hospital.fujita-hu.ac.jp": 1,
+  "hospital.iwata.shizuoka.jp": 1,
+  "hospital.or.jp": 12,
+  "houwa.or.jp": 1,
+  "hp.kmu.ac.jp": 1,
+  "hpdx.or.jp": 5,
+  "hrsa.gov": 2,
+  "htn.co.uk": 1,
+  "hub.tmu.edu.tw": 1,
+  "huhp.hokudai.ac.jp": 1,
+  "hus.ac.jp": 1,
+  "hws-kyokai.or.jp": 1,
+  "hyo-med.ac.jp": 1,
+  "ic3.gov": 3,
+  "icd11pub.byomei.org": 1,
+  "ictr.wisc.edu": 1,
+  "igaku-shoin.co.jp": 4,
+  "ihikenpo.or.jp": 1,
+  "implementer.digitalhealth.gov.au": 1,
+  "incrediblehealth.com": 1,
+  "info.pmda.go.jp": 2,
+  "infocom.co.jp": 1,
+  "infoway-inforoute.ca": 1,
+  "innervision.co.jp": 8,
+  "innolitics.com": 1,
+  "intelligenthealth.tech": 1,
+  "ipa.go.jp": 24,
+  "ircp.niigata-u.ac.jp": 1,
+  "iryohokenjyoho.service-now.com": 1,
+  "iryou-kinmukankyou.mhlw.go.jp": 9,
+  "iryou.teikyouseido.mhlw.go.jp": 1,
+  "isct.ac.jp": 2,
+  "isoukai2027.jp": 1,
+  "it-shien.smrj.go.jp": 6,
+  "it.impress.co.jp": 2,
+  "j-net21.smrj.go.jp": 2,
+  "jaccn.jp": 1,
+  "jaccw.or.jp": 2,
+  "jacsw.or.jp": 3,
+  "jaen.jp": 1,
+  "jahc31.yupia.net": 2,
+  "jahcm.org": 1,
+  "jahcp.org": 1,
+  "jahis.jp": 2,
+  "jamanetwork.com": 12,
+  "jamcf.jp": 1,
+  "jami-fhir-jp-wg.github.io": 1,
+  "jami-ni.jp": 1,
+  "jami.jp": 6,
+  "janap.jp": 1,
+  "janhc.jp": 1,
+  "jans.or.jp": 2,
+  "japan-medical-ai.org": 1,
+  "japhn15.yupia.net": 1,
+  "jarcw.jp": 1,
+  "jaswhs.or.jp": 6,
+  "jcc-conference.org": 1,
+  "jcma.or.jp": 1,
+  "jcmi46.org": 3,
+  "jddw.jp": 2,
+  "jges.net": 1,
+  "jhim-e.com": 1,
+  "jhm.umin.jp": 1,
+  "jihs.go.jp": 1,
+  "jmari.med.or.jp": 2,
+  "jmees-inc.com": 1,
+  "johokiko.co.jp": 1,
+  "joint-kaigo.com": 8,
+  "jona.gr.jp": 1,
+  "journals.plos.org": 1,
+  "jp.ext.hp.com": 1,
+  "jpcert.or.jp": 17,
+  "jpds.or.jp": 3,
+  "jpec.or.jp": 1,
+  "jpfhir.jp": 3,
+  "jpi.co.jp": 1,
+  "jpn.nec.com": 1,
+  "jpna-gakujutsu.jp": 1,
+  "jq-hyouka.jcqhc.or.jp": 1,
+  "jracd.jp": 1,
+  "jrc.or.jp": 2,
+  "jrs.or.jp": 2,
+  "jscc.or.jp": 1,
+  "jscm.jp": 5,
+  "jscmbiz.sakura.ne.jp": 3,
+  "jsco.or.jp": 1,
+  "jscpt.jp": 1,
+  "jshp-hokuriku.net": 1,
+  "jshp.info": 11,
+  "jshp.or.jp": 14,
+  "jsmsw.jp": 3,
+  "jsnep.umin.jp": 1,
+  "jsnp.org": 1,
+  "jsnr.or.jp": 1,
+  "jsphcs.jp": 8,
+  "jssoc.or.jp": 1,
+  "jssw.jp": 2,
+  "jstage.jst.go.jp": 62,
+  "justice.gov": 1,
+  "jvn.jp": 50,
+  "jvnf.or.jp": 9,
+  "kaboot.net": 1,
+  "kagoshima-shp.jp": 1,
+  "kaigo-center.or.jp": 1,
+  "kaigo-kiban-portal.jp": 1,
+  "kaigo.pref.yamaguchi.lg.jp": 1,
+  "kakehashi.life": 1,
+  "kango-award.jp": 12,
+  "kantei.go.jp": 1,
+  "kb.cert.org": 2,
+  "keio.ac.jp": 2,
+  "kenken.or.jp": 1,
+  "kenshu.asuyaku.life": 2,
+  "kingsfund.org.uk": 1,
+  "kitakyu-cho.jp": 1,
+  "kitakyu-hp.jp": 1,
+  "kobe-u.ac.jp": 1,
+  "kokuho.or.jp": 5,
+  "koseikan.jp": 2,
+  "koureisha-jutaku.com": 3,
+  "kouseikyoku.mhlw.go.jp": 30,
+  "kpa.or.jp": 3,
+  "kyoto-u.ac.jp": 5,
+  "kyushu-u.ac.jp": 2,
+  "labo.kyoto-phu.ac.jp": 1,
+  "ldi.upenn.edu": 1,
+  "leadingage.org": 1,
+  "link.springer.com": 6,
+  "local.gov.uk": 1,
+  "lpixel.net": 3,
+  "luminishealth.org": 1,
+  "m-messe.co.jp": 1,
+  "m3.com": 10,
+  "massgeneralbrigham.org": 3,
+  "med-device.jp": 1,
+  "med-safe.jp": 7,
+  "med.nagoya-u.ac.jp": 2,
+  "med.or.jp": 4,
+  "med.osaka-u.ac.jp": 1,
+  "med.stanford.edu": 2,
+  "med.wisc.edu": 1,
+  "media.defense.gov": 1,
+  "medical-jpn.jp": 3,
+  "medicaldevice-network.com": 1,
+  "medicaltech-news.com": 12,
+  "medicine.wisc.edu": 1,
+  "medinform.jmir.org": 1,
+  "medis.or.jp": 1,
+  "mediso.mhlw.go.jp": 1,
+  "medit.tech": 8,
+  "member.jahis.jp": 1,
+  "mercy.net": 1,
+  "meti.go.jp": 1,
+  "metro.tokyo.lg.jp": 4,
+  "mf.jiho.jp": 1,
+  "mhlw.go.jp": 396,
+  "microsoft.com": 2,
+  "mist.mhlw.go.jp": 11,
+  "mobihealthnews.com": 3,
+  "moh.gov.sg": 1,
+  "moj.go.jp": 1,
+  "mychart.org": 1,
+  "nagasaki-cma.org": 1,
+  "nagoya-u.ac.jp": 1,
+  "naika.or.jp": 4,
+  "nao.org.uk": 1,
+  "nara-np.co.jp": 1,
+  "nationalaccelerator.org": 1,
+  "nature.com": 86,
+  "ncc.go.jp": 3,
+  "ncgg.go.jp": 1,
+  "ncnp.go.jp": 1,
+  "ncsc.gov.uk": 1,
+  "ncvc.go.jp": 3,
+  "netone.co.jp": 1,
+  "news.ashp.org": 8,
+  "news.bostonscientific.com": 1,
+  "news.cuanschutz.edu": 1,
+  "news.mynavi.jp": 3,
+  "news.ochsner.org": 2,
+  "news.stanford.edu": 1,
+  "news.va.gov": 4,
+  "news.web.nhk": 2,
+  "newsnetwork.mayoclinic.org": 8,
+  "newsroom.clevelandclinic.org": 5,
+  "newsroom.osfhealthcare.org": 1,
+  "nextgov.com": 1,
+  "nichigan.or.jp": 1,
+  "nichiyaku.or.jp": 5,
+  "ninr.nih.gov": 1,
+  "nist.gov": 1,
+  "nms.ac.jp": 3,
+  "noma-hs.com": 1,
+  "npa.go.jp": 4,
+  "nsa.gov": 1,
+  "ntt-west.co.jp": 1,
+  "ntt.com": 2,
+  "nurse.or.jp": 22,
+  "nurse.org": 3,
+  "nursingworld.org": 8,
+  "nvlpubs.nist.gov": 1,
+  "nyulangone.org": 1,
+  "odahp.com": 2,
+  "oici.jp": 2,
+  "okayama-pmc.jp": 2,
+  "okayama-u.ac.jp": 1,
+  "okikoku.or.jp": 1,
+  "olympus.co.jp": 1,
+  "onvidahealth.org": 1,
+  "openai.com": 1,
+  "optim.co.jp": 2,
+  "orca.med.or.jp": 2,
+  "ouh.nhs.uk": 1,
+  "pennmedicine.org": 1,
+  "ph-ayumi.org": 2,
+  "pharmaceutical-journal.com": 1,
+  "pharmacytimes.com": 1,
+  "phchd.com": 1,
+  "phr-s.org": 1,
+  "phti.org": 2,
+  "plaza.umin.ac.jp": 1,
+  "pmc.ncbi.nlm.nih.gov": 4,
+  "pmda.go.jp": 50,
+  "pnb.jiho.jp": 2,
+  "pointclickcare.com": 1,
+  "post.medicalcare-station.com": 1,
+  "ppc.go.jp": 35,
+  "pref.aichi.jp": 1,
+  "pref.aomori.lg.jp": 2,
+  "pref.fukui.lg.jp": 1,
+  "pref.gunma.jp": 1,
+  "pref.hokkaido.lg.jp": 1,
+  "pref.ishikawa.lg.jp": 1,
+  "pref.kagoshima.jp": 1,
+  "pref.miyagi.jp": 1,
+  "pref.nara.lg.jp": 1,
+  "pref.saitama.lg.jp": 2,
+  "pref.shiga.lg.jp": 1,
+  "pref.shizuoka.jp": 1,
+  "press.medigle.jp": 1,
+  "prnewswire.com": 5,
+  "procomu.jp": 1,
+  "prtimes.jp": 107,
+  "public-comment.e-gov.go.jp": 2,
+  "pubmed.ncbi.nlm.nih.gov": 9,
+  "radiology.jp": 1,
+  "rakuwa.or.jp": 4,
+  "rce.sequoiaproject.org": 1,
+  "research.regionh.dk": 1,
+  "riken.jp": 1,
+  "rocket-boys.co.jp": 1,
+  "roken.or.jp": 3,
+  "roken2026-tochigi.jp": 2,
+  "rounenkango.com": 1,
+  "rutgers.edu": 1,
+  "ryutsuu.biz": 1,
+  "saimiya.com": 1,
+  "sakura.ad.jp": 2,
+  "sakurajuji.or.jp": 1,
+  "sath.nhs.uk": 1,
+  "scan.netsecurity.ne.jp": 1,
+  "sciencedirect.com": 2,
+  "sec.cloudapps.cisco.com": 2,
+  "sec.gov": 3,
+  "secure.nippon-pa.org": 2,
+  "secure.ps-japan.org": 2,
+  "security-next.com": 17,
+  "service1.kktcs.co.jp": 4,
+  "shimamotohp.or.jp": 1,
+  "shinryohoshu.mhlw.go.jp": 1,
+  "shiseido-hp.jp": 1,
+  "shoryokuka.smrj.go.jp": 3,
+  "signature-healthcare.org": 1,
+  "site2.convention.co.jp": 4,
+  "sites.google.com": 2,
+  "skygroup.jp": 1,
+  "sonicwall.com": 1,
+  "soumu.go.jp": 1,
+  "square.umin.ac.jp": 3,
+  "ssk.or.jp": 16,
+  "stanfordhealthcare.org": 1,
+  "statnews.com": 2,
+  "std.jpfhir.jp": 1,
+  "stryker.com": 1,
+  "supertalk.fm": 1,
+  "surescripts.com": 2,
+  "susmed.co.jp": 1,
+  "t.u-tokyo.ac.jp": 2,
+  "tadami-town.note.jp": 1,
+  "takarazukacity-hp.com": 1,
+  "telehealthcoe.org": 1,
+  "telemed-telecare.jp": 1,
+  "therecord.media": 1,
+  "tmhp.jp": 1,
+  "tohoku-kyoritz.jp": 1,
+  "tohoku.ac.jp": 3,
+  "tokyo-kosha.or.jp": 1,
+  "tokyo-mc.hosp.go.jp": 1,
+  "tokyohoukan-st.jp": 1,
+  "torbayandsouthdevon.nhs.uk": 1,
+  "tsukuba.ac.jp": 1,
+  "u-presscenter.jp": 1,
+  "uchealth.org": 1,
+  "uclahealth.org": 1,
+  "uhcprovider.com": 1,
+  "unni.app": 1,
+  "uvm.edu": 1,
+  "va.gov": 1,
+  "vulners.com": 1,
+  "wam.go.jp": 15,
+  "warner.senate.gov": 2,
+  "web.pref.hyogo.lg.jp": 1,
+  "welcia-yakkyoku.co.jp": 1,
+  "whitehouse.gov": 1,
+  "wrap.warwick.ac.uk": 1,
+  "www8.cao.go.jp": 4,
+  "yakkyoku-hiyari.jcqhc.or.jp": 3,
+  "yakuji.co.jp": 42,
+  "yakuyomi.jp": 1,
+  "yakuzai.kuhp.kyoto-u.ac.jp": 1,
+  "yakuzemi-shougai.jp": 1,
+  "yamato-hd.co.jp": 1,
+  "ycps.jp": 1,
+  "yoursourceone.com": 1,
+  "zaikei.co.jp": 1,
+  "zaitakupf.mhlw.go.jp": 19,
+  "zenhokan.or.jp": 20,
+  "zest.jp": 1
+ },
+ "log": [
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "厚生労働省 医療措置協定とG-MISでの報告",
+   "reason": "感染症DXの調査で追加"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "厚生労働省 在宅医療・介護連携推進事業に係るプラットフォーム",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "いきいき働く医療機関サポートWeb（いきサポ）",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "内閣感染症危機管理統括庁",
+   "reason": "感染症DXの調査で追加"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "内閣官房（新型インフルエンザ等対策推進会議の資料）",
+   "reason": "感染症DXの調査で追加"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "内閣府 医療等情報の利活用の推進に関する検討会（資料）",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "警察庁",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-01",
+   "action": "追加",
+   "name": "DX審査支払機構（医療情報基盤・診療報酬審査支払機構）",
+   "reason": "情報源に追加（支払基金の名称変更に合わせて）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "JIHS 感染症情報提供サイト",
+   "reason": "感染症DXの調査で追加"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "JIHS AMR臨床リファレンスセンター（J-SIPHE・OASCIS）",
+   "reason": "感染症DXの調査で追加"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "JANIS（院内感染対策サーベイランス）",
+   "reason": "感染症DXの調査で追加"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "JVN（Japan Vulnerability Notes）",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "佐賀県",
+   "reason": "感染症DXの調査で追加"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "日本病院会",
+   "reason": "サイバーDXの調査で追加"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "日本医師会",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "日本内科学会",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "学術集会の公式サイト（学会の大会ページ）",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "Springer Link",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "PR Newswire",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "医療テックニュース",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "医学書院",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "Federal Register（米国官報）",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "ASPR TRACIE（米国保健福祉省の災害医療支援）",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "VA News（米国退役軍人省）",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "NHS England Digital",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "GOV.UK（英国政府）",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "Australian Digital Health Agency",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "AONL（米国看護管理者協会）",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "Mayo Clinic News Network",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "Cleveland Clinic Newsroom",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "Fierce Healthcare",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  },
+  {
+   "date": "2026-10-02",
+   "action": "追加",
+   "name": "The HIPAA Journal",
+   "reason": "掲載実績から追加（8/28〜10/2の出典。本番では毎朝自動）"
+  }
+ ],
+ "baseline_note": "2026-10-02 公開時点で出典に載っていた発信元とURL数。ここから2件以上増えた発信元だけを自動追加する"
+}

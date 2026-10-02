@@ -1,0 +1,541 @@
+
+:root{
+  --paper:#FFFFFF; --ink:#1A242E; --sub:#4A5A66; --mut:#7C8A94; --rule:#D9DDE0; --rule2:#1A242E;
+  --acc:#163672; --teal:#12A38F; --logobg:transparent; --panel:#F2F3EF; --hintbg:#0A4C9B; --hintink:#FFFFFF;
+  --med:#2E6FB7; --hosp:#7A5FB5; --care:#2F9E7C; --home:#1E9AA8; --fund:#D97B2B; --sec:#C24141; --brch:#8E3E63; --nurs:#C25573; --nursbg:#FBEFF2; --nursrule:#EBD3DB; --medi:#012A64; --koto:#039D96;--bnnews:#E3E9F6;--bnstudy:#EBF7F4; --doc:#285F9D; --docbg:#EEF5FC; --docrule:#CFE0F1; --pharm:#2F8F6B; --pharmbg:#EAF5EF; --pharmrule:#C9E5D8; --study:#C56A15; --studybg:#FFF4E5; --reim:#5B3FA6; --reimbg:#F1EDF9; --reimrule:#D6CBEE; --conn:#7A5230; --connbg:#F5EEE8; --connrule:#E3D3C4;
+--gov:#0A8E9C;--govv:#12BCCE;--govbg:#E3F7FA;--govrule:#BCE7EE;}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#10181E; --ink:#E3EAEF; --sub:#A9B7C1; --mut:#7C8A94; --rule:#2E3C46; --rule2:#E3EAEF;
+    --acc:#8FB7F4; --teal:#43C7B2; --logobg:#FFFFFF; --panel:#18232B; --hintbg:#0D3B8F; --hintink:#FFFFFF;
+    --med:#7FB3F0; --hosp:#A896E0; --care:#4FC49E; --home:#55C4CC; --fund:#E89A55; --sec:#E8807E; --brch:#D389AE; --nurs:#E794B0; --nursbg:#251A20; --nursrule:#4A3038; --medi:#7FA9F0; --koto:#3BC2B4;--bnnews:#1D2A45;--bnstudy:#152A28; --doc:#7FB3F0; --docbg:#16202B; --docrule:#2C3E52; --pharm:#5FCB9E; --pharmbg:#14241D; --pharmrule:#274A3B; --study:#E89A55; --studybg:#2A2010; --reim:#B79DF5; --reimbg:#1E1830; --reimrule:#3B2F5A; --conn:#D2A27E; --connbg:#241A14; --connrule:#4A3A2E;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#10181E; --ink:#E3EAEF; --sub:#A9B7C1; --mut:#7C8A94; --rule:#2E3C46; --rule2:#E3EAEF;
+  --acc:#8FB7F4; --teal:#43C7B2; --logobg:#FFFFFF; --panel:#18232B; --hintbg:#0D3B8F; --hintink:#FFFFFF;
+  --med:#7FB3F0; --hosp:#A896E0; --care:#4FC49E; --home:#55C4CC; --fund:#E89A55; --sec:#E8807E; --brch:#D389AE; --nurs:#E794B0; --nursbg:#251A20; --nursrule:#4A3038; --medi:#7FA9F0; --koto:#3BC2B4;--bnnews:#1D2A45;--bnstudy:#152A28; --doc:#7FB3F0; --docbg:#16202B; --docrule:#2C3E52; --pharm:#5FCB9E; --pharmbg:#14241D; --pharmrule:#274A3B; --study:#E89A55; --studybg:#2A2010; --reim:#B79DF5; --reimbg:#1E1830; --reimrule:#3B2F5A; --conn:#D2A27E; --connbg:#241A14; --connrule:#4A3A2E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);line-height:1.8;
+  font-family:"BIZ UDPGothic","BIZ UDPゴシック","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;}
+.disp{font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
+a{color:var(--acc);text-decoration:underline;text-underline-offset:2px;}
+.wrap{max-width:980px;margin:0 auto;padding:1.6rem 1.2rem 3rem;}
+/* masthead */
+.masthead{display:flex;gap:1.4rem;align-items:stretch;border-bottom:3px double var(--rule2);padding-bottom:1.1rem;}
+.daiji{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;color:var(--acc);
+  font-size:2.0rem;line-height:1.45;letter-spacing:.06em;flex:none;align-self:center;
+  border-right:1px solid var(--rule);padding-right:1.3rem;margin:0;}
+.mh-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:.3rem;}
+.dateline{font-size:.85rem;color:var(--sub);display:flex;flex-wrap:wrap;gap:.3rem .9rem;}
+.dateline b{color:var(--ink);font-size:.95rem;}
+.slogan{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.32rem;line-height:1.7;margin:.2rem 0 .1rem;text-wrap:balance;}
+.slogan small{display:block;font-size:.85rem;font-weight:400;color:var(--sub);font-family:inherit;}
+.mh-meta{font-size:.76rem;color:var(--mut);}
+.modes{display:flex;gap:.5rem;margin-top:.45rem;}
+.modebtn{font:inherit;font-size:.88rem;font-weight:700;padding:.4rem 1.1rem;border-radius:999px;cursor:pointer;
+  border:1.5px solid var(--acc);background:transparent;color:var(--acc);}
+.modebtn[aria-pressed="true"]{background:var(--acc);color:var(--paper);}
+.modebtn:focus-visible{outline:2px solid var(--acc);outline-offset:2px;}
+/* index strip */
+.idx{display:flex;flex-wrap:wrap;gap:.2rem 1.1rem;font-size:.82rem;border-bottom:1px solid var(--rule);padding:.5rem 0;}
+.idx a{text-decoration:none;color:var(--sub);font-weight:700;}
+.idx a:hover{color:var(--acc);}
+.idx .no{color:var(--acc);margin-right:.25rem;font-variant-numeric:tabular-nums;}
+/* study strip */
+.studybar{display:none;background:var(--panel);border-radius:10px;padding:.8rem 1.1rem;margin:1rem 0 0;font-size:.9rem;}
+.study .studybar{display:block;}
+.studybar b{color:var(--acc);}
+.studybar ol{margin:.3rem 0 0;padding-left:1.3em;}
+.studybar li{margin:.1rem 0;}
+.mins{display:none;font-size:.72rem;font-weight:700;color:var(--paper);background:var(--acc);border-radius:999px;padding:.06rem .55rem;margin-left:auto;align-self:center;}
+.study .mins{display:inline-block;}
+.mocknote{font-size:.78rem;color:var(--mut);margin:.8rem 0 0;}
+/* 面 */
+.men{margin-top:2.2rem;}
+.menhead{display:flex;align-items:baseline;gap:.7rem;border-top:3px solid var(--rule2);border-bottom:1px solid var(--rule);padding:.45rem 0 .4rem;margin-bottom:1rem;}
+.menno{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.9rem;color:var(--teal);letter-spacing:.1em;flex:none;}
+.menhead h2{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.5rem;margin:0;line-height:1.4;}
+.menk{font-size:.8rem;color:var(--mut);}
+.mk{display:inline-block;font-size:.66rem;font-weight:700;color:var(--mut);border:1px solid var(--rule);border-radius:4px;padding:0 .35rem;margin-left:.4rem;vertical-align:middle;}
+/* lead + headline list */
+.lead{padding-bottom:.9rem;border-bottom:1px solid var(--rule);margin-bottom:.9rem;}
+.klab{font-size:.75rem;font-weight:700;letter-spacing:.05em;margin:0 0 .15rem;}
+.lead h3{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.62rem;line-height:1.55;margin:0 0 .35rem;text-wrap:balance;}
+.leadsum{font-size:.98rem;color:var(--sub);margin:0 0 .3rem;max-width:42em;}
+.hlgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 2.2rem;}
+.hl{display:flex;gap:.6rem;padding:.65rem 0;border-bottom:1px solid var(--rule);}
+.tick{width:.5rem;height:1.15rem;flex:none;margin-top:.28rem;border-radius:2px;}
+.hlb{min-width:0;}
+.hh{font-weight:700;font-size:1.02rem;line-height:1.6;margin:0 0 .15rem;}
+.hs{font-size:.88rem;color:var(--sub);margin:0 0 .2rem;line-height:1.7;}
+.hsrc{font-size:.78rem;color:var(--mut);margin:0;}
+.hsrc a{font-size:.78rem;}
+.sb{display:inline-block;font-size:.68rem;font-weight:700;border:1px solid currentColor;border-radius:999px;padding:0 .45rem;margin-right:.35rem;line-height:1.5;vertical-align:.08em;}
+.sb-pub{color:var(--acc);} .sb-fac{color:var(--care);} .sb-ent{color:var(--fund);} .sb-med{color:var(--mut);}
+/* hint(示唆) */
+.hint{background:var(--hintbg);color:var(--hintink);border-radius:8px;padding:.55rem .95rem;font-weight:700;font-size:.93rem;margin:1rem 0 0;}
+.hintlab{display:inline-block;font-size:.68rem;font-weight:700;border:1px solid rgba(255,255,255,.7);border-radius:4px;padding:0 .4rem;margin-right:.6rem;vertical-align:.1em;letter-spacing:.05em;}
+/* memo */
+.memo{margin:.8rem 0 0;font-size:.88rem;color:var(--sub);background:var(--panel);border-radius:8px;padding:.5rem .9rem;}
+.memo summary{cursor:pointer;font-weight:700;color:var(--mut);font-size:.82rem;}
+.memo p{margin:.5rem 0 .2rem;line-height:1.9;}
+/* tables */
+.tablewrap{overflow-x:auto;}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:560px;}
+th{text-align:left;color:var(--mut);font-size:.78rem;border-bottom:2px solid var(--rule2);padding:.35rem .6rem;white-space:nowrap;}
+td{border-bottom:1px solid var(--rule);padding:.5rem .6rem;vertical-align:top;}
+td.d{white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums;}
+.sub4{font-size:1.02rem;color:var(--ink);margin:1.3rem 0 .5rem;font-weight:700;}
+.sub4 .menk{font-weight:400;}
+#kensaku .bnc{border:1px solid var(--rule);border-radius:.7rem;padding:.8rem 1rem .55rem;margin:1.15rem 0 0;}
+#kensaku .bnc .sub4{margin:0 0 .45rem;}
+#kensaku .bnc td{padding:.45rem .6rem;border-bottom:1px solid var(--rule);vertical-align:top;}
+#kensaku .bnc tr:last-child td{border-bottom:none;}
+.bnc-news{background:var(--bnnews);}
+.bnc-study{background:var(--bnstudy);}
+.bnc-nursing{background:var(--nursbg);}
+.bnc-doctors{background:var(--docbg);}
+.bnc-news .sub4{color:var(--acc);}
+.bnc-study .sub4{color:var(--koto);}
+.bnc-nursing .sub4{color:var(--nurs);}
+.bnc-doctors .sub4{color:var(--doc);}
+.bnc-pharm{background:var(--pharmbg);}
+.bnc-pharm .sub4{color:var(--pharm);}
+.bnc-reim{background:var(--reimbg);}
+.bnc-reim .sub4{color:var(--reim);}
+.bnc-connect{background:var(--connbg);}
+.bnc-connect .sub4{color:var(--conn);}
+.bnc-study{background:var(--studybg);}
+.bnc-study .sub4{color:var(--study);}
+#benkyou .menno{color:var(--study);}
+#benkyou .cta{background:var(--study);color:#fff;}
+#benkyou .hdate{color:var(--study);}
+#benkyou .hthemes b{color:var(--study);}
+/* serial */
+.serials{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.6rem;}
+.serial{border:1px solid var(--rule);border-radius:10px;padding:1.1rem 1.2rem;background:var(--panel);}
+.serialmark{font-size:.7rem;font-weight:700;letter-spacing:.2em;color:var(--paper);background:var(--acc);display:inline-block;border-radius:4px;padding:.05rem .5rem;margin:0 0 .3rem;}
+.serialname{font-size:.78rem;color:var(--mut);margin:0 0 .3rem;}
+.serialtheme{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.18rem;line-height:1.65;margin:0 0 .6rem;text-wrap:balance;}
+.serialbody p{font-size:.92rem;line-height:1.95;margin:0 0 .7rem;}
+.tips{border-top:1px dashed var(--rule);padding-top:.5rem;margin-top:.2rem;}
+.tipslab{font-size:.78rem;font-weight:700;color:var(--acc);margin:0 0 .2rem;}
+.tips ul{margin:0 0 .5rem;padding-left:1.2em;}
+.tips li{font-size:.9rem;margin:.15rem 0;}
+/* 実装面 */
+.ledger td b{font-variant-numeric:tabular-nums;}
+.stepsline{margin:.3rem 0 0;padding-left:1.4em;}
+.stepsline li{font-size:.92rem;margin:.25rem 0;}
+.stepsline span{color:var(--mut);font-size:.8rem;margin-left:.6rem;}
+.check{margin:.6rem 0 0;padding:0;list-style:none;column-count:2;column-gap:2rem;}
+.check li{font-size:.9rem;padding:.24rem 0;break-inside:avoid;}
+.check li::before{content:"✓";color:var(--care);font-weight:700;margin-right:.5rem;}
+/* 奥付 */
+.policy3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;font-size:.86rem;color:var(--sub);}
+.policy3 b{color:var(--ink);display:block;margin-bottom:.15rem;}
+.colinks{font-size:.84rem;margin:1.2rem 0 0;}
+.credit{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--rule);font-size:.76rem;color:var(--mut);font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
+.cr1{color:var(--sub);font-weight:700;}
+@media (max-width:640px){
+  .daiji{border-right:none;border-bottom:1px solid var(--rule);padding:0 0 .5rem;font-size:1.5rem;align-self:stretch;}
+  .masthead{flex-direction:column;gap:.7rem;}
+  .check{column-count:1;}
+}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important;}}
+html{scroll-behavior:smooth;}
+
+/* portal additions */
+.logowrap{flex:none;align-self:center;margin:0;background:var(--logobg);border-radius:14px;padding:.55rem .7rem;border-right:none;}
+.logo{display:block;height:66px;width:auto;}
+@media (max-width:640px){.logo{height:46px;}.logowrap{align-self:flex-start;}}
+
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;margin:1.1rem 0 0;}
+.hub a{display:block;border:1px solid var(--rule);border-radius:10px;padding:.6rem .8rem;text-decoration:none;background:var(--panel);}
+.hub a:hover{border-color:var(--acc);}
+.hub .hn{display:block;font-weight:700;color:var(--acc);font-size:.95rem;}
+.hub .hd{display:block;font-size:.74rem;color:var(--mut);line-height:1.6;}
+.hero{border:1px solid var(--rule);border-radius:12px;padding:1.2rem 1.4rem;background:var(--panel);display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;}
+.hero .hleft{flex:1;min-width:260px;}
+.hero .hdate{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.5rem;margin:0 0 .2rem;}
+.hero .hthemes{font-size:.9rem;color:var(--sub);margin:0;}
+.hero .hthemes b{color:var(--acc);font-size:.78rem;margin-right:.4rem;}
+.cta{display:inline-block;background:var(--acc);color:var(--paper);font-weight:700;border-radius:10px;padding:.7rem 1.5rem;text-decoration:none;}
+.cta:hover{opacity:.92;}
+.ctasub{display:block;font-size:.76rem;color:var(--mut);margin-top:.4rem;}
+.hero>div:last-child{flex:0 0 300px;max-width:100%;}
+.btn,.cta{display:block;width:100%;box-sizing:border-box;text-align:center;padding:.7rem .8rem;font-size:.98rem;white-space:nowrap;}
+#okuzuke .menhead h2{font-size:1.05rem;color:var(--sub);}
+#okuzuke .policy3{font-size:.78rem;color:var(--mut);}
+#okuzuke .policy3 b{color:var(--sub);}
+#okuzuke .colinks{font-size:.76rem;}
+.qsearch input{width:100%;padding:.6rem .9rem;font:inherit;font-size:.95rem;color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:10px;outline:none;}
+.qsearch input:focus-visible{border-color:var(--acc);outline:2px solid var(--acc);outline-offset:1px;}
+.shint{font-size:.76rem;color:var(--mut);margin:.3rem 0 0;}
+.sresults{margin:.7rem 0 0;padding:0;list-style:none;}
+.sresults li{padding:.5rem 0;border-bottom:1px solid var(--rule);font-size:.9rem;}
+.sresults .sdate{font-weight:700;margin-right:.5rem;font-variant-numeric:tabular-nums;}
+.sresults .ssnip{display:block;font-size:.82rem;color:var(--sub);}
+.sresults mark{background:transparent;color:var(--acc);font-weight:700;padding:0;}
+.snone{font-size:.85rem;color:var(--mut);margin:.7rem 0 0;}
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem;}
+.shelf .sh{border:1px dashed var(--rule);border-radius:10px;padding:.7rem .9rem;font-size:.85rem;color:var(--sub);}
+.shelf .sh b{display:block;color:var(--ink);font-size:.92rem;}
+.study2{background:var(--panel);border-radius:12px;padding:1.1rem 1.3rem;}
+.study2 .stheme{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 .5rem;}
+.agenda{margin:0;padding:0;list-style:none;}
+.agenda li{display:flex;gap:.7rem;align-items:baseline;padding:.35rem 0;border-bottom:1px solid var(--rule);font-size:.92rem;}
+.agenda li:last-child{border-bottom:none;}
+.agenda .min{flex:none;font-weight:700;color:var(--acc);font-variant-numeric:tabular-nums;width:3em;}
+.agenda .an{color:var(--mut);font-size:.82rem;}
+.btnrow{display:flex;flex-wrap:wrap;gap:.6rem;margin:.8rem 0 0;}
+.btn2{display:inline-block;background:var(--acc);color:var(--paper);font-weight:700;border-radius:10px;padding:.5rem 1.1rem;text-decoration:none;font-size:.9rem;}
+.btn2.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc);}
+
+.brandrow{display:flex;align-items:center;gap:.45rem;}
+.dxsuf{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;color:var(--teal);letter-spacing:.02em;}
+.daiji .mlogo{height:42px;width:auto;display:block;background:var(--logobg);border-radius:8px;padding:3px 6px;}
+.daiji .pg{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;color:var(--acc);margin-top:.4rem;line-height:1.3;}
+.brandline{font-size:.78rem;font-weight:700;color:var(--acc);letter-spacing:.14em;margin:.1rem 0 0;}
+
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.1rem 0 0;padding:0;list-style:none;}
+.chips li{display:flex;align-items:center;gap:.45rem;background:var(--panel);border-radius:999px;padding:.3rem .85rem;font-size:.8rem;font-weight:700;}
+.chips .dot{width:.62em;height:.62em;border-radius:50%;flex:none;}
+.latest .date{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.5rem;margin:0 0 .2rem;}
+.latest .theme{font-size:.9rem;color:var(--sub);margin:.1rem 0 0;}
+.btn{display:inline-block;background:var(--acc);color:var(--paper);font-weight:700;border-radius:10px;padding:.7rem 1.5rem;text-decoration:none;}
+.btn:hover{opacity:.92;}
+.videos{margin:0;padding:0;list-style:none;}
+.videos li{padding:.6rem 0;border-bottom:1px solid var(--rule);font-size:.95rem;}
+.videos li:last-child{border-bottom:none;}
+.videos .vtitle{font-weight:700;}
+.videos .yt{width:1.25em;height:auto;vertical-align:-.22em;margin-right:.4rem;flex:none;}
+.videos .vep{display:block;}
+.videos .vnote{display:block;font-size:.86rem;color:var(--sub);margin-top:.2rem;}
+.videos .vdate{font-size:.78rem;font-weight:400;color:var(--mut);margin-left:.4rem;white-space:nowrap;}
+.videos .vdesc{display:block;font-size:.8rem;line-height:1.75;color:var(--mut);margin-top:.3rem;}
+.videos .vdesc a{font-size:.8rem;}
+.videobox{padding:0;}
+details.mgroup{margin:.6rem 0 0;}
+details.mgroup summary{cursor:pointer;font-weight:700;color:var(--sub);padding:.45rem .2rem;border-bottom:1px solid var(--rule);font-size:.95rem;}
+details.mgroup .tablewrap{margin-top:.4rem;}
+.searchbox{margin:.2rem 0 .2rem;}
+.searchcard{border:1.5px solid var(--rule);border-radius:14px;padding:.95rem 1.15rem .35rem;background:var(--panel);margin:.2rem 0 .4rem;}
+.slabel{display:flex;align-items:center;gap:.5rem;margin:0 0 .6rem;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.08em;color:var(--ink);}
+.sdot{width:.6rem;height:.6rem;border-radius:50%;background:var(--koto);display:inline-block;}
+.searchcard .shint{margin:.55rem 0 .6rem;}
+.searchbox{position:relative;}
+.searchbox .sicon{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--mut);pointer-events:none;}
+.searchbox input{width:100%;padding:.6rem .9rem .6rem 2.5rem;font:inherit;font-size:.95rem;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:10px;outline:none;}
+.searchbox input:focus-visible{border-color:var(--acc);outline:2px solid var(--acc);outline-offset:1px;}
+.contact-badge{margin:.5rem 0 0;font-size:.76rem;font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
+.contact-badge a{display:inline-block;color:var(--mut);text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:.08rem .7rem;line-height:1.6;}
+.contact-badge a:hover{color:var(--sub);border-color:var(--sub);}
+
+@media (max-width:560px){.menhead{flex-wrap:wrap;}.menhead .menk{flex-basis:100%;margin-left:0;}}
+/* 今日の2枚 */
+.todaygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem;}
+.tcard{border:1px solid var(--rule);border-radius:14px;padding:1.1rem 1.3rem 1rem;display:flex;flex-direction:column;gap:.35rem;}
+.tcard .tlab{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.12em;margin:0;}
+.tcard h2{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.35rem;margin:0;line-height:1.35;}
+.tcard .date,.tcard .hdate{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.75rem;margin:.15rem 0 .1rem;line-height:1.3;}
+.tcard .theme,.tcard .hthemes{font-size:.9rem;color:var(--sub);margin:0;}
+.tcard .hthemes b{font-size:.78rem;margin-right:.4rem;color:var(--study);}
+.tcard.study .hdate{color:var(--study);}
+.tcard .tnote{font-size:.78rem;color:var(--mut);margin:.2rem 0 .4rem;}
+.tcard .btn,.tcard .cta{margin-top:auto;display:block;width:100%;box-sizing:border-box;text-align:center;font-size:1.02rem;padding:.8rem 1rem;}
+.tcard .ctasub{margin-top:.35rem;}
+/* 職種別・制度 4枚 */
+.rolegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.8rem;}
+.rcard{border:1px solid var(--rule);border-radius:12px;padding:.85rem 1rem .9rem;display:flex;flex-direction:column;gap:.3rem;}
+.rcard .rlab{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;margin:0;}
+.rcard h3{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.15rem;margin:0;}
+.rcard p{font-size:.8rem;color:var(--sub);margin:0;line-height:1.6;}
+.rcard #reim-status{font-size:.74rem;color:var(--sub);margin:.1rem 0 0;}
+.rcard #reim-status b{font-size:.7rem;margin-right:.3rem;}
+.rcard .cta{margin-top:auto;display:block;width:100%;box-sizing:border-box;text-align:center;font-size:.88rem;padding:.55rem .8rem;}
+.rcard p:last-of-type{margin-bottom:.6rem;}
+
+.disclaimer{margin:2.2rem 0 0;padding-top:.8rem;border-top:1px solid var(--rule);font-size:.76rem;line-height:1.7;color:var(--mut,var(--muted));}
+.disclaimer+.credit,.disclaimer+footer.credit{margin-top:.7rem;border-top:0;padding-top:0;}
+
+/* --- site nav (全ページ共通・上下) --- */
+.sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-ovs:#4E6E8E;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
+  display:flex;flex-wrap:wrap;gap:.4rem;border:1px solid var(--sn-line);border-radius:12px;padding:.45rem;margin:.6rem 0 0;font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
+.sitenav a{flex:1 1 auto;text-align:center;font-size:.86rem;font-weight:700;text-decoration:none;border:1px solid var(--sn-line);border-radius:8px;padding:.42rem .6rem;background:var(--sn-bg);color:var(--sn-c);white-space:nowrap;line-height:1.5;}
+.sitenav a:hover{border-color:var(--sn-c);}
+.sitenav a.cur{background:var(--sn-c);color:#fff;border-color:var(--sn-c);}
+.sitenav a:focus-visible{outline:2px solid var(--sn-c);outline-offset:2px;}
+.sitenav.top{margin:.6rem 0 1.1rem;}
+.sitenav.bottom{margin:2rem 0 0;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-bg:#18232B;--sn-line:#2E3C46;}
+  :root:not([data-theme="light"]) .sitenav a.cur{color:#10181E;}}
+:root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-bg:#18232B;--sn-line:#2E3C46;}
+:root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
+@media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
+@media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
+
+/* --- 資料室：資料タイル（2026-09-03） --- */
+.dlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:.7rem;margin:.3rem 0 0;}
+.dcard{display:grid;grid-template-columns:64px minmax(0,1fr);gap:.55rem;align-items:start;padding:.55rem .65rem;background:var(--panel);border:1px solid var(--rule);border-radius:8px;}
+.dthumb{background:#fff;border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin-top:.15rem;}
+.dthumb img{display:block;width:100%;height:auto;}
+.dkind{display:inline-block;font-size:.6rem;font-weight:700;color:var(--acc);border:1px solid var(--acc);border-radius:999px;padding:0 .45rem;margin:0 0 .15rem;line-height:1.5;}
+.dcard h3{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.84rem;line-height:1.45;margin:0 0 .15rem;}
+.dcard .ddesc{display:none;}
+.dmeta{display:block;font-size:.66rem;margin:0;line-height:1.55;color:var(--sub);}
+.dmeta div{display:inline;margin-right:.6rem;}.dmeta dt{display:inline;font-weight:700;color:var(--ink);margin-right:.2rem}.dmeta dd{display:inline;margin:0}
+.dbtns{display:flex;flex-wrap:wrap;gap:.3rem;margin:.35rem 0 0;}
+.dbtn{display:inline-block;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.68rem;text-decoration:none;border-radius:6px;padding:.15rem .6rem;border:1.5px solid var(--acc);color:var(--acc);line-height:1.5;white-space:nowrap;}
+.dbtn.primary{background:var(--acc);color:#fff;}
+
+/* --- 3本柱 --- */
+.pillars .menhead{border-top-color:var(--medi);}
+.pillargrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:stretch;}
+.pillargrid .tcard{display:flex;flex-direction:column;height:100%;margin:0;}
+.pillargrid .tcard .btn,.pillargrid .tcard .cta{margin-top:auto;}
+.pno{display:inline-flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem;border-radius:999px;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;color:#fff;margin:0 0 .35rem;}
+.pillargrid .newbadge{display:inline-block;margin-left:.45rem;font-size:.66rem;font-weight:700;letter-spacing:.06em;
+  background:var(--gov);color:#fff;border-radius:999px;padding:.06rem .5rem;vertical-align:.1em;}
+.govbox{--gov:#0A8E9C;--govv:#12BCCE;--govbg:#E3F7FA;--govrule:#BCE7EE;}
+.pillargrid .gsub{font-size:.86rem;color:var(--sub);margin:.1rem 0 .5rem;line-height:1.75;}
+.pillargrid .gsub b{color:var(--gov);font-family:"Zen Kaku Gothic New",sans-serif;margin-right:.4rem;}
+.pillargrid .date,.pillargrid .hdate{font-size:1.15rem;line-height:1.5;margin:.1rem 0 .45rem;}
+.pillargrid .btn,.pillargrid .cta{display:block;text-align:center;width:100%;box-sizing:border-box;margin-bottom:.5rem;}
+.pillargrid .ctasub{display:block;font-size:.78rem;line-height:1.6;min-height:2.5rem;margin:0;}
+.pillargrid .tnote{font-size:.84rem;line-height:1.7;min-height:2.9rem;}
+.pillnote{font-size:.82rem;color:var(--mut);margin:.9rem 0 0;}
+/* --- 職種別・診療報酬（サブ扱い） --- */
+.subsec .menhead h2{font-size:1.2rem;}
+.subsec .rolegrid .rcard h3{font-size:1.02rem;}
+.sublead{font-size:.88rem;color:var(--sub);margin:0 0 .9rem;line-height:1.85;}
+@media (max-width:900px){.pillargrid{grid-template-columns:1fr;}}
+
+
+:root{--gov:#0E8E9C;--govv:#12BCCE;--govbg:#E3F7FA;--govrule:#BCE7EE;
+  --st-live:#2F8F6B;--st-grow:#C56A15;--st-dev:#285F9D;--st-plan:#7C8A94;--duty:#C24141;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--gov:#6FD8E6;--govv:#29C6DC;--govbg:#0C262B;--govrule:#24484F;
+  --st-live:#4FC49E;--st-grow:#E89A55;--st-dev:#7FB3F0;--st-plan:#9AA7B0;--duty:#E8807E;}}
+:root[data-theme="dark"]{--gov:#6FD8E6;--govv:#29C6DC;--govbg:#0C262B;--govrule:#24484F;
+  --st-live:#4FC49E;--st-grow:#E89A55;--st-dev:#7FB3F0;--st-plan:#9AA7B0;--duty:#E8807E;}
+h1.gov{font-family:'Zen Kaku Gothic New','BIZ UDPゴシック',sans-serif;font-weight:700;font-size:1.02rem;color:var(--gov);margin:0 0 .25rem;}
+.lead{background:var(--govbg);border:1px solid var(--govrule);border-radius:12px;padding:1rem 1.2rem;margin:1.2rem 0 0;font-size:.95rem;}
+.lead b{color:var(--gov);}
+/* 一覧表 */
+.mx{width:100%;min-width:640px;border-collapse:collapse;font-size:.86rem;table-layout:fixed;}
+.mx th,.mx td{border:1px solid var(--rule);padding:.5rem .6rem;text-align:left;vertical-align:top;}
+.mx th{background:var(--govbg);color:var(--gov);font-size:.78rem;white-space:nowrap;}
+.mx th:nth-child(1),.mx td:nth-child(1){width:30%;}
+.mx th:nth-child(2),.mx td:nth-child(2){width:12%;}
+.mx th:nth-child(3),.mx td:nth-child(3){width:14%;}
+.mx th:nth-child(4),.mx td:nth-child(4){width:44%;}
+.mx td a{font-weight:700;}
+.mx td{overflow-wrap:anywhere;}
+/* 状態バッジ */
+.st{display:inline-block;font-size:.7rem;font-weight:700;border-radius:.4rem;padding:.08rem .55rem;color:#fff;white-space:nowrap;}
+.st-live{background:var(--st-live);} .st-grow{background:var(--st-grow);} .st-dev{background:var(--st-dev);} .st-plan{background:var(--st-plan);}
+.duty{display:inline-block;font-size:.7rem;font-weight:700;border-radius:.4rem;padding:.06rem .5rem;border:1px solid var(--mut);color:var(--mut);white-space:nowrap;}
+.d-duty{border-color:var(--duty);color:var(--duty);} .d-opt{border-color:var(--st-plan);color:var(--sub);} .d-na{border-color:var(--rule);color:var(--mut);}
+/* テーマカード */
+.tgrid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:.6rem;}
+.tcd{background:var(--panel);border:1px solid var(--rule);border-top:3px solid var(--gov);border-radius:.7rem;padding:.9rem 1.2rem 1rem;}
+/* カード見出し：バッジ・名称・副題を1行にまとめる */
+.tcd .chead{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .7rem;margin:0 0 .1rem;}
+.tcd h3{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.1rem;margin:0;line-height:1.45;}
+.tcd .sub{font-size:.84rem;color:var(--gov);font-weight:700;margin:0;}
+.tcd .badges{display:flex;gap:.35rem;flex-wrap:wrap;margin:0;}
+/* 本文：左＝背景、右＝自院の話。2列に分けて縦を半分にする */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:.2rem 1.8rem;margin:.7rem 0 0;}
+.qa{margin:0;font-size:.9rem;line-height:1.75;}
+.qa dt{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.76rem;color:var(--gov);margin:.6rem 0 .05rem;letter-spacing:.02em;}
+.qa dt:first-child{margin-top:0;}
+.qa dd{margin:0;color:var(--ink);}
+/* 行動につながる欄だけ視覚的に持ち上げる */
+.qa dd.act{background:var(--govbg);border-left:3px solid var(--gov);border-radius:0 .4rem .4rem 0;padding:.4rem .7rem;margin:.15rem 0 0;}
+/* 折りたたみ（経緯・出典） */
+.fold{margin:.7rem 0 0;border-top:1px dashed var(--rule);padding-top:.5rem;}
+.foldh{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.78rem;color:var(--gov);margin:0 0 .3rem;}
+.foldh span{font-weight:400;color:var(--mut);margin-left:.4rem;}
+.cau{margin:.7rem 0 0;padding:.5rem .7rem;background:#FFF7E0;border:1px solid #E8D28A;border-radius:.5rem;font-size:.84rem;line-height:1.7;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cau{background:#2A2410;border-color:#5A4A1A;}}
+:root[data-theme="dark"] .cau{background:#2A2410;border-color:#5A4A1A;}
+.cau b{color:var(--st-grow);}
+.srcs{margin:.4rem 0 0;font-size:.78rem;color:var(--mut);}
+.srcs a{color:var(--acc);}
+.srcs li{margin:.15rem 0;}
+.srcs ul{margin:0;padding-left:1.1rem;}
+.glead{font-size:.92rem;color:var(--sub);margin:.2rem 0 0;}
+/* 経緯・変更ログ */
+.kd{display:inline-block;font-size:.68rem;font-weight:700;border-radius:.35rem;padding:.04rem .45rem;color:#fff;white-space:nowrap;margin-right:.4rem;}
+.k-追加{background:var(--govv);} .k-決定{background:var(--st-live);} .k-数値{background:var(--st-dev);} .k-予定{background:var(--st-grow);} .k-資料{background:var(--st-plan);}
+.chg{margin:.4rem 0 0;}
+.chg ul{margin:0;padding-left:0;list-style:none;font-size:.83rem;line-height:1.7;}
+.chg li{margin:.25rem 0;display:grid;grid-template-columns:7.4em 3.3em 1fr;gap:.05rem .45rem;align-items:baseline;}
+.chg .cd{color:var(--mut);font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.78rem;}
+.chg .kd{margin-right:0;justify-self:start;}
+.chg .ct{min-width:0;}
+.lastck{font-size:.76rem;color:var(--mut);margin:.5rem 0 0;}
+/* 最近変わったこと */
+.recent{border:1px solid var(--govrule);border-radius:.7rem;padding:.2rem 1.1rem .9rem;background:var(--panel);
+  --rh:37rem;max-height:min(var(--rh),72vh);overflow-y:auto;overscroll-behavior:contain;}
+.recent:focus-visible{outline:2px solid var(--gov);outline-offset:2px;}
+.recent ul{margin:0;padding-left:0;list-style:none;font-size:.9rem;line-height:1.75;}
+.recent li{margin:.35rem 0;padding-bottom:.35rem;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:8.2em 3.4em 1fr;gap:.05rem .5rem;align-items:baseline;}
+.recent li:last-child{border-bottom:0;}
+.recent .cd{color:var(--mut);font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.82rem;}
+.recent .kd{margin-right:0;justify-self:start;}
+.recent .cw{min-width:0;}
+.recent .cw a{font-weight:700;}
+/* 件数が増えても文字は縮めない。10件ぶんの高さで止めてスクロールさせる */
+.scrollnote{font-size:.78rem;color:var(--mut);margin:.45rem 0 0;}
+.recent .mo{display:block;grid-column:1 / -1;border-bottom:0;padding:.5rem 0 .2rem;margin:0;
+  position:sticky;top:0;background:var(--panel);z-index:1;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.78rem;color:var(--gov);letter-spacing:.04em;}
+.recent .mo:first-child{padding-top:0;margin-top:0;}
+.recent .mo span{color:var(--mut);font-weight:400;margin-left:.4rem;}
+.chg.c-l ul{font-size:.79rem;} .chg.c-xl ul{font-size:.75rem;}
+@media (max-width:560px){
+  .recent li{grid-template-columns:7.2em 3.2em 1fr;font-size:.86rem;}
+  .chg li{grid-template-columns:6.8em 3.1em 1fr;}
+}
+.backnote{font-size:.8rem;color:var(--mut);margin:.6rem 0 0;padding-top:.5rem;border-top:1px dashed var(--rule);}
+.track{display:inline-flex;gap:.2rem;align-items:center;vertical-align:middle;}
+.track i{display:block;width:1.5rem;height:.42rem;border-radius:999px;background:var(--rule);}
+.track i.on{background:var(--govv);}
+.mx .track i{width:1.35rem;}
+.tsteps{display:flex;gap:.2rem;font-size:.62rem;color:var(--mut);letter-spacing:-.02em;margin:.15rem 0 0;}
+.tsteps span{width:1.35rem;text-align:center;}
+.tgs{flex-basis:100%;display:flex;flex-wrap:wrap;gap:.3rem;margin:.45rem 0 0;}
+.tgs span{font-size:.72rem;font-weight:700;border-radius:999px;padding:.14rem .6rem;border:1px solid transparent;white-space:nowrap;}
+.tg-on{background:var(--govv);color:#fff;}
+.tg-cond{background:transparent;color:var(--gov);border-color:var(--govv);}
+.tg-off{background:transparent;color:var(--mut);border-color:var(--rule);opacity:.75;}
+.mx .more{display:inline-block;margin-left:.4rem;font-size:.76rem;font-weight:700;color:var(--gov);white-space:nowrap;}
+.tglg{font-size:.78rem;color:var(--sub);display:flex;flex-wrap:wrap;gap:.35rem .8rem;align-items:center;margin:.5rem 0 0;}
+.tabbar{display:flex;flex-wrap:wrap;align-items:flex-start;gap:.5rem;margin:.2rem 0 1rem;border-bottom:2px solid var(--govrule);padding-bottom:.6rem;}
+.tabbtn{font:inherit;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.95rem;padding:.5rem 1.1rem;border-radius:999px;cursor:pointer;border:1.5px solid var(--gov);background:transparent;color:var(--gov);}
+.themes-all .tabpanel>.gnames{display:none;}
+.gnames{font-size:.82rem;line-height:1.9;margin:0 0 .5rem;color:var(--sub);}
+.gnames b{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.76rem;color:var(--gov);margin-right:.5rem;}
+.gnames a{color:var(--ink);border-bottom:1px solid var(--govrule);text-decoration:none;}
+.gnames a:hover{border-bottom-color:var(--govv);color:var(--gov);}
+.gnames .sep{color:var(--mut);margin:0 .3rem;}
+.tabbtn[aria-selected="true"]{background:var(--govv);border-color:var(--govv);color:#fff;}
+.tabbtn:focus-visible{outline:2px solid var(--gov);outline-offset:2px;}
+.tabbtn .tn{font-weight:400;font-size:.82rem;opacity:.85;margin-left:.35rem;}
+.tabpanel[hidden]{display:none;}
+.tabpanel>.gtitle{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.15rem;color:var(--ink);margin:.2rem 0 .2rem;}
+.tabnote{font-size:.78rem;color:var(--mut);margin:.5rem 0 0;}
+@media print{.tabpanel[hidden]{display:block;}.tabpanel{page-break-inside:avoid;}}
+@media (max-width:560px){.tabbtn{font-size:.86rem;padding:.45rem .85rem;}}
+.legend{display:flex;gap:.5rem 1rem;flex-wrap:wrap;font-size:.8rem;color:var(--sub);margin:.5rem 0 .9rem;align-items:center;line-height:1.9;}
+
+
+/* --- MediKoto jirei table v1（DX実践事例の表） --- */
+.tablewrap{overflow-x:auto;}
+table.jtable{width:100%;min-width:640px;table-layout:fixed;border-collapse:collapse;font-size:.88rem;}
+.jtable th{text-align:left;color:var(--mut,var(--muted));font-size:.78rem;border-bottom:2px solid var(--rule2,var(--ink));padding:.35rem .6rem;white-space:nowrap;}
+.jtable td{border-bottom:1px solid var(--rule);padding:.5rem .6rem;vertical-align:top;overflow-wrap:anywhere;}
+.jtable th:nth-child(1),.jtable td:nth-child(1){width:21%;}
+.jtable th:nth-child(2),.jtable td:nth-child(2){width:33%;}
+.jtable th:nth-child(3),.jtable td:nth-child(3){width:30%;white-space:normal;font-weight:700;}
+.jtable th:nth-child(4),.jtable td:nth-child(4){width:16%;font-size:.8rem;font-weight:400;}
+.jnote{font-size:.85rem;color:var(--mut,var(--muted));margin:.6rem 0 0;}
+/* MediKoto findbar v1 */
+.mkfind{border:1.5px solid var(--rule,#D9DDE0);border-radius:12px;padding:.6rem .8rem;background:var(--panel,#F2F3EF);margin:.7rem 0 .2rem;
+  font-family:"BIZ UDPGothic","BIZ UDPゴシック",-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;}
+.mkf-lab{display:flex;align-items:center;gap:.45rem;margin:0 0 .4rem;font-family:"Zen Kaku Gothic New","BIZ UDPGothic",sans-serif;
+  font-weight:700;font-size:.78rem;letter-spacing:.08em;color:var(--ink,#1A242E);}
+.mkf-lab::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:#039D96;display:inline-block;}
+.mkf-box{position:relative;}
+.mkf-box svg{position:absolute;left:.8rem;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--mut,#7C8A94);pointer-events:none;}
+.mkf-box input{width:100%;box-sizing:border-box;padding:.55rem .8rem .55rem 2.4rem;font-size:.95rem;line-height:1.6;
+  border:1.5px solid var(--rule,#D9DDE0);border-radius:10px;background:var(--paper,#FFFFFF);color:var(--ink,#1A242E);font-family:inherit;}
+.mkf-box input:focus{outline:none;border-color:#039D96;box-shadow:0 0 0 3px rgba(3,157,150,.16);}
+.mkf-out{margin:.5rem 0 0;}
+.mkf-out ul{margin:0;padding:0;list-style:none;}
+.mkf-out li{padding:.32rem 0;border-bottom:1px dashed var(--rule,#D9DDE0);}
+.mkf-out a{text-decoration:none;color:var(--ink,#1A242E);}
+.mkf-out a:hover .mkf-th{text-decoration:underline;}
+.mkf-tag{display:inline-block;font-size:.68rem;font-weight:700;line-height:1.6;border-radius:999px;padding:.02rem .5rem;
+  margin-right:.45rem;color:#FFFFFF;background:var(--k,#163672);vertical-align:.05em;}
+.mkf-d{font-size:.78rem;font-weight:700;color:var(--sub,#4A5A66);margin-right:.45rem;font-variant-numeric:tabular-nums;}
+.mkf-th{font-size:.84rem;}
+.mkf-all{display:inline-block;margin:.5rem 0 .1rem;font-size:.82rem;font-weight:700;color:#039D96;text-decoration:none;}
+.mkf-all:hover{text-decoration:underline;}
+.mkf-none{font-size:.8rem;color:var(--mut,#7C8A94);margin:.4rem 0 0;}
+.mkf-hint{font-size:.72rem;color:var(--mut,#7C8A94);margin:.35rem 0 0;}
+.mkf-tag[data-k="news"]{--k:#163672;}.mkf-tag[data-k="study"]{--k:#C56A15;}.mkf-tag[data-k="nursing"]{--k:#C25573;}.mkf-tag[data-k="doctors"]{--k:#285F9D;}.mkf-tag[data-k="pharm"]{--k:#2F8F6B;}.mkf-tag[data-k="connect"]{--k:#7A5230;}.mkf-tag[data-k="se"]{--k:#8E7414;}.mkf-tag[data-k="reim"]{--k:#5B3FA6;}.mkf-tag[data-k="global"]{--k:#4E6E8E;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .mkf-tag{color:#10181E;}:root:not([data-theme="light"]) .mkf-tag[data-k="news"]{--k:#8FB7F4;}:root:not([data-theme="light"]) .mkf-tag[data-k="study"]{--k:#E89A55;}:root:not([data-theme="light"]) .mkf-tag[data-k="nursing"]{--k:#E794B0;}:root:not([data-theme="light"]) .mkf-tag[data-k="doctors"]{--k:#7FB3F0;}:root:not([data-theme="light"]) .mkf-tag[data-k="pharm"]{--k:#5FCB9E;}:root:not([data-theme="light"]) .mkf-tag[data-k="connect"]{--k:#D2A27E;}:root:not([data-theme="light"]) .mkf-tag[data-k="se"]{--k:#E3C64F;}:root:not([data-theme="light"]) .mkf-tag[data-k="reim"]{--k:#B79DF5;}}
+:root[data-theme="dark"] .mkf-tag{color:#10181E;}:root[data-theme="dark"] .mkf-tag[data-k="news"]{--k:#8FB7F4;}:root[data-theme="dark"] .mkf-tag[data-k="study"]{--k:#E89A55;}:root[data-theme="dark"] .mkf-tag[data-k="nursing"]{--k:#E794B0;}:root[data-theme="dark"] .mkf-tag[data-k="doctors"]{--k:#7FB3F0;}:root[data-theme="dark"] .mkf-tag[data-k="pharm"]{--k:#5FCB9E;}:root[data-theme="dark"] .mkf-tag[data-k="connect"]{--k:#D2A27E;}:root[data-theme="dark"] .mkf-tag[data-k="se"]{--k:#E3C64F;}:root[data-theme="dark"] .mkf-tag[data-k="reim"]{--k:#B79DF5;}
+@media (max-width:560px){.mkf-th{display:block;margin-top:.1rem;}}
+/* MediKoto backnumber v1 */
+
+.bnsec .bnc{border:1px solid var(--rule,#D9DDE0);border-radius:.7rem;padding:.8rem 1rem .55rem;margin:.4rem 0 0;background:#E3F7FA;}
+.bnsec .bnc h4{font-family:"Zen Kaku Gothic New","BIZ UDPGothic",sans-serif;font-weight:700;font-size:1.02rem;margin:0 0 .45rem;color:#0A8E9C;}
+.bnsec .bnwrap{overflow-x:auto;}
+.bnsec table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:520px;}
+.bnsec th{text-align:left;color:var(--mut,#7C8A94);font-size:.78rem;border-bottom:2px solid var(--rule2,#1A242E);padding:.35rem .6rem;white-space:nowrap;}
+.bnsec td{border-bottom:1px solid var(--rule,#D9DDE0);padding:.45rem .6rem;vertical-align:top;}
+.bnsec tr:last-child td{border-bottom:none;}
+.bnsec td.d{white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums;}
+.bnsec .bnsub{color:var(--mut,#7C8A94);font-size:.86em;}
+.bnsec details.mgroup{margin:.6rem 0 0;}
+.bnsec details.mgroup summary{cursor:pointer;font-weight:700;color:var(--sub,#4A5A66);padding:.45rem .2rem;border-bottom:1px solid var(--rule,#D9DDE0);font-size:.95rem;}
+.bnsec details.mgroup .bnwrap{margin-top:.4rem;}
+.bnsec .bnlead{font-size:.78rem;color:var(--mut,#7C8A94);margin:.1rem 0 .4rem;}
+.bnnote{font-size:.78rem;color:var(--mut,#7C8A94);margin:.6rem 0 0;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnsec .bnc{background:#0C262B;}
+  :root:not([data-theme="light"]) .bnsec .bnc h4{color:#6FD8E6;}}
+:root[data-theme="dark"] .bnsec .bnc{background:#0C262B;}
+:root[data-theme="dark"] .bnsec .bnc h4{color:#6FD8E6;}
+/* MediKoto sitenav v9 */
+.sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-ovs:#4E6E8E;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
+  display:flex;flex-wrap:wrap;gap:.35rem;border:1px solid var(--sn-line);border-radius:12px;padding:.45rem;margin:.6rem 0 0;font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
+.sitenav a{flex:1 1 auto;text-align:center;font-size:.8rem;font-weight:700;text-decoration:none;border:1px solid var(--sn-line);border-radius:8px;padding:.4rem .5rem;background:var(--sn-bg);color:var(--sn-c);white-space:nowrap;line-height:1.5;}
+.sitenav a:hover{border-color:var(--sn-c);}
+.sitenav a.cur{background:var(--sn-c);color:#fff;border-color:var(--sn-c);}
+.sitenav a:focus-visible{outline:2px solid var(--sn-c);outline-offset:2px;}
+.sitenav.top{margin:.6rem 0 1.1rem;}
+.sitenav.bottom{margin:2rem 0 0;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-bg:#18232B;--sn-line:#2E3C46;}
+  :root:not([data-theme="light"]) .sitenav a.cur{color:#10181E;}}
+:root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-bg:#18232B;--sn-line:#2E3C46;}
+:root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
+@media (min-width:641px){.sitenav a{padding:.4rem .42rem;font-size:.8rem;}}
+@media (min-width:641px) and (max-width:900px){.sitenav{display:grid;grid-template-columns:repeat(6,1fr);}.sitenav a{flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
+@media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
+@media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
+/* バックナンバー枠の色（HTMLだけ増えてCSSが抜ける事故を防ぐため、ここでも定義する） */
+.bnc-gov{background:var(--govbg,#E3F7FA);}
+.bnc-gov .sub4{color:var(--gov,#0A8E9C);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-gov{background:#0C262B;}
+  :root:not([data-theme="light"]) .bnc-gov .sub4{color:#6FD8E6;}}
+:root[data-theme="dark"] .bnc-gov{background:#0C262B;}
+:root[data-theme="dark"] .bnc-gov .sub4{color:#6FD8E6;}
+.bnc-global{--bk:var(--ovs,#4E6E8E);background:transparent;}
+.bnc-global .sub4{color:var(--ovs,#4E6E8E);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-global{--bk:#8FB0CC;}
+  :root:not([data-theme="light"]) .bnc-global .sub4{color:#8FB0CC;}}
+:root[data-theme="dark"] .bnc-global{--bk:#8FB0CC;}
+:root[data-theme="dark"] .bnc-global .sub4{color:#8FB0CC;}
+/* 疑義解釈まとめ（別ページ）への入口。色変数だけに頼らずリテラルの控えを必ず添える */
+.gigi{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem 1rem;margin:1.1rem 0 0;
+  text-decoration:none;color:inherit;background:var(--panel,#F2F3EF);
+  border:1.5px solid var(--reim,#5B3FA6);border-left:6px solid var(--reim,#5B3FA6);
+  border-radius:10px;padding:.8rem 1.1rem;}
+.gigi:hover{background:var(--reimbg,#F1EDF9);}
+.gigi:focus-visible{outline:2px solid var(--reim,#5B3FA6);outline-offset:2px;}
+.gigi-ic{font-size:1.5rem;line-height:1;flex:none;}
+.gigi-b{flex:1 1 20rem;min-width:0;}
+.gigi-lab{display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--mut,#7C8A94);}
+.gigi-t{display:block;font-family:"Zen Kaku Gothic New","BIZ UDPGothic",sans-serif;font-weight:700;
+  font-size:1.08rem;line-height:1.5;color:var(--reim,#5B3FA6);margin:.05rem 0 .15rem;}
+.gigi-d{display:block;font-size:.82rem;color:var(--sub,#4A5A66);line-height:1.7;}
+.gigi-go{flex:none;font-weight:700;font-size:.88rem;color:var(--paper,#FBFAF7);
+  background:var(--reim,#5B3FA6);border-radius:999px;padding:.32rem 1.1rem;white-space:nowrap;}
+@media (max-width:560px){.gigi-go{width:100%;text-align:center;}}
+
+[hidden]{display:none!important;}

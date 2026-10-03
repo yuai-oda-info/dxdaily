@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-03",
+ "updated": "2026-10-04",
  "rules": {
   "auto_min_urls": 2,
   "demote_days": 90,
@@ -495,7 +495,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "厚生労働省 医療等情報利活用ワーキンググループ",
@@ -563,7 +563,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "厚生労働省 医療用医薬品の供給状況",
@@ -652,7 +652,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "内閣感染症危機管理統括庁",
@@ -672,7 +672,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "内閣官房（新型インフルエンザ等対策推進会議の資料）",
@@ -693,7 +693,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "内閣府 医療等情報の利活用の推進に関する検討会（資料）",
@@ -713,7 +713,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "WAM NET 介護保険最新情報",
@@ -732,7 +732,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "e-Gov パブリック・コメント",
@@ -750,7 +750,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "個人情報保護委員会",
@@ -770,7 +770,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "警察庁",
@@ -815,7 +815,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "DX審査支払機構（医療情報基盤・診療報酬審査支払機構）",
@@ -839,7 +839,7 @@
      "status": "active",
      "added": "2026-10-01",
      "added_reason": "情報源に追加（支払基金の名称変更に合わせて）",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "AMED（日本医療研究開発機構）",
@@ -858,7 +858,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "国民健康保険中央会 ケアプランデータ連携システム",
@@ -896,7 +896,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "JIHS AMR臨床リファレンスセンター（J-SIPHE・OASCIS）",
@@ -917,7 +917,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "JANIS（院内感染対策サーベイランス）",
@@ -937,7 +937,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "日本医療機能評価機構 医療安全情報",
@@ -956,7 +956,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     }
    ]
   },
@@ -981,7 +981,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "IPA（情報処理推進機構）",
@@ -1000,7 +1000,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "JVN（Japan Vulnerability Notes）",
@@ -1020,7 +1020,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "国家サイバー統括室",
@@ -1059,7 +1059,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "Security NEXT",
@@ -1101,7 +1101,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-03",
+     "last_used": "2026-10-04",
      "paths": [
       "kouseikyoku.mhlw.go.jp/kyushu/"
      ]
@@ -1124,7 +1124,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "東京都保健医療局",
@@ -1145,7 +1145,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "中小機構 デジタル化・AI導入補助金",
@@ -1164,7 +1164,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "J-Net21 支援情報ヘッドライン",
@@ -1250,7 +1250,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "地方厚生局を全国分そろえる",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "東海北陸厚生局",
@@ -1273,7 +1273,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "地方厚生局を全国分そろえる",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "近畿厚生局",
@@ -1296,7 +1296,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "地方厚生局を全国分そろえる",
-     "last_used": "2026-09-02"
+     "last_used": "2026-10-04"
     },
     {
      "name": "中国四国厚生局",
@@ -1387,7 +1387,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "サイバーDXの調査で追加",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "日本医療情報学会（JAMI）",
@@ -1408,7 +1408,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "日本看護協会",
@@ -1462,7 +1462,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "日本訪問看護財団",
@@ -1480,7 +1480,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "日本病院薬剤師会",
@@ -1588,7 +1588,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "日本ケアマネジメント学会",
@@ -1674,7 +1674,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     }
    ]
   },
@@ -1700,7 +1700,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "PubMed／PubMed Central",
@@ -1757,7 +1757,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "JAMA Network",
@@ -1776,7 +1776,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "Oxford Academic（JAMIA ほか）",
@@ -1796,7 +1796,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "Springer Link",
@@ -1864,7 +1864,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "PR Newswire",
@@ -1929,7 +1929,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "CBnews",
@@ -1984,7 +1984,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-09-28"
+     "last_used": "2026-10-04"
     },
     {
      "name": "インナービジョン",
@@ -2003,7 +2003,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-02"
+     "last_used": "2026-10-04"
     },
     {
      "name": "Med IT Tech",
@@ -2126,7 +2126,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "Federal Register（米国官報）",
@@ -2207,7 +2207,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "FDA（米国食品医薬品局）",
@@ -2227,7 +2227,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "HHS（米国保健福祉省）",
@@ -2246,7 +2246,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "AHRQ（米国医療研究品質庁）",
@@ -2266,7 +2266,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "NHS England",
@@ -2285,7 +2285,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "NHS England Digital",
@@ -2328,7 +2328,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "Australian Digital Health Agency",
@@ -2385,7 +2385,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "American Nurses Association",
@@ -2404,7 +2404,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "AONL（米国看護管理者協会）",
@@ -2425,7 +2425,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "AHA（米国病院協会）",
@@ -2443,7 +2443,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "Mayo Clinic News Network",
@@ -2464,7 +2464,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "Cleveland Clinic Newsroom",
@@ -2502,7 +2502,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "Becker's Hospital Review",
@@ -2521,7 +2521,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "Fierce Healthcare",
@@ -2541,7 +2541,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "The HIPAA Journal",
@@ -2562,7 +2562,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-02"
+     "last_used": "2026-10-04"
     }
    ]
   },
@@ -2611,7 +2611,7 @@
      "auto": true,
      "added": "2026-10-03",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     },
     {
      "name": "pref.kanagawa.jp",
@@ -2634,7 +2634,7 @@
      "auto": true,
      "added": "2026-10-03",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-04"
     }
    ]
   }

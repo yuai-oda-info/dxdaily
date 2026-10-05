@@ -4,6 +4,8 @@
 v10（2026-10-02）：「国の医療DX」の右に「サイバーDX」「感染症DX」を追加。PCは7列×2段。
 同じフォルダの medikoto_themes.py があれば呼び、ポータルに THEME MAP・サイバーDX／感染症DXのバックナンバー・データソース（ボタンとポップアップ）を差し込み、
 data/sources.json（情報源の一覧）を更新して sources.html を作り直す。
+v11（2026-10-05）：続けて同じフォルダの medikoto_feed.py があれば呼び、RSS（feed.xml・1日1件・直近10日）を作り直し、
+ポータルに RSS の自動検出の1行と「RSS配信」チップ（→ rss.html）を入れ、rss.html を sitemap に載せる。共通ナビ・CSS（v10）は変えない。
 使い方: python3 tools/fix_sitenav.py . [--check]
 """
 import os, re, sys, glob, datetime, json
@@ -301,6 +303,12 @@ def main():
             th = medikoto_themes.run(root)
         except Exception as ex:
             th = ['!! テーマ: %s（ナビの処理は続ける）' % ex]
+        # RSS配信（2026-10-05追加）。事例DXの保存版を作った後に動かし、その日のページへのリンクに含める
+        try:
+            import medikoto_feed
+            th += medikoto_feed.run(root)
+        except Exception as ex:
+            th.append('!! RSS: %s（ナビの処理は続ける）' % ex)
     files = sorted(f for f in glob.glob(os.path.join(root, '*.html')))
     gigi_href = 'gigikaishaku.html' if os.path.exists(os.path.join(root, 'gigikaishaku.html')) else GIGI_ART
     gigi_n = gigi_count(root)

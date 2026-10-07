@@ -6,6 +6,8 @@ v10（2026-10-02）：「国の医療DX」の右に「サイバーDX」「感染
 data/sources.json（情報源の一覧）を更新して sources.html を作り直す。
 v11（2026-10-05）：続けて同じフォルダの medikoto_feed.py があれば呼び、RSS（feed.xml・1日1件・直近10日）を作り直し、
 ポータルに RSS の自動検出の1行と「RSS配信」チップ（→ rss.html）を入れ、rss.html を sitemap に載せる。共通ナビ・CSS（v10）は変えない。
+v11b（2026-10-07）：続けて同じフォルダの medikoto_backnumber.py があれば呼び、ポータルのバックナンバー表（ヘッドライン・勉強会・職種別5・診療報酬・国の医療DX）を
+リポジトリにある日付つきファイルから作り直す（移行元・移行先どちらのアカウントで作った号も抜けないように）。共通ナビ・CSS（v10）は変えない。
 使い方: python3 tools/fix_sitenav.py . [--check]
 """
 import os, re, sys, glob, datetime, json
@@ -309,6 +311,12 @@ def main():
             th += medikoto_feed.run(root)
         except Exception as ex:
             th.append('!! RSS: %s（ナビの処理は続ける）' % ex)
+        # バックナンバー表（2026-10-07追加）。どのアカウントで作った号も、リポジトリにある日付つきファイルから表を作り直す
+        try:
+            import medikoto_backnumber
+            th += medikoto_backnumber.run(root)
+        except Exception as ex:
+            th.append('!! バックナンバー: %s（ナビの処理は続ける）' % ex)
     files = sorted(f for f in glob.glob(os.path.join(root, '*.html')))
     gigi_href = 'gigikaishaku.html' if os.path.exists(os.path.join(root, 'gigikaishaku.html')) else GIGI_ART
     gigi_n = gigi_count(root)

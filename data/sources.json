@@ -876,7 +876,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-07"
+     "last_used": "2026-10-06"
     },
     {
      "name": "JIHS 感染症情報提供サイト",
@@ -1228,7 +1228,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "地方厚生局を全国分そろえる",
-     "last_used": "2026-10-05"
+     "last_used": "2026-10-07"
     },
     {
      "name": "関東信越厚生局",
@@ -1481,7 +1481,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-07"
+     "last_used": "2026-10-04"
     },
     {
      "name": "日本病院薬剤師会",
@@ -1517,7 +1517,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-07"
+     "last_used": "2026-09-29"
     },
     {
      "name": "日本医療薬学会",
@@ -1535,7 +1535,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-07"
+     "last_used": "2026-10-01"
     },
     {
      "name": "日本医療ソーシャルワーカー協会",
@@ -1885,7 +1885,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-06"
+     "last_used": "2026-10-07"
     },
     {
      "name": "OpenEvidence（オープンエビデンス）",
@@ -1985,7 +1985,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-07"
+     "last_used": "2026-10-04"
     },
     {
      "name": "インナービジョン",
@@ -2004,7 +2004,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-07"
+     "last_used": "2026-10-04"
     },
     {
      "name": "Med IT Tech",
@@ -2044,7 +2044,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-05"
+     "last_used": "2026-10-07"
     },
     {
      "name": "医学書院",
@@ -2084,7 +2084,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-07"
+     "last_used": "2026-09-24"
     },
     {
      "name": "m3.com 医療維新",
@@ -2286,7 +2286,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-05"
+     "last_used": "2026-10-07"
     },
     {
      "name": "NHS England Digital",
@@ -2307,7 +2307,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-05"
+     "last_used": "2026-10-07"
     },
     {
      "name": "GOV.UK（英国政府）",
@@ -2444,7 +2444,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-07"
+     "last_used": "2026-10-06"
     },
     {
      "name": "Mayo Clinic News Network",
@@ -2590,7 +2590,7 @@
      "auto": true,
      "added": "2026-10-03",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-03"
+     "last_used": "2026-10-07"
     },
     {
      "name": "yakkyoku-hiyari.jcqhc.or.jp",
@@ -2748,7 +2748,7 @@
      "auto": true,
      "added": "2026-10-07",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-07"
+     "last_used": "2026-10-05"
     },
     {
      "name": "rocket-boys.co.jp",
@@ -2771,7 +2771,7 @@
      "auto": true,
      "added": "2026-10-07",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-07"
+     "last_used": "2026-10-02"
     },
     {
      "name": "store.medica.co.jp",
@@ -2784,6 +2784,72 @@
      ],
      "domains": [
       "store.medica.co.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-07",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-07"
+    },
+    {
+     "name": "bousai.go.jp",
+     "url": "https://bousai.go.jp/",
+     "label": "公的",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "conn",
+      "hl"
+     ],
+     "domains": [
+      "bousai.go.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-07",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-07"
+    },
+    {
+     "name": "pnb.jiho.jp",
+     "url": "https://pnb.jiho.jp/",
+     "label": "報道",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "hl",
+      "pharm"
+     ],
+     "domains": [
+      "pnb.jiho.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-07",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-07"
+    },
+    {
+     "name": "kaiziren.or.jp",
+     "url": "https://kaiziren.or.jp/",
+     "label": "公的",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "conn",
+      "hl"
+     ],
+     "domains": [
+      "kaiziren.or.jp"
      ],
      "note": "",
      "kind": "参照先",
@@ -3588,6 +3654,24 @@
    "date": "2026-10-07",
    "action": "追加",
    "name": "store.medica.co.jp",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-07",
+   "action": "追加",
+   "name": "bousai.go.jp",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-07",
+   "action": "追加",
+   "name": "pnb.jiho.jp",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-07",
+   "action": "追加",
+   "name": "kaiziren.or.jp",
    "reason": "自動追加（出典に載せたURLの発信元）"
   }
  ],

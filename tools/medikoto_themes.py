@@ -71,6 +71,28 @@ def norm(dom):
     return dom[4:] if dom.startswith('www.') else dom
 
 # ---------------------------------------------------------------- 1. 数える
+def case_media_urls(h):
+    """事例データ（JSON）から、出典が報道・まとめのURLだけを返す。"""
+    out = []
+    for sid in ('j-data', 'j-feat'):
+        m = re.search(r'<script type="application/json" id="%s">(.*?)</script>' % sid, h, re.S)
+        if not m:
+            continue
+        try:
+            rows = json.loads(m.group(1).replace('<\\/', '</'))
+        except Exception:
+            continue
+        for r in rows:
+            if isinstance(r, dict) and isinstance(r.get('src'), dict):          # j-data
+                s = r['src']
+                if s.get('l') in ('報道', 'まとめ') and str(s.get('u', '')).startswith('http'):
+                    out.append(s['u'])
+            elif isinstance(r, dict) and isinstance(r.get('src'), list):        # j-feat
+                for s in r['src']:
+                    if isinstance(s, list) and len(s) > 3 and s[0] in ('報道', 'まとめ') and str(s[3]).startswith('http'):
+                        out.append(s[3])
+    return out
+
 def scan(root, ignore):
     pages = {k: {'files': 0, 'dom': {}} for k, _ in PAGE_FILES}
     doms = {}
@@ -81,10 +103,14 @@ def scan(root, ignore):
             continue
         h = open(f, encoding='utf-8').read()
         h = re.sub(re.escape(MK0) + '.*?' + re.escape(MK1), '', h, flags=re.S)   # 差し込んだ一覧は数えない
+        # 2026-10-10 事例データ（サイバーDX「事例と対策」の script#j-data / #j-feat）の出典のうち、
+        # 報道・まとめだけを数える（各組織の発表ページは1件ずつの出典なので数えない）
+        case_urls = case_media_urls(h)
+        h = re.sub(r'<section class="men" id="c-jirei">.*?</section>', '', h, flags=re.S)
         h = re.sub(r'<script.*?</script>', '', h, flags=re.S)
         h = re.sub(r'<nav class="sitenav.*?</nav>', '', h, flags=re.S)
         pages[key]['files'] += 1
-        for u in re.findall(r'href="(https?://[^"#]+)', h):
+        for u in re.findall(r'href="(https?://[^"#]+)', h) + case_urls:
             m = re.match(r'https?://([^/:]+)', u)
             if not m:
                 continue
@@ -93,7 +119,9 @@ def scan(root, ignore):
                 continue
             u = u.split('?')[0]
             pages[key]['dom'].setdefault(dom, set()).add(u)
-            info = doms.setdefault(dom, {'urls': set(), 'pages': set(), 'last': None, 'ulast': {}})
+            info = doms.setdefault(dom, {'urls': set(), 'pages': set(), 'last': None, 'ulast': {}, 'case': False})
+            if u in case_urls:
+                info['case'] = True
             info['urls'].add(u)
             info['pages'].add(key)
             dd = d or today
@@ -200,7 +228,8 @@ def update_registry(data, pages, doms, today):
             continue
         n = len(info['urls'])
         grow = n - base.get(dom, 0) if dom in base else n
-        if grow < minu:
+        need = data.get('rules', {}).get('auto_min_urls_cases', 1) if info.get('case') else minu
+        if grow < need:
             continue
         if auto is None:
             auto = {'name': AUTO_GROUP, 'items': []}
@@ -211,6 +240,10 @@ def update_registry(data, pages, doms, today):
               'what': '出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）', 'freq': '随時',
               'pages': pg, 'domains': [dom], 'note': '', 'kind': '参照先', 'fixed': False, 'status': 'active', 'auto': True,
               'added': today.isoformat(), 'added_reason': '自動追加（出典に載せたURLの発信元）'}
+        if info.get('case'):
+            it['kind'] = '巡回先'
+            it['what'] = '事例を探すときに見た報道・まとめとして自動で追加しました（内容は週1回の見直しで書き足します）'
+            it['added_reason'] = '自動追加（事例一覧の出典に使った報道・まとめ）'
         auto['items'].append(it)
         covered[dom] = it
         data.setdefault('log', []).append({'date': today.isoformat(), 'action': '追加', 'name': it['name'], 'reason': it['added_reason']})

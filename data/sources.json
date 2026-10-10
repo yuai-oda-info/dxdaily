@@ -8,7 +8,8 @@
    4,
    8
   ],
-  "private_cap": "2〜3.5割（上限3.5割）"
+  "private_cap": "2〜3.5割（上限3.5割）",
+  "auto_min_urls_cases": 1
  },
  "ignore_domains": [
   "fonts.googleapis.com",
@@ -19,8 +20,7 @@
   "googletagmanager.com",
   "youtube.com",
   "youtu.be",
-  "doi.org",
-  "idcf.jp"
+  "doi.org"
  ],
  "domain_names": {
   "mhlw.go.jp": [

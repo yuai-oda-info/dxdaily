@@ -8,6 +8,58 @@
   "openevidence.com": [
    "OpenEvidence",
    "企業発表"
+  ],
+  "scan.netsecurity.ne.jp": [
+   "ScanNetSecurity",
+   "報道"
+  ],
+  "itmedia.co.jp": [
+   "ITmedia（@IT・ITmedia NEWS）",
+   "報道"
+  ],
+  "sbbit.jp": [
+   "ビジネス+IT",
+   "報道"
+  ],
+  "nikkei.com": [
+   "日本経済新聞",
+   "報道"
+  ],
+  "piyolog.hatenadiary.jp": [
+   "piyolog",
+   "報道"
+  ],
+  "bose50.hatenadiary.org": [
+   "シン・情報（はてなブログ）",
+   "報道"
+  ],
+  "smartscope.blog": [
+   "SmartScope",
+   "報道"
+  ],
+  "nhk.or.jp": [
+   "NHK（各地域局のニュース）",
+   "報道"
+  ],
+  "47news.jp": [
+   "47NEWS（共同通信・全国の地方紙）",
+   "報道"
+  ],
+  "saga-s.co.jp": [
+   "佐賀新聞",
+   "報道"
+  ],
+  "nishinippon.co.jp": [
+   "西日本新聞",
+   "報道"
+  ],
+  "hokkaido-np.co.jp": [
+   "北海道新聞",
+   "報道"
+  ],
+  "rocket-boys.co.jp": [
+   "セキュリティ対策Lab（rocket-boys）",
+   "報道"
   ]
  },
  "ops": [
@@ -236,6 +288,314 @@
     "note": "",
     "kind": "参照先",
     "fixed": false
+   }
+  },
+  {
+   "id": "add-scannet-20261010",
+   "op": "add",
+   "group": "業界メディア（話題の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "ScanNetSecurity",
+    "url": "https://scan.netsecurity.ne.jp/",
+    "label": "報道",
+    "what": "国内のサイバー被害・情報漏えいの公表一覧（所在確認。掲載は組織の発表にリンク）",
+    "freq": "週1",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "scan.netsecurity.ne.jp"
+    ],
+    "note": "",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-itmedia-20261010",
+   "op": "add",
+   "group": "業界メディア（話題の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "ITmedia（@IT・ITmedia NEWS）",
+    "url": "https://www.itmedia.co.jp/",
+    "label": "報道",
+    "what": "サイバー被害・不正アクセスの報道と解説（所在確認）",
+    "freq": "週1",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "itmedia.co.jp"
+    ],
+    "note": "",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-sbbit-20261010",
+   "op": "add",
+   "group": "業界メディア（話題の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "ビジネス+IT",
+    "url": "https://www.sbbit.jp/",
+    "label": "報道",
+    "what": "大規模なサイバー被害の報道（所在確認）",
+    "freq": "随時",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "sbbit.jp"
+    ],
+    "note": "",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-nikkei-20261010",
+   "op": "add",
+   "group": "業界メディア（話題の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "日本経済新聞",
+    "url": "https://www.nikkei.com/",
+    "label": "報道",
+    "what": "企業・大学のサイバー被害の報道（会員限定部分は書かない）",
+    "freq": "随時",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "nikkei.com"
+    ],
+    "note": "",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-piyolog-20261010",
+   "op": "add",
+   "group": "業界メディア（話題の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "piyolog",
+    "url": "https://piyolog.hatenadiary.jp/",
+    "label": "報道",
+    "what": "サイバー被害の事案ごとの経緯まとめ（個人ブログ。所在確認のみ）",
+    "freq": "週1",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "piyolog.hatenadiary.jp"
+    ],
+    "note": "まとめ（個人ブログ）",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-bose50-20261010",
+   "op": "add",
+   "group": "業界メディア（話題の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "シン・情報（はてなブログ）",
+    "url": "https://bose50.hatenadiary.org/",
+    "label": "報道",
+    "what": "国内の情報漏えい事案の日次まとめ（個人ブログ。所在確認のみ）",
+    "freq": "週1",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "bose50.hatenadiary.org"
+    ],
+    "note": "まとめ（個人ブログ）",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-smartscope-20261010",
+   "op": "add",
+   "group": "業界メディア（話題の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "SmartScope",
+    "url": "https://smartscope.blog/",
+    "label": "報道",
+    "what": "国内の情報漏えい事案の一覧（まとめサイト。所在確認のみ）",
+    "freq": "随時",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "smartscope.blog"
+    ],
+    "note": "まとめサイト",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-nhk-20261010",
+   "op": "add",
+   "group": "地方紙・地域ニュース（事例の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "NHK（各地域局のニュース）",
+    "url": "https://www3.nhk.or.jp/news/",
+    "label": "報道",
+    "what": "地方の病院・自治体・企業のサイバー被害の報道（地方の事例の入口）",
+    "freq": "週1",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "nhk.or.jp"
+    ],
+    "note": "",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-47news-20261010",
+   "op": "add",
+   "group": "地方紙・地域ニュース（事例の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "47NEWS（共同通信・全国の地方紙）",
+    "url": "https://www.47news.jp/",
+    "label": "報道",
+    "what": "全国の地方紙の記事のまとめ（地方紙全体の入口）",
+    "freq": "週1",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "47news.jp"
+    ],
+    "note": "",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-saga-s-20261010",
+   "op": "add",
+   "group": "地方紙・地域ニュース（事例の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "佐賀新聞",
+    "url": "https://www.saga-s.co.jp/",
+    "label": "報道",
+    "what": "佐賀県内の病院・自治体・企業のサイバー被害の報道",
+    "freq": "週1",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "saga-s.co.jp"
+    ],
+    "note": "",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-nishinippon-20261010",
+   "op": "add",
+   "group": "地方紙・地域ニュース（事例の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "西日本新聞",
+    "url": "https://www.nishinippon.co.jp/",
+    "label": "報道",
+    "what": "九州のサイバー被害の報道",
+    "freq": "週1",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "nishinippon.co.jp"
+    ],
+    "note": "",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-hokkaido-np-20261010",
+   "op": "add",
+   "group": "地方紙・地域ニュース（事例の発見用）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+   "item": {
+    "name": "北海道新聞",
+    "url": "https://www.hokkaido-np.co.jp/",
+    "label": "報道",
+    "what": "北海道のサイバー被害・情報漏えいの報道",
+    "freq": "随時",
+    "pages": [
+     "cyb"
+    ],
+    "domains": [
+     "hokkaido-np.co.jp"
+    ],
+    "note": "",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "upd-securitynext-cyb-20261010",
+   "op": "update",
+   "name": "Security NEXT",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」でも使う",
+   "set": {
+    "pages": [
+     "se",
+     "cyb"
+    ]
+   }
+  },
+  {
+   "id": "upd-rocketboys-20261010",
+   "op": "update",
+   "name": "rocket-boys.co.jp",
+   "rename": "セキュリティ対策Lab（rocket-boys）",
+   "date": "2026-10-10",
+   "reason": "サイバーDX「事例と対策」で事例を探す巡回先として名前と内容を書き足す",
+   "set": {
+    "pages": [
+     "hl",
+     "nurs",
+     "se",
+     "cyb"
+    ],
+    "what": "サイバー被害・情報漏えいの月次まとめと業種別一覧（所在確認。掲載は組織の発表にリンク）",
+    "freq": "週1",
+    "kind": "巡回先"
    }
   }
  ]

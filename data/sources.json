@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-10",
+ "updated": "2026-10-11",
  "rules": {
   "auto_min_urls": 2,
   "demote_days": 90,
@@ -466,6 +466,58 @@
   "openevidence.com": [
    "OpenEvidence",
    "企業発表"
+  ],
+  "scan.netsecurity.ne.jp": [
+   "ScanNetSecurity",
+   "報道"
+  ],
+  "itmedia.co.jp": [
+   "ITmedia（@IT・ITmedia NEWS）",
+   "報道"
+  ],
+  "sbbit.jp": [
+   "ビジネス+IT",
+   "報道"
+  ],
+  "nikkei.com": [
+   "日本経済新聞",
+   "報道"
+  ],
+  "piyolog.hatenadiary.jp": [
+   "piyolog",
+   "報道"
+  ],
+  "bose50.hatenadiary.org": [
+   "シン・情報（はてなブログ）",
+   "報道"
+  ],
+  "smartscope.blog": [
+   "SmartScope",
+   "報道"
+  ],
+  "nhk.or.jp": [
+   "NHK（各地域局のニュース）",
+   "報道"
+  ],
+  "47news.jp": [
+   "47NEWS（共同通信・全国の地方紙）",
+   "報道"
+  ],
+  "saga-s.co.jp": [
+   "佐賀新聞",
+   "報道"
+  ],
+  "nishinippon.co.jp": [
+   "西日本新聞",
+   "報道"
+  ],
+  "hokkaido-np.co.jp": [
+   "北海道新聞",
+   "報道"
+  ],
+  "rocket-boys.co.jp": [
+   "セキュリティ対策Lab（rocket-boys）",
+   "報道"
   ]
  },
  "groups": [
@@ -496,7 +548,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "厚生労働省 医療等情報利活用ワーキンググループ",
@@ -564,7 +616,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "厚生労働省 医療用医薬品の供給状況",
@@ -653,7 +705,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "内閣感染症危機管理統括庁",
@@ -673,7 +725,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "内閣官房（新型インフルエンザ等対策推進会議の資料）",
@@ -694,7 +746,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "内閣府 医療等情報の利活用の推進に関する検討会（資料）",
@@ -714,7 +766,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "WAM NET 介護保険最新情報",
@@ -733,7 +785,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-08"
+     "last_used": "2026-10-11"
     },
     {
      "name": "e-Gov パブリック・コメント",
@@ -751,7 +803,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "個人情報保護委員会",
@@ -771,7 +823,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "警察庁",
@@ -816,7 +868,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "DX審査支払機構（医療情報基盤・診療報酬審査支払機構）",
@@ -840,7 +892,7 @@
      "status": "active",
      "added": "2026-10-01",
      "added_reason": "情報源に追加（支払基金の名称変更に合わせて）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "AMED（日本医療研究開発機構）",
@@ -859,7 +911,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "国民健康保険中央会 ケアプランデータ連携システム",
@@ -877,7 +929,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "JIHS 感染症情報提供サイト",
@@ -897,7 +949,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "JIHS AMR臨床リファレンスセンター（J-SIPHE・OASCIS）",
@@ -918,7 +970,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "JANIS（院内感染対策サーベイランス）",
@@ -938,7 +990,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "日本医療機能評価機構 医療安全情報",
@@ -957,7 +1009,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-09"
+     "last_used": "2026-10-11"
     }
    ]
   },
@@ -982,7 +1034,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "IPA（情報処理推進機構）",
@@ -1001,7 +1053,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "JVN（Japan Vulnerability Notes）",
@@ -1021,7 +1073,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "国家サイバー統括室",
@@ -1060,7 +1112,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "Security NEXT",
@@ -1069,7 +1121,8 @@
      "what": "被害公表の所在確認（掲載は公式発表にリンク）",
      "freq": "毎日",
      "pages": [
-      "se"
+      "se",
+      "cyb"
      ],
      "domains": [
       "security-next.com"
@@ -1078,7 +1131,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-07"
+     "last_used": "2026-10-11"
     }
    ]
   },
@@ -1102,7 +1155,7 @@
      "kind": "巡回先",
      "fixed": true,
      "status": "active",
-     "last_used": "2026-10-10",
+     "last_used": "2026-10-11",
      "paths": [
       "kouseikyoku.mhlw.go.jp/kyushu/"
      ]
@@ -1125,7 +1178,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "感染症DXの調査で追加",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "東京都保健医療局",
@@ -1146,7 +1199,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "中小機構 デジタル化・AI導入補助金",
@@ -1165,7 +1218,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "J-Net21 支援情報ヘッドライン",
@@ -1184,7 +1237,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "北海道厚生局",
@@ -1252,7 +1305,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "地方厚生局を全国分そろえる",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "東海北陸厚生局",
@@ -1275,7 +1328,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "地方厚生局を全国分そろえる",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "近畿厚生局",
@@ -1321,7 +1374,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "地方厚生局を全国分そろえる",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "四国厚生支局",
@@ -1369,7 +1422,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "日本病院会",
@@ -1390,7 +1443,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "サイバーDXの調査で追加",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "日本医療情報学会（JAMI）",
@@ -1411,7 +1464,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "日本看護協会",
@@ -1465,7 +1518,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "日本訪問看護財団",
@@ -1483,7 +1536,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "日本病院薬剤師会",
@@ -1519,7 +1572,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-09-29"
+     "last_used": "2026-10-11"
     },
     {
      "name": "日本医療薬学会",
@@ -1537,7 +1590,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-01"
+     "last_used": "2026-10-11"
     },
     {
      "name": "日本医療ソーシャルワーカー協会",
@@ -1555,7 +1608,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "日本社会福祉士会",
@@ -1591,7 +1644,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "日本ケアマネジメント学会",
@@ -1609,7 +1662,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "日本医師会",
@@ -1677,7 +1730,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     }
    ]
   },
@@ -1723,7 +1776,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-09-27"
+     "last_used": "2026-10-11"
     },
     {
      "name": "厚生労働科学研究成果データベース",
@@ -1760,7 +1813,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "JAMA Network",
@@ -1779,7 +1832,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "Oxford Academic（JAMIA ほか）",
@@ -1799,7 +1852,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "Springer Link",
@@ -1867,7 +1920,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "PR Newswire",
@@ -1932,7 +1985,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "CBnews",
@@ -1951,7 +2004,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "薬事日報",
@@ -1969,7 +2022,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-09"
+     "last_used": "2026-10-11"
     },
     {
      "name": "介護ニュースJoint",
@@ -2006,7 +2059,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "Med IT Tech",
@@ -2106,6 +2159,146 @@
      "fixed": false,
      "status": "active",
      "last_used": "2026-10-10"
+    },
+    {
+     "name": "ScanNetSecurity",
+     "url": "https://scan.netsecurity.ne.jp/",
+     "label": "報道",
+     "what": "国内のサイバー被害・情報漏えいの公表一覧（所在確認。掲載は組織の発表にリンク）",
+     "freq": "週1",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "scan.netsecurity.ne.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+     "last_used": "2026-10-11"
+    },
+    {
+     "name": "ITmedia（@IT・ITmedia NEWS）",
+     "url": "https://www.itmedia.co.jp/",
+     "label": "報道",
+     "what": "サイバー被害・不正アクセスの報道と解説（所在確認）",
+     "freq": "週1",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "itmedia.co.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+     "last_used": "2026-10-11"
+    },
+    {
+     "name": "ビジネス+IT",
+     "url": "https://www.sbbit.jp/",
+     "label": "報道",
+     "what": "大規模なサイバー被害の報道（所在確認）",
+     "freq": "随時",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "sbbit.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+     "last_used": "2026-10-11"
+    },
+    {
+     "name": "日本経済新聞",
+     "url": "https://www.nikkei.com/",
+     "label": "報道",
+     "what": "企業・大学のサイバー被害の報道（会員限定部分は書かない）",
+     "freq": "随時",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "nikkei.com"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+     "last_used": "2026-10-11"
+    },
+    {
+     "name": "piyolog",
+     "url": "https://piyolog.hatenadiary.jp/",
+     "label": "報道",
+     "what": "サイバー被害の事案ごとの経緯まとめ（個人ブログ。所在確認のみ）",
+     "freq": "週1",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "piyolog.hatenadiary.jp"
+     ],
+     "note": "まとめ（個人ブログ）",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+     "last_used": "2026-10-11"
+    },
+    {
+     "name": "シン・情報（はてなブログ）",
+     "url": "https://bose50.hatenadiary.org/",
+     "label": "報道",
+     "what": "国内の情報漏えい事案の日次まとめ（個人ブログ。所在確認のみ）",
+     "freq": "週1",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "bose50.hatenadiary.org"
+     ],
+     "note": "まとめ（個人ブログ）",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+     "last_used": "2026-10-11"
+    },
+    {
+     "name": "SmartScope",
+     "url": "https://smartscope.blog/",
+     "label": "報道",
+     "what": "国内の情報漏えい事案の一覧（まとめサイト。所在確認のみ）",
+     "freq": "随時",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "smartscope.blog"
+     ],
+     "note": "まとめサイト",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+     "last_used": "2026-10-11"
     }
    ]
   },
@@ -2129,7 +2322,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "Federal Register（米国官報）",
@@ -2210,7 +2403,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "FDA（米国食品医薬品局）",
@@ -2230,7 +2423,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "HHS（米国保健福祉省）",
@@ -2249,7 +2442,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-06"
+     "last_used": "2026-10-11"
     },
     {
      "name": "AHRQ（米国医療研究品質庁）",
@@ -2269,7 +2462,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "NHS England",
@@ -2331,7 +2524,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "Australian Digital Health Agency",
@@ -2351,7 +2544,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-09-29"
+     "last_used": "2026-10-11"
     },
     {
      "name": "NCSC（英国 国家サイバーセキュリティセンター）",
@@ -2388,7 +2581,7 @@
      "kind": "巡回先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-08"
+     "last_used": "2026-10-11"
     },
     {
      "name": "American Nurses Association",
@@ -2407,7 +2600,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "AONL（米国看護管理者協会）",
@@ -2428,7 +2621,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "AHA（米国病院協会）",
@@ -2467,7 +2660,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "Cleveland Clinic Newsroom",
@@ -2505,7 +2698,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "Becker's Hospital Review",
@@ -2524,7 +2717,7 @@
      "kind": "参照先",
      "fixed": false,
      "status": "active",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "Fierce Healthcare",
@@ -2544,7 +2737,7 @@
      "status": "active",
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "The HIPAA Journal",
@@ -2614,7 +2807,7 @@
      "auto": true,
      "added": "2026-10-03",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "pref.kanagawa.jp",
@@ -2637,7 +2830,7 @@
      "auto": true,
      "added": "2026-10-03",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "medicalai.m3.com",
@@ -2683,7 +2876,7 @@
      "auto": true,
      "added": "2026-10-05",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "ghkyo.or.jp",
@@ -2753,27 +2946,28 @@
      "last_used": "2026-10-05"
     },
     {
-     "name": "rocket-boys.co.jp",
+     "name": "セキュリティ対策Lab（rocket-boys）",
      "url": "https://rocket-boys.co.jp/",
      "label": "報道",
-     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
-     "freq": "随時",
+     "what": "サイバー被害・情報漏えいの月次まとめと業種別一覧（所在確認。掲載は組織の発表にリンク）",
+     "freq": "週1",
      "pages": [
       "hl",
       "nurs",
-      "se"
+      "se",
+      "cyb"
      ],
      "domains": [
       "rocket-boys.co.jp"
      ],
      "note": "",
-     "kind": "参照先",
+     "kind": "巡回先",
      "fixed": false,
      "status": "active",
      "auto": true,
      "added": "2026-10-07",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-02"
+     "last_used": "2026-10-11"
     },
     {
      "name": "store.medica.co.jp",
@@ -2952,7 +3146,7 @@
      "auto": true,
      "added": "2026-10-09",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "radiology.jp",
@@ -2975,7 +3169,7 @@
      "auto": true,
      "added": "2026-10-09",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "jsqsh.jp",
@@ -3062,7 +3256,7 @@
      "auto": true,
      "added": "2026-10-10",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-11"
     },
     {
      "name": "kyoto-u.ac.jp",
@@ -3107,6 +3301,241 @@
      "added": "2026-10-10",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
      "last_used": "2026-10-10"
+    },
+    {
+     "name": "hcit.or.jp",
+     "url": "https://hcit.or.jp/",
+     "label": "公的",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "doc",
+      "hl",
+      "nurs",
+      "se"
+     ],
+     "domains": [
+      "hcit.or.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-11",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-11"
+    },
+    {
+     "name": "ic3.gov",
+     "url": "https://ic3.gov/",
+     "label": "公的",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "hl",
+      "nurs",
+      "ovs",
+      "se"
+     ],
+     "domains": [
+      "ic3.gov"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-11",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-11"
+    },
+    {
+     "name": "nagoya-u.ac.jp",
+     "url": "https://nagoya-u.ac.jp/",
+     "label": "施設公式",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "doc"
+     ],
+     "domains": [
+      "nagoya-u.ac.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-11",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-11"
+    },
+    {
+     "name": "tsukuba.ac.jp",
+     "url": "https://tsukuba.ac.jp/",
+     "label": "施設公式",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "doc"
+     ],
+     "domains": [
+      "tsukuba.ac.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-11",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-11"
+    },
+    {
+     "name": "janap.jp",
+     "url": "https://janap.jp/",
+     "label": "報道",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "nurs"
+     ],
+     "domains": [
+      "janap.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-11",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-11"
+    },
+    {
+     "name": "nursing.jmir.org",
+     "url": "https://nursing.jmir.org/",
+     "label": "報道",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "hl",
+      "nurs",
+      "ovs"
+     ],
+     "domains": [
+      "nursing.jmir.org"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-11",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-11"
+    }
+   ]
+  },
+  {
+   "name": "地方紙・地域ニュース（事例の発見用）",
+   "items": [
+    {
+     "name": "NHK（各地域局のニュース）",
+     "url": "https://www3.nhk.or.jp/news/",
+     "label": "報道",
+     "what": "地方の病院・自治体・企業のサイバー被害の報道（地方の事例の入口）",
+     "freq": "週1",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "nhk.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+    },
+    {
+     "name": "47NEWS（共同通信・全国の地方紙）",
+     "url": "https://www.47news.jp/",
+     "label": "報道",
+     "what": "全国の地方紙の記事のまとめ（地方紙全体の入口）",
+     "freq": "週1",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "47news.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+    },
+    {
+     "name": "佐賀新聞",
+     "url": "https://www.saga-s.co.jp/",
+     "label": "報道",
+     "what": "佐賀県内の病院・自治体・企業のサイバー被害の報道",
+     "freq": "週1",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "saga-s.co.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+    },
+    {
+     "name": "西日本新聞",
+     "url": "https://www.nishinippon.co.jp/",
+     "label": "報道",
+     "what": "九州のサイバー被害の報道",
+     "freq": "週1",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "nishinippon.co.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+    },
+    {
+     "name": "北海道新聞",
+     "url": "https://www.hokkaido-np.co.jp/",
+     "label": "報道",
+     "what": "北海道のサイバー被害・情報漏えいの報道",
+     "freq": "随時",
+     "pages": [
+      "cyb"
+     ],
+     "domains": [
+      "hokkaido-np.co.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-10",
+     "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
+     "last_used": "2026-10-11"
     }
    ]
   }
@@ -3987,10 +4416,134 @@
    "action": "追加",
    "name": "kokusen.go.jp",
    "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "ScanNetSecurity",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "ITmedia（@IT・ITmedia NEWS）",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "ビジネス+IT",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "日本経済新聞",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "piyolog",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "シン・情報（はてなブログ）",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "SmartScope",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "NHK（各地域局のニュース）",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "47NEWS（共同通信・全国の地方紙）",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "佐賀新聞",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "西日本新聞",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "追加",
+   "name": "北海道新聞",
+   "reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "変更",
+   "name": "Security NEXT",
+   "reason": "サイバーDX「事例と対策」でも使う"
+  },
+  {
+   "date": "2026-10-10",
+   "action": "変更",
+   "name": "セキュリティ対策Lab（rocket-boys）",
+   "reason": "サイバーDX「事例と対策」で事例を探す巡回先として名前と内容を書き足す"
+  },
+  {
+   "date": "2026-10-11",
+   "action": "追加",
+   "name": "hcit.or.jp",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-11",
+   "action": "追加",
+   "name": "ic3.gov",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-11",
+   "action": "追加",
+   "name": "nagoya-u.ac.jp",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-11",
+   "action": "追加",
+   "name": "tsukuba.ac.jp",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-11",
+   "action": "追加",
+   "name": "janap.jp",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-11",
+   "action": "追加",
+   "name": "nursing.jmir.org",
+   "reason": "自動追加（出典に載せたURLの発信元）"
   }
  ],
  "baseline_note": "2026-10-02 公開時点で出典に載っていた発信元とURL数。ここから2件以上増えた発信元だけを自動追加する",
  "manual_applied": [
+  "add-47news-20261010",
+  "add-bose50-20261010",
+  "add-hokkaido-np-20261010",
+  "add-itmedia-20261010",
   "add-kouseikyoku-chugokushikoku",
   "add-kouseikyoku-hokkaido",
   "add-kouseikyoku-kantoshinetsu",
@@ -3998,8 +4551,18 @@
   "add-kouseikyoku-shikoku",
   "add-kouseikyoku-tohoku",
   "add-kouseikyoku-tokaihokuriku",
+  "add-nhk-20261010",
+  "add-nikkei-20261010",
+  "add-nishinippon-20261010",
   "add-openevidence",
+  "add-piyolog-20261010",
+  "add-saga-s-20261010",
+  "add-sbbit-20261010",
+  "add-scannet-20261010",
+  "add-smartscope-20261010",
   "reword-auto-note-20261002",
-  "upd-kouseikyoku-kyushu"
+  "upd-kouseikyoku-kyushu",
+  "upd-rocketboys-20261010",
+  "upd-securitynext-cyb-20261010"
  ]
 }

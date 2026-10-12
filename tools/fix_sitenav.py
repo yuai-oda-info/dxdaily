@@ -317,6 +317,12 @@ def main():
             th += medikoto_backnumber.run(root)
         except Exception as ex:
             th.append('!! バックナンバー: %s（ナビの処理は続ける）' % ex)
+        # ポータルの推進方針・予算概算要求の2行（2026-10-13追加）。推進方針を上に、予算のボタンも金色に
+        try:
+            import medikoto_header_rows
+            th += medikoto_header_rows.run(os.path.join(root, 'index.html'))
+        except Exception as ex:
+            th.append('!! 推進方針・予算の行: %s（ナビの処理は続ける）' % ex)
     files = sorted(f for f in glob.glob(os.path.join(root, '*.html')))
     gigi_href = 'gigikaishaku.html' if os.path.exists(os.path.join(root, 'gigikaishaku.html')) else GIGI_ART
     gigi_n = gigi_count(root)

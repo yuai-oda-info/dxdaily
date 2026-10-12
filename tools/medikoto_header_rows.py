@@ -1,22 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""ポータル（index.html）の日付行の下の2行の並びと色をそろえる（2026-10-13追加）。
+"""ポータル（index.html）の日付行の下の2行の並びをそろえる（2026-10-13追加）。
 
 2026-10-08 決定：
   ・「医療情報化推進方針」の行（p#hoshin）を、予算概算要求の行（p#yosan）の上に置く
-  ・予算概算要求のボタンは推進方針と同じ金色（金茶）、ラベル文字の色も同じ
+  ・ボタンの色は2行で変える（予算概算要求＝元の青系、推進方針＝金色。2026-10-13「色が両方同じになってる」）
 毎朝の作成タスクが前日のポータルを引き継ぐため、逆順のまま続いていた。何度実行しても同じ結果になる。
 
 単独でも実行できる： python3 tools/medikoto_header_rows.py index.html
 """
 import re, sys
 
-GOLD_ID = 'yosan-gold-css'
-GOLD_CSS = ('<style id="%s">/* 予算概算要求のボタンも推進方針と同じ金色（2026-10-08決定・2026-10-13反映） */\n'
-            '.yosan a{color:#FFFFFF;background:#A85A14;border-color:#94500F;}\n'
-            '@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .yosan a{color:#10181E;background:#E89A55;border-color:#D78A46;}}\n'
-            ':root[data-theme="dark"] .yosan a{color:#10181E;background:#E89A55;border-color:#D78A46;}\n'
-            '</style>' % GOLD_ID)
+GOLD_ID = 'yosan-gold-css'   # 2026-10-13に一度入れて取り消した金色の上書き（残っていたら外す）
 
 ROW = r'<p class="%s" id="%s">.*?</p>'
 
@@ -34,13 +29,11 @@ def fix(h):
             h = h[:k.start()] + h[k.end():]
             h = h.replace(ys, ks + ys, 1)
         msgs.append('ポータル：医療情報化推進方針の行を予算概算要求の行の上へ移した')
-    if y and GOLD_ID not in h:
-        m = re.search(r'<style id="yosan-css">.*?</style>', h, re.S)
-        if m:
-            h = h[:m.end()] + '\n' + GOLD_CSS + h[m.end():]
-        else:
-            h = h.replace('</body>', GOLD_CSS + '\n</body>', 1) if '</body>' in h else h + '\n' + GOLD_CSS
-        msgs.append('ポータル：予算概算要求のボタンを金色にした')
+    # 2026-10-13 予算概算要求のボタンを金色にしたが「色が両方同じになってる」で取り消し（色は元の青系のまま）
+    g = re.search(r'\n?<style id="%s">.*?</style>' % GOLD_ID, h, re.S)
+    if g:
+        h = h[:g.start()] + h[g.end():]
+        msgs.append('ポータル：予算概算要求のボタンの色を元に戻した')
     return h, msgs
 
 

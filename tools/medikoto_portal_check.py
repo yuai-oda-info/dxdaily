@@ -124,6 +124,19 @@ def add_due(t, base, report):
         cls2 = 'done' if n < 0 else ('hot' if n <= 1 else ('warn' if n <= 7 else 'ok'))
         return '<div class="kdue" data-due="%s"><span>%s</span><span class="dlpill %s">%s</span>' % (iso, m.group('md'), cls2, lab2)
     t = re.sub(r'<div class="kdue"><span>(?P<md>\d{1,2}/\d{1,2})</span><span class="dlpill [a-z]*">(?P<lab>[^<]*)</span>', k_due, t)
+    # すでに data-due が付いている行も、静的な表示（今日／あとN日）を作成日基準に直す（2026-10-16：10/15「今日」が残った）
+    def k_fix(m):
+        iso, md, lab = m.group('iso'), m.group('md'), m.group('lab')
+        try:
+            n = (datetime.date.fromisoformat(iso) - base).days
+        except ValueError:
+            return m.group(0)
+        lab2 = '期日超過' if n < 0 else ('今日' if n == 0 else ('明日' if n == 1 else 'あと%d日' % n))
+        cls2 = 'done' if n < 0 else ('hot' if n <= 1 else ('warn' if n <= 7 else 'ok'))
+        if lab != lab2:
+            report.append('今週の重要事項：「%s」の日付が作成日と違う（%s→「%s」に直した）' % (lab, iso, lab2))
+        return '<div class="kdue" data-due="%s"><span>%s</span><span class="dlpill %s">%s</span>' % (iso, md, cls2, lab2)
+    t = re.sub(r'<div class="kdue" data-due="(?P<iso>\d{4}-\d{2}-\d{2})"><span>(?P<md>\d{1,2}/\d{1,2})</span><span class="dlpill [a-z]*">(?P<lab>[^<]*)</span>', k_fix, t)
 
     def tick_due(m):
         iso = to_iso(m.group(3), base)
@@ -137,6 +150,16 @@ def add_due(t, base, report):
             report.append('一面の締切行：「%s」が作成日と合わない（%s→%s）' % (m.group(1), m.group(3), lab))
         return '<span class="it" data-due="%s"><b>%s</b>%s%s' % (iso, lab, m.group(2), m.group(3))
     t = re.sub(r'<span class="it"><b>([^<]*)</b>([ \u3000]+)(\d{1,2}/\d{1,2})', tick_due, t)
+    def tick_fix(m):
+        try:
+            n = (datetime.date.fromisoformat(m.group(1)) - base).days
+        except ValueError:
+            return m.group(0)
+        lab = '本日' if n == 0 else ('明日' if n == 1 else ('あと%d日' % n if n > 1 else m.group(2)))
+        if n >= 0 and lab != m.group(2):
+            report.append('一面の締切行：「%s」が作成日と合わない（%s→%s・直した）' % (m.group(2), m.group(1), lab))
+        return '<span class="it" data-due="%s"><b>%s</b>' % (m.group(1), lab)
+    t = re.sub(r'<span class="it" data-due="(\d{4}-\d{2}-\d{2})"><b>([^<]*)</b>', tick_fix, t)
 
     def row_due(m):
         head, dd = m.group(1), m.group(2)

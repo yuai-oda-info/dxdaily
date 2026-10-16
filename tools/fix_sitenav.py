@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""MediKoto：全HTMLの共通ナビ（14項目・v10）とCSSをそろえ、事例DX・海外DXの保存版とポータルのバックナンバー表を作る。
+"""MediKoto：全HTMLの共通ナビ（15項目・v12）とCSSをそろえ、
+v12（2026-10-16）：「病院SE」の右に「栄養」（nutrition.html・MediKoto Nutrition）を追加。PCは8列×2段・中幅5列×3段・スマホ3列×5段。
+  続けて medikoto_searchdata.py（ポータルの本文検索データを search-data.json に分離）と medikoto_portal_check.py（締切の日付判定・重複統合・検証）を呼ぶ。
+事例DX・海外DXの保存版とポータルのバックナンバー表を作る。
 v10（2026-10-02）：「国の医療DX」の右に「サイバーDX」「感染症DX」を追加。PCは7列×2段。
 同じフォルダの medikoto_themes.py があれば呼び、ポータルに THEME MAP・サイバーDX／感染症DXのバックナンバー・データソース（ボタンとポップアップ）を差し込み、
 data/sources.json（情報源の一覧）を更新して sources.html を作り直す。
@@ -12,7 +15,7 @@ v11b（2026-10-07）：続けて同じフォルダの medikoto_backnumber.py が
 """
 import os, re, sys, glob, datetime, json
 
-MARK = 'MediKoto sitenav v10'
+MARK = 'MediKoto sitenav v12'
 MARK_RE = re.compile(r'\n?<style>/\* MediKoto sitenav v\d+ \*/.*?</style>\n?', re.S)
 
 NAV = [
@@ -28,12 +31,13 @@ NAV = [
     ('pharm',   '薬剤師',        'sn-pharm',  'pharmacists.html'),
     ('connect', '相談支援・連携', 'sn-conn',   'connect.html'),
     ('se',      '病院SE',        'sn-se',     'hospitalit.html'),
+    ('nutrition', '栄養',        'sn-nutr',   'nutrition.html'),    # 2026-10-16追加（MediKoto Nutrition）
     ('reim',    '診療報酬',      'sn-reim',   'reimbursement.html'),
     ('global',  '海外DX',        'sn-ovs',    'global.html'),      # 2026-09-26追加（MediKoto Global）
 ]
 
 CSS = """<style>/* __MARK__ */
-.sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-ovs:#4E6E8E;--sn-cyb:#2F3B47;--sn-inf:#B5382D;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
+.sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-nutr:#D9603A;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-ovs:#4E6E8E;--sn-cyb:#2F3B47;--sn-inf:#B5382D;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
   display:flex;flex-wrap:wrap;gap:.35rem;border:1px solid var(--sn-line);border-radius:12px;padding:.45rem;margin:.6rem 0 0;font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
 .sitenav a{flex:1 1 auto;text-align:center;font-size:.8rem;font-weight:700;text-decoration:none;border:1px solid var(--sn-line);border-radius:8px;padding:.4rem .5rem;background:var(--sn-bg);color:var(--sn-c);white-space:nowrap;line-height:1.5;}
 .sitenav a:hover{border-color:var(--sn-c);}
@@ -41,13 +45,14 @@ CSS = """<style>/* __MARK__ */
 .sitenav a:focus-visible{outline:2px solid var(--sn-c);outline-offset:2px;}
 .sitenav.top{margin:.6rem 0 1.1rem;}
 .sitenav.bottom{margin:2rem 0 0;}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-cyb:#C5CFD9;--sn-inf:#F2998E;--sn-bg:#18232B;--sn-line:#2E3C46;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-nutr:#F19B7C;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-cyb:#C5CFD9;--sn-inf:#F2998E;--sn-bg:#18232B;--sn-line:#2E3C46;}
   :root:not([data-theme="light"]) .sitenav a.cur{color:#10181E;}}
-:root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-cyb:#C5CFD9;--sn-inf:#F2998E;--sn-bg:#18232B;--sn-line:#2E3C46;}
+:root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-nutr:#F19B7C;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-cyb:#C5CFD9;--sn-inf:#F2998E;--sn-bg:#18232B;--sn-line:#2E3C46;}
 :root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
 @media (min-width:641px){.sitenav a{padding:.4rem .42rem;font-size:.8rem;}}
-@media (min-width:901px){.sitenav{display:grid;grid-template-columns:repeat(7,1fr);}.sitenav a{flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
-@media (min-width:641px) and (max-width:900px){.sitenav{display:grid;grid-template-columns:repeat(6,1fr);}.sitenav a{flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
+/* 15項目：PCは8列×2段、中幅は5列×3段、スマホは3列×5段（全部同じ大きさ。2026-10-16） */
+@media (min-width:901px){.sitenav{display:grid;grid-template-columns:repeat(8,1fr);}.sitenav a{flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;padding:.4rem .3rem;font-size:.78rem;}}
+@media (min-width:641px) and (max-width:900px){.sitenav{display:grid;grid-template-columns:repeat(5,1fr);}.sitenav a{flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
 /* バックナンバー枠の色（HTMLだけ増えてCSSが抜ける事故を防ぐため、ここでも定義する） */
@@ -59,6 +64,12 @@ CSS = """<style>/* __MARK__ */
 :root[data-theme="dark"] .bnc-gov .sub4{color:#6FD8E6;}
 .bnc-global{--bk:var(--ovs,#4E6E8E);background:transparent;}
 .bnc-global .sub4{color:var(--ovs,#4E6E8E);}
+.bnc-nutrition{--bk:var(--nutr,#D9603A);background:transparent;}
+.bnc-nutrition .sub4{color:var(--nutr,#D9603A);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-nutrition{--bk:#F19B7C;}
+  :root:not([data-theme="light"]) .bnc-nutrition .sub4{color:#F19B7C;}}
+:root[data-theme="dark"] .bnc-nutrition{--bk:#F19B7C;}
+:root[data-theme="dark"] .bnc-nutrition .sub4{color:#F19B7C;}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-global{--bk:#8FB0CC;}
   :root:not([data-theme="light"]) .bnc-global .sub4{color:#8FB0CC;}}
 :root[data-theme="dark"] .bnc-global{--bk:#8FB0CC;}
@@ -83,7 +94,8 @@ CSS = """<style>/* __MARK__ */
 
 PREFIX = [('weekly-study', 'weekly'), ('index', 'portal'), ('news', 'news'), ('study', 'study'), ('nursing', 'nursing'),
           ('doctors', 'doctors'), ('pharmacists', 'pharm'), ('pharm', 'pharm'),
-          ('connect', 'connect'), ('hospitalit', 'se'), ('reimbursement', 'reim'), ('gov', 'gov'),
+          ('connect', 'connect'), ('hospitalit', 'se'), ('nutrition', 'nutrition'),   # 2026-10-16追加
+          ('reimbursement', 'reim'), ('gov', 'gov'),
           ('global', 'global'),       # 海外DX（MediKoto Global）
           ('cyber', 'cyber'), ('infection', 'infection'),   # 2026-10-02追加
           ('gigikaishaku', 'reim')]   # 疑義解釈まとめは診療報酬の下位ページ扱い
@@ -209,7 +221,7 @@ def jirei(root):
     if not rows:
         rows = ['<tr class="bn-empty"><td colspan="3">バックナンバーは明日から1日1行ずつ増えます。</td></tr>']
     blk = ('<div class="bnc bnc-jirei"><style>.bnc-jirei{--bk:var(--study,#C56A15);background:transparent;}.bnc-jirei .sub4{color:var(--study,#C56A15);}</style>\n<details class="bnfold"><summary><h4 class="sub4">事例DXのバックナンバー</h4></summary>\n'
-           '<div id="bn-jirei"><div class="tablewrap"><table>\n<thead><tr><th>日付</th><th>取り上げた事例（医師／薬剤師／相談支援・連携／病院SE）</th><th>リンク</th></tr></thead>\n<tbody>\n'
+           '<div id="bn-jirei"><div class="tablewrap"><table>\n<thead><tr><th>日付</th><th>取り上げた事例（医師／薬剤師／相談支援・連携／病院SE／栄養／診療報酬／海外DX）</th><th>リンク</th></tr></thead>\n<tbody>\n'
            + '\n'.join(rows) + '\n</tbody>\n</table></div></div>\n</details></div>')
     p = os.path.join(root, 'index.html')
     if not os.path.exists(p):
@@ -323,6 +335,18 @@ def main():
             th += medikoto_header_rows.run(os.path.join(root, 'index.html'))
         except Exception as ex:
             th.append('!! 推進方針・予算の行: %s（ナビの処理は続ける）' % ex)
+        # 本文検索データの分離（2026-10-16追加）：index.html の search-data を search-data.json に合流させ、ページ側は直近分だけ残す
+        try:
+            import medikoto_searchdata
+            th += medikoto_searchdata.run(root)
+        except Exception as ex:
+            th.append('!! 検索データ: %s（ナビの処理は続ける）' % ex)
+        # ポータルの日付判定・締切表の重複統合・検証（2026-10-16追加）
+        try:
+            import medikoto_portal_check
+            th += medikoto_portal_check.run(root)
+        except Exception as ex:
+            th.append('!! ポータル検証: %s（ナビの処理は続ける）' % ex)
     files = sorted(f for f in glob.glob(os.path.join(root, '*.html')))
     gigi_href = 'gigikaishaku.html' if os.path.exists(os.path.join(root, 'gigikaishaku.html')) else GIGI_ART
     gigi_n = gigi_count(root)

@@ -460,7 +460,7 @@
    "公的"
   ],
   "congre.co.jp": [
-   "学会の大会サイト（コングレ）",
+   "コングレ（学会運営事務局）",
    "公的"
   ],
   "openevidence.com": [
@@ -518,6 +518,86 @@
   "rocket-boys.co.jp": [
    "セキュリティ対策Lab（rocket-boys）",
    "報道"
+  ],
+  "dietitian.or.jp": [
+   "日本栄養士会",
+   "公的"
+  ],
+  "jspen.or.jp": [
+   "日本栄養治療学会（JSPEN）",
+   "公的"
+  ],
+  "eiyou.or.jp": [
+   "日本病態栄養学会",
+   "公的"
+  ],
+  "jsdr.or.jp": [
+   "日本摂食嚥下リハビリテーション学会",
+   "公的"
+  ],
+  "tokyo-eiyo.or.jp": [
+   "東京都栄養士会",
+   "公的"
+  ],
+  "nutritioncare.org": [
+   "ASPEN",
+   "公的"
+  ],
+  "eatrightpro.org": [
+   "Academy of Nutrition and Dietetics",
+   "公的"
+  ],
+  "eatrightstore.org": [
+   "Academy of Nutrition and Dietetics",
+   "公的"
+  ],
+  "bda.uk.com": [
+   "BDA（British Dietetic Association）",
+   "公的"
+  ],
+  "dietitiansaustralia.org.au": [
+   "Dietitians Australia",
+   "公的"
+  ],
+  "jmir.org": [
+   "JMIR",
+   "研究"
+  ],
+  "ai.jmir.org": [
+   "JMIR AI",
+   "研究"
+  ],
+  "pc.watch.impress.co.jp": [
+   "PC Watch（＠Press配信の転載）",
+   "企業発表"
+  ],
+  "eat-treat.jp": [
+   "Eatreat",
+   "報道"
+  ],
+  "metrosouth.health.qld.gov.au": [
+   "Metro South Health（豪クイーンズランド州）",
+   "施設公式"
+  ],
+  "city.yokohama.lg.jp": [
+   "横浜市",
+   "公的"
+  ],
+  "nutritionday.org": [
+   "nutritionDay worldwide",
+   "公的"
+  ],
+  "frontiersin.org": [
+   "Frontiers",
+   "研究"
+  ],
+  "hitconsultant.net": [
+   "HIT Consultant",
+   "報道"
+  ],
+  "healthleap.ai": [
+   "Healthleap",
+   "企業発表"
   ]
  },
  "groups": [
@@ -844,6 +924,41 @@
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-14"
+    },
+    {
+     "name": "厚生労働省 社会保障審議会介護給付費分科会",
+     "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698.html",
+     "label": "公的",
+     "what": "介護報酬改定の論点（栄養ケア・マネジメント、療養食加算、LIFE）、関係団体ヒアリング資料",
+     "freq": "開催ごと",
+     "pages": [
+      "nutr",
+      "conn"
+     ],
+     "domains": [],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+    },
+    {
+     "name": "厚生労働省 管理栄養士・栄養士の資格・制度",
+     "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/kanrieiyoushi/index.html",
+     "label": "公的",
+     "what": "管理栄養士国家試験、免許申請のデジタル化、栄養士法の改正",
+     "freq": "週1",
+     "pages": [
+      "nutr"
+     ],
+     "domains": [],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
     }
    ]
   },
@@ -999,8 +1114,9 @@
      "what": "医療事故情報、1テーマ・1アクションの安全情報",
      "freq": "月1",
      "pages": [
+      "hl",
       "nurs",
-      "hl"
+      "nutr"
      ],
      "domains": [
       "med-safe.jp"
@@ -1731,6 +1847,106 @@
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-16"
+    },
+    {
+     "name": "日本栄養士会",
+     "url": "https://www.dietitian.or.jp/",
+     "label": "公的",
+     "what": "要望書・政策提言、認定栄養ケア・ステーション、管理栄養士免許のオンライン申請、研修・学会日程",
+     "freq": "毎日",
+     "pages": [
+      "nutr",
+      "hl"
+     ],
+     "domains": [
+      "dietitian.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加",
+     "last_used": "2026-10-16"
+    },
+    {
+     "name": "日本栄養治療学会（JSPEN）",
+     "url": "https://www.jspen.or.jp/",
+     "label": "公的",
+     "what": "学術集会・LLLコースの案内、NST・栄養療法のガイドライン、学会の通知",
+     "freq": "週1",
+     "pages": [
+      "nutr"
+     ],
+     "domains": [
+      "jspen.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加",
+     "last_used": "2026-10-16"
+    },
+    {
+     "name": "日本病態栄養学会",
+     "url": "https://www.eiyou.or.jp/",
+     "label": "公的",
+     "what": "年次学術集会、病態栄養専門管理栄養士の制度",
+     "freq": "週1",
+     "pages": [
+      "nutr"
+     ],
+     "domains": [
+      "eiyou.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加",
+     "last_used": "2026-10-16"
+    },
+    {
+     "name": "日本摂食嚥下リハビリテーション学会",
+     "url": "https://www.jsdr.or.jp/",
+     "label": "公的",
+     "what": "嚥下調整食分類、学術大会・研修の案内",
+     "freq": "週1",
+     "pages": [
+      "nutr"
+     ],
+     "domains": [
+      "jsdr.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+    },
+    {
+     "name": "都道府県栄養士会（例：東京都栄養士会）",
+     "url": "https://www.tokyo-eiyo.or.jp/",
+     "label": "公的",
+     "what": "栄養士大会・研修会の案内（各都道府県栄養士会）",
+     "freq": "週1",
+     "pages": [
+      "nutr"
+     ],
+     "domains": [
+      "tokyo-eiyo.or.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加",
+     "last_used": "2026-10-16"
     }
    ]
   },
@@ -1745,9 +1961,10 @@
      "freq": "週1",
      "pages": [
       "doc",
-      "pharm",
+      "inf",
       "nurs",
-      "inf"
+      "nutr",
+      "pharm"
      ],
      "domains": [
       "jstage.jst.go.jp"
@@ -1887,14 +2104,15 @@
      "what": "導入の結果、運用方法、障害・被害の公表",
      "freq": "随時",
      "pages": [
-      "hl",
-      "nurs",
-      "doc",
-      "pharm",
       "conn",
-      "se",
       "cyb",
-      "inf"
+      "doc",
+      "hl",
+      "inf",
+      "nurs",
+      "nutr",
+      "pharm",
+      "se"
      ],
      "domains": [],
      "note": "施設自身の公表だけを使う",
@@ -1909,9 +2127,10 @@
      "what": "新製品・導入の発表（発信者が病院なら施設公式として扱う）",
      "freq": "毎日",
      "pages": [
+      "doc",
       "hl",
       "nurs",
-      "doc"
+      "nutr"
      ],
      "domains": [
       "prtimes.jp"
@@ -2299,6 +2518,25 @@
      "added": "2026-10-10",
      "added_reason": "サイバーDX「事例と対策」で事例を探すための巡回先として追加",
      "last_used": "2026-10-16"
+    },
+    {
+     "name": "Eatreat（管理栄養士・栄養士の情報サイト）",
+     "url": "https://eat-treat.jp/",
+     "label": "報道",
+     "what": "栄養士向けセミナー・求人の一覧（セミナー情報の入口。掲載リンクは主催者の公式へ）",
+     "freq": "週1",
+     "pages": [
+      "nutr"
+     ],
+     "domains": [
+      "eat-treat.jp"
+     ],
+     "note": "",
+     "kind": "巡回先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
     }
    ]
   },
@@ -2759,6 +2997,111 @@
      "added": "2026-10-02",
      "added_reason": "掲載実績から追加（8/28〜10/2の出典）",
      "last_used": "2026-10-04"
+    },
+    {
+     "name": "ASPEN（American Society for Parenteral and Enteral Nutrition）",
+     "url": "https://nutritioncare.org/",
+     "label": "公的",
+     "what": "米国の臨床栄養学会。低栄養スクリーニング、Malnutrition Awareness Week、ASPEN学術集会",
+     "freq": "週1",
+     "pages": [
+      "nutr",
+      "ovs"
+     ],
+     "domains": [
+      "nutritioncare.org"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加",
+     "last_used": "2026-10-16"
+    },
+    {
+     "name": "Academy of Nutrition and Dietetics（eatrightPRO）",
+     "url": "https://www.eatrightpro.org/",
+     "label": "公的",
+     "what": "米国の栄養士団体。遠隔栄養指導の制度、FNCE、Nutrition Informatics",
+     "freq": "週1",
+     "pages": [
+      "nutr",
+      "ovs"
+     ],
+     "domains": [
+      "eatrightpro.org",
+      "eatrightstore.org"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+    },
+    {
+     "name": "BDA（British Dietetic Association）",
+     "url": "https://www.bda.uk.com/",
+     "label": "公的",
+     "what": "英国の栄養士団体。政策提言、デジタル・データ技能の研修",
+     "freq": "週1",
+     "pages": [
+      "nutr",
+      "ovs"
+     ],
+     "domains": [
+      "bda.uk.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加",
+     "last_used": "2026-10-16"
+    },
+    {
+     "name": "Dietitians Australia",
+     "url": "https://dietitiansaustralia.org.au/",
+     "label": "公的",
+     "what": "豪州の栄養士団体の発表",
+     "freq": "随時",
+     "pages": [
+      "nutr",
+      "ovs"
+     ],
+     "domains": [
+      "dietitiansaustralia.org.au"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+    },
+    {
+     "name": "JMIR（Journal of Medical Internet Research・JMIR AI）",
+     "url": "https://www.jmir.org/",
+     "label": "研究",
+     "what": "医療情報学・AIの査読誌（栄養のAI研究を含む）",
+     "freq": "随時",
+     "pages": [
+      "nutr",
+      "doc"
+     ],
+     "domains": [
+      "jmir.org",
+      "ai.jmir.org"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "added": "2026-10-16",
+     "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加",
+     "last_used": "2026-10-16"
     }
    ]
   },
@@ -3761,6 +4104,29 @@
      ],
      "domains": [
       "carecom.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-16",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-16"
+    },
+    {
+     "name": "横浜市",
+     "url": "https://city.yokohama.lg.jp/",
+     "label": "公的",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "hl",
+      "nurs",
+      "nutr"
+     ],
+     "domains": [
+      "city.yokohama.lg.jp"
      ],
      "note": "",
      "kind": "参照先",
@@ -4961,6 +5327,114 @@
    "action": "追加",
    "name": "carecom.jp",
    "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "日本栄養士会",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "日本栄養治療学会（JSPEN）",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "日本病態栄養学会",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "日本摂食嚥下リハビリテーション学会",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "都道府県栄養士会（例：東京都栄養士会）",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "厚生労働省 社会保障審議会介護給付費分科会",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "厚生労働省 管理栄養士・栄養士の資格・制度",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "ASPEN（American Society for Parenteral and Enteral Nutrition）",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "Academy of Nutrition and Dietetics（eatrightPRO）",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "BDA（British Dietetic Association）",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "Dietitians Australia",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "JMIR（Journal of Medical Internet Research・JMIR AI）",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "Eatreat（管理栄養士・栄養士の情報サイト）",
+   "reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "変更",
+   "name": "日本医療機能評価機構 医療安全情報",
+   "reason": "栄養ページでも使うため、掲載ページに栄養を追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "変更",
+   "name": "J-STAGE",
+   "reason": "栄養ページでも使うため、掲載ページに栄養を追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "変更",
+   "name": "PR TIMES",
+   "reason": "栄養ページでも使うため、掲載ページに栄養を追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "変更",
+   "name": "病院・大学・医療法人の公式サイト",
+   "reason": "栄養ページでも使うため、掲載ページに栄養を追加"
+  },
+  {
+   "date": "2026-10-16",
+   "action": "追加",
+   "name": "横浜市",
+   "reason": "自動追加（出典に載せたURLの発信元）"
   }
  ],
  "baseline_note": "2026-10-02 公開時点で出典に載っていた発信元とURL数。ここから2件以上増えた発信元だけを自動追加する",
@@ -4979,6 +5453,19 @@
   "add-nhk-20261010",
   "add-nikkei-20261010",
   "add-nishinippon-20261010",
+  "add-nutr-1847417aa1",
+  "add-nutr-1b18d7d9f1",
+  "add-nutr-1d52f6cc36",
+  "add-nutr-7b4e9889cd",
+  "add-nutr-7d32e32d53",
+  "add-nutr-8dbe4a914e",
+  "add-nutr-8f6d05a77e",
+  "add-nutr-9602c9c181",
+  "add-nutr-976b64b6c3",
+  "add-nutr-a5d7c9c2c8",
+  "add-nutr-a92912678d",
+  "add-nutr-b36f251cde",
+  "add-nutr-d120cc9981",
   "add-openevidence",
   "add-piyolog-20261010",
   "add-saga-s-20261010",
@@ -4987,6 +5474,10 @@
   "add-smartscope-20261010",
   "reword-auto-note-20261002",
   "upd-kouseikyoku-kyushu",
+  "upd-nutr-0c235f6516",
+  "upd-nutr-5c2a42fdb5",
+  "upd-nutr-c2909a0c77",
+  "upd-nutr-d68c2e9c95",
   "upd-rocketboys-20261010",
   "upd-securitynext-cyb-20261010"
  ]

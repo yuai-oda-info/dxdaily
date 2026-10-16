@@ -31,6 +31,7 @@ PAGE_FILES = [  # キー, ファイル名の先頭（固定入口 X.html と保�
     ('portal', ['index']), ('news', ['news']), ('study', ['study']), ('weekly', ['weekly-study']),
     ('gov', ['gov']), ('cyb', ['cyber']), ('inf', ['infection']), ('nurs', ['nursing']),
     ('doc', ['doctors']), ('pharm', ['pharmacists', 'pharm']), ('conn', ['connect']), ('se', ['hospitalit']),
+    ('nutr', ['nutrition']),   # 2026-10-16追加（MediKoto Nutrition）
     ('reim', ['reimbursement', 'gigikaishaku']), ('ovs', ['global']),
 ]
 SEL = [  # キー, 表示名, 色, 一覧の掲載ページキー, URL, 更新, 補足
@@ -46,16 +47,17 @@ SEL = [  # キー, 表示名, 色, 一覧の掲載ページキー, URL, 更新, 
     ('pharm', '薬剤師', 'sn-pharm', 'pharm', 'pharmacists.html', '毎日更新', ''),
     ('conn', '相談支援・連携', 'sn-conn', 'conn', 'connect.html', '毎日更新', ''),
     ('se', '病院SE', 'sn-se', 'se', 'hospitalit.html', '毎日更新', ''),
+    ('nutr', '栄養', 'sn-nutr', 'nutr', 'nutrition.html', '毎日更新', '管理栄養士・給食部門向け。DXに関係する話題だけを載せるため、学会・団体と行政の資料が中心で、企業発表は少なめです。'),
     ('reim', '診療報酬', 'sn-reim', 'reim', 'reimbursement.html', '毎日更新', '点数・要件・期限は厚生労働省と厚生局の原典で確かめ、民間の解説には「報道」のラベルを付けます。'),
     ('ovs', '海外DX', 'sn-ovs', 'ovs', 'global.html', '毎日更新', '各ページに載った海外の記事を集めた面です。'),
 ]
 LABELS = {'公的': 'pub', '施設公式': 'fac', '企業発表': 'ent', '報道': 'med', '研究': 'res'}
 PNAME = {'portal': 'ポータル', 'hl': 'ヘッドライン', 'gov': '国の医療DX', 'cyb': 'サイバーDX', 'inf': '感染症DX', 'nurs': '看護', 'doc': '医師',
-         'pharm': '薬剤師', 'conn': '相談支援・連携', 'se': '病院SE', 'reim': '診療報酬', 'ovs': '海外DX'}
+         'pharm': '薬剤師', 'conn': '相談支援・連携', 'se': '病院SE', 'nutr': '栄養', 'reim': '診療報酬', 'ovs': '海外DX'}
 PCOL = {'portal': 'sn-portal', 'hl': 'sn-news', 'gov': 'sn-gov', 'cyb': 'sn-cyb', 'inf': 'sn-inf', 'nurs': 'sn-nurs', 'doc': 'sn-doc',
-        'pharm': 'sn-pharm', 'conn': 'sn-conn', 'se': 'sn-se', 'reim': 'sn-reim', 'ovs': 'sn-ovs'}
+        'pharm': 'sn-pharm', 'conn': 'sn-conn', 'se': 'sn-se', 'nutr': 'sn-nutr', 'reim': 'sn-reim', 'ovs': 'sn-ovs'}
 SCAN_KEY_TO_PAGE = {'portal': 'portal', 'news': 'hl', 'study': 'hl', 'weekly': 'hl', 'gov': 'gov', 'cyb': 'cyb', 'inf': 'inf', 'nurs': 'nurs',
-                    'doc': 'doc', 'pharm': 'pharm', 'conn': 'conn', 'se': 'se', 'reim': 'reim', 'ovs': 'ovs'}
+                    'doc': 'doc', 'pharm': 'pharm', 'conn': 'conn', 'se': 'se', 'nutr': 'nutr', 'reim': 'reim', 'ovs': 'ovs'}
 E = lambda s: H.escape(s or '', quote=True)
 
 def page_of(fn):

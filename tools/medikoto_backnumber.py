@@ -14,6 +14,7 @@
   #bn-pharm   薬剤師        pharm-YYYY-MM-DD.html
   #bn-connect 相談支援      connect-YYYY-MM-DD.html
   #bn-se      病院SE        hospitalit-YYYY-MM-DD.html
+  #bn-nutrition 栄養        nutrition-YYYY-MM-DD.html（2026-10-16追加。枠が無ければ bnc-se の直後に作る）
   #bn-reim    診療報酬      reimbursement-YYYY-MM-DD.html
   #bn-gov     国の医療DX    gov-YYYY-MM-DD.html（gov だけは最新の版も載せる）
 （事例DX・海外DX・サイバーDX・感染症DXの表は fix_sitenav.py／medikoto_themes.py が別に作る）
@@ -40,6 +41,7 @@ TABLES = [
     ('bn-pharm',    'pharm',         'pharm',   'pharm_url'),
     ('bn-connect',  'connect',       'connect', 'connect_url'),
     ('bn-se',       'hospitalit',    'se',      'se_url'),
+    ('bn-nutrition', 'nutrition',    'nutrition', 'nutrition_url'),
     ('bn-reim',     'reimbursement', 'reim',    'reim_url'),
     ('bn-gov',      'gov',           'gov',     'gov_url'),
 ]
@@ -139,7 +141,38 @@ def theme_cell(k, theme):
     return H.escape(theme or '')
 
 
+# 枠が無いときに作る表（2026-10-16：栄養）。bnc-se の塊の直後に入れる。CSS（.bnc-nutrition）は fix_sitenav.py の sitenav CSS 側で定義
+NEW_FRAMES = {
+    'bn-nutrition': ('bnc-se', '''
+<div class="bnc bnc-nutrition">
+<details class="bnfold"><summary><h4 class="sub4">MediKoto Nutrition（管理栄養士・給食部門）のバックナンバー</h4></summary>
+<div id="bn-nutrition"><div class="tablewrap"><table>
+<thead><tr><th>日付</th><th>内容</th><th>リンク</th></tr></thead>
+<tbody>
+</tbody>
+</table></div></div>
+</details></div>
+'''),
+}
+
+
+def ensure_frame(x, tid, files):
+    """表の枠が無く、その種類の日付つきファイルがあれば、所定の塊の直後に枠を作る。"""
+    if ('id="%s"' % tid) in x or tid not in NEW_FRAMES or not files:
+        return x
+    after, frame = NEW_FRAMES[tid]
+    i = x.find('class="bnc %s"' % after)
+    if i < 0:
+        return x
+    j = x.find('</details></div>', i)
+    if j < 0:
+        return x
+    j += len('</details></div>')
+    return x[:j] + '\n' + frame.rstrip('\n') + x[j:]
+
+
 def rebuild_table(x, tid, pre, k, files, existing_latest, sl, root):
+    x = ensure_frame(x, tid, files)
     m = re.search(r'(<div id="%s">.*?<tbody>)(.*?)(</tbody>)' % re.escape(tid), x, re.S)
     if not m:
         return x, None

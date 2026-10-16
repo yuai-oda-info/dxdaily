@@ -60,7 +60,7 @@ def patch_js(x, out):
     new_head = ("  /* mk-search-lazy v1（2026-10-16）：本文データ（search-data.json）はポータルを開いただけでは読まず、検索したときに1回だけ読む */\n"
                 "  var SD=document.getElementById('search-data'); var SRC=SD?SD.getAttribute('data-src'):null;\n"
                 "  var TX={}, idx=[], loaded=false, loading=null;\n"
-                "  function buildIdx(S){\n  TX={}; idx=[];\n")
+                "  function buildIdx(S){\n  idx=[];\n")   # TX は消さずに足す（ページ内の直近分と search-data.json の全体を合わせる）
     x = x.replace(old_head, new_head, 1)
     new_tail = old_tail + ("  }\n  buildIdx(pj('search-data')||[]);\n"
                            "  function ensureData(cb){\n"

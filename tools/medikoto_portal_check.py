@@ -154,7 +154,7 @@ def add_due(t, base, report):
             else:
                 head = head.replace('<tr class="p', '<tr data-due="%s" class="p' % iso, 1)
         return head + '<td data-l="締切"><span class="dd">' + dd
-    t = re.sub(r'(<tr class="p[^"]*"[^>]*?)<td data-l="締切"><span class="dd">(\d{1,2}/\d{1,2}（.）)', row_due, t)
+    t = re.sub(r'(<tr class="p[^"]*"[^>]*>)<td data-l="締切"><span class="dd">(\d{1,2}/\d{1,2}（.）)', row_due, t)
     return t
 
 

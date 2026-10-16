@@ -358,7 +358,7 @@ STAMP_RE = re.compile(r'作成日時：\s*\d{4}年\d{1,2}月\d{1,2}日（[月火
 
 
 def jst_now_label():
-    n = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
+    n = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None) + datetime.timedelta(hours=9)
     return '作成日時：%d年%d月%d日（%s）%d:%02d（日本時間）' % (n.year, n.month, n.day, '月火水木金土日'[n.weekday()], n.hour, n.minute)
 
 

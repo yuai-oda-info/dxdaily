@@ -10,6 +10,7 @@
     対象地域は具体的な方（都道府県）に統一し、確認日は新しい方、空欄（—）は相手の行から補う。題名末尾の「（○○県）」は地域列と重複するので外す。
  C. 一面：掲載件数の横に「今日まず読む3件」（無ければ勉強会ページの題から作る。作成側が置いていればそのまま）。
  D. 色変数：栄養（--nutr／--nutrbg）が :root に無ければ足す。
+ G. 今週の重要事項：公式の期限だけ「あとN日／締切済み」、MediKotoの行動提案（期限＝掲載日以前）は「今週の確認／取り組み例」。「今日の記事を見る」はその職種の最新号へ。
  F. スマホの見やすさ（mk-mobile v1）：640px以下でナビを「ページ一覧 ▾」、国の重要資料を1行に畳む。推進方針・予算のボタンは輪郭に。「件 掲載」を1行に。今週の重要事項の最後のタブを記憶。
  E. 検証：作成日の時点での不整合（「今日」「明日」の日付違い・過去日の締切行・data-days の食い違い・重複）を数えて報告する。
     報告は fix_sitenav.py の出力に「検証:」の行で出る。0件なら「検証: 不整合なし」。
@@ -22,7 +23,7 @@ from urllib.parse import urlsplit
 
 NUTR = {'c': '#D9603A', 'bg': '#FCEEE8', 'dc': '#F19B7C', 'dbg': '#2A1A14'}
 
-RELDATE_JS = r'''<script>/* mk-reldate v1（2026-10-16）：締切の「今日／明日／あとN日／締切済み」を閲覧日（日本時間）で計算し直す */
+RELDATE_JS = r'''<script>/* mk-reldate v2（2026-10-16）：締切の「今日／明日／あとN日／締切済み」を閲覧日（日本時間）で計算し直す。v2＝今週の重要事項の過去日も「締切済み」 */
 (function(){
   function jstToday(){var d=new Date(Date.now()+9*3600*1000);return new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate()));}
   function days(iso){var p=iso.split('-');if(p.length!==3){return null;}var t=Date.UTC(+p[0],+p[1]-1,+p[2]);return Math.round((t-jstToday().getTime())/86400000);}
@@ -32,7 +33,7 @@ RELDATE_JS = r'''<script>/* mk-reldate v1（2026-10-16）：締切の「今日�
   var ks=document.querySelectorAll('#konshu .kdue[data-due]');
   for(var i=0;i<ks.length;i++){var n=days(ks[i].getAttribute('data-due'));if(n===null){continue;}
     var pill=ks[i].querySelector('.dlpill');if(!pill){continue;}
-    pill.className='dlpill '+(n<0?'done':(n<=1?'hot':(n<=7?'warn':'ok')));pill.textContent=(n<0?'期日超過':lab(n));}
+    pill.className='dlpill '+(n<0?'done':(n<=1?'hot':(n<=7?'warn':'ok')));pill.textContent=lab(n);}
   /* 一面の締切行 */
   var ts=document.querySelectorAll('#tick .it[data-due]'), left=0;
   for(var j=0;j<ts.length;j++){var m=days(ts[j].getAttribute('data-due'));if(m===null){continue;}
@@ -160,7 +161,7 @@ def add_due(t, base, report):
         if (lab == '今日' and n != 0) or (lab == '明日' and n != 1) or (lab.startswith('あと') and lab != 'あと%d日' % n):
             report.append('今週の重要事項：「%s」の日付が作成日と違う（%s→直した）' % (lab, iso))
         # 静的な表示も作成日基準で正しくしておく（JSが動かない環境のため）
-        lab2 = '期日超過' if n < 0 else ('今日' if n == 0 else ('明日' if n == 1 else 'あと%d日' % n))
+        lab2 = '締切済み' if n < 0 else ('今日' if n == 0 else ('明日' if n == 1 else 'あと%d日' % n))
         cls2 = 'done' if n < 0 else ('hot' if n <= 1 else ('warn' if n <= 7 else 'ok'))
         return '<div class="kdue" data-due="%s"><span>%s</span><span class="dlpill %s">%s</span>' % (iso, m.group('md'), cls2, lab2)
     t = re.sub(r'<div class="kdue"><span>(?P<md>\d{1,2}/\d{1,2})</span><span class="dlpill [a-z]*">(?P<lab>[^<]*)</span>', k_due, t)
@@ -171,7 +172,7 @@ def add_due(t, base, report):
             n = (datetime.date.fromisoformat(iso) - base).days
         except ValueError:
             return m.group(0)
-        lab2 = '期日超過' if n < 0 else ('今日' if n == 0 else ('明日' if n == 1 else 'あと%d日' % n))
+        lab2 = '締切済み' if n < 0 else ('今日' if n == 0 else ('明日' if n == 1 else 'あと%d日' % n))
         cls2 = 'done' if n < 0 else ('hot' if n <= 1 else ('warn' if n <= 7 else 'ok'))
         if lab != lab2:
             report.append('今週の重要事項：「%s」の日付が作成日と違う（%s→「%s」に直した）' % (lab, iso, lab2))
@@ -219,6 +220,63 @@ def add_due(t, base, report):
         return head + '<td data-l="締切"><span class="dd">' + dd
     t = re.sub(r'(<tr class="p[^"]*"[^>]*>)<td data-l="締切"><span class="dd">(\d{1,2}/\d{1,2}（.）)', row_due, t)
     return t
+
+
+# ---------- A2. 今週の重要事項：日付の意味を分ける（2026-10-16） ----------
+# 公式の期限（届出・補助金・意見募集・調査など）だけが「あとN日／締切済み」。
+# MediKoto が提案した確認行動（期限が記事の掲載日以前＝「その日にやる」として書いたもの）は
+# 翌日に「締切済み」と出て「公式の締切を過ぎた」と誤解されるので、data-due を外して「今週の確認／取り組み例」にする。
+OFFICIAL_TAGS = {'届出', '補助金', '制度', '意見募集', '調査', '公募', '申請', '回答', '締切', '研修', '電子処方箋'}
+
+
+def konshu_kinds(t, base, report):
+    i, j = t.find('id="konshu"'), t.find('id="simekiri"')
+    if i < 0 or j < 0:
+        return t
+    sec = t[i:j]
+
+    def li_fix(m):
+        li = m.group(0)
+        tag = re.search(r'<span class="ktag">([^<]*)</span>', li)
+        tag = tag.group(1).strip() if tag else ''
+        due = re.search(r'<div class="kdue" data-due="(\d{4}-\d{2}-\d{2})">', li)
+        if not due or tag in OFFICIAL_TAGS:
+            return li
+        src = re.search(r'ページ (\d{1,2}/\d{1,2})</a>', li)
+        src_iso = to_iso(src.group(1), base) if src else None
+        if not src_iso:
+            h = re.search(r'href="[a-z-]+-(\d{4}-\d{2}-\d{2})\.html"', li)
+            src_iso = h.group(1) if h else None
+        if not src_iso or due.group(1) > src_iso:
+            return li
+        report.append('今週の重要事項：「%s」の期限 %s は掲載日以前＝MediKotoの行動提案なので「今週の確認／取り組み例」にした' % (tag, due.group(1)))
+        return re.sub(r'<div class="kdue" data-due="\d{4}-\d{2}-\d{2}"><span>[^<]*</span><span class="dlpill [a-z]*">[^<]*</span>',
+                      '<div class="kdue"><span>今週の確認</span><span class="dlpill ok">取り組み例</span>', li, count=1)
+    sec = re.sub(r'<li class="kri">.*?</li>', li_fix, sec, flags=re.S)
+    return t[:i] + sec + t[j:]
+
+
+def konshu_more_links(t, root, report):
+    """パネル末尾「◯◯ページで今日の記事を見る →」のリンク先を、その職種のいちばん新しい号にそろえる。"""
+    i, j = t.find('id="konshu"'), t.find('id="simekiri"')
+    if i < 0 or j < 0:
+        return t
+    sec = t[i:j]
+    files = os.listdir(root)
+
+    def latest(prefix):
+        ds = sorted(m.group(1) for m in (re.match(r'%s-(\d{4}-\d{2}-\d{2})\.html$' % prefix, f) for f in files) if m)
+        return ds[-1] if ds else None
+
+    def km(m):
+        prefix, d = m.group(1), m.group(2)
+        new = latest(prefix)
+        if new and new > d:
+            report.append('今週の重要事項：「今日の記事を見る」のリンク先を %s-%s → %s に直した' % (prefix, d, new))
+            return '<p class="kmore"><a href="%s-%s.html">' % (prefix, new)
+        return m.group(0)
+    sec = re.sub(r'<p class="kmore"><a href="([a-z]+)-(\d{4}-\d{2}-\d{2})\.html">', km, sec)
+    return t[:i] + sec + t[j:]
 
 
 # ---------- B. 重複統合 ----------
@@ -394,12 +452,16 @@ def run(root):
         base = jst_today()
         latest = base.isoformat()
     t = add_due(t, base, report)
+    t = konshu_kinds(t, base, report)
+    t = konshu_more_links(t, root, report)
     t, near, tot = dedupe(t, base, report)
     t, top3 = add_top3(t, root, latest, report)
     t, nvars = ensure_vars(t)
     if os.path.exists(os.path.join(root, 'nutrition-%s.html' % latest)):
         t = t.replace('朝礼でそのまま読める8題・約10分。司会用の台本つき。', '朝礼でそのまま読める9題・約11分。司会用の台本つき。')
-    if 'mk-reldate v1' not in t:
+    if '/* mk-reldate' in t:   # 旧版（v1）が入っていれば今の版に置き換える
+        t = re.sub(r'<script>/\* mk-reldate v\d+.*?</script>', lambda m: RELDATE_JS, t, count=1, flags=re.S)
+    else:
         t = t.replace('</body>', RELDATE_JS + '\n</body>', 1) if '</body>' in t else t + '\n' + RELDATE_JS
     # スマホの見やすさ（2026-10-16）：ナビと国の重要資料を1行に畳む・輪郭ボタン・「件 掲載」・今週の重要事項のタブを記憶
     if 'mk-mobile v1' not in t:

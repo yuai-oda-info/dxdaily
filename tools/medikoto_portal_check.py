@@ -12,6 +12,8 @@
  D. 色変数：栄養（--nutr／--nutrbg）が :root に無ければ足す。
  G. 今週の重要事項：公式の期限だけ「あとN日／締切済み」、MediKotoの行動提案（期限＝掲載日以前）は「今週の確認／取り組み例」。「今日の記事を見る」はその職種の最新号へ。
  F. スマホの見やすさ（mk-mobile v1）：640px以下でナビを「ページ一覧 ▾」、国の重要資料を1行に畳む。推進方針・予算のボタンは輪郭に。「件 掲載」を1行に。今週の重要事項の最後のタブを記憶。
+ H2. 「◯◯ページで今日の記事を見る」の文言をリンク先の日付に合わせる（今日の号でなければ「M月D日の記事を見る」）。
+ I. ヘッドラインの分類チェック：医療安全情報がサイバー・漏洩に入っていたら「病院 DX・AI」に付け替え、件数欄もそろえる。
  E. 検証：作成日の時点での不整合（「今日」「明日」の日付違い・過去日の締切行・data-days の食い違い・重複）を数えて報告する。
     報告は fix_sitenav.py の出力に「検証:」の行で出る。0件なら「検証: 不整合なし」。
 
@@ -174,7 +176,7 @@ def add_due(t, base, report):
             return m.group(0)
         lab2 = '締切済み' if n < 0 else ('今日' if n == 0 else ('明日' if n == 1 else 'あと%d日' % n))
         cls2 = 'done' if n < 0 else ('hot' if n <= 1 else ('warn' if n <= 7 else 'ok'))
-        if lab != lab2:
+        if lab != lab2 and lab != '期日超過':  # 旧文言「期日超過」→「締切済み」は言い換えだけなので報告しない
             report.append('今週の重要事項：「%s」の日付が作成日と違う（%s→「%s」に直した）' % (lab, iso, lab2))
         return '<div class="kdue" data-due="%s"><span>%s</span><span class="dlpill %s">%s</span>' % (iso, md, cls2, lab2)
     t = re.sub(r'<div class="kdue" data-due="(?P<iso>\d{4}-\d{2}-\d{2})"><span>(?P<md>\d{1,2}/\d{1,2})</span><span class="dlpill [a-z]*">(?P<lab>[^<]*)</span>', k_fix, t)
@@ -430,6 +432,91 @@ def stamp_now(t):
     return t[:m.start()] + jst_now_label() + t[m.end():], True
 
 
+# ---------- H2. 「今日の記事を見る」の文言をリンク先の日付に合わせる（2026-10-16夕） ----------
+# リンク先がその日の号でないとき（最新号がまだ無い・作成日より前の号）は「今日」と書かず「M月D日の記事」にする。
+def kmore_wording(t, base, report):
+    i, j = t.find('id="konshu"'), t.find('id="simekiri"')
+    if i < 0 or j < 0:
+        return t
+    sec = t[i:j]
+
+    def one(m):
+        href, d, name, rest = m.group(1), m.group(2), m.group(3), m.group(4)
+        try:
+            dd = datetime.date.fromisoformat(d)
+        except ValueError:
+            return m.group(0)
+        if dd == base:
+            lab = '今日の記事を見る'
+        else:
+            lab = '%d月%d日の記事を見る' % (dd.month, dd.day)
+        new = '<p class="kmore"><a href="%s">%sページで%s →</a>' % (href, name, lab)
+        if new != m.group(0):
+            report.append('今週の重要事項：「%sページで%s」をリンク先（%s）に合わせて「%s」にした' % (name, rest, d, lab))
+        return new
+    sec = re.sub(r'<p class="kmore"><a href="([a-z]+-(\d{4}-\d{2}-\d{2})\.html)">(.+?)ページで((?:今日|\d+月\d+日)の記事を見る) →</a>', one, sec)
+    return t[:i] + sec + t[j:]
+
+
+# ---------- I. ヘッドラインの分類チェック（2026-10-16夕） ----------
+# 医療安全情報（医療機能評価機構など）は「サイバーセキュリティ」「情報漏洩」ではない。
+# 2026-10-16、MRI植込み機器確認の医療安全情報がサイバーに入っていたのを「病院 DX・AI」に手で直した。
+# 同じ取り違えを毎朝自動で見つけて「病院 DX・AI」に付け替え、件数欄（nav.toc8）もそろえる。
+SAFE_HOSTS = ('med-safe.jp', 'jcqhc.or.jp')
+SAFE_WORDS = re.compile(r'医療安全情報|医療事故情報|ヒヤリ・?ハット|誤投与|植込み医療機器|患者誤認')
+CYBER_WORDS = re.compile(r'サイバー|ランサム|脆弱性|不正アクセス|マルウェア|ウイルス|VPN|情報セキュリティ|漏え?い|漏洩|個人情報|フィッシング|CVE|パスワード|攻撃')
+SAFE_TO = ('--hosp', '病院 DX・AI')
+
+
+def _fix_news_cats(t):
+    moved, warn = [], []
+
+    def row(m):
+        r = m.group(0)
+        c = re.search(r'<span class="cat" style="--tc:var\((--sec|--brch)\)">([^<]+)</span><a href="([^"]*)"[^>]*>(.*?)</a>', r, re.S)
+        if not c:
+            return r
+        title = strip(c.group(4))
+        host = urlsplit(c.group(3)).netloc.lower()
+        if any(h in host for h in SAFE_HOSTS) or (SAFE_WORDS.search(title) and not CYBER_WORDS.search(title)):
+            moved.append((c.group(1), c.group(2), title))
+            return r.replace('<span class="cat" style="--tc:var(%s)">%s</span>' % (c.group(1), c.group(2)),
+                             '<span class="cat" style="--tc:var(%s)">%s</span>' % SAFE_TO, 1)
+        if c.group(1) == '--sec' and not CYBER_WORDS.search(strip(r)):
+            warn.append(title)
+        return r
+    t = re.sub(r'<div class="hlrow">.*?</details></div></div>', row, t, flags=re.S)
+    for var, name, _ in moved:
+        t = re.sub(r'(<span class="ti"><span class="cat" style="--tc:var\(%s\);margin-right:0">%s</span><b>)(\d+)' % (re.escape(var), re.escape(name)),
+                   lambda m: m.group(1) + str(max(0, int(m.group(2)) - 1)), t, count=1)
+        t = re.sub(r'(<span class="ti"><span class="cat" style="--tc:var\(%s\);margin-right:0">%s</span><b>)(\d+)' % (re.escape(SAFE_TO[0]), re.escape(SAFE_TO[1])),
+                   lambda m: m.group(1) + str(int(m.group(2)) + 1), t, count=1)
+    return t, moved, warn
+
+
+def fix_categories(root, base):
+    out, n, files = [], 0, []
+    names = ['news.html'] + ['news-%s.html' % (base - datetime.timedelta(days=d)).isoformat() for d in range(8)]
+    for fn in names:
+        p = os.path.join(root, fn)
+        if not os.path.exists(p):
+            continue
+        t = read(p)
+        t2, moved, warn = _fix_news_cats(t)
+        if t2 != t:
+            with open(p, 'w', encoding='utf-8') as f:
+                f.write(t2)
+        for var, name, title in moved:
+            out.append('  検証: 分類 %s：「%s」は医療安全の記事なので「%s」→「%s」に付け替えた（作成側の修正対象）' % (fn, title[:40], name, SAFE_TO[1]))
+        for title in warn:
+            out.append('  検証: 分類 %s：「%s」はサイバーの語を含まない。分類を確認（自動では直さない）' % (fn, title[:40]))
+        if moved:
+            n += len(moved)
+            files.append(fn)
+    out.insert(0, 'OK: ヘッドラインの分類チェック（直近8日分＋news.html／付け替え %d 件%s）' % (n, ('：' + '・'.join(files)) if files else ''))
+    return out
+
+
 def run(root):
     out, report = [], []
     p = os.path.join(root, 'index.html')
@@ -454,6 +541,7 @@ def run(root):
     t = add_due(t, base, report)
     t = konshu_kinds(t, base, report)
     t = konshu_more_links(t, root, report)
+    t = kmore_wording(t, base, report)
     t, near, tot = dedupe(t, base, report)
     t, top3 = add_top3(t, root, latest, report)
     t, nvars = ensure_vars(t)
@@ -481,6 +569,7 @@ def run(root):
         out.append('  検証: 不整合 %d 件（上記）。重複は統合済み・日付の表示は閲覧時に直るが、作成側（毎朝のタスク）の修正対象として記録する' % len(report))
     else:
         out.append('  検証: 不整合なし')
+    out.extend(fix_categories(root, base))
     return out
 
 

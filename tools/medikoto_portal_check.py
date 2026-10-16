@@ -354,12 +354,31 @@ def ensure_vars(t):
     return t, n
 
 
+STAMP_RE = re.compile(r'作成日時：\s*\d{4}年\d{1,2}月\d{1,2}日（[月火水木金土日]）\s*\d{1,2}:\d{2}（日本時間）')
+
+
+def jst_now_label():
+    n = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
+    return '作成日時：%d年%d月%d日（%s）%d:%02d（日本時間）' % (n.year, n.month, n.day, '月火水木金土日'[n.weekday()], n.hour, n.minute)
+
+
+def stamp_now(t):
+    """日付行の「作成日時」を今（日本時間）にする。版が変わったら必ず呼ぶ（portal-v3 スキル (g)：
+    色・並びだけの修正でも、同じURLへ上書きしたら作成日時はその版を作った時刻にする）。
+    search-data 内の他ページ本文は触らない＝最初の1か所（日付行）だけ置き換える。"""
+    m = STAMP_RE.search(t)
+    if not m:
+        return t, False
+    return t[:m.start()] + jst_now_label() + t[m.end():], True
+
+
 def run(root):
     out, report = [], []
     p = os.path.join(root, 'index.html')
     if not os.path.exists(p):
         return ['!! ポータル検証: index.html が無い']
     t = read(p)
+    t0 = t
     latest = ''
     a0 = t.find('id="archive-data">')
     if a0 > 0:
@@ -385,10 +404,15 @@ def run(root):
     # スマホの見やすさ（2026-10-16）：ナビと国の重要資料を1行に畳む・輪郭ボタン・「件 掲載」・今週の重要事項のタブを記憶
     if 'mk-mobile v1' not in t:
         t = t.replace('</body>', MOBILE_BLOCK + '\n</body>', 1) if '</body>' in t else t + '\n' + MOBILE_BLOCK
+    # 内容を直したら「作成日時」をこの版を作った時刻（今・日本時間）に進める（2026-10-16：1:30 のまま公開して指摘を受けた）
+    stamped = False
+    if t != t0:
+        t, stamped = stamp_now(t)
     with open(p, 'w', encoding='utf-8') as f:
         f.write(t)
-    out.append('OK: ポータル検証（作成日 %s／締切表 %s／今日まず読む3件 %s／栄養の色変数 %s／日付は閲覧時に再計算）'
-               % (base.isoformat(), ('30日以内 %d・全 %d 行' % (near, tot)) if tot is not None else '表なし', top3, '追加' if nvars else 'あり'))
+    out.append('OK: ポータル検証（作成日 %s／締切表 %s／今日まず読む3件 %s／栄養の色変数 %s／作成日時 %s／日付は閲覧時に再計算）'
+               % (base.isoformat(), ('30日以内 %d・全 %d 行' % (near, tot)) if tot is not None else '表なし', top3, '追加' if nvars else 'あり',
+                  '更新' if stamped else '変更なし'))
     if report:
         for r in report:
             out.append('  検証: ' + r)

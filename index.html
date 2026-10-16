@@ -2067,5 +2067,43 @@ body{padding-left:0;padding-right:0;}
     pt.textContent=(pt.getAttribute('aria-expanded')==='true'?pt.getAttribute('data-close'):pt.getAttribute('data-open'));pt.hidden=(past===0);}
 })();
 </script>
+<style>/* mk-mobile v1（2026-10-16）：スマホで一面を最初の画面に／国の重要資料を輪郭に／件掲載の折り返し */
+.hoshin a,.yosan a{background:transparent!important;color:#A85A14!important;border:1.5px solid #A85A14!important;font-weight:700;}
+.yosan a{color:var(--acc)!important;border-color:var(--acc)!important;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hoshin a{color:#E89A55!important;border-color:#E89A55!important;}
+  :root:not([data-theme="light"]) .yosan a{color:#8FB7F4!important;border-color:#8FB7F4!important;}}
+:root[data-theme="dark"] .hoshin a{color:#E89A55!important;border-color:#E89A55!important;}
+:root[data-theme="dark"] .yosan a{color:#8FB7F4!important;border-color:#8FB7F4!important;}
+.ed-stat span br{display:none;}
+.ed-stat span .st2{margin-left:.35em;}
+.mkfold{display:none;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.86rem;color:var(--acc);background:var(--paper,#FFFFFF);border:1.5px solid var(--acc);border-radius:999px;padding:.38rem 1rem;margin:.6rem 0 .4rem;cursor:pointer;width:100%;text-align:left;}
+.mkfold .ar{float:right;}
+.mkfold-gov{color:var(--sub);border-color:var(--rule);font-size:.8rem;padding:.3rem .9rem;margin:.5rem 0 0;}
+@media (max-width:640px){
+  .mkfold{display:block;}
+  nav.sitenav.top{display:none;}
+  nav.sitenav.top.open{display:grid;}
+  #hoshin,#yosan{display:none;}
+  .govopen #hoshin,.govopen #yosan{display:flex;}
+}
+</style>
+<script>/* mk-mobile v1（2026-10-16）*/
+(function(){
+  var mq=window.matchMedia('(max-width:640px)');
+  var nav=document.querySelector('nav.sitenav.top');
+  if(nav){var b=document.createElement('button');b.type='button';b.className='mkfold';b.innerHTML='ページ一覧（15ページ）<span class="ar">▾</span>';
+    b.setAttribute('aria-expanded','false');nav.parentNode.insertBefore(b,nav);
+    b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.querySelector('.ar').textContent=o?'▴':'▾';});}
+  var h=document.getElementById('hoshin');
+  if(h){var g=document.createElement('button');g.type='button';g.className='mkfold mkfold-gov';g.innerHTML='国の重要資料（医療情報化推進方針・令和9年度予算）<span class="ar">▾</span>';
+    g.setAttribute('aria-expanded','false');h.parentNode.insertBefore(g,h);
+    g.addEventListener('click',function(){var o=h.parentNode.classList.toggle('govopen');g.setAttribute('aria-expanded',o?'true':'false');g.querySelector('.ar').textContent=o?'▴':'▾';});}
+  var st=document.querySelector('.ed-stat span');if(st&&/件<br/i.test(st.innerHTML)){st.innerHTML='件<span class="st2">掲載</span>';}
+  /* 今週の重要事項：最後に見たタブを覚える */
+  try{var tabs=document.querySelectorAll('.ktabs [role="tab"]');var saved=localStorage.getItem('mk-ktab');
+    for(var i=0;i<tabs.length;i++){tabs[i].addEventListener('click',function(){try{localStorage.setItem('mk-ktab',this.id);}catch(e){}});}
+    if(saved){var sb=document.getElementById(saved);if(sb&&sb.getAttribute('aria-selected')!=='true'){sb.click();}}}catch(e){}
+})();
+</script>
 </body>
 </html>

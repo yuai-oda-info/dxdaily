@@ -10,6 +10,7 @@
     対象地域は具体的な方（都道府県）に統一し、確認日は新しい方、空欄（—）は相手の行から補う。題名末尾の「（○○県）」は地域列と重複するので外す。
  C. 一面：掲載件数の横に「今日まず読む3件」（無ければ勉強会ページの題から作る。作成側が置いていればそのまま）。
  D. 色変数：栄養（--nutr／--nutrbg）が :root に無ければ足す。
+ F. スマホの見やすさ（mk-mobile v1）：640px以下でナビを「ページ一覧 ▾」、国の重要資料を1行に畳む。推進方針・予算のボタンは輪郭に。「件 掲載」を1行に。今週の重要事項の最後のタブを記憶。
  E. 検証：作成日の時点での不整合（「今日」「明日」の日付違い・過去日の締切行・data-days の食い違い・重複）を数えて報告する。
     報告は fix_sitenav.py の出力に「検証:」の行で出る。0件なら「検証: 不整合なし」。
 
@@ -63,6 +64,45 @@ TOP3_CSS = '''<style>/* 一面「今日まず読む3件」v1（2026-10-16） */
 .ed-top3 .t3s{display:inline-block;font-size:.68rem;font-weight:700;color:var(--t3c,var(--acc));border:1px solid var(--t3c,var(--acc));border-radius:5px;padding:0 .4rem;margin-left:.4rem;vertical-align:.1em;white-space:nowrap;}
 @media (max-width:640px){.ed-top3{border-left:0;padding-left:0;}}
 </style>'''
+
+MOBILE_BLOCK = r'''<style>/* mk-mobile v1（2026-10-16）：スマホで一面を最初の画面に／国の重要資料を輪郭に／件掲載の折り返し */
+.hoshin a,.yosan a{background:transparent!important;color:#A85A14!important;border:1.5px solid #A85A14!important;font-weight:700;}
+.yosan a{color:var(--acc)!important;border-color:var(--acc)!important;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hoshin a{color:#E89A55!important;border-color:#E89A55!important;}
+  :root:not([data-theme="light"]) .yosan a{color:#8FB7F4!important;border-color:#8FB7F4!important;}}
+:root[data-theme="dark"] .hoshin a{color:#E89A55!important;border-color:#E89A55!important;}
+:root[data-theme="dark"] .yosan a{color:#8FB7F4!important;border-color:#8FB7F4!important;}
+.ed-stat span br{display:none;}
+.ed-stat span .st2{margin-left:.35em;}
+.mkfold{display:none;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.86rem;color:var(--acc);background:var(--paper,#FFFFFF);border:1.5px solid var(--acc);border-radius:999px;padding:.38rem 1rem;margin:.6rem 0 .4rem;cursor:pointer;width:100%;text-align:left;}
+.mkfold .ar{float:right;}
+.mkfold-gov{color:var(--sub);border-color:var(--rule);font-size:.8rem;padding:.3rem .9rem;margin:.5rem 0 0;}
+@media (max-width:640px){
+  .mkfold{display:block;}
+  nav.sitenav.top{display:none;}
+  nav.sitenav.top.open{display:grid;}
+  #hoshin,#yosan{display:none;}
+  .govopen #hoshin,.govopen #yosan{display:flex;}
+}
+</style>
+<script>/* mk-mobile v1（2026-10-16）*/
+(function(){
+  var mq=window.matchMedia('(max-width:640px)');
+  var nav=document.querySelector('nav.sitenav.top');
+  if(nav){var b=document.createElement('button');b.type='button';b.className='mkfold';b.innerHTML='ページ一覧（15ページ）<span class="ar">▾</span>';
+    b.setAttribute('aria-expanded','false');nav.parentNode.insertBefore(b,nav);
+    b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.querySelector('.ar').textContent=o?'▴':'▾';});}
+  var h=document.getElementById('hoshin');
+  if(h){var g=document.createElement('button');g.type='button';g.className='mkfold mkfold-gov';g.innerHTML='国の重要資料（医療情報化推進方針・令和9年度予算）<span class="ar">▾</span>';
+    g.setAttribute('aria-expanded','false');h.parentNode.insertBefore(g,h);
+    g.addEventListener('click',function(){var o=h.parentNode.classList.toggle('govopen');g.setAttribute('aria-expanded',o?'true':'false');g.querySelector('.ar').textContent=o?'▴':'▾';});}
+  var st=document.querySelector('.ed-stat span');if(st&&/件<br/i.test(st.innerHTML)){st.innerHTML='件<span class="st2">掲載</span>';}
+  /* 今週の重要事項：最後に見たタブを覚える */
+  try{var tabs=document.querySelectorAll('.ktabs [role="tab"]');var saved=localStorage.getItem('mk-ktab');
+    for(var i=0;i<tabs.length;i++){tabs[i].addEventListener('click',function(){try{localStorage.setItem('mk-ktab',this.id);}catch(e){}});}
+    if(saved){var sb=document.getElementById(saved);if(sb&&sb.getAttribute('aria-selected')!=='true'){sb.click();}}}catch(e){}
+})();
+</script>'''
 
 SECCOL = {'国の医療DX': '--gov', '看護': '--nurs', '医師': '--doc', '薬剤師': '--pharm', '相談支援・連携': '--conn',
           '病院SE': '--se', '栄養': '--nutr', '診療報酬': '--reim', '海外': '--ovs', '海外DX': '--ovs'}
@@ -342,6 +382,9 @@ def run(root):
         t = t.replace('朝礼でそのまま読める8題・約10分。司会用の台本つき。', '朝礼でそのまま読める9題・約11分。司会用の台本つき。')
     if 'mk-reldate v1' not in t:
         t = t.replace('</body>', RELDATE_JS + '\n</body>', 1) if '</body>' in t else t + '\n' + RELDATE_JS
+    # スマホの見やすさ（2026-10-16）：ナビと国の重要資料を1行に畳む・輪郭ボタン・「件 掲載」・今週の重要事項のタブを記憶
+    if 'mk-mobile v1' not in t:
+        t = t.replace('</body>', MOBILE_BLOCK + '\n</body>', 1) if '</body>' in t else t + '\n' + MOBILE_BLOCK
     with open(p, 'w', encoding='utf-8') as f:
         f.write(t)
     out.append('OK: ポータル検証（作成日 %s／締切表 %s／今日まず読む3件 %s／栄養の色変数 %s／日付は閲覧時に再計算）'

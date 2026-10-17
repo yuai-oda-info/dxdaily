@@ -10,6 +10,7 @@
     対象地域は具体的な方（都道府県）に統一し、確認日は新しい方、空欄（—）は相手の行から補う。題名末尾の「（○○県）」は地域列と重複するので外す。
  C. 一面：掲載件数の横に「今日まず読む3件」（無ければ勉強会ページの題から作る。作成側が置いていればそのまま）。
  D. 色変数：栄養（--nutr／--nutrbg）が :root に無ければ足す。
+ R. 一面「自分の仕事の視点で」（#roles）の職種リンクが claude.ai/artifact を指していたら、サイト内のファイルに戻す（2026-10-17：栄養が claude.ai のままだった）。
  G. 今週の重要事項：公式の期限だけ「あとN日／締切済み」、MediKotoの行動提案（期限＝掲載日以前）は「今週の確認／取り組み例」。「今日の記事を見る」はその職種の最新号へ。
  F. スマホの見やすさ（mk-mobile v1）：640px以下でナビを「ページ一覧 ▾」、国の重要資料を1行に畳む。推進方針・予算のボタンは輪郭に。「件 掲載」を1行に。今週の重要事項の最後のタブを記憶。
  H2. 「◯◯ページで今日の記事を見る」の文言をリンク先の日付に合わせる（今日の号でなければ「M月D日の記事を見る」）。
@@ -414,6 +415,21 @@ def ensure_vars(t):
     return t, n
 
 
+# ---------- R. 職種リンク（#roles）をサイト内のファイルに ----------
+ROLE_FILES = {'nursing': 'nursing.html', 'doctors': 'doctors.html', 'pharm': 'pharmacists.html', 'connect': 'connect.html',
+              'se': 'hospitalit.html', 'nutrition': 'nutrition.html', 'reim': 'reimbursement.html'}
+
+
+def fix_role_links(t, report):
+    n = 0
+    for rid, fn in ROLE_FILES.items():
+        t, k = re.subn(r'(<a id="%s" href=")https://claude\.ai/[^"]*(")' % rid, r'\g<1>%s\2' % fn, t)
+        n += k
+    if n:
+        report.append('一面の職種リンク %d 件が claude.ai を指していたので、サイト内のファイルに戻した' % n)
+    return t
+
+
 STAMP_RE = re.compile(r'作成日時：\s*\d{4}年\d{1,2}月\d{1,2}日（[月火水木金土日]）\s*\d{1,2}:\d{2}（日本時間）')
 
 
@@ -545,6 +561,7 @@ def run(root):
     t, near, tot = dedupe(t, base, report)
     t, top3 = add_top3(t, root, latest, report)
     t, nvars = ensure_vars(t)
+    t = fix_role_links(t, report)
     if os.path.exists(os.path.join(root, 'nutrition-%s.html' % latest)):
         t = t.replace('朝礼でそのまま読める8題・約10分。司会用の台本つき。', '朝礼でそのまま読める9題・約11分。司会用の台本つき。')
     if '/* mk-reldate' in t:   # 旧版（v1）が入っていれば今の版に置き換える

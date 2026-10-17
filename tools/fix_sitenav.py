@@ -11,6 +11,9 @@ v11（2026-10-05）：続けて同じフォルダの medikoto_feed.py があれ�
 ポータルに RSS の自動検出の1行と「RSS配信」チップ（→ rss.html）を入れ、rss.html を sitemap に載せる。共通ナビ・CSS（v10）は変えない。
 v11b（2026-10-07）：続けて同じフォルダの medikoto_backnumber.py があれば呼び、ポータルのバックナンバー表（ヘッドライン・勉強会・職種別5・診療報酬・国の医療DX）を
 リポジトリにある日付つきファイルから作り直す（移行元・移行先どちらのアカウントで作った号も抜けないように）。共通ナビ・CSS（v10）は変えない。
+v12b（2026-10-17）：共通ナビを新聞型（枠と塗りをやめた色文字・細い罫・現在のページは黒文字＋色の下線）にする CSS（papernav v2）を足す。
+  サイバーDX（cyber*.html）は題字の横にナビを置く独自の新聞型があるので足さない。
+  あわせてサイバーDX・感染症DXのバックナンバー表（#c-bn／#i-bn）から「変わったこと」の列を外す（「変わったことの記録」と重なるため）。
 使い方: python3 tools/fix_sitenav.py . [--check]
 """
 import os, re, sys, glob, datetime, json
@@ -114,6 +117,51 @@ def nav_html(pos, cur):
         a.append('<a href="%s" style="--sn-c:var(--%s)"%s>%s</a>' % (href, var, c, label))
     return '<nav class="sitenav %s" aria-label="MediKotoのページ">%s</nav>' % (pos, ''.join(a))
 
+PAPER_MARK = 'MediKoto papernav v2'
+PAPER_RE = re.compile(r'\n?<style>/\* MediKoto papernav v\d+.*?</style>\n?', re.S)
+PAPER_CSS = """<style>/* MediKoto papernav v2（2026-10-17：共通ナビを新聞型に。枠と塗りをやめた色文字を細い罫で挟み、現在のページは黒文字＋色の下線。スマホは横に流れる1行で、ポータルの「ページ一覧」ボタンは使わない） */
+:root:not(#x) nav.sitenav{display:flex!important;flex-wrap:wrap!important;justify-content:flex-start!important;gap:.15rem 1.1rem!important;
+  grid-template-columns:none!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:.45rem 0!important;}
+:root:not(#x) nav.sitenav.top{border-top:2px solid var(--ink,#1A242E)!important;border-bottom:1px solid var(--ink,#1A242E)!important;margin:.6rem 0 1.1rem!important;}
+:root:not(#x) nav.sitenav.bottom{border-top:1px solid var(--rule,#D9DDE0)!important;margin:2rem 0 0!important;padding:.6rem 0 0!important;}
+:root:not(#x) nav.sitenav a,:root:not(#x) nav.sitenav a:not(.cur){flex:none!important;min-width:0;border:0!important;border-radius:0!important;
+  background:transparent!important;padding:.15rem 0!important;font-size:.8rem!important;line-height:1.6;color:var(--sn-c)!important;overflow:visible!important;}
+:root:not(#x) nav.sitenav.bottom a,:root:not(#x) nav.sitenav.bottom a:not(.cur){font-size:.72rem!important;}
+:root:not(#x) nav.sitenav a.cur{color:var(--ink,#1A242E)!important;background:transparent!important;border-bottom:2px solid var(--sn-c)!important;}
+nav.sitenav a:hover{text-decoration:underline;}
+@media (max-width:640px){:root:not(#x) nav.sitenav.top{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);}
+  nav.sitenav.top::-webkit-scrollbar{display:none;}
+  :root:not(#x) .mkfold:not(.mkfold-gov){display:none!important;}}
+</style>"""
+
+
+def put_paper(h, path):
+    if os.path.basename(path).startswith('cyber'):
+        return h                   # サイバーDXは独自の新聞型（題字の横のナビ）
+    if PAPER_MARK in h:
+        return h
+    h = PAPER_RE.sub('\n', h)
+    i = h.rfind('</body>')
+    if i < 0:
+        i = h.rfind('</html>')
+    if i >= 0:
+        return h[:i] + PAPER_CSS + '\n' + h[i:]
+    return h.rstrip() + '\n' + PAPER_CSS + '\n'
+
+
+def slim_bn(h, path):
+    """サイバーDX・感染症DXのバックナンバー表から「変わったこと」の列を外す（日付と「開く」だけにする）。"""
+    if os.path.basename(path) not in ('cyber.html', 'infection.html'):
+        return h
+    m = re.search(r'<section class="men" id="[ci]-bn">.*?</section>', h, re.S)
+    if not m or '<th>変わったこと</th>' not in m.group(0):
+        return h
+    s = m.group(0).replace('<th>変わったこと</th>', '')
+    s = re.sub(r'(<tr><td class="d">.*?</td>)<td>.*?</td>(<td><a )', r'\1\2', s, flags=re.S)
+    return h[:m.start()] + s + h[m.end():]
+
+
 def put_css(h):
     if MARK in h:
         return h
@@ -180,6 +228,8 @@ def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
     src = open(path, encoding='utf-8').read()
     cur = page_key(path)
     h = put_css(src)
+    h = put_paper(h, path)
+    h = slim_bn(h, path)
     h, note = put_nav(h, cur, insert_if_missing=(cur is not None))
     if os.path.basename(path) == 'reimbursement.html':
         h, n2 = put_gigi(h, gigi_href, gigi_n)

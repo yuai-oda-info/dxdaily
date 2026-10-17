@@ -656,5 +656,20 @@ details.art .im b{display:inline-block;font-size:.66rem;border:1px solid var(--s
   background:var(--reim,#5B3FA6);border-radius:999px;padding:.32rem 1.1rem;white-space:nowrap;}
 @media (max-width:560px){.gigi-go{width:100%;text-align:center;}}
 </style>
+<style>/* MediKoto papernav v2（2026-10-17：共通ナビを新聞型に。枠と塗りをやめた色文字を細い罫で挟み、現在のページは黒文字＋色の下線。スマホは横に流れる1行で、ポータルの「ページ一覧」ボタンは使わない） */
+:root:not(#x) nav.sitenav{display:flex!important;flex-wrap:wrap!important;justify-content:flex-start!important;gap:.15rem 1.1rem!important;
+  grid-template-columns:none!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:.45rem 0!important;}
+:root:not(#x) nav.sitenav.top{border-top:2px solid var(--ink,#1A242E)!important;border-bottom:1px solid var(--ink,#1A242E)!important;margin:.6rem 0 1.1rem!important;}
+:root:not(#x) nav.sitenav.bottom{border-top:1px solid var(--rule,#D9DDE0)!important;margin:2rem 0 0!important;padding:.6rem 0 0!important;}
+:root:not(#x) nav.sitenav a,:root:not(#x) nav.sitenav a:not(.cur){flex:none!important;min-width:0;border:0!important;border-radius:0!important;
+  background:transparent!important;padding:.15rem 0!important;font-size:.8rem!important;line-height:1.6;color:var(--sn-c)!important;overflow:visible!important;}
+:root:not(#x) nav.sitenav.bottom a,:root:not(#x) nav.sitenav.bottom a:not(.cur){font-size:.72rem!important;}
+:root:not(#x) nav.sitenav a.cur{color:var(--ink,#1A242E)!important;background:transparent!important;border-bottom:2px solid var(--sn-c)!important;}
+nav.sitenav a:hover{text-decoration:underline;}
+@media (max-width:640px){:root:not(#x) nav.sitenav.top{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);}
+  nav.sitenav.top::-webkit-scrollbar{display:none;}
+  :root:not(#x) .mkfold:not(.mkfold-gov){display:none!important;}}
+</style>
 </body>
 </html>

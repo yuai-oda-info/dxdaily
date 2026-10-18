@@ -677,6 +677,12 @@ header.uv-hd>nav.sitenav.top{flex:1 1 30rem;border:0!important;padding:0!importa
 .jtable td:nth-child(3){white-space:normal!important;min-width:11em}
 @media (max-width:640px){table.c3tbl,table.jtable,table.wkt{display:block!important;overflow-x:auto!important;max-width:100%!important;min-width:0!important;width:100%!important;-webkit-overflow-scrolling:touch}}
 </style>
+<style>/* 2026-10-19：ロゴを「デジタル新聞」の左に置き、その行を共通ナビの上へ */
+header.uv-hd>.uv-top{flex:1 1 100%!important;align-items:center;border-bottom:0;padding:.35rem 0 .1rem}
+.uv-top .uv-tl{display:inline-flex;align-items:center;gap:.8rem;min-width:0}
+.uv-top .uv-logo{flex:none}
+@media (max-width:600px){.uv-top .uv-tl{gap:.5rem}.uv-top .uv-logo img,.uv-top img.uv-logo{height:24px!important}}
+</style>
 <script>/* MediKoto unity v1：塗りの札は色文字に、塗りの箱は罫線に（色はそのまま文字・罫線へ移す） */
 (function(){
 if(document.getElementById('c-paper'))return; /* サイバーDXは対象外 */
@@ -744,14 +750,18 @@ function mast(){
  var cr=[].filter.call(hd.querySelectorAll('span,p'),function(x){return x.children.length===0&&/^作成日時：/.test(x.textContent.trim());})[0];
  var dtx=cr?cr.textContent.trim().replace(/^作成日時：/,''):(d?d.textContent.trim():'');
  var M=document.createElement('div');M.className='uv-mast';
- M.innerHTML='<div class="uv-top"><span>医療・介護の現場のためのデジタル新聞</span><span>'+dtx+'</span></div><div class="uv-brand"><p class="uv-title" aria-hidden="true">Medi<span>Koto</span>'+(w?' '+w:'')+'</p>'+(sub?'<p class="uv-sub">'+sub+'</p>':'')+'</div>';
- if(nav&&nav.parentNode===hd)nav.insertAdjacentElement('afterend',M);else hd.insertBefore(M,hd.firstChild);
+ M.innerHTML='<div class="uv-brand"><p class="uv-title" aria-hidden="true">Medi<span>Koto</span>'+(w?' '+w:'')+'</p>'+(sub?'<p class="uv-sub">'+sub+'</p>':'')+'</div>';
+ /* 2026-10-19：ロゴは「デジタル新聞」の左へ。この行を共通ナビの上に置き、題字はナビの下 */
+ var Tp=document.createElement('div');Tp.className='uv-top';
+ Tp.innerHTML='<span class="uv-tl"><span>医療・介護の現場のためのデジタル新聞</span></span><span>'+dtx+'</span>';
+ if(nav&&nav.parentNode===hd){nav.insertAdjacentElement('afterend',M);hd.insertBefore(Tp,hd.firstChild);}else{hd.insertBefore(M,hd.firstChild);hd.insertBefore(Tp,M);}
  if(hs)sl.classList.add('uv-hide');if(hh)h1.classList.add('uv-vh');
  /* ロゴと日付の重複を外す（題字がロゴの代わり・日付は題字の上だけ） */
  var lg=null,im=hd.querySelector('img');if(im&&!im.closest('nav,.uv-mast')){lg=im.closest('a')||im;if(lg.parentNode!==hd&&!lg.closest('.logowrap'))lg=null;}
  var lw=hd.querySelector('h1.logowrap');if(lw){lw.classList.add('uv-logo');}
  var href=(lg&&lg.tagName==='A'&&lg.getAttribute('href'))||(nav&&nav.querySelector('a')&&nav.querySelector('a').getAttribute('href'));
  if(lg&&!lw)lg.classList.add('uv-logo');
+ var L=lw||lg;if(L)Tp.firstChild.insertBefore(L,Tp.firstChild.firstChild);
  hd.classList.add('uv-hd');
  if(href){var T=M.querySelector('.uv-title');var A=document.createElement('a');A.href=href;A.className='uv-home';A.setAttribute('aria-label','MediKoto ポータルへ');T.parentNode.insertBefore(A,T);A.appendChild(T);}
  if(d)d.classList.add('uv-hide');if(cr)cr.classList.add('uv-hide');

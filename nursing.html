@@ -347,7 +347,7 @@ h1.nurs{font-family:'Zen Kaku Gothic New','BIZ UDPゴシック',sans-serif;font-
 <nav class="sitenav top" aria-label="MediKotoのページ"><a href="./" style="--sn-c:var(--sn-portal)">ポータル</a><a href="news.html" style="--sn-c:var(--sn-news)">ヘッドライン</a><a href="study.html" style="--sn-c:var(--sn-study)">今日の勉強会</a><a href="weekly-study.html" style="--sn-c:var(--sn-study)">事例DX</a><a href="gov.html" style="--sn-c:var(--sn-gov)">国の医療DX</a><a href="cyber.html" style="--sn-c:var(--sn-cyb)">サイバーDX</a><a href="infection.html" style="--sn-c:var(--sn-inf)">感染症DX</a><a href="nursing.html" style="--sn-c:var(--sn-nurs)" class="cur" aria-current="page">看護</a><a href="doctors.html" style="--sn-c:var(--sn-doc)">医師</a><a href="pharmacists.html" style="--sn-c:var(--sn-pharm)">薬剤師</a><a href="connect.html" style="--sn-c:var(--sn-conn)">相談支援・連携</a><a href="hospitalit.html" style="--sn-c:var(--sn-se)">病院SE</a><a href="nutrition.html" style="--sn-c:var(--sn-nutr)">栄養</a><a href="reimbursement.html" style="--sn-c:var(--sn-reim)">診療報酬</a><a href="global.html" style="--sn-c:var(--sn-ovs)">海外DX</a></nav>
 <p class="slogan" style="font-family:'Zen Kaku Gothic New','BIZ UDPゴシック',sans-serif;font-weight:700;font-size:1.5rem;color:var(--ink);margin:0 0 .1rem;line-height:1.4">看護業務の困りごとから、DX・AIを探せる実践ページ。</p>
 <h1 class="nurs" style="font-size:1.02rem;margin:0 0 .25rem">MediKoto Nursing</h1>
-<p class="dateline"><b>2026年10月19日（月）</b><span>毎日更新</span><span>作成日時：2026年10月19日（月）2:20（日本時間）</span><span>発行：MediKoto（メディコト）</span></p>
+<p class="dateline"><b>2026年10月19日（月）</b><span>毎日更新</span><span>作成日時：2026年10月19日（月）7:41（日本時間）</span><span>発行：MediKoto（メディコト）</span></p>
 
 <p class="mh-meta">看護師・看護補助者・訪問看護師・看護管理者の皆さま向け</p>
 </header>
@@ -688,6 +688,12 @@ header.uv-hd>nav.sitenav.top{flex:1 1 30rem;border:0!important;padding:0!importa
 .jtable td:nth-child(3){white-space:normal!important;min-width:11em}
 @media (max-width:640px){table.c3tbl,table.jtable,table.wkt{display:block!important;overflow-x:auto!important;max-width:100%!important;min-width:0!important;width:100%!important;-webkit-overflow-scrolling:touch}}
 </style>
+<style>/* 2026-10-19：ロゴを「デジタル新聞」の左に置き、その行を共通ナビの上へ */
+header.uv-hd>.uv-top{flex:1 1 100%!important;align-items:center;border-bottom:0;padding:.35rem 0 .1rem}
+.uv-top .uv-tl{display:inline-flex;align-items:center;gap:.8rem;min-width:0}
+.uv-top .uv-logo{flex:none}
+@media (max-width:600px){.uv-top .uv-tl{gap:.5rem}.uv-top .uv-logo img,.uv-top img.uv-logo{height:24px!important}}
+</style>
 <script>/* MediKoto unity v1：塗りの札は色文字に、塗りの箱は罫線に（色はそのまま文字・罫線へ移す） */
 (function(){
 if(document.getElementById('c-paper'))return; /* サイバーDXは対象外 */
@@ -755,14 +761,18 @@ function mast(){
  var cr=[].filter.call(hd.querySelectorAll('span,p'),function(x){return x.children.length===0&&/^作成日時：/.test(x.textContent.trim());})[0];
  var dtx=cr?cr.textContent.trim().replace(/^作成日時：/,''):(d?d.textContent.trim():'');
  var M=document.createElement('div');M.className='uv-mast';
- M.innerHTML='<div class="uv-top"><span>医療・介護の現場のためのデジタル新聞</span><span>'+dtx+'</span></div><div class="uv-brand"><p class="uv-title" aria-hidden="true">Medi<span>Koto</span>'+(w?' '+w:'')+'</p>'+(sub?'<p class="uv-sub">'+sub+'</p>':'')+'</div>';
- if(nav&&nav.parentNode===hd)nav.insertAdjacentElement('afterend',M);else hd.insertBefore(M,hd.firstChild);
+ M.innerHTML='<div class="uv-brand"><p class="uv-title" aria-hidden="true">Medi<span>Koto</span>'+(w?' '+w:'')+'</p>'+(sub?'<p class="uv-sub">'+sub+'</p>':'')+'</div>';
+ /* 2026-10-19：ロゴは「デジタル新聞」の左へ。この行を共通ナビの上に置き、題字はナビの下 */
+ var Tp=document.createElement('div');Tp.className='uv-top';
+ Tp.innerHTML='<span class="uv-tl"><span>医療・介護の現場のためのデジタル新聞</span></span><span>'+dtx+'</span>';
+ if(nav&&nav.parentNode===hd){nav.insertAdjacentElement('afterend',M);hd.insertBefore(Tp,hd.firstChild);}else{hd.insertBefore(M,hd.firstChild);hd.insertBefore(Tp,M);}
  if(hs)sl.classList.add('uv-hide');if(hh)h1.classList.add('uv-vh');
  /* ロゴと日付の重複を外す（題字がロゴの代わり・日付は題字の上だけ） */
  var lg=null,im=hd.querySelector('img');if(im&&!im.closest('nav,.uv-mast')){lg=im.closest('a')||im;if(lg.parentNode!==hd&&!lg.closest('.logowrap'))lg=null;}
  var lw=hd.querySelector('h1.logowrap');if(lw){lw.classList.add('uv-logo');}
  var href=(lg&&lg.tagName==='A'&&lg.getAttribute('href'))||(nav&&nav.querySelector('a')&&nav.querySelector('a').getAttribute('href'));
  if(lg&&!lw)lg.classList.add('uv-logo');
+ var L=lw||lg;if(L)Tp.firstChild.insertBefore(L,Tp.firstChild.firstChild);
  hd.classList.add('uv-hd');
  if(href){var T=M.querySelector('.uv-title');var A=document.createElement('a');A.href=href;A.className='uv-home';A.setAttribute('aria-label','MediKoto ポータルへ');T.parentNode.insertBefore(A,T);A.appendChild(T);}
  if(d)d.classList.add('uv-hide');if(cr)cr.classList.add('uv-hide');

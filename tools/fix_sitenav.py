@@ -397,6 +397,13 @@ def main():
             th += medikoto_portal_check.run(root)
         except Exception as ex:
             th.append('!! ポータル検証: %s（ナビの処理は続ける）' % ex)
+        # ヘッダーの並び（2026-10-19追加）：ロゴを「医療・介護の現場のためのデジタル新聞」の左へ、その行を共通ナビの上へ。
+        # アーティファクトのHTMLで上書きされても毎朝ここでそろえる
+        try:
+            import medikoto_logo_row
+            th += medikoto_logo_row.run(root)
+        except Exception as ex:
+            th.append('!! ヘッダーの並び: %s（ナビの処理は続ける）' % ex)
     files = sorted(f for f in glob.glob(os.path.join(root, '*.html')))
     gigi_href = 'gigikaishaku.html' if os.path.exists(os.path.join(root, 'gigikaishaku.html')) else GIGI_ART
     gigi_n = gigi_count(root)

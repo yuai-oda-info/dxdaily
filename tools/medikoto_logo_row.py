@@ -11,7 +11,7 @@ fix_sitenav.py から毎回これを呼んで並びをそろえる。
   ・2026-10-19 に手で直した版（mast() の中で「デジタル新聞」の行を作る形。目印「ロゴは「デジタル新聞」の左へ」）はそのまま。
 単独でも実行できる： python3 tools/medikoto_logo_row.py .
 """
-import os, sys, glob
+import os, re, sys, glob
 
 MARK = 'MediKoto logo-row v1'
 DONE_BY_HAND = 'ロゴは「デジタル新聞」の左へ'     # 2026-10-19 に mast() を直接直した版の目印
@@ -40,11 +40,39 @@ def fix(h):
     return h[:i] + CSS + h[i:]
 
 
+# サイバーDX（cyber*.html）は mast() を使わない独自の新聞型。旧い形（ロゴ→ナビ→…→「デジタル新聞」の行）を同じ並びに直す
+CY_OLD_TOP = '<div class="pp-top"><span>医療・介護の現場のためのデジタル新聞</span><span id="pp-date"></span></div>'
+CY_LOGO = re.compile(r'<header>(<img class="logo" [^>]*>)(?=<nav class="sitenav top")')
+CY_CSS = ('<style>/* ' + MARK + ' cyber（2026-10-19） */\n'
+          '.wrap>header>.pp-top{flex:1 1 100%;align-items:center;border-bottom:0;padding:.35rem 0 .1rem}\n'
+          '.pp-top .uv-tl{display:inline-flex;align-items:center;gap:.8rem;min-width:0}\n'
+          '.pp-top .logo{height:30px!important;width:auto;flex:none;margin:0}\n'
+          '@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pp-top .logo{background:#FFFFFF;border-radius:4px;padding:2px 5px}}\n'
+          ':root[data-theme="dark"] .pp-top .logo{background:#FFFFFF;border-radius:4px;padding:2px 5px}\n'
+          '@media (max-width:600px){.pp-top .uv-tl{gap:.5rem}.pp-top .logo{height:24px!important}.pp-top{flex-wrap:wrap;row-gap:.25rem}.pp-top>span:last-child{flex:1 1 100%;text-align:left!important}}\n'
+          '</style>')
+
+
+def fix_cyber(h):
+    if '<span class="uv-tl"><img class="logo"' in h or h.count(CY_OLD_TOP) != 1:
+        return h
+    m = CY_LOGO.search(h)
+    if not m or m.start() > h.find(CY_OLD_TOP):
+        return h
+    new_top = ('<div class="pp-top"><span class="uv-tl">' + m.group(1)
+               + '<span>医療・介護の現場のためのデジタル新聞</span></span><span id="pp-date"></span></div>')
+    h = h.replace(CY_OLD_TOP, '', 1)
+    h = h[:m.start()] + '<header>' + new_top + h[m.end():]
+    if '.wrap>header>.pp-top' not in h and '</head>' in h:
+        h = h.replace('</head>', CY_CSS + '</head>', 1)
+    return h
+
+
 def run(root='.'):
     n = 0
     for p in sorted(glob.glob(os.path.join(root, '*.html'))):
         t = open(p, encoding='utf-8').read()
-        t2 = fix(t)
+        t2 = fix_cyber(t) if os.path.basename(p).startswith('cyber') else fix(t)
         if t2 != t:
             open(p, 'w', encoding='utf-8').write(t2)
             n += 1

@@ -229,6 +229,7 @@ def put_nav(h, cur, insert_if_missing):
     return h, ('ナビ挿入(%s)' % '＋'.join(done) if done else '!! 挿入位置が見つからない')
 
 GIGI_ART = 'https://claude.ai/code/artifact/9a8233e1-dc26-4415-87d7-3caa667630f5'
+DSRC_ART = 'https://claude.ai/artifact/N5QcYaxoRpmkFbHjt4jN7w'
 
 GIGI_BAND = ('<a class="gigi" href="%s" rel="noopener">'
              '<span class="gigi-ic" aria-hidden="true">\U0001F4D1</span>'
@@ -258,6 +259,10 @@ def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
     src = open(path, encoding='utf-8').read()
     cur = page_key(path)
     h = put_css(src)
+    # 2026-10-20：奥付の「データソース」は claude.ai の非公開アーティファクトを指したままだと公開サイトで開けない。
+    # リポジトリに sources.html があれば、そちらへ付け替える（毎朝の公開でも元に戻らないように）。
+    if DSRC_ART in h and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(path)), 'sources.html')):
+        h = h.replace(DSRC_ART, 'sources.html')
     h = put_paper(h, path)
     h = slim_bn(h, path)
     h, note = put_nav(h, cur, insert_if_missing=(cur is not None))

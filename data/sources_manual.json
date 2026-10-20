@@ -144,6 +144,18 @@
   "congre.co.jp": [
    "コングレ（学会運営事務局）",
    "公的"
+  ],
+  "kk-shinko.com": [
+   "株式会社SHINKO",
+   "企業発表"
+  ],
+  "keiju.co.jp": [
+   "恵寿総合病院（社会医療法人財団董仙会）",
+   "施設公式"
+  ],
+  "smartwatchlife.jp": [
+   "Smart Watch Life",
+   "報道"
   ]
  },
  "ops": [
@@ -1049,6 +1061,95 @@
      "pharm",
      "se"
     ]
+   }
+  },
+  {
+   "id": "add-keiju-20261020",
+   "op": "add",
+   "group": "医療機関・企業の発表",
+   "date": "2026-10-20",
+   "reason": "病院DXの発信が多い施設を定点に（スマートウォッチ300台・RPA 130体超・生成AIの看護サマリなど、8月下旬から15回以上掲載）",
+   "item": {
+    "name": "恵寿総合病院（社会医療法人財団董仙会）",
+    "url": "https://www.keiju.co.jp/news/",
+    "label": "施設公式",
+    "what": "病院自身のDX導入・運用の発表（スマートウォッチによるバイタル自動記録、RPA、生成AI、地域連携）。PR TIMES の董仙会の発表も施設公式として扱う",
+    "freq": "週1",
+    "pages": [
+     "hl",
+     "nurs",
+     "doc",
+     "se",
+     "conn",
+     "admin",
+     "tech"
+    ],
+    "domains": [
+     "keiju.co.jp"
+    ],
+    "paths": [
+     "keiju.co.jp/news/"
+    ],
+    "note": "定点（病院公式）",
+    "kind": "巡回先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-kk-shinko-20261020",
+   "op": "add",
+   "group": "医療機関・企業の発表",
+   "date": "2026-10-20",
+   "reason": "医療・介護向けIT導入の発見用（2026-10-20 ユーザー提案）",
+   "item": {
+    "name": "株式会社SHINKO",
+    "url": "https://www.kk-shinko.com/",
+    "label": "企業発表",
+    "what": "医療・介護向けIT導入のニュースリリース（病院のスマートウォッチ運用、AI見守り介護システム、病院・クリニック向け自動精算機）",
+    "freq": "随時",
+    "pages": [
+     "se",
+     "nurs",
+     "care",
+     "admin"
+    ],
+    "domains": [
+     "kk-shinko.com"
+    ],
+    "paths": [
+     "kk-shinko.com/"
+    ],
+    "note": "導入事例は病院・施設側の発表で確かめてから載せる（企業発表は発見用）",
+    "kind": "参照先",
+    "fixed": false
+   }
+  },
+  {
+   "id": "add-smartwatchlife-20261020",
+   "op": "add",
+   "group": "業界メディア（話題の発見用）",
+   "date": "2026-10-20",
+   "reason": "ウェアラブル・スマートウォッチのヘルスケア機能の発見用（2026-10-20 ユーザー提案）",
+   "item": {
+    "name": "Smart Watch Life",
+    "url": "https://www.smartwatchlife.jp/",
+    "label": "報道",
+    "what": "スマートウォッチ・スマートリングの新製品・海外ニュース（健康管理・ヘルスケア機能の話題の発見用）",
+    "freq": "週1",
+    "pages": [
+     "nurs",
+     "doc",
+     "ovs"
+    ],
+    "domains": [
+     "smartwatchlife.jp"
+    ],
+    "paths": [
+     "smartwatchlife.jp/"
+    ],
+    "note": "発見用のみ。製品レビュー・セール情報は載せない。掲載リンクはメーカー・医療機関・規制当局の一次情報へ（医療機器の承認・効果はPMDA・FDA等で確認）",
+    "kind": "参照先",
+    "fixed": false
    }
   }
  ]

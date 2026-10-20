@@ -230,10 +230,12 @@ def put_nav(h, cur, insert_if_missing):
 
 GIGI_ART = 'https://claude.ai/code/artifact/9a8233e1-dc26-4415-87d7-3caa667630f5'
 DSRC_ART = 'https://claude.ai/artifact/N5QcYaxoRpmkFbHjt4jN7w'
-MK_BG = ('<style id="mk-bg">/* MediKoto bg v1（2026-10-20「背景は限りなく白に近いグレーで」→16:53「#F5F9FC にして」→16:57 トップの職種の枠などクリーム地の箱は白） */'
+MK_BG = ('<style id="mk-bg">/* MediKoto bg v1（2026-10-20「背景は限りなく白に近いグレーで」→16:53「#F5F9FC にして」→16:57 トップの職種の枠などクリーム地の箱は白→17:00「テーマから深く知る」も同じ白地） */'
          '@media (prefers-color-scheme: light){html:not([data-theme="dark"]),html:not([data-theme="dark"]) body{background:#F5F9FC!important}'
          'html:not([data-theme="dark"]) div.mkf-box{background:transparent!important}'
-         'html:not([data-theme="dark"]) a.clean-role,html:not([data-theme="dark"]) div.evcard,html:not([data-theme="dark"]) #pastTg,html:not([data-theme="dark"]) #farTg{background:#FFFFFF!important}}'
+         'html:not([data-theme="dark"]) a.clean-role,html:not([data-theme="dark"]) div.evcard,html:not([data-theme="dark"]) #pastTg,html:not([data-theme="dark"]) #farTg{background:#FFFFFF!important}'
+         'html:not([data-theme="dark"]) .clean-theme-entries a{background:#FFFFFF!important;border:1px solid var(--rule)!important;padding-left:14px!important;padding-right:14px!important;margin-top:-1px}'
+         'html:not([data-theme="dark"]) a.clean-role:hover,html:not([data-theme="dark"]) .clean-theme-entries a:hover{background:#EEF3F7!important}}'
          ':root[data-theme="light"],:root[data-theme="light"] body{background:#F5F9FC!important}</style>\n')
 
 GIGI_BAND = ('<a class="gigi" href="%s" rel="noopener">'

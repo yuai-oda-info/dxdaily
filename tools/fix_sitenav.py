@@ -230,6 +230,10 @@ def put_nav(h, cur, insert_if_missing):
 
 GIGI_ART = 'https://claude.ai/code/artifact/9a8233e1-dc26-4415-87d7-3caa667630f5'
 DSRC_ART = 'https://claude.ai/artifact/N5QcYaxoRpmkFbHjt4jN7w'
+MK_BG = ('<style id="mk-bg">/* MediKoto bg v1（2026-10-20「背景は限りなく白に近いグレーで」） */'
+         '@media (prefers-color-scheme: light){html:not([data-theme="dark"]),html:not([data-theme="dark"]) body{background:#FAFAFA!important}'
+         'html:not([data-theme="dark"]) div.mkf-box{background:transparent!important}}'
+         ':root[data-theme="light"],:root[data-theme="light"] body{background:#FAFAFA!important}</style>\n')
 
 GIGI_BAND = ('<a class="gigi" href="%s" rel="noopener">'
              '<span class="gigi-ic" aria-hidden="true">\U0001F4D1</span>'
@@ -263,6 +267,10 @@ def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
     # リポジトリに sources.html があれば、そちらへ付け替える（毎朝の公開でも元に戻らないように）。
     if DSRC_ART in h and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(path)), 'sources.html')):
         h = h.replace(DSRC_ART, 'sources.html')
+    # 2026-10-20：背景を「限りなく白に近いグレー」#FAFAFA に（全ページ共通・ライト表示だけ。ダークは各ページのまま。検索欄の白は各ページの指定で残る）
+    h = re.sub(r'<style id="mk-bg">.*?</style>\n?', '', h, flags=re.S)
+    k = h.rfind('</body>')
+    h = (h[:k] + MK_BG + h[k:]) if k >= 0 else (h + '\n' + MK_BG)
     # 2026-10-20：検索バーで「その場で」本文検索する findbar v2（findbar.js）を読み込む。旧 v1 はEnterでトップへ移動していた
     if 'id="mkq"' in h and 'findbar.js' not in h and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(path)), 'findbar.js')):
         k = h.rfind('</body>')

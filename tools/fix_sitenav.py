@@ -230,10 +230,10 @@ def put_nav(h, cur, insert_if_missing):
 
 GIGI_ART = 'https://claude.ai/code/artifact/9a8233e1-dc26-4415-87d7-3caa667630f5'
 DSRC_ART = 'https://claude.ai/artifact/N5QcYaxoRpmkFbHjt4jN7w'
-MK_BG = ('<style id="mk-bg">/* MediKoto bg v1（2026-10-20「背景は限りなく白に近いグレーで」） */'
-         '@media (prefers-color-scheme: light){html:not([data-theme="dark"]),html:not([data-theme="dark"]) body{background:#FAFAFA!important}'
+MK_BG = ('<style id="mk-bg">/* MediKoto bg v1（2026-10-20「背景は限りなく白に近いグレーで」→16:53「#F5F9FC にして」） */'
+         '@media (prefers-color-scheme: light){html:not([data-theme="dark"]),html:not([data-theme="dark"]) body{background:#F5F9FC!important}'
          'html:not([data-theme="dark"]) div.mkf-box{background:transparent!important}}'
-         ':root[data-theme="light"],:root[data-theme="light"] body{background:#FAFAFA!important}</style>\n')
+         ':root[data-theme="light"],:root[data-theme="light"] body{background:#F5F9FC!important}</style>\n')
 
 GIGI_BAND = ('<a class="gigi" href="%s" rel="noopener">'
              '<span class="gigi-ic" aria-hidden="true">\U0001F4D1</span>'

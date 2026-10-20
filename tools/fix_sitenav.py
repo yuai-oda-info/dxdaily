@@ -263,6 +263,11 @@ def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
     # リポジトリに sources.html があれば、そちらへ付け替える（毎朝の公開でも元に戻らないように）。
     if DSRC_ART in h and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(path)), 'sources.html')):
         h = h.replace(DSRC_ART, 'sources.html')
+    # 2026-10-20：検索バーで「その場で」本文検索する findbar v2（findbar.js）を読み込む。旧 v1 はEnterでトップへ移動していた
+    if 'id="mkq"' in h and 'findbar.js' not in h and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(path)), 'findbar.js')):
+        k = h.rfind('</body>')
+        tag = '<script src="findbar.js" defer></script>\n'
+        h = (h[:k] + tag + h[k:]) if k >= 0 else (h + '\n' + tag)
     h = put_paper(h, path)
     h = slim_bn(h, path)
     h, note = put_nav(h, cur, insert_if_missing=(cur is not None))

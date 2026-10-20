@@ -417,16 +417,61 @@ def ensure_vars(t):
 
 # ---------- R. 職種リンク（#roles）をサイト内のファイルに ----------
 ROLE_FILES = {'nursing': 'nursing.html', 'doctors': 'doctors.html', 'pharm': 'pharmacists.html', 'connect': 'connect.html',
-              'se': 'hospitalit.html', 'nutrition': 'nutrition.html', 'reim': 'reimbursement.html'}
+              'se': 'hospitalit.html', 'nutrition': 'nutrition.html', 'reim': 'reimbursement.html',
+              'care': 'care.html', 'admin': 'office.html', 'rehab': 'rehab.html', 'tech': 'medtech.html'}   # 2026-10-20追加
+
+
+_ROOT = ['.']   # run() が入れる。付け替え先のファイルが無いとき（公開側がまだそのページを作っていない日）は claude.ai のまま残す（2026-10-20）
+
+
+def _have(fn):
+    return os.path.exists(os.path.join(_ROOT[0], fn))
 
 
 def fix_role_links(t, report):
     n = 0
     for rid, fn in ROLE_FILES.items():
-        t, k = re.subn(r'(<a id="%s" href=")https://claude\.ai/[^"]*(")' % rid, r'\g<1>%s\2' % fn, t)
+        if not _have(fn):
+            continue
+        t, k = re.subn(r'(<a\b[^>]*?\bid="%s"[^>]*?\bhref=")https://claude\.ai/[^"]*(")' % rid, r'\g<1>%s\2' % fn, t)   # 2026-10-20：v6 の clean-role にも効くように
         n += k
     if n:
         report.append('一面の職種リンク %d 件が claude.ai を指していたので、サイト内のファイルに戻した' % n)
+    return t
+
+
+# ---------- R2. ポータル v6（2026-10-20）：data-u="キー" を持つ MediKoto内リンクをサイト内のファイルに ----------
+DATAU_FILES = {'news': 'news.html', 'study': 'study.html', 'weekly': 'weekly-study.html', 'gov': 'gov.html', 'cyber': 'cyber.html',
+               'infection': 'infection.html', 'reim': 'reimbursement.html', 'global': 'global.html',
+               'nursing': 'nursing.html', 'doctors': 'doctors.html', 'pharm': 'pharmacists.html', 'connect': 'connect.html',
+               'se': 'hospitalit.html', 'nutrition': 'nutrition.html', 'care': 'care.html', 'admin': 'office.html',
+               'rehab': 'rehab.html', 'tech': 'medtech.html'}
+
+
+def fix_datau_links(t, report):
+    n = 0
+    # data-u="キー" の href（claude.ai）を覚えておき、同じURLを指す data-u 無しのリンク（一面の見出し等）も同じ固定入口へ
+    seen = {}
+    for m in re.finditer(r'<a\b[^>]*?\bdata-u="([a-z]+)"[^>]*?\bhref="(https://claude\.ai/[^"#]*)', t):
+        if m.group(1) in DATAU_FILES and _have(DATAU_FILES[m.group(1)]):
+            seen.setdefault(m.group(2), DATAU_FILES[m.group(1)])
+    def rep(m):
+        nonlocal n
+        fn = DATAU_FILES.get(m.group(2))
+        if not fn or not _have(fn):
+            return m.group(0)
+        n += 1
+        return m.group(1) + fn + (m.group(3) or '') + m.group(4)
+    t = re.sub(r'(<a\b[^>]*?\bdata-u="([a-z]+)"[^>]*?\bhref=")https://claude\.ai/[^"#]*(#[^"]*)?(")', rep, t)
+    m = re.search(r'<script type="application/json" id="archive-data">', t)
+    cut = m.start() if m else len(t)
+    body, tail = t[:cut], t[cut:]
+    for u, fn in seen.items():
+        body, k = re.subn(r'href="' + re.escape(u) + r'(#[^"]*)?"', lambda mm: 'href="%s%s"' % (fn, mm.group(1) or ''), body)
+        n += k
+    t = body + tail
+    if n:
+        report.append('ポータル v6 の data-u・当日号リンク %d 件が claude.ai を指していたので、サイト内のファイルに戻した' % n)
     return t
 
 
@@ -561,7 +606,9 @@ def run(root):
     t, near, tot = dedupe(t, base, report)
     t, top3 = add_top3(t, root, latest, report)
     t, nvars = ensure_vars(t)
+    _ROOT[0] = root
     t = fix_role_links(t, report)
+    t = fix_datau_links(t, report)   # 2026-10-20：ポータル v6
     if os.path.exists(os.path.join(root, 'nutrition-%s.html' % latest)):
         t = t.replace('朝礼でそのまま読める8題・約10分。司会用の台本つき。', '朝礼でそのまま読める9題・約11分。司会用の台本つき。')
     if '/* mk-reldate' in t:   # 旧版（v1）が入っていれば今の版に置き換える
@@ -580,6 +627,11 @@ def run(root):
     out.append('OK: ポータル検証（作成日 %s／締切表 %s／今日まず読む3件 %s／栄養の色変数 %s／作成日時 %s／日付は閲覧時に再計算）'
                % (base.isoformat(), ('30日以内 %d・全 %d 行' % (near, tot)) if tot is not None else '表なし', top3, '追加' if nvars else 'あり',
                   '更新' if stamped else '変更なし'))
+    # リンクの付け替え（claude.ai → サイト内）は公開手順の一部なので、不整合には数えない（2026-10-20）
+    links = [r for r in report if 'claude.ai を指していた' in r]
+    report = [r for r in report if r not in links]
+    for r in links:
+        out.append('  公開: ' + r)
     if report:
         for r in report:
             out.append('  検証: ' + r)

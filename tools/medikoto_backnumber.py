@@ -42,6 +42,10 @@ TABLES = [
     ('bn-connect',  'connect',       'connect', 'connect_url'),
     ('bn-se',       'hospitalit',    'se',      'se_url'),
     ('bn-nutrition', 'nutrition',    'nutrition', 'nutrition_url'),
+    ('bn-care', 'care', 'care', 'care_url'),   # 2026-10-20追加
+    ('bn-admin', 'office', 'admin', 'admin_url'),   # 2026-10-20追加
+    ('bn-rehab', 'rehab', 'rehab', 'rehab_url'),   # 2026-10-20追加
+    ('bn-tech', 'medtech', 'tech', 'tech_url'),   # 2026-10-20追加
     ('bn-reim',     'reimbursement', 'reim',    'reim_url'),
     ('bn-gov',      'gov',           'gov',     'gov_url'),
 ]
@@ -147,6 +151,46 @@ NEW_FRAMES = {
 <div class="bnc bnc-nutrition">
 <details class="bnfold"><summary><h4 class="sub4">MediKoto Nutrition（管理栄養士・給食部門）のバックナンバー</h4></summary>
 <div id="bn-nutrition"><div class="tablewrap"><table>
+<thead><tr><th>日付</th><th>内容</th><th>リンク</th></tr></thead>
+<tbody>
+</tbody>
+</table></div></div>
+</details></div>
+'''),
+    'bn-care': ('bnc-nutrition', '''
+<div class="bnc bnc-care">
+<details class="bnfold"><summary><h4 class="sub4">MediKoto Care（介護職）のバックナンバー</h4></summary>
+<div id="bn-care"><div class="tablewrap"><table>
+<thead><tr><th>日付</th><th>内容</th><th>リンク</th></tr></thead>
+<tbody>
+</tbody>
+</table></div></div>
+</details></div>
+'''),
+    'bn-admin': ('bnc-care', '''
+<div class="bnc bnc-admin">
+<details class="bnfold"><summary><h4 class="sub4">MediKoto Office（医事・事務）のバックナンバー</h4></summary>
+<div id="bn-admin"><div class="tablewrap"><table>
+<thead><tr><th>日付</th><th>内容</th><th>リンク</th></tr></thead>
+<tbody>
+</tbody>
+</table></div></div>
+</details></div>
+'''),
+    'bn-rehab': ('bnc-admin', '''
+<div class="bnc bnc-rehab">
+<details class="bnfold"><summary><h4 class="sub4">MediKoto Rehab（リハビリ）のバックナンバー</h4></summary>
+<div id="bn-rehab"><div class="tablewrap"><table>
+<thead><tr><th>日付</th><th>内容</th><th>リンク</th></tr></thead>
+<tbody>
+</tbody>
+</table></div></div>
+</details></div>
+'''),
+    'bn-tech': ('bnc-rehab', '''
+<div class="bnc bnc-tech">
+<details class="bnfold"><summary><h4 class="sub4">MediKoto MedTech（医療技術）のバックナンバー</h4></summary>
+<div id="bn-tech"><div class="tablewrap"><table>
 <thead><tr><th>日付</th><th>内容</th><th>リンク</th></tr></thead>
 <tbody>
 </tbody>

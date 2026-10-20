@@ -351,14 +351,29 @@ details.notes p { margin:.5rem 0 .2rem; line-height:1.85; }
 <p class="note">※ 日付・金額・締切は各出典で確認済み。数値は発表時点のもので、最終確認は必ず公式ページで行ってください。</p>
 <details class="notes"><summary>読み上げ原稿</summary><p>本日の出典一覧です。厚生労働省の公表資料、自治体の公式ページ、企業の公式プレスリリース、業界メディアの記事から、日付や金額を確認できたものだけを掲載しています。金額や締切は発表時点のものですので、申請などの最終判断の際は、必ずリンク先の公式ページで最新の情報をご確認ください。本日の内容は以上です。ご清聴ありがとうございました。明日もまたお会いしましょう。</p></details>
 </section>
-<nav class="sitenav bottom" aria-label="MediKotoのページ"><a href="./" style="--sn-c:var(--sn-portal)">ポータル</a><a href="news.html" style="--sn-c:var(--sn-news)" class="cur" aria-current="page">ヘッドライン</a><a href="study.html" style="--sn-c:var(--sn-study)">今日の勉強会</a><a href="weekly-study.html" style="--sn-c:var(--sn-study)">事例DX</a><a href="gov.html" style="--sn-c:var(--sn-gov)">国の医療DX</a><a href="cyber.html" style="--sn-c:var(--sn-cyb)">サイバーDX</a><a href="infection.html" style="--sn-c:var(--sn-inf)">感染症DX</a><a href="nursing.html" style="--sn-c:var(--sn-nurs)">看護</a><a href="doctors.html" style="--sn-c:var(--sn-doc)">医師</a><a href="pharmacists.html" style="--sn-c:var(--sn-pharm)">薬剤師</a><a href="connect.html" style="--sn-c:var(--sn-conn)">相談支援・連携</a><a href="hospitalit.html" style="--sn-c:var(--sn-se)">病院SE</a><a href="nutrition.html" style="--sn-c:var(--sn-nutr)">栄養</a><a href="reimbursement.html" style="--sn-c:var(--sn-reim)">診療報酬</a><a href="global.html" style="--sn-c:var(--sn-ovs)">海外DX</a></nav>
+<nav class="sitenav bottom" aria-label="MediKotoのページ"><a href="./" style="--sn-c:var(--sn-portal)">ポータル</a><a href="news.html" style="--sn-c:var(--sn-news)" class="cur" aria-current="page">ヘッドライン</a><a href="study.html" style="--sn-c:var(--sn-study)">今日の勉強会</a><a href="weekly-study.html" style="--sn-c:var(--sn-study)">事例DX</a><a href="gov.html" style="--sn-c:var(--sn-gov)">国の医療DX</a><a href="cyber.html" style="--sn-c:var(--sn-cyb)">サイバーDX</a><a href="infection.html" style="--sn-c:var(--sn-inf)">感染症DX</a><a href="nursing.html" style="--sn-c:var(--sn-nurs)">看護</a><a href="doctors.html" style="--sn-c:var(--sn-doc)">医師</a><a href="pharmacists.html" style="--sn-c:var(--sn-pharm)">薬剤師</a><a href="connect.html" style="--sn-c:var(--sn-conn)">相談支援・連携</a><a href="hospitalit.html" style="--sn-c:var(--sn-se)">病院SE</a><a href="nutrition.html" style="--sn-c:var(--sn-nutr)">栄養</a><a href="care.html" style="--sn-c:var(--sn-care)">介護職</a><a href="office.html" style="--sn-c:var(--sn-admin)">医事・事務</a><a href="rehab.html" style="--sn-c:var(--sn-rehab)">リハビリ</a><a href="medtech.html" style="--sn-c:var(--sn-tech)">医療技術</a><a href="reimbursement.html" style="--sn-c:var(--sn-reim)">診療報酬</a><a href="global.html" style="--sn-c:var(--sn-ovs)">海外DX</a></nav>
 <footer class="credit"><span style="color:var(--head);font-weight:700">DX / AI / SECURITY / BCP</span><br>© 2026 Information Management Office, Oda Hospital, Yuaikai Medical Corporation</footer>
 </div>
 
 
 
-<style>/* MediKoto sitenav v12 */
-.sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-nutr:#D9603A;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-ovs:#4E6E8E;--sn-cyb:#2F3B47;--sn-inf:#B5382D;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
+<style>/* MediKoto papernav v2（2026-10-17：共通ナビを新聞型に。枠と塗りをやめた色文字を細い罫で挟み、現在のページは黒文字＋色の下線。スマホは横に流れる1行で、ポータルの「ページ一覧」ボタンは使わない） */
+:root:not(#x) nav.sitenav{display:flex!important;flex-wrap:wrap!important;justify-content:flex-start!important;gap:.15rem 1.1rem!important;
+  grid-template-columns:none!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:.45rem 0!important;}
+:root:not(#x) nav.sitenav.top{border-top:2px solid var(--ink,#1A242E)!important;border-bottom:1px solid var(--ink,#1A242E)!important;margin:.6rem 0 1.1rem!important;}
+:root:not(#x) nav.sitenav.bottom{border-top:1px solid var(--rule,#D9DDE0)!important;margin:2rem 0 0!important;padding:.6rem 0 0!important;}
+:root:not(#x) nav.sitenav a,:root:not(#x) nav.sitenav a:not(.cur){flex:none!important;min-width:0;border:0!important;border-radius:0!important;
+  background:transparent!important;padding:.15rem 0!important;font-size:.8rem!important;line-height:1.6;color:var(--sn-c)!important;overflow:visible!important;}
+:root:not(#x) nav.sitenav.bottom a,:root:not(#x) nav.sitenav.bottom a:not(.cur){font-size:.72rem!important;}
+:root:not(#x) nav.sitenav a.cur{color:var(--ink,#1A242E)!important;background:transparent!important;border-bottom:2px solid var(--sn-c)!important;}
+nav.sitenav a:hover{text-decoration:underline;}
+@media (max-width:640px){:root:not(#x) nav.sitenav.top{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);}
+  nav.sitenav.top::-webkit-scrollbar{display:none;}
+  :root:not(#x) .mkfold:not(.mkfold-gov){display:none!important;}}
+</style>
+<style>/* MediKoto sitenav v13 */
+.sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-nutr:#D9603A;--sn-care:#176F68;--sn-admin:#765098;--sn-rehab:#4F7A12;--sn-tech:#245F89;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-ovs:#4E6E8E;--sn-cyb:#2F3B47;--sn-inf:#B5382D;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
   display:flex;flex-wrap:wrap;gap:.35rem;border:1px solid var(--sn-line);border-radius:12px;padding:.45rem;margin:.6rem 0 0;font-family:"Zen Kaku Gothic New","BIZ UDPGothic","BIZ UDPゴシック",sans-serif;}
 .sitenav a{flex:1 1 auto;text-align:center;font-size:.8rem;font-weight:700;text-decoration:none;border:1px solid var(--sn-line);border-radius:8px;padding:.4rem .5rem;background:var(--sn-bg);color:var(--sn-c);white-space:nowrap;line-height:1.5;}
 .sitenav a:hover{border-color:var(--sn-c);}
@@ -366,13 +381,13 @@ details.notes p { margin:.5rem 0 .2rem; line-height:1.85; }
 .sitenav a:focus-visible{outline:2px solid var(--sn-c);outline-offset:2px;}
 .sitenav.top{margin:.6rem 0 1.1rem;}
 .sitenav.bottom{margin:2rem 0 0;}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-nutr:#F19B7C;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-cyb:#C5CFD9;--sn-inf:#F2998E;--sn-bg:#18232B;--sn-line:#2E3C46;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-nutr:#F19B7C;--sn-care:#7CD4BA;--sn-admin:#D2B0F0;--sn-rehab:#A9D46A;--sn-tech:#95C5EC;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-cyb:#C5CFD9;--sn-inf:#F2998E;--sn-bg:#18232B;--sn-line:#2E3C46;}
   :root:not([data-theme="light"]) .sitenav a.cur{color:#10181E;}}
-:root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-nutr:#F19B7C;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-cyb:#C5CFD9;--sn-inf:#F2998E;--sn-bg:#18232B;--sn-line:#2E3C46;}
+:root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-nutr:#F19B7C;--sn-care:#7CD4BA;--sn-admin:#D2B0F0;--sn-rehab:#A9D46A;--sn-tech:#95C5EC;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-cyb:#C5CFD9;--sn-inf:#F2998E;--sn-bg:#18232B;--sn-line:#2E3C46;}
 :root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
 @media (min-width:641px){.sitenav a{padding:.4rem .42rem;font-size:.8rem;}}
-/* 15項目：PCは8列×2段、中幅は5列×3段、スマホは3列×5段（全部同じ大きさ。2026-10-16） */
-@media (min-width:901px){.sitenav{display:grid;grid-template-columns:repeat(8,1fr);}.sitenav a{flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;padding:.4rem .3rem;font-size:.78rem;}}
+/* 19項目：PCは10列×2段、中幅は5列×4段、スマホは3列×7段（全部同じ大きさ。2026-10-20） */
+@media (min-width:901px){.sitenav{display:grid;grid-template-columns:repeat(10,1fr);}.sitenav a{flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;padding:.4rem .3rem;font-size:.78rem;}}
 @media (min-width:641px) and (max-width:900px){.sitenav{display:grid;grid-template-columns:repeat(5,1fr);}.sitenav a{flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:380px){.sitenav{grid-template-columns:repeat(2,1fr);}}
@@ -391,6 +406,30 @@ details.notes p { margin:.5rem 0 .2rem; line-height:1.85; }
   :root:not([data-theme="light"]) .bnc-nutrition .sub4{color:#F19B7C;}}
 :root[data-theme="dark"] .bnc-nutrition{--bk:#F19B7C;}
 :root[data-theme="dark"] .bnc-nutrition .sub4{color:#F19B7C;}
+.bnc-care{--bk:var(--care,#176F68);background:transparent;}
+.bnc-care .sub4{color:var(--care,#176F68);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-care{--bk:#7CD4BA;}
+  :root:not([data-theme="light"]) .bnc-care .sub4{color:#7CD4BA;}}
+:root[data-theme="dark"] .bnc-care{--bk:#7CD4BA;}
+:root[data-theme="dark"] .bnc-care .sub4{color:#7CD4BA;}
+.bnc-admin{--bk:var(--admin,#765098);background:transparent;}
+.bnc-admin .sub4{color:var(--admin,#765098);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-admin{--bk:#D2B0F0;}
+  :root:not([data-theme="light"]) .bnc-admin .sub4{color:#D2B0F0;}}
+:root[data-theme="dark"] .bnc-admin{--bk:#D2B0F0;}
+:root[data-theme="dark"] .bnc-admin .sub4{color:#D2B0F0;}
+.bnc-rehab{--bk:var(--rehab,#4F7A12);background:transparent;}
+.bnc-rehab .sub4{color:var(--rehab,#4F7A12);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-rehab{--bk:#A9D46A;}
+  :root:not([data-theme="light"]) .bnc-rehab .sub4{color:#A9D46A;}}
+:root[data-theme="dark"] .bnc-rehab{--bk:#A9D46A;}
+:root[data-theme="dark"] .bnc-rehab .sub4{color:#A9D46A;}
+.bnc-tech{--bk:var(--tech,#245F89);background:transparent;}
+.bnc-tech .sub4{color:var(--tech,#245F89);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-tech{--bk:#95C5EC;}
+  :root:not([data-theme="light"]) .bnc-tech .sub4{color:#95C5EC;}}
+:root[data-theme="dark"] .bnc-tech{--bk:#95C5EC;}
+:root[data-theme="dark"] .bnc-tech .sub4{color:#95C5EC;}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bnc-global{--bk:#8FB0CC;}
   :root:not([data-theme="light"]) .bnc-global .sub4{color:#8FB0CC;}}
 :root[data-theme="dark"] .bnc-global{--bk:#8FB0CC;}
@@ -408,23 +447,8 @@ details.notes p { margin:.5rem 0 .2rem; line-height:1.85; }
 .gigi-t{display:block;font-family:"Zen Kaku Gothic New","BIZ UDPGothic",sans-serif;font-weight:700;
   font-size:1.08rem;line-height:1.5;color:var(--reim,#5B3FA6);margin:.05rem 0 .15rem;}
 .gigi-d{display:block;font-size:.82rem;color:var(--sub,#4A5A66);line-height:1.7;}
-.gigi-go{flex:none;font-weight:700;font-size:.88rem;color:var(--paper,#FBFAF7);
+.gigi-go{flex:none;font-weight:700;font-size:.88rem;color:var(--paper,#FFFFFF);
   background:var(--reim,#5B3FA6);border-radius:999px;padding:.32rem 1.1rem;white-space:nowrap;}
 @media (max-width:560px){.gigi-go{width:100%;text-align:center;}}
-</style>
-<style>/* MediKoto papernav v2（2026-10-17：共通ナビを新聞型に。枠と塗りをやめた色文字を細い罫で挟み、現在のページは黒文字＋色の下線。スマホは横に流れる1行で、ポータルの「ページ一覧」ボタンは使わない） */
-:root:not(#x) nav.sitenav{display:flex!important;flex-wrap:wrap!important;justify-content:flex-start!important;gap:.15rem 1.1rem!important;
-  grid-template-columns:none!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:.45rem 0!important;}
-:root:not(#x) nav.sitenav.top{border-top:2px solid var(--ink,#1A242E)!important;border-bottom:1px solid var(--ink,#1A242E)!important;margin:.6rem 0 1.1rem!important;}
-:root:not(#x) nav.sitenav.bottom{border-top:1px solid var(--rule,#D9DDE0)!important;margin:2rem 0 0!important;padding:.6rem 0 0!important;}
-:root:not(#x) nav.sitenav a,:root:not(#x) nav.sitenav a:not(.cur){flex:none!important;min-width:0;border:0!important;border-radius:0!important;
-  background:transparent!important;padding:.15rem 0!important;font-size:.8rem!important;line-height:1.6;color:var(--sn-c)!important;overflow:visible!important;}
-:root:not(#x) nav.sitenav.bottom a,:root:not(#x) nav.sitenav.bottom a:not(.cur){font-size:.72rem!important;}
-:root:not(#x) nav.sitenav a.cur{color:var(--ink,#1A242E)!important;background:transparent!important;border-bottom:2px solid var(--sn-c)!important;}
-nav.sitenav a:hover{text-decoration:underline;}
-@media (max-width:640px){:root:not(#x) nav.sitenav.top{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;
-  -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);}
-  nav.sitenav.top::-webkit-scrollbar{display:none;}
-  :root:not(#x) .mkfold:not(.mkfold-gov){display:none!important;}}
 </style>
 </body></html>

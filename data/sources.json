@@ -3103,7 +3103,7 @@
      "status": "active",
      "added": "2026-10-16",
      "added_reason": "栄養ページ（MediKoto Nutrition）の新設に合わせて追加",
-     "last_used": "2026-10-16"
+     "last_used": "2026-10-20"
     }
    ]
   },
@@ -3445,7 +3445,7 @@
      "auto": true,
      "added": "2026-10-08",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-14"
+     "last_used": "2026-10-20"
     },
     {
      "name": "dimesociety.org",
@@ -3514,7 +3514,7 @@
      "auto": true,
      "added": "2026-10-09",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-10"
+     "last_used": "2026-10-20"
     },
     {
      "name": "jsqsh.jp",
@@ -3779,7 +3779,7 @@
      "auto": true,
      "added": "2026-10-11",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-13"
+     "last_used": "2026-10-20"
     },
     {
      "name": "hospital.fujita-hu.ac.jp",
@@ -4226,7 +4226,7 @@
      "auto": true,
      "added": "2026-10-17",
      "added_reason": "自動追加（出典に載せたURLの発信元）",
-     "last_used": "2026-10-19"
+     "last_used": "2026-10-20"
     },
     {
      "name": "cureus.com",
@@ -4575,6 +4575,115 @@
      ],
      "domains": [
       "value-press.com"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-20",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-20"
+    },
+    {
+     "name": "roken.or.jp",
+     "url": "https://roken.or.jp/",
+     "label": "公的",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "care",
+      "conn",
+      "hl"
+     ],
+     "domains": [
+      "roken.or.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-20",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-20"
+    },
+    {
+     "name": "ja-ces.or.jp",
+     "url": "https://ja-ces.or.jp/",
+     "label": "公的",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "cyb",
+      "tech"
+     ],
+     "domains": [
+      "ja-ces.or.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-20",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-20"
+    },
+    {
+     "name": "jamt.or.jp",
+     "url": "https://jamt.or.jp/",
+     "label": "公的",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "tech"
+     ],
+     "domains": [
+      "jamt.or.jp"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-20",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-20"
+    },
+    {
+     "name": "pt-ot-st.net",
+     "url": "https://pt-ot-st.net/",
+     "label": "報道",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "hl",
+      "rehab"
+     ],
+     "domains": [
+      "pt-ot-st.net"
+     ],
+     "note": "",
+     "kind": "参照先",
+     "fixed": false,
+     "status": "active",
+     "auto": true,
+     "added": "2026-10-20",
+     "added_reason": "自動追加（出典に載せたURLの発信元）",
+     "last_used": "2026-10-20"
+    },
+    {
+     "name": "rehab.jmir.org",
+     "url": "https://rehab.jmir.org/",
+     "label": "報道",
+     "what": "出典として載せた記事から自動で追加しました（内容は週1回の見直しで書き足します）",
+     "freq": "随時",
+     "pages": [
+      "rehab"
+     ],
+     "domains": [
+      "rehab.jmir.org"
      ],
      "note": "",
      "kind": "参照先",
@@ -6002,6 +6111,36 @@
    "date": "2026-10-20",
    "action": "追加",
    "name": "value-press.com",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-20",
+   "action": "追加",
+   "name": "roken.or.jp",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-20",
+   "action": "追加",
+   "name": "ja-ces.or.jp",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-20",
+   "action": "追加",
+   "name": "jamt.or.jp",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-20",
+   "action": "追加",
+   "name": "pt-ot-st.net",
+   "reason": "自動追加（出典に載せたURLの発信元）"
+  },
+  {
+   "date": "2026-10-20",
+   "action": "追加",
+   "name": "rehab.jmir.org",
    "reason": "自動追加（出典に載せたURLの発信元）"
   }
  ],

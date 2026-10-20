@@ -42,7 +42,8 @@ DAY_PAGES = [
     ('news', 'ヘッドライン'), ('study', '今日の勉強会'), ('weekly-study', '事例DX'),
     ('gov', '国の医療DX'), ('cyber', 'サイバーDX'), ('infection', '感染症DX'),
     ('nursing', '看護'), ('doctors', '医師'), ('pharm', '薬剤師'),
-    ('connect', '相談支援・連携'), ('hospitalit', '病院SE'), ('reimbursement', '診療報酬'),
+    ('connect', '相談支援・連携'), ('hospitalit', '病院SE'), ('nutrition', '栄養'),
+    ('care', '介護職'), ('office', '医事・事務'), ('rehab', 'リハビリ'), ('medtech', '医療技術'), ('reimbursement', '診療報酬'),
     ('global', '海外DX'),
 ]
 
@@ -265,6 +266,8 @@ def patch_portal(root):
     if m and GUIDE not in m.group(1):
         h = h[:m.end() - 4] + CHIP + h[m.end() - 4:]
         msgs.append('OK: RSS: ショートカット行に「RSS配信」を入れた')
+    elif not m and ('rss.html' in h or 'id="all-functions"' in h):
+        msgs.append('OK: RSS: ポータル v6（「紙面をすべて見る」に RSS配信 の入口あり）')   # 2026-10-20
     elif not m:
         msgs.append('!! RSS: ショートカット行（p.shortcut）が見つからない')
     if h != h0:

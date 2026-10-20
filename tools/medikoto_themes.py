@@ -32,6 +32,10 @@ PAGE_FILES = [  # キー, ファイル名の先頭（固定入口 X.html と保�
     ('gov', ['gov']), ('cyb', ['cyber']), ('inf', ['infection']), ('nurs', ['nursing']),
     ('doc', ['doctors']), ('pharm', ['pharmacists', 'pharm']), ('conn', ['connect']), ('se', ['hospitalit']),
     ('nutr', ['nutrition']),   # 2026-10-16追加（MediKoto Nutrition）
+    ('care', ['care']),   # 2026-10-20追加
+    ('admin', ['office']),   # 2026-10-20追加
+    ('rehab', ['rehab']),   # 2026-10-20追加
+    ('tech', ['medtech']),   # 2026-10-20追加
     ('reim', ['reimbursement', 'gigikaishaku']), ('ovs', ['global']),
 ]
 SEL = [  # キー, 表示名, 色, 一覧の掲載ページキー, URL, 更新, 補足
@@ -48,16 +52,20 @@ SEL = [  # キー, 表示名, 色, 一覧の掲載ページキー, URL, 更新, 
     ('conn', '相談支援・連携', 'sn-conn', 'conn', 'connect.html', '毎日更新', ''),
     ('se', '病院SE', 'sn-se', 'se', 'hospitalit.html', '毎日更新', ''),
     ('nutr', '栄養', 'sn-nutr', 'nutr', 'nutrition.html', '毎日更新', '管理栄養士・給食部門向け。DXに関係する話題だけを載せるため、学会・団体と行政の資料が中心で、企業発表は少なめです。'),
+    ('care', '介護職', 'sn-care', 'care', 'care.html', '毎日更新', '介護職・介護現場の管理者向け。介護記録・見守り・申し送り・業務改善のDX。'),
+    ('admin', '医事・事務', 'sn-admin', 'admin', 'office.html', '毎日更新', '医事課・受付・会計・総務向け。資格確認・請求実務・文書作成・業務自動化。'),
+    ('rehab', 'リハビリ', 'sn-rehab', 'rehab', 'rehab.html', '毎日更新', 'PT・OT・ST向け。リハ記録・評価・訓練支援・退院後の連携のDX。'),
+    ('tech', '医療技術', 'sn-tech', 'tech', 'medtech.html', '毎日更新', '放射線・検査・臨床工学向け。画像AI・検査自動化・医療機器管理・部門間の情報共有。'),
     ('reim', '診療報酬', 'sn-reim', 'reim', 'reimbursement.html', '毎日更新', '点数・要件・期限は厚生労働省と厚生局の原典で確かめ、民間の解説には「報道」のラベルを付けます。'),
     ('ovs', '海外DX', 'sn-ovs', 'ovs', 'global.html', '毎日更新', '各ページに載った海外の記事を集めた面です。'),
 ]
 LABELS = {'公的': 'pub', '施設公式': 'fac', '企業発表': 'ent', '報道': 'med', '研究': 'res'}
 PNAME = {'portal': 'ポータル', 'hl': 'ヘッドライン', 'gov': '国の医療DX', 'cyb': 'サイバーDX', 'inf': '感染症DX', 'nurs': '看護', 'doc': '医師',
-         'pharm': '薬剤師', 'conn': '相談支援・連携', 'se': '病院SE', 'nutr': '栄養', 'reim': '診療報酬', 'ovs': '海外DX'}
+         'pharm': '薬剤師', 'conn': '相談支援・連携', 'se': '病院SE', 'nutr': '栄養', 'care': '介護職', 'admin': '医事・事務', 'rehab': 'リハビリ', 'tech': '医療技術', 'reim': '診療報酬', 'ovs': '海外DX'}
 PCOL = {'portal': 'sn-portal', 'hl': 'sn-news', 'gov': 'sn-gov', 'cyb': 'sn-cyb', 'inf': 'sn-inf', 'nurs': 'sn-nurs', 'doc': 'sn-doc',
-        'pharm': 'sn-pharm', 'conn': 'sn-conn', 'se': 'sn-se', 'nutr': 'sn-nutr', 'reim': 'sn-reim', 'ovs': 'sn-ovs'}
+        'pharm': 'sn-pharm', 'conn': 'sn-conn', 'se': 'sn-se', 'nutr': 'sn-nutr', 'care': 'sn-care', 'admin': 'sn-admin', 'rehab': 'sn-rehab', 'tech': 'sn-tech', 'reim': 'sn-reim', 'ovs': 'sn-ovs'}
 SCAN_KEY_TO_PAGE = {'portal': 'portal', 'news': 'hl', 'study': 'hl', 'weekly': 'hl', 'gov': 'gov', 'cyb': 'cyb', 'inf': 'inf', 'nurs': 'nurs',
-                    'doc': 'doc', 'pharm': 'pharm', 'conn': 'conn', 'se': 'se', 'nutr': 'nutr', 'reim': 'reim', 'ovs': 'ovs'}
+                    'doc': 'doc', 'pharm': 'pharm', 'conn': 'conn', 'se': 'se', 'nutr': 'nutr', 'care': 'care', 'admin': 'admin', 'rehab': 'rehab', 'tech': 'tech', 'reim': 'reim', 'ovs': 'ovs'}
 E = lambda s: H.escape(s or '', quote=True)
 
 def page_of(fn):
@@ -430,6 +438,8 @@ def portal(root, frag, today):
     m = re.search(r'<a class="row" id="gov"[^>]*>.*?</a>', x, re.S)
     if m:
         x = x[:m.end()] + '\n' + row + x[m.end():]
+    elif 'id="themes-home"' in x:
+        notes.append('OK: テーマ: ポータル v6（#themes-home にサイバーDX・感染症DXの入口あり）のため THEME MAP の行は足さない')   # 2026-10-20
     else:
         notes.append('!! テーマ: 一面に「国が進める医療DX」の行が無い')
     # バックナンバー2表（国の医療DXの表の下）

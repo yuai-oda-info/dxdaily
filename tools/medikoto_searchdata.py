@@ -21,7 +21,7 @@ MAXLEN = 6000
 # ファイル名の接頭辞 → search-data の k（ポータルの PG と同じ鍵）
 PREFIX_K = [
     ('news', 'news'), ('study', 'study'), ('nursing', 'nursing'), ('doctors', 'doctors'), ('pharm', 'pharm'),
-    ('connect', 'connect'), ('hospitalit', 'se'), ('nutrition', 'nutrition'), ('reimbursement', 'reim'), ('global', 'global'),
+    ('connect', 'connect'), ('hospitalit', 'se'), ('nutrition', 'nutrition'), ('care', 'care'), ('office', 'admin'), ('rehab', 'rehab'), ('medtech', 'tech'), ('reimbursement', 'reim'), ('global', 'global'),   # 2026-10-20：追加4職種
 ]
 K_ORDER = [k for _, k in PREFIX_K]
 NUTR = {'c': '#D9603A', 'dc': '#F19B7C'}
@@ -87,6 +87,18 @@ def patch_search_ui(x):
          ':root[data-theme="dark"] .mkf-tag[data-k="nutrition"]'),
         ('"se": "病院SE", "reim": "診療報酬"', '"se": "病院SE", "nutrition": "栄養", "reim": "診療報酬"', '"nutrition": "栄養"'),
         ('["se", "病院SE", "se_url", "se_theme", "--se"], ', '["se", "病院SE", "se_url", "se_theme", "--se"], ["nutrition", "栄養", "nutrition_url", "nutrition_theme", "--nutr"], ', '"nutrition_url", "nutrition_theme"'),
+        ('.mkf-tag[data-k="nutrition"]{--k:' + NUTR['c'] + ';}', '.mkf-tag[data-k="nutrition"]{--k:' + NUTR['c'] + ';}.mkf-tag[data-k="tech"]{--k:#245F89;}', '.mkf-tag[data-k="tech"]{--k:#'),
+        ('"nutrition": "栄養", ', '"nutrition": "栄養", "tech": "医療技術", ', '"tech": "医療技術"'),
+        ('["nutrition", "栄養", "nutrition_url", "nutrition_theme", "--nutr"], ', '["nutrition", "栄養", "nutrition_url", "nutrition_theme", "--nutr"], ["tech", "医療技術", "tech_url", "tech_theme", "--tech"], ', '"tech_url", "tech_theme"'),
+        ('.mkf-tag[data-k="nutrition"]{--k:' + NUTR['c'] + ';}', '.mkf-tag[data-k="nutrition"]{--k:' + NUTR['c'] + ';}.mkf-tag[data-k="rehab"]{--k:#4F7A12;}', '.mkf-tag[data-k="rehab"]{--k:#'),
+        ('"nutrition": "栄養", ', '"nutrition": "栄養", "rehab": "リハビリ", ', '"rehab": "リハビリ"'),
+        ('["nutrition", "栄養", "nutrition_url", "nutrition_theme", "--nutr"], ', '["nutrition", "栄養", "nutrition_url", "nutrition_theme", "--nutr"], ["rehab", "リハビリ", "rehab_url", "rehab_theme", "--rehab"], ', '"rehab_url", "rehab_theme"'),
+        ('.mkf-tag[data-k="nutrition"]{--k:' + NUTR['c'] + ';}', '.mkf-tag[data-k="nutrition"]{--k:' + NUTR['c'] + ';}.mkf-tag[data-k="admin"]{--k:#765098;}', '.mkf-tag[data-k="admin"]{--k:#'),
+        ('"nutrition": "栄養", ', '"nutrition": "栄養", "admin": "医事・事務", ', '"admin": "医事・事務"'),
+        ('["nutrition", "栄養", "nutrition_url", "nutrition_theme", "--nutr"], ', '["nutrition", "栄養", "nutrition_url", "nutrition_theme", "--nutr"], ["admin", "医事・事務", "admin_url", "admin_theme", "--admin"], ', '"admin_url", "admin_theme"'),
+        ('.mkf-tag[data-k="nutrition"]{--k:' + NUTR['c'] + ';}', '.mkf-tag[data-k="nutrition"]{--k:' + NUTR['c'] + ';}.mkf-tag[data-k="care"]{--k:#176F68;}', '.mkf-tag[data-k="care"]{--k:#'),
+        ('"nutrition": "栄養", ', '"nutrition": "栄養", "care": "介護職", ', '"care": "介護職"'),
+        ('["nutrition", "栄養", "nutrition_url", "nutrition_theme", "--nutr"], ', '["nutrition", "栄養", "nutrition_url", "nutrition_theme", "--nutr"], ["care", "介護職", "care_url", "care_theme", "--care"], ', '"care_url", "care_theme"'),
         ('病院SE・診療報酬の全ページの本文から探せます。', '病院SE・栄養・診療報酬・海外DXの全ページの本文から探せます。', None),
         ('病院SE・診療報酬・海外DXの全ページから探せます。', '病院SE・栄養・診療報酬・海外DXの全ページから探せます。', None),
     ]

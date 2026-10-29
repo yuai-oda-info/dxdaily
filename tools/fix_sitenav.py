@@ -262,10 +262,52 @@ def put_gigi(h, href, note_n=''):
         return h, '!! hubナビが見つからない（入口を入れられない）'
     return h[:m.end()] + '\n' + (GIGI_BAND % (href, note_n)) + h[m.end():], '疑義解釈まとめへの入口を挿入'
 
+# ---- 2026-10-29：枠の混入・裸のCSSの修復（公開タスクが枠を外しそこねても崩れないための保険） ----
+# 10/25〜29、作成側のページの先頭に Artifact の外枠（<!doctype…<style>…</style></head><body>）が混入し、
+# 共通ナビのCSSがその <style> の中に入った。公開タスクの切り方が日によって違い、10/29 は <style> ごと
+# 削られてCSSが本文として表示された。作成側は正本スクリプト版70で直したが、ここでも毎朝修復する。
+WRAP_HEAD = re.compile(r'<!doctype html>\s*<html[^>]*>\s*<head>\s*<meta charset=utf8>\s*<meta name=viewport[^>]*>', re.I)
+WRAP_CSS = ':root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top'
+
+def repair_wrap(h):
+    """<body> の中に残った枠と裸のCSSを直す。戻り値＝(直したHTML, 説明。何もなければ空文字)"""
+    i = h.find('<body')
+    if i < 0: return h, ''
+    j = h.find('>', i) + 1
+    head, body = h[:j], h[j:]
+    notes = []
+    # (a) 本文に混入した枠（2つ目の doctype〜）：その枠の </head><body> まで、無ければタグ列だけを外す
+    while True:
+        m = WRAP_HEAD.search(body)
+        if not m: break
+        k = body.find('</head><body>', m.end())
+        if 0 <= k - m.end() <= 6000:
+            body = body[:m.start()] + body[k + len('</head><body>'):]
+        else:
+            body = body[:m.start()] + body[m.end():]
+        notes.append('本文に混入した枠を除去')
+    # (b) 枠のCSSだけが <style> で残っているもの（枠の :root{color-scheme…} で始まる style）は外す
+    body, n = re.subn(r'<style>' + re.escape(WRAP_CSS) + r'.*?</style>\s*', '', body, count=1, flags=re.S)
+    if n: notes.append('枠のCSSを除去')
+    # (c) 裸のCSS：<body> 直後がCSSらしく、次に来るのが <style ではなく </style> のとき <style> を補う
+    m = re.match(r'\s*(?=(?:/\*|:root|@media|\.[A-Za-z]|[a-z]+\s*\{))', body)
+    if m:
+        a = body.find('<style'); b2 = body.find('</style>')
+        if b2 >= 0 and (a < 0 or b2 < a):
+            x = body[m.end():b2]
+            x2 = re.sub(r'^' + re.escape(WRAP_CSS) + r'[^\n]*\n', '', x)   # 枠のCSSが混ざっていれば落とす
+            body = body[:m.end()] + '<style>\n' + x2 + body[b2:]
+            notes.append('裸のCSSに<style>を補った')
+    h2 = head + body
+    if h2.count('<style') != h2.count('</style>'):
+        notes.append('!! <style>と</style>の数が合わない（%d/%d）' % (h2.count('<style'), h2.count('</style>')))
+    return h2, '／'.join(notes)
+
 def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
     src = open(path, encoding='utf-8').read()
     cur = page_key(path)
-    h = put_css(src)
+    h, wnote = repair_wrap(src)   # 2026-10-29：枠の混入・裸のCSSを先に直す
+    h = put_css(h)
     # 2026-10-20：奥付の「データソース」は claude.ai の非公開アーティファクトを指したままだと公開サイトで開けない。
     # リポジトリに sources.html があれば、そちらへ付け替える（毎朝の公開でも元に戻らないように）。
     if DSRC_ART in h and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(path)), 'sources.html')):
@@ -286,6 +328,9 @@ def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
         h, n2 = put_gigi(h, gigi_href, gigi_n)
         if n2:
             note = (note + '／' + n2) if note else n2
+    if wnote:
+        note = (wnote + '／' + note) if note else wnote
+        if wnote.startswith('!!') or '!!' in wnote: note = '!! ' + note.lstrip('! ')
     changed = (h != src)
     if changed and not check:
         open(path, 'w', encoding='utf-8').write(h)

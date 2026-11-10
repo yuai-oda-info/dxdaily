@@ -864,6 +864,34 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 @media (max-width:560px){.gigi-go{width:100%;text-align:center;}}
 </style>
 <style id="mk-bg">/* MediKoto bg v1（2026-10-20「背景は限りなく白に近いグレーで」→16:53「#F5F9FC にして」→16:57 トップの職種の枠などクリーム地の箱は白→17:00「テーマから深く知る」も同じ白地。17:02「画面は前に戻して。色だけ変更」＝枠線・余白は元のまま、地の色だけ白。17:04「間も白にして」＝入口の間の隙間も白） */@media (prefers-color-scheme: light){html:not([data-theme="dark"]),html:not([data-theme="dark"]) body{background:#F5F9FC!important}html:not([data-theme="dark"]) div.mkf-box{background:transparent!important}html:not([data-theme="dark"]) a.clean-role,html:not([data-theme="dark"]) div.evcard,html:not([data-theme="dark"]) #pastTg,html:not([data-theme="dark"]) #farTg{background:#FFFFFF!important}html:not([data-theme="dark"]) .clean-theme-entries{background:#FFFFFF!important}html:not([data-theme="dark"]) .clean-theme-entries a{background:#FFFFFF!important}html:not([data-theme="dark"]) a.clean-role:hover,html:not([data-theme="dark"]) .clean-theme-entries a:hover{background:#EEF3F7!important}}:root[data-theme="light"],:root[data-theme="light"] body{background:#F5F9FC!important}</style>
+<style id="mk-cyber-mast">/* MediKoto Cyber 題字 v7・書体 v5（2026-11-10「ヘッドラインと同じフォントとタイトルイメージにして」）：題字＝筆文字 MediKoto（Medi＝紺・Koto＝青緑）＋明朝の Cyber、左寄せ、下に標語と号数（第N号）と濃い罫。書体＝本文 Zen Kaku Gothic New・見出し しっぽり明朝・数字 Newsreader（ヘッドラインの「書体 v5」「題字 v7」と同じ指定）。表示だけ。HTMLの中身は変えない。消さない */
+html:root:not(#x){--body:"Zen Kaku Gothic New","BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;--hd:"Zen Kaku Gothic New","BIZ UDPGothic",sans-serif;--serif:"Shippori Mincho B1","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;--uv-serif:"Shippori Mincho B1","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;--np-serif:"Shippori Mincho B1","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif}
+html:root:not(#x) body{font-family:var(--body);font-weight:400;font-feature-settings:"palt" 1;letter-spacing:.02em}
+html:root:not(#x) .mkfind,html:root:not(#x) .j2 small,html:root:not(#x) .jmo-t small{font-family:var(--body)}
+/* 題字：ヘッドラインと同じ並び（ロゴ行 → 題字と標語 → 濃い罫 → 共通ナビ → ページ内メニュー） */
+html:root:not(#x) .wrap>header>.pp-mast{display:contents}
+html:root:not(#x) .wrap>header>.pp-top{order:0;flex:1 1 100%}
+html:root:not(#x) .wrap>header .pp-brand{order:1;flex:1 1 100%;text-align:left!important;padding:.7rem 0 .7rem!important;border-bottom:2px solid var(--ink);display:block!important}
+html:root:not(#x) .wrap>header>nav.sitenav.top{order:2;flex:1 1 100%!important;margin:.3rem 0 0!important;padding:.45rem 0 .3rem!important;gap:.2rem 1.1rem!important}
+html:root:not(#x) .wrap>header .pp-nav{order:3;flex:1 1 100%;justify-content:flex-start!important;border-top:1px solid var(--rule)!important;border-bottom:1px solid var(--rule)!important;gap:.3rem 1.4rem!important}
+html:root:not(#x) .wrap>header .pp-brand .pp-title{display:flex!important;align-items:baseline;gap:.35em;font-size:clamp(2.6rem,7.6vw,4.7rem)!important;line-height:1!important;letter-spacing:-.01em!important;color:var(--ink)!important;margin:0!important;font-family:"Kaushan Script",cursive!important;font-weight:400!important}
+html:root:not(#x) .wrap>header .pp-brand .pp-title span{color:var(--logo-navy,#002963)!important}
+html:root:not(#x) .wrap>header .pp-brand .pp-title .mq-w>span{color:var(--logo-teal,#009C95)!important}
+html:root:not(#x) .wrap>header .pp-brand .pp-title .mq-news{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:.76em;color:var(--ink)!important;letter-spacing:-.01em;position:relative;top:-.06em}
+html:root:not(#x) .wrap>header .pp-brand .pp-sub{margin:.6rem 0 0!important;font-size:.98rem!important;letter-spacing:.06em!important;font-weight:500!important;font-family:var(--hd)!important;color:var(--ink)!important;text-align:left!important}
+html:root:not(#x) .wrap>header .pp-brand .pp-sub .mq-no{display:inline-block;margin-left:1.1rem;padding-left:1.1rem;border-left:1px solid var(--rule);font-size:.78rem;letter-spacing:.1em;color:var(--logo-teal,#009C95);font-weight:700}
+</style>
+<script>/* MediKoto Cyber 題字 v7（2026-11-10）：題字を「筆文字 MediKoto＋Cyber」に組み直す（表示だけ）。書体 Kaushan Script はここで head に読み込む */
+(function(){try{
+ if(!document.querySelector('link[data-mq-font]')){var L=document.createElement('link');L.rel='stylesheet';L.setAttribute('data-mq-font','1');L.href='https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap';document.head.appendChild(L);}
+ var t=document.querySelector('.wrap>header .pp-brand .pp-title');if(!t||t.querySelector('.mq-w'))return;
+ t.innerHTML='<span class="mq-w">Medi<span>Koto</span></span><span class="mq-news">Cyber</span>';
+ /* 号数：ヘッドラインと同じ数え方（2026-08-28＝第1号）。日付はページ上部の日付と同じ「きょう（日本時間）」 */
+ var sub=document.querySelector('.wrap>header .pp-brand .pp-sub'),n=new Date(Date.now()+9*36e5);
+ var no=Math.round((Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate())-Date.UTC(2026,7,28))/864e5)+1;
+ if(sub&&no>0&&!sub.querySelector('.mq-no')){var N=document.createElement('span');N.className='mq-no';N.textContent='第'+no+'号';sub.appendChild(N);}
+}catch(e){}})();
+</script>
 <script src="findbar.js" defer></script>
 </body>
 </html>

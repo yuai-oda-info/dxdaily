@@ -500,6 +500,13 @@ def main():
             th += medikoto_logo_row.run(root)
         except Exception as ex:
             th.append('!! ヘッダーの並び: %s（ナビの処理は続ける）' % ex)
+        # ヘッドラインの図解（2026-11-11追加）：「数字で見る」の数字が重ならないようにし、出典名を出典URLへのリンクにする。
+        # 正本のHTMLで上書きされても毎朝ここでそろえる
+        try:
+            import medikoto_v6fig
+            th += medikoto_v6fig.run(root)
+        except Exception as ex:
+            th.append('!! 図解: %s（ナビの処理は続ける）' % ex)
     files = sorted(f for f in glob.glob(os.path.join(root, '*.html')))
     gigi_href = 'gigikaishaku.html' if os.path.exists(os.path.join(root, 'gigikaishaku.html')) else GIGI_ART
     gigi_n = gigi_count(root)

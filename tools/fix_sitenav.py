@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""MediKoto：全HTMLの共通ナビ（19項目・v13）とCSSをそろえ、
+"""MediKoto：全HTMLの共通ナビ（20項目・v13＋学会・セミナー）とCSSをそろえ、
 v13（2026-10-20）：「栄養」の右に「介護職」（care.html）「医事・事務」（office.html）「リハビリ」（rehab.html）「医療技術」（medtech.html）を追加して19項目。PCは10列×2段・中幅5列×4段・スマホ3列×7段。ポータル v6（#roles の職種10リンク・バックナンバー18表）に対応。
 v12（2026-10-16）：「病院SE」の右に「栄養」（nutrition.html・MediKoto Nutrition）を追加。PCは8列×2段・中幅5列×3段・スマホ3列×5段。
   続けて medikoto_searchdata.py（ポータルの本文検索データを search-data.json に分離）と medikoto_portal_check.py（締切の日付判定・重複統合・検証）を呼ぶ。
@@ -42,7 +42,12 @@ NAV = [
     ('tech', '医療技術', 'sn-tech', 'medtech.html'),    # 2026-10-20追加
     ('reim',    '診療報酬',      'sn-reim',   'reimbursement.html'),
     ('global',  '海外DX',        'sn-ovs',    'global.html'),      # 2026-09-26追加（MediKoto Global）
+    # 2026-11-25追加：学会・セミナー＝海外DXの右。専用ページは作らず、ポータルの学会・セミナー欄（#events）へ飛ぶ
+    # （2026-11-21 利用者の決定・11-24 本番承認。20項目＝PCは10列×2段にちょうど収まるのでCSSは変えない。消さない）
+    ('events',  '学会・セミナー', 'sn-portal', './#events'),
 ]
+# claude.ai 側のポータル固定URL。本文に「…#events」（勉強会14題目・ヘッドラインの勉強会一覧）で出てくるので、公開サイトでは ./#events に直す
+PORTAL_ARTS = ('https://claude.ai/code/artifact/6718b32b-58e6-477d-9100-2397bd288e9c', 'https://claude.ai/artifact/DjPPZ6hfJm4wndBvh1iqvs')
 
 CSS = """<style>/* __MARK__ */
 .sitenav{--sn-portal:#163672;--sn-news:#163672;--sn-study:#C56A15;--sn-nurs:#C25573;--sn-doc:#285F9D;--sn-pharm:#2F8F6B;--sn-conn:#7A5230;--sn-se:#8E7414;--sn-nutr:#D9603A;--sn-care:#176F68;--sn-admin:#765098;--sn-rehab:#4F7A12;--sn-tech:#245F89;--sn-reim:#5B3FA6;--sn-gov:#0FA9BC;--sn-ovs:#4E6E8E;--sn-cyb:#2F3B47;--sn-inf:#B5382D;--sn-bg:#F2F3EF;--sn-line:#D9DDE0;
@@ -58,7 +63,7 @@ CSS = """<style>/* __MARK__ */
 :root[data-theme="dark"] .sitenav{--sn-portal:#8FB7F4;--sn-news:#8FB7F4;--sn-study:#E89A55;--sn-nurs:#E794B0;--sn-doc:#7FB3F0;--sn-pharm:#5FCB9E;--sn-conn:#D2A27E;--sn-se:#E3C64F;--sn-nutr:#F19B7C;--sn-care:#7CD4BA;--sn-admin:#D2B0F0;--sn-rehab:#A9D46A;--sn-tech:#95C5EC;--sn-reim:#B79DF5;--sn-gov:#6FD8E6;--sn-ovs:#8FB0CC;--sn-cyb:#C5CFD9;--sn-inf:#F2998E;--sn-bg:#18232B;--sn-line:#2E3C46;}
 :root[data-theme="dark"] .sitenav a.cur{color:#10181E;}
 @media (min-width:641px){.sitenav a{padding:.4rem .42rem;font-size:.8rem;}}
-/* 19項目：PCは10列×2段、中幅は5列×4段、スマホは3列×7段（全部同じ大きさ。2026-10-20） */
+/* 20項目（2026-11-25 学会・セミナーを追加）：PCは10列×2段、中幅は5列×4段、スマホは3列×7段（全部同じ大きさ。2026-10-20） */
 @media (min-width:901px){.sitenav{display:grid;grid-template-columns:repeat(10,1fr);}.sitenav a{flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;padding:.4rem .3rem;font-size:.78rem;}}
 @media (min-width:641px) and (max-width:900px){.sitenav{display:grid;grid-template-columns:repeat(5,1fr);}.sitenav a{flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
 @media (max-width:640px){.sitenav{display:grid;grid-template-columns:repeat(3,1fr);}.sitenav a{font-size:.76rem;padding:.38rem .3rem;flex:none;min-width:0;overflow:hidden;text-overflow:ellipsis;}}
@@ -312,6 +317,9 @@ def fix(path, check=False, gigi_href=GIGI_ART, gigi_n=''):
     # リポジトリに sources.html があれば、そちらへ付け替える（毎朝の公開でも元に戻らないように）。
     if DSRC_ART in h and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(path)), 'sources.html')):
         h = h.replace(DSRC_ART, 'sources.html')
+    # 2026-11-25：ポータルの学会・セミナー欄へのリンク（claude.ai の固定URL＋#events）を、公開サイトのポータルへ付け替える
+    for _pa in PORTAL_ARTS:
+        h = h.replace(_pa + '#events', './#events')
     # 2026-10-20：背景を「限りなく白に近いグレー」#FAFAFA に（全ページ共通・ライト表示だけ。ダークは各ページのまま。検索欄の白は各ページの指定で残る）
     h = re.sub(r'<style id="mk-bg">.*?</style>\n?', '', h, flags=re.S)
     k = h.rfind('</body>')

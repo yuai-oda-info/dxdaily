@@ -144,7 +144,11 @@ def strip(s):
 
 def norm_url(u):
     s = urlsplit(u)
-    return (s.netloc.lower().replace('www.', '') + s.path.rstrip('/')).lower()
+    base = (s.netloc.lower().replace('www.', '') + s.path.rstrip('/')).lower()
+    # 2026-11-27：案件を ?id=… で区別するサイト（e-Gov パブリックコメントなど）は、id／seqNo を鍵に残す。
+    # 残さないと、同じ日が締切の別の意見募集2件が「同じ公式URL」とみなされて1行に統合され、片方が消える。
+    ids = sorted(m.group(0).lower() for m in re.finditer(r'(?:^|(?<=&))(?:id|seqNo)=[^&]+', s.query, re.I))
+    return base + ('?' + '&'.join(ids) if ids else '')
 
 
 def norm_title(s):
